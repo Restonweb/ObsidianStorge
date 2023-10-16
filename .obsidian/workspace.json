@@ -11,8 +11,12 @@
             "id": "bdf24e56bbe31829",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Capture The Flag/ReadMe.md",
+                "mode": "source",
+                "source": false
+              }
             }
           },
           {
@@ -27,8 +31,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -78,7 +81,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -142,7 +146,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,10 +159,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "59c519b4a082c308",
+  "active": "bdf24e56bbe31829",
   "lastOpenFiles": [
-    "未命名.md",
     "Capture The Flag/ReadMe.md",
+    "未命名.md",
     "Capture The Flag.md",
     "Capture The Flag",
     "Python/Python-urllib.md",
