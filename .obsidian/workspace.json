@@ -8,65 +8,27 @@
         "type": "tabs",
         "children": [
           {
-            "id": "33857d1dc54af68d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Python/RAA&EV.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "55835b7480427cbf",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Python/RAA&EV.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c6a4dfa0df7acca5",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.4.13"
-              }
-            }
-          },
-          {
-            "id": "edf6b905bdeb4cbe",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Python/Python-urllib.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "bdf24e56bbe31829",
             "type": "leaf",
             "state": {
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "59c519b4a082c308",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "Capture The Flag.md",
+                "file": "Capture The Flag/ReadMe.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -132,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capture The Flag.md",
+                "file": "Capture The Flag/ReadMe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capture The Flag.md",
+                "file": "Capture The Flag/ReadMe.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -172,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capture The Flag.md"
+                "file": "Capture The Flag/ReadMe.md"
               }
             }
           }
@@ -192,10 +154,13 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "bdf24e56bbe31829",
+  "active": "59c519b4a082c308",
   "lastOpenFiles": [
-    "Python/Python-urllib.md",
+    "未命名.md",
+    "Capture The Flag/ReadMe.md",
     "Capture The Flag.md",
+    "Capture The Flag",
+    "Python/Python-urllib.md",
     "Python/RAA&EV.md",
     "Python",
     "未命名.canvas"
