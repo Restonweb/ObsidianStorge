@@ -30,9 +30,29 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c6a4dfa0df7acca5",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.13"
+              }
+            }
+          },
+          {
+            "id": "edf6b905bdeb4cbe",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.16"
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -159,7 +179,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "55835b7480427cbf",
+  "active": "edf6b905bdeb4cbe",
   "lastOpenFiles": [
     "Python/Python-urllib.md",
     "Python/RAA&EV.md",
