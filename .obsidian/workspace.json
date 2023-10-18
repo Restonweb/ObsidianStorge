@@ -20,6 +20,18 @@
             }
           },
           {
+            "id": "7f48b5ed4b4231fe",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Capture The Flag/WP.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "59c519b4a082c308",
             "type": "leaf",
             "state": {
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -81,8 +94,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Capture The Flag/ReadMe.md",
+                "file": "Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Capture The Flag/ReadMe.md",
+                "file": "Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Capture The Flag/ReadMe.md"
+                "file": "Capture The Flag/WP.md"
               }
             }
           }
@@ -159,10 +171,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "bdf24e56bbe31829",
+  "active": "7f48b5ed4b4231fe",
   "lastOpenFiles": [
     "Capture The Flag/ReadMe.md",
-    "未命名.md",
+    "Capture The Flag/WP.md",
     "Capture The Flag.md",
     "Capture The Flag",
     "Python/Python-urllib.md",
