@@ -16,10 +16,11 @@
 	使用拼接符让其执行多条命令
 	“&“ ”|“ ”||“ ”&&“ ”;“
 	使用ls查看文件，使用cat执行文件，绕过空格，使用$IFS变量，使用反引号\`\`高优先级执行ls,查看 源码，得到Flag() 
-	关于反引号高优先级：[[Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法_shell脚本 #b_锦夏挽秋的博客-CSDN博客.pdf|【精选】Shell语法基础--各种括号、引号的用法_shell脚本 #b_锦夏挽秋的博客-CSDN博客]]
+	关于反引号高优先级：[[【精选】Shell语法基础--各种括号、引号的用法.pdf]]
  [ACTF2020 新生赛]Exec
 	==命令执行漏洞==
 	index.php使用了exec来模拟执行命令，使用拼接符来执行ls,ls /,发现flag在上一级目录中，使用 cat /flag获取flag
+	关于命令漏洞：[[【精选】命令执行漏洞详解_命令执行漏洞原理.pdf]]
 [极客大挑战 2019]BuyFlag
 	==PHP绕过==
 	isnumeric()绕过:
@@ -36,3 +37,4 @@
 	构造URLhttp://cb544b05-5897-4925-8632-8b81aace8260.node4.buuoj.cn:81/check.php?username=‘ or 1=1 -- ’&password=2
 	万能钥匙(随便找的文章，后面好好看SQL注入)
 	-- 为SQL注释，--后有空格(可以替换为其他符号),password被注释掉，1=1为永真条件，直接通过。
+	关于SQL漏洞：[[网络安全——SQL注入漏洞.pdf]]
