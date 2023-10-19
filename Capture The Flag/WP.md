@@ -15,7 +15,7 @@
 	==命令执行漏洞==
 	使用拼接符让其执行多条命令
 	“&“ ”|“ ”||“ ”&&“ ”;“
-	使用ls查看文件，使用cat执行文件，绕过空格，使用$IFS变量，使用反引号\`\`高优先级执行ls,查看 源码，得到Flag
+	使用ls查看文件，使用cat执行文件，绕过空格，使用$IFS变量，使用反引号\`\`高优先级执行ls,查看 源码，得到Flag()
  [ACTF2020 新生赛]Exec
 	==命令执行漏洞==
 	index.php使用了exec来模拟执行命令，使用拼接符来执行ls,ls /,发现flag在上一级目录中，使用 cat /flag获取flag
@@ -30,3 +30,8 @@
 	而格式类似于“4e114514”会被识别为科学计数法，“0e114514”将会是0。
 	绕过上面两个后，他会检测你是不是特定用户，在cookie里找到了user变量，修改其值即可。cookie也是要注意的点。
 	PS:这题不用post方法不会返回FLAG，要在burpsuite进行POST提交，修改GET为POST,添加Content-Type: application/x-www-form-urlencoded，才能正常的进行POST提交。
+[极客大挑战 2019]EasySQL
+	==SQL注入漏洞==
+	构造URLhttp://cb544b05-5897-4925-8632-8b81aace8260.node4.buuoj.cn:81/check.php?username=‘ or 1=1 -- ’&password=2
+	万能钥匙(随便找的文章，后面好好看SQL注入)
+	-- 为SQL注释，--后有空格(可以替换为其他符号),password被注释掉，1=1为永真条件，直接通过。
