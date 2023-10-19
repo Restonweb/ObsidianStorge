@@ -28,4 +28,5 @@
 	"1admin" == 1:True
 	字符串将会被强转类型进行比较，只有数字在字符串开头时才会转为此数字，否则为0。
 	而格式类似于“4e114514”会被识别为科学计数法，“0e114514”将会是0。
-	
+	绕过上面两个后，他会检测你是不是特定用户，在cookie里找到了user变量，修改其值即可。cookie也是要注意的点。
+	PS:这题不用post方法不会返回FLAG，要在burpsuite进行POST提交，修改GET为POST,添加Content-Type: application/x-www-form-urlencoded，才能正常的进行POST提交。
