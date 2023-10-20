@@ -11,8 +11,10 @@
             "id": "cdb89f61275dfedd",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "pdf",
+              "state": {
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf"
+              }
             }
           }
         ]
@@ -81,6 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +122,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf"
+              }
             }
           }
         ]
@@ -138,23 +144,22 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cef5dbb49c726b7f",
+  "active": "cdb89f61275dfedd",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Python",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
-    "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/KeyPoint",
     "MyStudyRoute/Capture The Flag",
     "Capture The Flag/WP.md",
     "Capture The Flag/ReadMe.md",
     "Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "Capture The Flag/KeyPoint/未确认 265356.crdownload",
-    "Capture The Flag/KeyPoint/未确认 584925.crdownload",
     "Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法_shell脚本.md",
     "shell命令符号.md",
     "Capture The Flag/KeyPoint/shell命令符号.md",
