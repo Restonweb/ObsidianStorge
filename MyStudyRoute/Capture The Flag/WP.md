@@ -67,5 +67,5 @@
 	 点点点直接END,没有任何的信息，让回去再看看，发现跳转用的action.php一直没有访问，直接查看其源码：![[Pasted image 20231020205329.png]]
 	 访问这个secr3t.php，进入后：
 	 ![[Pasted image 20231020205518.png]]
-	 其屏蔽了，../访问上一级，tp,input但是没有过滤filter，使用filter查看flag.php的源码，base64解码拿到flag：![[Pasted image 20231020205753.png]]
+	 其屏蔽了，../访问上一级，tp,input但是没有过滤filter，使用filter（php://filter/convert.base64-encode/resource=文件路径）查看flag.php的源码，base64解码拿到flag：![[Pasted image 20231020205753.png]]
 	 
