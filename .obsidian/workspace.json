@@ -11,9 +11,11 @@
             "id": "cdb89f61275dfedd",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf"
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -67,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -83,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -144,12 +147,12 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cdb89f61275dfedd",
+  "active": "cef5dbb49c726b7f",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Python",
-    "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
