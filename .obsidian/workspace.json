@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "be1af9137dc69695",
+        "id": "75711de2ff2d2802",
         "type": "tabs",
         "children": [
           {
-            "id": "cdb89f61275dfedd",
+            "id": "17dc85ad7e1c8d72",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf"
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -67,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -84,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -145,8 +146,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cdb89f61275dfedd",
+  "active": "17dc85ad7e1c8d72",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
@@ -154,7 +156,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint",
     "MyStudyRoute/Capture The Flag",
     "Capture The Flag/WP.md",
