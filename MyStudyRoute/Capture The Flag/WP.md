@@ -50,4 +50,9 @@
 	关于绕过正则：[[命令执行中关于PHP正则表达式的一些绕过方法.pdf]]
 	关于show()：[[MySQL show()函数详述.pdf]]
 [SUCTF 2019]EasySQL
+	==SQL注入漏洞==
 	输入1,2,3,4.......回显一个数据，输入0，无回复，输入字符无回复，堆叠语句连续使用show语句，得到表名为Flag的表，但是最后使用show columns from flag时回复nonono，其他的字符都无回显，尝试发现，flag,from被屏蔽，回复nonono
+	你管这叫EASY?
+	直接看别人WP!秒了！
+	猜测SQL语句SELECT ?||flag FROM Flag
+	法一：让
