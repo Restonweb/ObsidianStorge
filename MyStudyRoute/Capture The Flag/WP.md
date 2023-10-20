@@ -55,4 +55,4 @@
 	你管这叫EASY?
 	直接看别人WP!秒了！
 	猜测SQL语句SELECT ?||flag FROM Flag
-	法一：让
+	法一：让语句里这个‘||’变成连接符，而不是或，使用1;set sql_mode=PIPE_AS_CONCAT;SELECT 1
