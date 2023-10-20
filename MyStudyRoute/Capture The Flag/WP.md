@@ -61,3 +61,11 @@
 	关于||：
 	Mysql中的或运算符是通过让两边转为BOOL值再比较。
 	字符串为0,非0数字为1
+ [极客大挑战 2019]Secret File
+	 #Include文件包含漏洞 
+	 进入页面，查看源代码，发现页面有隐藏按钮，直接跳转到Archiveroom.php,再点击到SECRET页面
+	 点点点直接END,没有任何的信息，让回去再看看，发现跳转用的action.php一直没有访问，直接查看其源码：![[Pasted image 20231020205329.png]]
+	 访问这个secr3t.php，进入后：
+	 ![[Pasted image 20231020205518.png]]
+	 其屏蔽了，../访问上一级，tp,input但是没有过滤filter，使用filter查看flag.php的源码，base64解码拿到flag：![[Pasted image 20231020205753.png]]
+	 
