@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#SQL注入漏洞",
+                "query": "tag:#命令执行漏洞",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -146,8 +147,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "17dc85ad7e1c8d72",
+  "active": "ceb500f1981397e9",
   "lastOpenFiles": [
+    "Pasted image 20231023175937.png",
+    "Pasted image 20231023175609.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 878362.crdownload",
     "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 693901.crdownload",
@@ -163,7 +166,6 @@
     "MyStudyRoute/Python",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "Capture The Flag/WP.md",
     "Capture The Flag/ReadMe.md",
     "Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法_shell脚本.md",
@@ -175,7 +177,6 @@
     "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/20230815023238.png",
     "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/original.png",
     "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/newUpTime2.png",
-    "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/articleReadEyes2.png",
     "Capture The Flag.md",
     "MyStudyRoute/Python/Python-urllib.md",
     "MyStudyRoute/Python/RAA&EV.md",

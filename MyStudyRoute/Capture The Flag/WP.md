@@ -71,3 +71,11 @@
 [极客大挑战 2019]Http1
 	直接访问没有任何东西，利用burpsuite访问发现其下有Secret.php页面，进入后，提示，请从https://Sycsecret.buuoj.cn访问，这里要加Referer请求头，修改来源界面为https://Sycsecret.buuoj.cn.添加后访问，其提示要使用Syclover浏览器访问，将User-Agent里的Mozilla修改为Syclover即可进入，其提示需要本地访问，添加X-Forwarded-For字段：127.0.0.1，即可获取到Flag.
 	请求头的类型：[[http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf]]
+[极客大挑战 2019]Knife
+	#命令执行漏洞 
+	直接访问提示：
+	![[Pasted image 20231023175609.png]]
+	那么应该是命令执行漏洞，使用PHP的eval函数来执行POST请求发送的Syc参数。
+	向其发送POST请求Syc=var_dump(scandir(’/‘))，其返回所在目录的结构，查看源代码(黑色背景看不到)，看到当前目录有flag文件，发送POST请求Syc=var_dump(get_file_contents('/flag'))返回flag。
+	![[Pasted image 20231023175937.png]]
+	var_dump打印变量。scandir扫描目录，返回数组。
