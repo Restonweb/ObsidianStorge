@@ -68,4 +68,6 @@
 	 访问这个secr3t.php，进入后：
 	 ![[Pasted image 20231020205518.png]]
 	 其屏蔽了，../访问上一级，tp,input但是没有过滤filter，使用filter（php://filter/convert.base64-encode/resource=文件路径）查看flag.php的源码，base64解码拿到flag：![[Pasted image 20231020205753.png]]
-	 
+[极客大挑战 2019]Http1
+	直接访问没有任何东西，利用burpsuite访问发现其下有Secret.php页面，进入后，提示，请从https://Sycsecret.buuoj.cn访问，这里要加Referer请求头，修改来源界面为https://Sycsecret.buuoj.cn.添加后访问，其提示要使用Syclover浏览器访问，将User-Agent里的Mozilla修改为Syclover即可进入，其提示需要本地访问，添加X-Forwarded-For字段：127.0.0.1，即可获取到Flag.
+	请求头的类型：[[http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf]]
