@@ -78,4 +78,4 @@
 	那么应该是命令执行漏洞，使用PHP的eval函数来执行POST请求发送的Syc参数。
 	向其发送POST请求Syc=var_dump(scandir(’/‘))，其返回所在目录的结构，查看源代码(黑色背景看不到)，看到当前目录有flag文件，发送POST请求Syc=var_dump(get_file_contents('/flag'))返回flag。
 	![[Pasted image 20231023175937.png]]
-	var_dump打印变量。scandir扫描目录，返回数组。
+	var_dump打印变量。scandir扫描目录，返回数组。get_file_contents将文件读入字符串返回
