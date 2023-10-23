@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -147,8 +146,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ceb500f1981397e9",
+  "active": "17dc85ad7e1c8d72",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
     "Pasted image 20231023175937.png",
     "Pasted image 20231023175609.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 878362.crdownload",
@@ -157,7 +158,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
-    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205329.png",
     "MyStudyRoute/Capture The Flag/res",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205753.png",
@@ -176,7 +176,6 @@
     "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/20230906110639.png",
     "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/20230815023238.png",
     "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/original.png",
-    "Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理_Toert_T的博客-CSDN博客_files/newUpTime2.png",
     "Capture The Flag.md",
     "MyStudyRoute/Python/Python-urllib.md",
     "MyStudyRoute/Python/RAA&EV.md",

