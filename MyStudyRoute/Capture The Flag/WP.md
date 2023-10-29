@@ -95,3 +95,25 @@
 	group_concat(column_name) frfromom infoorrmation_schema.columns whwhereere table_name=''
 	group_concat(col1,col2,col3...) from db.table
 	关于这些函数 ：[[内置函数与特殊数据库.pdf]]
+[ACTF2020 新生赛]BackupFile
+使用dirsearch扫描，设置低线程，延时，扫到index的bak备份文件：
+```php
+<?php
+include_once "flag.php";
+
+if(isset($_GET['key'])) {
+    $key = $_GET['key'];
+    if(!is_numeric($key)) {
+        exit("Just num!");
+    }
+    $key = intval($key);
+    $str = "123ffwsfwefwf24r2f32ir23jrw923rskfjwtsw54w3";
+    if($key == $str) {
+        echo $flag;
+    }
+}
+else {
+    echo "Try to find out source file!";
+}
+```
+将字符串视作int时，数就是字符串开头的数字。‘123’，直接key=123拿到flag
