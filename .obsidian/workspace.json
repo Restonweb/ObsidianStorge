@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "c5c2ff99cd9dedfe",
+        "id": "7c0d01d315a8a53b",
         "type": "tabs",
         "children": [
           {
-            "id": "65c93add77bcc373",
+            "id": "a4c31334f8c0a02b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#命令执行漏洞",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -146,10 +138,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "65c93add77bcc373",
+  "active": "a4c31334f8c0a02b",
   "lastOpenFiles": [
-    "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
