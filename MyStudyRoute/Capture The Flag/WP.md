@@ -201,12 +201,24 @@ if($a != $b && md5($a) == md5($b)){
     // wow, glzjin wants a girl friend.
 -->
 ```
-要求ab值不相等，但MD5值弱相等
+要求ab值弱不相等，但MD5值弱相等
 方法1：传递数组
 php中的MD5函数无法对数组进行处理，其会返回NULL
 因此传送两个数组即可，NULL\==NULL
 url传递数组是：a[]=1&b[]=2
 方法2：使用科学计数法
 找到两串开头为0e的MD5串，php会将0e开头的串视为科学计数法，而0的任何次方都是0，因此字符串不同，而md5后的串将是0=0
-直接chuan's
+直接传递数组，进入到下一个页面：
+```php
+<?php
+error_reporting(0);
+include "flag.php";
 
+highlight_file(__FILE__);
+
+if($_POST['param1']!==$_POST['param2']&&md5($_POST['param1'])===md5($_POST['param2'])){
+    echo $flag;
+}
+```
+要求param1和param2值强不相等，且MD5后的值强相等。
+这里只能传数组了。NULL和NULL强相等。拿到flag.
