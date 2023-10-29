@@ -186,3 +186,9 @@ var_dump(get_file_contents())
 ```http://node4.buuoj.cn:25481/calc.php? num=1;var_dump(get_file_contents(chr(47).f1agg))```
 chr(47).f1agg，即：/f1agg
 取得flag.
+[BJDCTF2020]Easy MD5
+#md5绕过
+进入只有一个提交框，在请求头看到hint:
+`Hint: select * from 'admin' where password=md5($pass,true)`
+要用万能钥匙，‘or 1=1’，其会被MD5，要求某个MD5串直接转为字符串后的结果是or \[1-9]才可以。
+ffifdyop字符串MD5后的二进制值转为的字符串开头带有 `'or 6`，直接输入ffif 
