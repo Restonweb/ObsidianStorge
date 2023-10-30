@@ -222,3 +222,12 @@ if($_POST['param1']!==$_POST['param2']&&md5($_POST['param1'])===md5($_POST['para
 ```
 要求param1和param2值强不相等，且MD5后的值强相等。
 这里只能传数组了。NULL和NULL强相等。拿到flag.
+[护网杯 2018]easy_tornado
+根据题目名字，搜索tornado，发现python的web框架tornado。
+根据Hints，filehash是这么组成的：
+`md5(cookie_secret+md5(filename))`
+那么得拿到cookie_secret才可计算出正确的filehash
+根据flag,提示flag在/fllllllllllllag下。
+直接访问/fllllllllllllag，出现一个错误界面，url中带有msg选项，查看tornad文档，这里可以传递函数参数，使用{{}}来包括，而cookie_secret在handler下的setting中，构造msg={{msg=handler.settings}},拿到cookie_secret，长这样：
+`046eec27-a62c-4a05-b12a-bc7cc476b8b4`
+根据hints用python
