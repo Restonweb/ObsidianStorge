@@ -230,4 +230,14 @@ if($_POST['param1']!==$_POST['param2']&&md5($_POST['param1'])===md5($_POST['para
 根据flag,提示flag在/fllllllllllllag下。
 直接访问/fllllllllllllag，出现一个错误界面，url中带有msg选项，查看tornad文档，这里可以传递函数参数，使用{{}}来包括，而cookie_secret在handler下的setting中，构造msg={{msg=handler.settings}},拿到cookie_secret，长这样：
 `046eec27-a62c-4a05-b12a-bc7cc476b8b4`
-根据hints用python
+根据hints用php解出filehash:
+```php
+<?php
+
+$scookie = md5("/fllllllllllllag");
+
+echo md5("046eec27-a62c-4a05-b12a-bc7cc476b8b4".$scookie)
+
+?>
+```
+写入filehash,修改文件名，拿到flag。
