@@ -241,3 +241,7 @@ echo md5("046eec27-a62c-4a05-b12a-bc7cc476b8b4".$scookie)
 ?>
 ```
 写入filehash,修改文件名，拿到flag。
+[HCTF 2018]admin
+修改session
+Unicode欺骗
+题有问题，没有源码
