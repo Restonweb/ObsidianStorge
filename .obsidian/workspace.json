@@ -11,11 +11,9 @@
             "id": "01df56ddb831d1b5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
-                "mode": "source",
-                "source": false
+                "file": "Pasted image 20231023175937.png"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "Pasted image 20231023175937.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "Pasted image 20231023175937.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md"
+                "file": "Pasted image 20231023175937.png"
               }
             }
           }
@@ -148,15 +146,15 @@
   },
   "active": "01df56ddb831d1b5",
   "lastOpenFiles": [
-    "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
+    "Pasted image 20231023175609.png",
     "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
     "Pasted image 20231023175937.png",
-    "Pasted image 20231023175609.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 878362.crdownload",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 693901.crdownload",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
