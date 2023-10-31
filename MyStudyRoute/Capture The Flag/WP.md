@@ -269,3 +269,46 @@ var_dump(file('/flag'))
 ```
 第一次上传后发现根目录有/flag.第二次拿到flag
 [ZJCTF 2019]NiZhuanSiWei
+进入，查看源码：
+```php
+<?php  
+
+$text = $_GET["text"];
+
+$file = $_GET["file"];
+
+$password = $_GET["password"];
+
+if(isset($text)&&(file_get_contents($text,'r')==="welcome to the zjctf")){
+
+    echo "<br><h1>".file_get_contents($text,'r')."</h1></br>";
+
+    if(preg_match("/flag/",$file)){
+
+        echo "Not now!";
+
+        exit();
+
+    }else{
+
+        include($file);  //useless.php
+
+        $password = unserialize($password);
+
+        echo $password;
+
+    }
+
+}
+
+else{
+
+    highlight_file(__FILE__);
+
+}
+
+?>
+```
+要设置text文件，内容为"welcome to the zjctf"，使用php伪协议：php://input，或者data伪协议。使用data伪协议构造payload:
+`http://a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome to the zjctf`
+第一层进入，开始绕过第二层的正则
