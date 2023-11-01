@@ -424,5 +424,6 @@ else{
 }
 }Please input first
 ```
-md5直接传俩数组过。numeric直接后面跟字符串过。拿到flag
+md5直接传俩数组过。numeric直接后面跟字符串过。拿到flag。
+
 
