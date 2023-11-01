@@ -381,4 +381,48 @@ by,union被屏蔽则使用===报错注入===（updatexml,extractvalue等，使�
 右：`2-494f-4b0b-8f6e-6a278c2fc7cf}`
 完整：`flag{05c6eef2-494f-4b0b-8f6e-6a278c2fc7cf}`
 ps:[[内置函数与特殊数据库.pdf]]
+[MRCTF2020]Ez_bypass #PHP绕过 
+直接进入看到源码：
+```php
+I put something in F12 for you
+include 'flag.php';
+$flag='MRCTF{xxxxxxxxxxxxxxxxxxxxxxxxx}';
+if(isset($_GET['gg'])&&isset($_GET['id'])) {
+    $id=$_GET['id'];
+    $gg=$_GET['gg'];
+    if (md5($id) === md5($gg) && $id !== $gg) {
+        echo 'You got the first step';
+        if(isset($_POST['passwd'])) {
+            $passwd=$_POST['passwd'];
+            if (!is_numeric($passwd))
+            {
+                 if($passwd==1234567)
+                 {
+                     echo 'Good Job!';
+                     highlight_file('flag.php');
+                     die('By Retr_0');
+                 }
+                 else
+                 {
+                     echo "can you think twice??";
+                 }
+            }
+            else{
+                echo 'You can not get it !';
+            }
+        }
+        else{
+            die('only one way to get the flag');
+        }
+}
+    else {
+        echo "You are not a real hacker!";
+    }
+}
+else{
+    die('Please input first');
+}
+}Please input first
+```
+md5直接传俩数组过。numeric直接后面跟字符串过。拿到flag
 
