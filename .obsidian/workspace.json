@@ -4,16 +4,18 @@
     "type": "split",
     "children": [
       {
-        "id": "7884b0f2624e15ab",
+        "id": "8cf9e8b93e30fa09",
         "type": "tabs",
         "children": [
           {
-            "id": "01df56ddb831d1b5",
+            "id": "e485e708e291b032",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Pasted image 20231023175937.png"
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -83,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Pasted image 20231023175937.png",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Pasted image 20231023175937.png",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Pasted image 20231023175937.png"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -144,17 +146,19 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "01df56ddb831d1b5",
+  "active": "e485e708e291b032",
   "lastOpenFiles": [
-    "Pasted image 20231023175609.png",
+    "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
+    "Pasted image 20231023175937.png",
+    "MyStudyRoute/Capture The Flag/KeyPoint/未确认 163004.crdownload",
+    "Pasted image 20231023175609.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
-    "Pasted image 20231023175937.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 878362.crdownload",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 693901.crdownload",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
@@ -162,8 +166,6 @@
     "MyStudyRoute/Capture The Flag/res",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205753.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205518.png",
-    "MyStudyRoute/Python",
-    "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "Capture The Flag/WP.md",
     "Capture The Flag/ReadMe.md",
     "Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法_shell脚本.md",
