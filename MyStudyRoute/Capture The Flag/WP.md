@@ -254,7 +254,7 @@ var_dump(file('/flag'))
 ?>
 ```
 第一次上传后发现根目录有/flag.第二次拿到flag
-[ZJCTF 2019]NiZhuanSiWei #Include文件包含漏洞
+[ZJCTF 2019]NiZhuanSiWei #Include文件包含漏洞 #PHP反序列化漏洞 
 进入，查看源码：
 ```php
 <?php  
