@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#PHP反序列化漏洞",
+                "query": "tag:#文件上传漏洞",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -70,8 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -148,7 +147,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a8062844314ff359",
+  "active": "ceb500f1981397e9",
   "lastOpenFiles": [
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
