@@ -562,4 +562,21 @@ if (isset($_POST["upload"])) {
 拿到flag。
 [GXYCTF2019]BabySQli
 直接1‘，报错说明可以注入
-1’ order by 1#被过滤，使用大写首字母1‘ Order by1#可以使用
+源码中有这么一串：
+`MMZFM422K5HDASKDN5TVU3SKOZRFGQRRMMZFM6KJJBSG6WSYJJWESSCWPJNFQSTVLFLTC3CJIQYGOSTZKJ2VSVZRNRFHOPJ5`
+大写与数字的配合且没等号，是base32的表现，解码：
+`c2VsZWN0ICogZnJvbSB1c2VyIHdoZXJlIHVzZXJuYW1lID0gJyRuYW1lJw==`
+是base64，解码：
+`select * from user where username = '$name'`
+直接使用任何语句显示wrong user,再结合上面的语句，那么要先知道用户名，才可以进行注入。
+猜用户名是admin
+admin’ order by 1#回显do not hack me，被过滤
+使用大写首字母admin‘ Order by1#可以使用。测试到4报错，那么有3列
+用union select和用户名admin测试注入点，1，3回显wrong user，2回显wrongpass，那么2是注入点(用户名)，3就是密码
+使用union会创建==虚拟行==，那么使用1'union select 1,'admin','114514'#(注意这里使用他没有的用户1，你要用admin就会选他的密码，达不到虚拟行的目的)后将会创建这么一列：
+```
+id username password
+1   admin     ????
+2     1       114514 (虚拟列)
+```
+密码栏输入114514，输入的密码会与虚拟列进行比较，
