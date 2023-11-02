@@ -38,8 +38,8 @@ PS:这题不用post方法不会返回FLAG，要在burpsuite进行POST提交，�
 使用Order by 命令试有几列数据
 一个提交框可以搜索，其搜索的是表一的数据
 使用’;’拼接多条SQL语句，使用show语句查看数据库的结构
-连续使用show database;show tables;show columns from 表名;
-得到其拥有两个表，在第二个表中有Flag列
+连续使用show dahow tables;show columns from 表名;
+得到其拥有两个表，在第二个表中有Flag列tabase;s
 但是直接进行SELECT返回被正则拦截，尝试异或字符绕过正则失败，继续使用堆叠多条SQL语句，将表一改名，将表二改为表一的名字，添加表一的id列，交换flag的位置,使用其自带的提交框进行检索id1，拿到Flag。
 关于绕过正则：[[命令执行中关于PHP正则表达式的一些绕过方法.pdf]]
 关于show()：[[MySQL show()函数详述.pdf]]
