@@ -560,3 +560,6 @@ if (isset($_POST["upload"])) {
 看到有flag文件
 `<script language='php'>var_dump(file('/flag'));</script>`
 拿到flag。
+[GXYCTF2019]BabySQli
+直接1‘，报错说明可以注入
+1’ order by 1#被过滤，使用大写首字母1‘ Order by1#可以使用
