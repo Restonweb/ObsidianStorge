@@ -425,7 +425,7 @@ else{
 }Please input first
 ```
 md5直接传俩数组过。numeric直接后面跟字符串过。拿到flag。
-[网鼎杯 2020 青龙组]AreUSerialz
+[网鼎杯 2020 青龙组]AreUSerialz #PHP反序列化漏洞 
 直接进入，看到源码：
 ```php
 <?php  
