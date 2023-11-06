@@ -11,11 +11,9 @@
             "id": "a8062844314ff359",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
-                "mode": "source",
-                "source": false
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md"
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf"
               }
             }
           }
@@ -148,8 +146,8 @@
   },
   "active": "a8062844314ff359",
   "lastOpenFiles": [
-    "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205518.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
