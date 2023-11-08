@@ -588,7 +588,56 @@ id username password
 [网鼎杯 2018]Fakebook #PHP反序列化漏洞  #ssrf利用
 进入环境，有login,join两个功能，在login尝试直接sqli全部返回loginfailed，直接进行sqli是不可行的。
 在join页面创建账号与blog也全部返回blog is not valid.
-在遇到这种情况时，或者说在前期信息收集时，就应该获取到所有可以获取到的信息，利用dirsearch扫描其目录发现robot.txt其内容：
+在遇到这种情况时，或者说在前期信息收集时，就应该获取到所有可以获取到的信息，利用dirsearch扫描的结果：
+ 200 -    1KB - /login.php                                        
+ 200 -   37B  - /robots.txt                                       
+ 200 -    0B  - /user.php                                         
+ 200 - 1019B  - /view.php     
+robots内容：
 ```
-
+User-agent: *
+Disallow: /user.php.bak
 ```
+这说明了其有一份user.php的备份文件
+访问并下载备份文件
+user.php.bak内容：
+```php
+<?php
+class UserInfo
+{
+    public $name = "";
+    public $age = 0;
+    public $blog = "";
+    public function __construct($name, $age, $blog)
+    {
+        $this->name = $name;
+        $this->age = (int)$age;
+        $this->blog = $blog;
+    }
+    function get($url)
+    {
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($ch);
+        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        if($httpCode == 404) {
+            return 404;
+        }
+        curl_close($ch);
+        return $output;
+    }
+    public function getBlogContents ()
+    {
+        return $this->get($this->blog);
+    }
+    public function isValidBlog ()
+    {
+        $blog = $this->blog;
+        return preg_match("/^(((http(s?))\:\/\/)?)([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/i", $blog);
+    }
+}
+?>
+```
+这才看到其对blog的内容进行了严格的限制，其格式应为一个url。
+回到join界面，随便输入一个url，
