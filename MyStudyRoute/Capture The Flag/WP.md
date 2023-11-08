@@ -563,7 +563,7 @@ if (isset($_POST["upload"])) {
 看到有flag文件
 `<script language='php'>var_dump(file('/flag'));</script>`
 拿到flag。
-[GXYCTF2019]BabySQli
+[GXYCTF2019]BabySQli #SQL注入漏洞 
 直接1‘，报错说明可以注入
 源码中有这么一串：
 `MMZFM422K5HDASKDN5TVU3SKOZRFGQRRMMZFM6KJJBSG6WSYJJWESSCWPJNFQSTVLFLTC3CJIQYGOSTZKJ2VSVZRNRFHOPJ5`
@@ -585,3 +585,10 @@ id username password
 密码栏输入114514，输入的密码会与虚拟列进行比较，达到目的。
 但是注入后显示wrongpass
 看源码，其密码进行了md5加密，将md5加密后的密码放入语句，即虚拟行里，对比成功，拿到flag。
+[网鼎杯 2018]Fakebook #PHP反序列化漏洞  #ssrf利用
+进入环境，有login,join两个功能，在login尝试直接sqli全部返回loginfailed，直接进行sqli是不可行的。
+在join页面创建账号与blog也全部返回blog is not valid.
+在遇到这种情况时，或者说在前期信息收集时，就应该获取到所有可以获取到的信息，利用dirsearch扫描其目录发现robot.txt其内容：
+```
+
+```
