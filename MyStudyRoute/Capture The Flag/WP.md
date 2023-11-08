@@ -640,4 +640,4 @@ class UserInfo
 ?>
 ```
 这才看到其对blog的内容进行了严格的限制，其格式应为一个url。
-回到join界面，随便输入一个url，
+回到join界面，随便输入一个url进行join，再回到主界面，点击用户，发现其会将url的内容显示出来，那么如果构造flag.php的payload那么就可以将flag输出了。上面的类功能“get”负责这个部分。其
