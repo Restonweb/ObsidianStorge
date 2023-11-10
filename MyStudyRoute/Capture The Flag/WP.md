@@ -780,3 +780,9 @@ echo serialize($a)
 打开文件拿到flag。
 `func=unserialize&p=O:4:"Test":2:{s:1:"p";s:22:"cat /tmp/flagoefiu4r93";s:4:"func";s:6:"system";}`
 ls找不到就直接find，不能傻乎乎的../../../../../../../。。。。。了
+[BSidesCF 2020]Had a bad day #Include文件包含漏洞 
+进入页面，可以选择woofers或者meowers,选择后会显示猫猫狗狗
+看到url有参数category，传别的字符串提示必须包含woofers或meowers。
+误打误撞哈，直接传：
+`category=php://filter/convert.base64-encode/resource=index`
+发现是可以看到源码的，b
