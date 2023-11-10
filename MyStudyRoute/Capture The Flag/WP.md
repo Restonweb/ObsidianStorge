@@ -585,7 +585,7 @@ id username password
 密码栏输入114514，输入的密码会与虚拟列进行比较，达到目的。
 但是注入后显示wrongpass
 看源码，其密码进行了md5加密，将md5加密后的密码放入语句，即虚拟行里，对比成功，拿到flag。
-[GYCTF2020]Blacklist
+[GYCTF2020]Blacklist #SQL注入漏洞 
 堆叠注入看到表名，但是如果进行联合注入其返回了一个正则式，其屏蔽了大多数的语句，尝试大写注入，双写法注入，都失效。
 看wp，其提到了handler
 ```
@@ -608,7 +608,13 @@ id username password
 输入：
 `http://3c6e5317-cd37-4cee-9e1f-7ffdea4f0191.node3.buuoj.cn/?inject=1';handler FlagHere open;handler FlagHere read first;handler FlagHere close;#
 `拿到flag
-[CISCN2019 华北赛区 Day2 Web1]Hack World
+[CISCN2019 华北赛区 Day2 Web1]Hack World #SQL注入漏洞 
+NOTE:这是一道盲注题
+输入1回显：Hello,gzlwantsgirlfriend
+输入0则是：Error occur when fetch result
+输入1‘#回显 SQL inject checked
+说明其过滤了一些语句，使用fuzz字典测试，发现其过滤了几乎所有可用的语句
+
 [网鼎杯 2018]Fakebook #PHP反序列化漏洞  #ssrf利用
 进入环境，有login,join两个功能，在login尝试直接sqli全部返回loginfailed，直接进行sqli是不可行的。
 在join页面创建账号与blog也全部返回blog is not valid.
