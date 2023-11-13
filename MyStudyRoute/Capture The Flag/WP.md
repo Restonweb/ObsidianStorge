@@ -876,3 +876,21 @@ ls找不到就直接find，不能傻乎乎的../../../../../../../。。。。�
 构造：
 `index.php?category=php://filter/convert.base64-encode/woofers/resource=flag`
 拿到flag。
+[BUUCTF 2018]Online Tool #命令执行漏洞 #RCE
+进入环境，显示源码：
+```php
+<?php  
+  
+if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {    $_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_X_FORWARDED_FOR'];  
+}  
+  
+if(!isset($_GET['host'])) {    highlight_file(__FILE__);  
+} else {$host = $_GET['host'];    $host = escapeshellarg($host);    $host = escapeshellcmd($host);    $sandbox = md5("glzjin". $_SERVER['REMOTE_ADDR']);  
+    echo 'you are in sandbox '.$sandbox;  
+    @mkdir($sandbox);    chdir($sandbox);  
+    echo system("nmap -T5 -sT -Pn --host-timeout 2 -F ".$host);  
+}
+```
+第一个部分获取了客户端的真实IP,第二个部分则通过get方法得到的参数host进行nmap扫描，并将扫描结果存放在一个文件里，并会回显路径。
+第二个部分对传入的参数host进行了两步处理：
+escapeshellarg以及escapeshellcmd。
