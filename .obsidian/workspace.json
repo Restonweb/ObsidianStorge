@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/File Inclusion.md",
+                "file": "MyStudyRoute/Capture The Flag/Trick.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/File Inclusion.md",
+                "file": "MyStudyRoute/Capture The Flag/Trick.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/File Inclusion.md",
+                "file": "MyStudyRoute/Capture The Flag/Trick.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/File Inclusion.md"
+                "file": "MyStudyRoute/Capture The Flag/Trick.md"
               }
             }
           }
@@ -148,11 +148,11 @@
   },
   "active": "a8062844314ff359",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
-    "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231118214523.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231118214506.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231118213704.png",

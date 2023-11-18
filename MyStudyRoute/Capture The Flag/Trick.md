@@ -6,4 +6,5 @@
 
 include函数可以通过%00截断来忽略掉一些已经写死在字符串后面的字符。如include($\_GET\['para'] . "php") 加入 %00截断来去掉后面的php后缀来包含其他文件。ps:_在PHP5.3.4已修复
 
+Content-Type: application/x-www-form-urlencoded
 
