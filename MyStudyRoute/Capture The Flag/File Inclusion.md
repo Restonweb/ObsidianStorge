@@ -1,3 +1,4 @@
+==Local Flie Inclusion==
 关于‘.’：
 etc/dic/.将会是etc/dic/（当前目录）
 etc/dic/..将会是代表etc/（上一目录）
@@ -9,3 +10,8 @@ include函数可以通过%00截断来忽略掉一些已经写死在字符串后�
 ....//....//....//....//
 过滤后将是：../../../../
 ![[Pasted image 20231118213704.png]]
+
+一些常见的目录：
+![[Pasted image 20231118214506.png]]
+![[Pasted image 20231118214523.png]]
+==Remote File Inclusion==
