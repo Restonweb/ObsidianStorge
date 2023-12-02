@@ -15,3 +15,5 @@ include函数可以通过%00截断来忽略掉一些已经写死在字符串后�
 ![[Pasted image 20231118214506.png]]
 ![[Pasted image 20231118214523.png]]
 ==Remote File Inclusion==
+进行RFI时，可以使用python3 -m http.sever 端口
+快速部署一个python3 http服务器来托管要RFI的文件。
