@@ -12,6 +12,6 @@ setg:设置默认值 切换模块值仍为设定的默认值
 show:后跟options payload等等等，显示相关信息
 info:显示当前模块的信息
 exploit(run):执行模块
-session查看当前会话，与会话交互使用 session -i \[序号]
+sessions查看当前会话，与会话交互使用 sessions -i \[序号]
 
 back退出当前的模块上下文
