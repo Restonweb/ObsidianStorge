@@ -133,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,9 +147,10 @@
   },
   "active": "a8062844314ff359",
   "lastOpenFiles": [
-    "Pasted image 20231202155612.png",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/Netcat.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Python/Python-urllib.md",
+    "Pasted image 20231202155612.png",
     "MyStudyRoute/Pentration/未命名",
     "MyStudyRoute/Pentration/NMAP.md",
     "Pasted image 20231202221807.png",
@@ -179,7 +179,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
-    "MyStudyRoute/Python/Python-urllib.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "Capture The Flag/WP.md",
