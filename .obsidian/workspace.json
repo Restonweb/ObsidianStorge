@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
+                "file": "MyStudyRoute/Pentration/MetaSploit.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
+                "file": "MyStudyRoute/Pentration/MetaSploit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
+                "file": "MyStudyRoute/Pentration/MetaSploit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md"
+                "file": "MyStudyRoute/Pentration/MetaSploit.md"
               }
             }
           }
@@ -148,15 +148,18 @@
   },
   "active": "a8062844314ff359",
   "lastOpenFiles": [
+    "Pasted image 20231202155612.png",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/Netcat.md",
+    "MyStudyRoute/Pentration/未命名",
+    "MyStudyRoute/Pentration/NMAP.md",
     "Pasted image 20231202221807.png",
     "Pasted image 20231202173230.png",
     "Pasted image 20231202173210.png",
     "Pasted image 20231202163116.png",
     "Pasted image 20231202155840.png",
     "Pasted image 20231202155632.png",
-    "Pasted image 20231202155612.png",
     "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration",
     "MyStudyRoute/未命名.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
@@ -176,11 +179,9 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
-    "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205518.png",
     "MyStudyRoute/Python/Python-urllib.md",
     "未命名 1.canvas",
     "未命名.canvas",
-    "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
     "Capture The Flag/WP.md",
     "Capture The Flag/ReadMe.md",
     "Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法_shell脚本.md",
