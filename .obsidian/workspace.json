@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/MetaSploit.md",
+                "file": "MyStudyRoute/Pentration/Netcat.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/MetaSploit.md",
+                "file": "MyStudyRoute/Pentration/Netcat.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/MetaSploit.md",
+                "file": "MyStudyRoute/Pentration/Netcat.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/MetaSploit.md"
+                "file": "MyStudyRoute/Pentration/Netcat.md"
               }
             }
           }
@@ -148,8 +147,8 @@
   },
   "active": "a8062844314ff359",
   "lastOpenFiles": [
-    "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Python/Python-urllib.md",
     "Pasted image 20231202155612.png",
     "MyStudyRoute/Pentration/未命名",
