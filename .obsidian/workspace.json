@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a8062844314ff359",
+            "id": "63a377211d42ec68",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Netcat.md",
+                "file": "MyStudyRoute/Pentration/Socat.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Netcat.md",
+                "file": "MyStudyRoute/Pentration/Socat.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Netcat.md",
+                "file": "MyStudyRoute/Pentration/Socat.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Netcat.md"
+                "file": "MyStudyRoute/Pentration/Socat.md"
               }
             }
           }
@@ -145,21 +145,24 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "a8062844314ff359",
+  "active": "63a377211d42ec68",
   "lastOpenFiles": [
     "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/Netcat.md",
-    "MyStudyRoute/Pentration/MetaSploit.md",
-    "Pasted image 20231208172838.png",
+    "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Python/Python-urllib.md",
-    "Pasted image 20231202155612.png",
+    "MyStudyRoute/Pentration/Netcat.md",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231202155612.png",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231202155632.png",
+    "MyStudyRoute/Python/RAA&EV.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231208173926.png",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231208172838.png",
     "MyStudyRoute/Pentration/未命名",
-    "Pasted image 20231202221807.png",
-    "Pasted image 20231202173230.png",
-    "Pasted image 20231202173210.png",
-    "Pasted image 20231202163116.png",
-    "Pasted image 20231202155840.png",
-    "Pasted image 20231202155632.png",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231202221807.png",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231202173230.png",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231202173210.png",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231202163116.png",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231202155840.png",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Pentration",
     "MyStudyRoute/未命名.md",
@@ -168,12 +171,10 @@
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231118214523.png",
-    "MyStudyRoute/Capture The Flag/res/Pasted image 20231118214506.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/未确认 454438.crdownload",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
-    "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
