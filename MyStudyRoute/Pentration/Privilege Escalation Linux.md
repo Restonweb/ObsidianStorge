@@ -1,5 +1,5 @@
 
-# Step0:Enumeration枚举
+# Enumeration枚举
 ### hostname 主机名
 `hostname` 命令将返回目标计算机的主机名。尽管此值可以很容易地更改或具有相对无意义的字符串（例如 Ubuntu-3487340239），但在某些情况下，它可以提供有关目标系统在企业网络中的角色的信息（例如，生产 SQL Server 的 .SQL-PROD-01）。
 ### uname -a
@@ -305,3 +305,327 @@ Once our user is added (please note how `root:/bin/bash` was used to provide a
   
 
 ![](https://i.imgur.com/HZcWGhi.png)
+
+# Privilege Escalation: Capabilities
+Another method system administrators can use to increase the privilege level of a process or binary is “Capabilities”. Capabilities help manage privileges at a more granular level. For example, if the SOC analyst needs to use a tool that needs to initiate socket connections, a regular user would not be able to do that. If the system administrator does not want to give this user higher privileges, they can change the capabilities of the binary. As a result, the binary would get through its task without needing a higher privilege user.  
+系统管理员可用于提高进程或二进制文件的权限级别的另一种方法是“功能”。这些功能有助于在更精细的级别管理权限。例如，如果 SOC 分析师需要使用需要启动套接字连接的工具，则普通用户将无法做到这一点。如果系统管理员不想授予此用户更高的权限，他们可以更改二进制文件的功能。因此，二进制文件将完成其任务，而无需更高权限的用户。  
+The capabilities man page provides detailed information on its usage and options.  
+功能手册页提供了有关其用法和选项的详细信息。  
+  
+We can use the `getcap` tool to list enabled capabilities.  
+我们可以使用 `getcap` 工具列出启用的功能。
+
+![](https://i.imgur.com/Q6XYr0p.png)
+
+When run as an unprivileged user, `getcap -r /` will generate a huge amount of errors, so it is good practice to redirect the error messages to /dev/null.  
+以非特权用户身份运行时， `getcap -r /` 将生成大量错误，因此最好将错误消息重定向到 /dev/null。  
+  
+Please note that neither vim nor its copy has the SUID bit set. This privilege escalation vector is therefore not discoverable when enumerating files looking for SUID.  
+请注意，vim 及其副本都没有设置 SUID 位。因此，在枚举查找 SUID 的文件时，无法发现此权限提升向量。
+
+![](https://i.imgur.com/6csoabB.png)
+
+GTFObins has a good list of binaries that can be leveraged for privilege escalation if we find any set capabilities.  
+Go Awaybins 有一个很好的二进制文件列表，如果我们发现任何设置的功能，可以利用这些二进制文件进行权限提升。  
+  
+We notice that vim can be used with the following command and payload:  
+我们注意到 vim 可以与以下命令和有效负载一起使用：  
+  
+![](https://i.imgur.com/nlpCMWj.png)  
+
+This will launch a root shell as seen below;  
+这将启动一个根 shell，如下所示;
+
+  
+
+![](https://i.imgur.com/jCjvgo3.png)
+
+# Privilege Escalation: Cron Jobs
+Cron jobs are used to run scripts or binaries at specific times. By default, they run with the privilege of their owners and not the current user. While properly configured cron jobs are not inherently vulnerable, they can provide a privilege escalation vector under some conditions.  
+Cron 作业用于在特定时间运行脚本或二进制文件。默认情况下，它们以其所有者的权限运行，而不是当前用户的权限。虽然正确配置的 cron 作业本身并不容易受到攻击，但在某些情况下，它们可以提供权限提升向量。  
+The idea is quite simple; if there is a scheduled task that runs with root privileges and we can change the script that will be run, then our script will run with root privileges.  
+这个想法很简单;如果有一个以 root 权限运行的计划任务，并且我们可以更改将要运行的脚本，那么我们的脚本将以 root 权限运行。  
+  
+Cron job configurations are stored as crontabs (cron tables) to see the next time and date the task will run.  
+Cron 作业配置存储为 crontabs（cron 表），以查看任务的下一次运行时间和日期。  
+  
+Each user on the system have their crontab file and can run specific tasks whether they are logged in or not. As you can expect, our goal will be to find a cron job set by root and have it run our script, ideally a shell.  
+系统上的每个用户都有自己的 crontab 文件，无论他们是否登录，都可以运行特定任务。正如你所期望的，我们的目标是找到一个由 root 设置的 cron 作业，并让它运行我们的脚本，最好是 shell。  
+  
+Any user can read the file keeping system-wide cron jobs under `/etc/crontab`  
+任何用户都可以读取 `/etc/crontab` 下保存系统范围的 cron 作业的文件  
+  
+While CTF machines can have cron jobs running every minute or every 5 minutes, you will more often see tasks that run daily, weekly or monthly in penetration test engagements.  
+虽然 CTF 计算机可以每分钟或每 5 分钟运行一次 cron 作业，但在渗透测试活动中，您更经常会看到每天、每周或每月运行的任务。  
+![](https://i.imgur.com/fwqPuHN.png)  
+
+You can see the `backup.sh` script was configured to run every minute. The content of the file shows a simple script that creates a backup of the prices.xls file.  
+您可以看到 `backup.sh` 脚本配置为每分钟运行一次。该文件的内容显示了一个简单的脚本，该脚本创建 prices.xls 文件的备份。
+
+![](https://i.imgur.com/qlDj93R.png)
+
+As our current user can access this script, we can easily modify it to create a reverse shell, hopefully with root privileges.  
+由于我们当前的用户可以访问此脚本，因此我们可以轻松地对其进行修改以创建反向 shell，希望具有 root 权限。  
+  
+The script will use the tools available on the target system to launch a reverse shell.  
+该脚本将使用目标系统上可用的工具来启动反向 shell。  
+Two points to note; 有两点需要注意;
+
+1. The command syntax will vary depending on the available tools. (e.g. `nc` will probably not support the `-e` option you may have seen used in other cases)  
+    命令语法将因可用工具而异。（例如 `nc` 可能不支持您可能在其他情况下看到的 `-e` 选项）
+2. We should always prefer to start reverse shells, as we not want to compromise the system integrity during a real penetration testing engagement.  
+    我们应该始终倾向于启动反向 shell，因为我们不想在真正的渗透测试过程中损害系统完整性。
+
+The file should look like this;  
+该文件应如下所示;  
+
+![](https://i.imgur.com/579yg6H.png)  
+
+We will now run a listener on our attacking machine to receive the incoming connection.  
+现在，我们将在攻击机器上运行一个侦听器来接收传入的连接。
+
+  
+
+![](https://i.imgur.com/xwYXfY1.png)
+
+  
+
+Crontab is always worth checking as it can sometimes lead to easy privilege escalation vectors. The following scenario is not uncommon in companies that do not have a certain cyber security maturity level:  
+Crontab 总是值得检查的，因为它有时会导致简单的权限升级向量。以下情况在没有一定网络安全成熟度级别的公司中并不少见：
+
+1. System administrators need to run a script at regular intervals.  
+    系统管理员需要定期运行脚本。
+2. They create a cron job to do this  
+    他们创建一个 cron 作业来执行此操作
+3. After a while, the script becomes useless, and they delete it  
+    过了一会儿，脚本变得无用，他们删除了它  
+    
+4. They do not clean the relevant cron job  
+    它们不会清理相关的 cron 作业
+
+This change management issue leads to a potential exploit leveraging cron jobs.  
+此更改管理问题会导致利用 cron 作业的潜在漏洞。
+
+  
+
+![](https://i.imgur.com/SovymJL.png)
+
+  
+
+  
+
+The example above shows a similar situation where the antivirus.sh script was deleted, but the cron job still exists.  
+上面的示例显示了类似的情况，其中删除了 antivirus.sh 脚本，但 cron 作业仍然存在。  
+If the full path of the script is not defined (as it was done for the backup.sh script), cron will refer to the paths listed under the PATH variable in the /etc/crontab file. In this case, we should be able to create a script named “antivirus.sh” under our user’s home folder and it should be run by the cron job.  
+如果未定义脚本的完整路径（就像对 backup.sh 脚本所做的那样），cron 将引用 /etc/crontab 文件中 PATH 变量下列出的路径。在这种情况下，我们应该能够在用户的主文件夹下创建一个名为“antivirus.sh”的脚本，并且它应该由 cron 作业运行。  
+
+  
+
+The file on the target system should look familiar:  
+目标系统上的文件应看起来很熟悉：  
+
+![](https://i.imgur.com/SHknR87.png)  
+
+  
+
+The incoming reverse shell connection has root privileges:  
+传入的反向 shell 连接具有 root 权限：
+
+![](https://i.imgur.com/EBCue17.png)  
+
+  
+
+In the odd event you find an existing script or task attached to a cron job, it is always worth spending time to understand the function of the script and how any tool is used within the context. For example, tar, 7z, rsync, etc., can be exploited using their wildcard feature.  
+在奇怪的情况下，您发现现有脚本或任务附加到 cron 作业，花时间了解脚本的功能以及如何在上下文中使用任何工具总是值得的。例如，tar、7z、rsync 等可以使用它们的通配符功能进行利用。
+
+#  Privilege Escalation: PATH
+If a folder for which your user has write permission is located in the path, you could potentially hijack an application to run a script. PATH in Linux is an environmental variable that tells the operating system where to search for executables. For any command that is not built into the shell or that is not defined with an absolute path, Linux will start searching in folders defined under PATH. (PATH is the environmental variable we're talking about here, path is the location of a file).  
+如果用户具有写入权限的文件夹位于路径中，则可能会劫持应用程序以运行脚本。Linux 中的 PATH 是一个环境变量，它告诉操作系统在哪里搜索可执行文件。对于任何未内置于 shell 中或未使用绝对路径定义的命令，Linux 将开始在 PATH 下定义的文件夹中进行搜索。（PATH是我们在这里讨论的环境变量，path是文件的位置）。  
+  
+Typically the PATH will look like this:  
+通常，PATH 将如下所示：
+
+![](https://i.imgur.com/ch2Z4zp.png)  
+
+If we type “thm” to the command line, these are the locations Linux will look in for an executable called thm. The scenario below will give you a better idea of how this can be leveraged to increase our privilege level. As you will see, this depends entirely on the existing configuration of the target system, so be sure you can answer the questions below before trying this.  
+如果我们在命令行中键入“thm”，这些是 Linux 将在其中查找名为 thm 的可执行文件的位置。下面的方案将使你更好地了解如何利用它来提高我们的权限级别。如您所见，这完全取决于目标系统的现有配置，因此在尝试此操作之前，请确保您可以回答以下问题。
+
+1. What folders are located under $PATH  
+    哪些文件夹位于$PATH下
+2. Does your current user have write privileges for any of these folders?  
+    您的当前用户是否具有这些文件夹中任何一个的写入权限？
+3. Can you modify $PATH? 你能修改$PATH吗？
+4. Is there a script/application you can start that will be affected by this vulnerability?  
+    是否可以启动受此漏洞影响的脚本/应用程序？
+
+For demo purposes, we will use the script below:  
+出于演示目的，我们将使用以下脚本：  
+
+![](https://i.imgur.com/qX7m2Jq.png)  
+
+This script tries to launch a system binary called “thm” but the example can easily be replicated with any binary.  
+此脚本尝试启动名为“thm”的系统二进制文件，但该示例可以很容易地使用任何二进制文件进行复制。
+
+  
+
+We compile this into an executable and set the SUID bit.  
+我们将其编译为可执行文件并设置 SUID 位。
+
+  
+
+![](https://i.imgur.com/A6QQ65I.png)  
+
+Our user now has access to the “path” script with SUID bit set.  
+我们的用户现在可以访问设置了 SUID 位的“路径”脚本。
+
+  
+
+  
+
+![](https://i.imgur.com/Af1RpuY.png)  
+
+  
+
+Once executed “path” will look for an executable named “thm” inside folders listed under PATH.  
+执行后，“path”将在PATH下列出的文件夹中查找名为“thm”的可执行文件。
+
+  
+
+If any writable folder is listed under PATH we could create a binary named thm under that directory and have our “path” script run it. As the SUID bit is set, this binary will run with root privilege  
+如果 PATH 下列出了任何可写文件夹，我们可以在该目录下创建一个名为 thm 的二进制文件，并让我们的“路径”脚本运行它。设置了 SUID 位后，此二进制文件将以 root 权限运行
+
+  
+
+  
+
+A simple search for writable folders can done using the “`find / -writable 2>/dev/null`” command. The output of this command can be cleaned using a simple cut and sort sequence.  
+可以使用“ `find / -writable 2>/dev/null` ”命令对可写文件夹进行简单的搜索。可以使用简单的剪切和排序序列来清理此命令的输出。
+
+  
+
+![](https://i.imgur.com/7UekB3t.png)  
+
+  
+
+Some CTF scenarios can present different folders but a regular system would output something like we see above.  
+某些 CTF 方案可以显示不同的文件夹，但常规系统会输出如上所示的内容。
+
+Comparing this with PATH will help us find folders we could use.  
+将其与 PATH 进行比较将帮助我们找到可以使用的文件夹。
+
+  
+
+![](https://i.imgur.com/67mdmmG.png)  
+
+We see a number of folders under /usr, thus it could be easier to run our writable folder search once more to cover subfolders.  
+我们在 /usr 下看到许多文件夹，因此再次运行可写文件夹搜索以覆盖子文件夹可能会更容易。
+
+  
+
+  
+
+![](https://i.imgur.com/Y3pDsrL.png)  
+
+  
+
+An alternative could be the command below.  
+另一种选择可能是以下命令。
+
+`find / -writable 2>/dev/null | cut -d "/" -f 2,3 | grep -v proc | sort -u`
+
+We have added “grep -v proc” to get rid of the many results related to running processes.  
+我们添加了“grep -v proc”来摆脱与正在运行的进程相关的许多结果。
+
+  
+
+Unfortunately, subfolders under /usr are not writable  
+遗憾的是，/usr 下的子文件夹是不可写的
+
+  
+
+The folder that will be easier to write to is probably /tmp. At this point because /tmp is not present in PATH so we will need to add it. As we can see below, the “`export PATH=/tmp:$PATH`” command accomplishes this.  
+更容易写入的文件夹可能是 /tmp。此时，由于 PATH 中不存在 /tmp，因此我们需要添加它。正如我们在下面看到的，“ `export PATH=/tmp:$PATH` ”命令完成了这一点。
+
+  
+
+![](https://i.imgur.com/u1PM8ZD.png)  
+
+  
+
+At this point the path script will also look under the /tmp folder for an executable named “thm”.  
+此时，路径脚本还将在 /tmp 文件夹下查找名为“thm”的可执行文件。
+
+Creating this command is fairly easy by copying /bin/bash as “thm” under the /tmp folder.  
+通过将 /bin/bash 复制为 /tmp 文件夹下的“thm”，创建此命令相当容易。
+
+  
+
+![](https://i.imgur.com/7UdrEnd.png)  
+
+  
+
+We have given executable rights to our copy of /bin/bash, please note that at this point it will run with our user’s right. What makes a privilege escalation possible within this context is that the path script runs with root privileges.  
+我们已经为我们的 /bin/bash 副本授予了可执行权限，请注意，此时它将以我们用户的权限运行。在此上下文中使权限升级成为可能的原因是路径脚本以 root 权限运行。
+
+  
+
+![](https://i.imgur.com/MlBJ8kb.png)
+
+# Privilege Escalation: NFS
+Privilege escalation vectors are not confined to internal access. Shared folders and remote management interfaces such as SSH and Telnet can also help you gain root access on the target system. Some cases will also require using both vectors, e.g. finding a root SSH private key on the target system and connecting via SSH with root privileges instead of trying to increase your current user’s privilege level.  
+权限提升向量并不局限于内部访问。共享文件夹和远程管理界面（如 SSH 和 Telnet）还可以帮助您在目标系统上获得 root 访问权限。在某些情况下，还需要同时使用这两种向量，例如，在目标系统上查找根 SSH 私钥，并使用根权限通过 SSH 进行连接，而不是尝试提高当前用户的权限级别。  
+  
+Another vector that is more relevant to CTFs and exams is a misconfigured network shell. This vector can sometimes be seen during penetration testing engagements when a network backup system is present.  
+另一个与 CTF 和考试更相关的向量是配置错误的网络外壳。当存在网络备份系统时，有时可以在渗透测试期间看到此向量。  
+  
+NFS (Network File Sharing) configuration is kept in the /etc/exports file. This file is created during the NFS server installation and can usually be read by users.  
+NFS（网络文件共享）配置保存在 /etc/exports 文件中。此文件是在 NFS 服务器安装期间创建的，通常可由用户读取。
+
+![](https://i.imgur.com/irDQTze.png)  
+
+The critical element for this privilege escalation vector is the “no_root_squash” option you can see above. By default, NFS will change the root user to nfsnobody and strip any file from operating with root privileges. If the “no_root_squash” option is present on a writable share, we can create an executable with SUID bit set and run it on the target system.  
+此权限升级向量的关键元素是您可以在上面看到的“no_root_squash”选项。默认情况下，NFS 会将 root 用户更改为 nfsnobody，并剥夺任何文件以 root 权限运行。如果可写共享上存在“no_root_squash”选项，我们可以创建一个设置了 SUID 位的可执行文件并在目标系统上运行它。  
+  
+We will start by enumerating mountable shares from our attacking machine.  
+我们将首先枚举攻击计算机的可挂载共享。
+
+![](https://i.imgur.com/CmXPDcv.png)  
+
+We will mount one of the “no_root_squash” shares to our attacking machine and start building our executable.  
+我们将其中一个“no_root_squash”共享挂载到我们的攻击机器上，并开始构建我们的可执行文件。
+
+  
+
+![](https://i.imgur.com/DwAB1qs.png)  
+
+  
+
+As we can set SUID bits, a simple executable that will run /bin/bash on the target system will do the job.  
+由于我们可以设置 SUID 位，因此将在目标系统上运行 /bin/bash 的简单可执行文件将完成这项工作。
+
+  
+
+![](https://i.imgur.com/nWKpFkK.png)  
+
+  
+
+Once we compile the code we will set the SUID bit.  
+编译代码后，我们将设置 SUID 位。
+
+  
+
+![](https://i.imgur.com/rkZOOjZ.png)  
+
+  
+
+You will see below that both files (nfs.c and nfs are present on the target system. We have worked on the mounted share so there was no need to transfer them).  
+您将在下面看到两个文件（nfs.c 和 nfs 都存在于目标系统上。我们已经处理了已装载的份额，因此没有必要转让它们）。
+
+  
+
+![](https://i.imgur.com/U7IjT38.png)  
+
+  
+
+Notice the nfs executable has the SUID bit set on the target system and runs with root privileges.  
+请注意，nfs 可执行文件在目标系统上设置了 SUID 位，并以 root 权限运行。
