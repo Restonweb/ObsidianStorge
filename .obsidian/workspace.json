@@ -18,8 +18,17 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "b43c4658b0531856",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +94,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +110,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +131,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -146,8 +151,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "4807b1582274dc59",
+  "active": "b43c4658b0531856",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/WP.md",
@@ -155,7 +161,6 @@
     "未命名.md",
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "未命名",
-    "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/Socat.md",
     "Pasted image 20231213200443.png",
