@@ -6,5 +6,9 @@
 或 || or
 包含 contain \"somestuff"
 在之中 in {11 4 5 14}
+匹配正则 matches "/regular/"
+大写/小写字符串选定对象 upper/lower (object)
+转换类型为字符串 string(some int)
 
+可以对某个数据包进行跟踪流操作显示其完整的上下文操作。
 
