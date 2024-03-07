@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
+                "file": "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
+                "file": "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
+                "file": "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md"
+                "file": "MyStudyRoute/Pentration/Practice/THM-Relevant.md"
               }
             }
           }
@@ -161,9 +161,11 @@
   },
   "active": "b43c4658b0531856",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
+    "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
+    "MyStudyRoute/Pentration/Practice",
     "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/Socat.md",
-    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/WireShark.md",
@@ -195,7 +197,6 @@
     "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231208173926.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231208172838.png",
-    "MyStudyRoute/Pentration/未命名",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202221807.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202173230.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202173210.png",
@@ -207,7 +208,6 @@
     "Capture The Flag/WP.md",
     "Capture The Flag/ReadMe.md",
     "Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法_shell脚本.md",
-    "shell命令符号.md",
-    "Capture The Flag/KeyPoint/shell命令符号.md"
+    "shell命令符号.md"
   ]
 }
