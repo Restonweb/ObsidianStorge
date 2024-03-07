@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/SearchSploit.md",
+                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/SearchSploit.md",
+                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/SearchSploit.md",
+                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/SearchSploit.md"
+                "file": "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md"
               }
             }
           }
@@ -161,12 +161,12 @@
   },
   "active": "b43c4658b0531856",
   "lastOpenFiles": [
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
-    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/Socat.md",
+    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/hashcat.md",
