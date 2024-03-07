@@ -52,4 +52,5 @@ For: Windows二进制文件的精选列表，可用于绕过配置错误的系�
 ...............................
 # LOLDrivers
 Link: https://www.loldrivers.io/
-For: Windows二进制文件的精选列表，可用于绕过配置错误的系统中的本地安全限制
+For: 攻击者用来绕过安全控制和执行攻击的精选 Windows 驱动程序列表
+
