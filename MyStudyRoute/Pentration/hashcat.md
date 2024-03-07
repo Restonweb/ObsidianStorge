@@ -1,0 +1,13 @@
+在使用hashcat破解hash之前，可以先使用hashid查看其类型
+如果拿到的是加盐hash，如果已知盐，要选择加盐版本的模式来破解。(hashcat的分隔符是':')
+参数：-a设置工作模式
+  \# | Mode
+  0 | Straight
+  1 | Combination字典
+  3 | Brute-force尝试所有可能排列组合
+  6 | Hybrid Wordlist + Mask混合
+  7 | Hybrid Mask + Wordlist
+  9 | Association
+  -m设置破解模式
+  后跟hash算法对应的编码，可以在--help中查看
+  

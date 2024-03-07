@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/PrivilegeScanScriptUsage.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/PrivilegeScanScriptUsage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/PrivilegeScanScriptUsage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md"
+                "file": "MyStudyRoute/Pentration/PrivilegeScanScriptUsage.md"
               }
             }
           }
@@ -161,7 +161,17 @@
   },
   "active": "b43c4658b0531856",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/hashcat.md",
+    "MyStudyRoute/Pentration/PrivilegeScanScriptUsage.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/Netcat.md",
+    "MyStudyRoute/Pentration/NMAP.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
+    "MyStudyRoute/Pentration/Socat.md",
+    "MyStudyRoute/Capture The Flag/ReadMe.md",
+    "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
@@ -171,16 +181,10 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
-    "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "2024-01-22.md",
     "未命名.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "未命名",
-    "MyStudyRoute/Pentration/MetaSploit.md",
-    "MyStudyRoute/Pentration/Socat.md",
     "Pasted image 20231213200443.png",
     "MyStudyRoute/Python/Python-urllib.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202155612.png",
@@ -195,8 +199,6 @@
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202163116.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202155840.png",
     "MyStudyRoute/未命名.md",
-    "MyStudyRoute/Capture The Flag/SQLi思路.md",
-    "MyStudyRoute/Capture The Flag/ReadMe.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "Capture The Flag/WP.md",

@@ -15,3 +15,5 @@ exploit(run):执行模块
 sessions查看当前会话，与会话交互使用 sessions -i \[序号]
 
 back退出当前的模块上下文
+
+活用其中的auxiliary与scanner进行前期的侦察
