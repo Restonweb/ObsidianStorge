@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/NMAP.md"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -148,13 +148,15 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "Pasted image 20240308181733.png",
+    "Pasted image 20240308181702.png",
+    "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
-    "MyStudyRoute/Pentration/NMAP.md",
     "Pasted image 20240307183229.png",
     "Pasted image 20240307183039.png",
     "Pasted image 20240307182940.png",
@@ -189,12 +191,10 @@
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202155612.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231202155632.png",
     "MyStudyRoute/Python/RAA&EV.md",
-    "MyStudyRoute/Capture The Flag/res/Pasted image 20231208173926.png",
     "MyStudyRoute/未命名.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "Capture The Flag/WP.md",
-    "Capture The Flag/ReadMe.md",
-    "Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法_shell脚本.md"
+    "Capture The Flag/ReadMe.md"
   ]
 }

