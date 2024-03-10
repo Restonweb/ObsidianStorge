@@ -938,5 +938,10 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 ![[Pasted image 20240310213009.png]]
 可以看到EIP的offset是146
 接下来测试146的offset是否可以完美的覆盖掉EIP寄存器
+![[Pasted image 20240310213600.png]]
+发送146bytes的数据，再加4bytes的“CCCC”后缀
+完美崩溃，查看寄存器EIP
+![[Pasted image 20240310213721.png]]
+可以看到四个“43”即"C"说明146bytes的offset是正确的
 ![[Pasted image 20240310150102.png]]
 fuzzing到58623显示丢弃数据包
