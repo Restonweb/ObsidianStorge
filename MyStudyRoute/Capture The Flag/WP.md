@@ -943,5 +943,12 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 完美崩溃，查看寄存器EIP
 ![[Pasted image 20240310213721.png]]
 可以看到四个“43”即"C"说明146bytes的offset是正确的
-![[Pasted image 20240310150102.png]]
-fuzzing到58623显示丢弃数据包
+接下来测试坏字符(BADCHAR),如“\\x00”这种字符在shell代码中是无法使用的，会导致shell无法成功的执行
+先设置mona插件的工作目录(接下来会用到)
+!mona config -set workingfolder c:\mona\%p
+使用mona插件生成除去"\\x00"的字节对照表：
+![[Pasted image 20240310214720.png]]
+同时将这个对照表复制到脚本中作为payload进行发送测试：
+![[Pasted image 20240310214958.png]]
+发送后崩溃，复制ESP地址：![[Pasted image 20240310215044.png]]
+并在控制台中执行：
