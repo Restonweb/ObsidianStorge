@@ -989,3 +989,9 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 将转储的文件重命名为它们原来的文件名
 clone解密脚本：
 `https://github.com/unode/firefox_decrypt`
+对存放凭证文件的文件夹使用脚本，得到密码:
+![[Pasted image 20240310223510.png]]
+使用RDP及上面的凭证进行远程登录：
+![[Pasted image 20240310223757.png]]
+在桌面拿到root.txt
+`{Th3_M4y0r_C0ngr4tul4t3s_U}`
