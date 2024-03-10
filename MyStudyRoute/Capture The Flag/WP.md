@@ -929,6 +929,9 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 可以看到他就是上面所扫描到的服务，且会显示其收到的数据大小
 将其丢入Immunity Debugger(官网下载)，并安装mona插件(可以在github上下载)
 使用脚本测试缓冲区溢出所需的字节大小
+![[Pasted image 20240310211632.png]]
+其在150字节时崩溃，重启程序后
+使用msf生成150字节的模式字节作为payload向其发送(使用：msf-pattern_create -l 长度)
 
 ![[Pasted image 20240310150102.png]]
 fuzzing到58623显示丢弃数据包
