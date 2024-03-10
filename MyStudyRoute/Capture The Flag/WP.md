@@ -932,6 +932,11 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 ![[Pasted image 20240310211632.png]]
 其在150字节时崩溃，重启程序后
 使用msf生成150字节的模式字节作为payload向其发送(使用：msf-pattern_create -l 长度)
-
+![[Pasted image 20240310212621.png]]
+完美崩溃，在Immunity Debugger的控制台内输入!mona findmsp -distance 150
+来查找这个重复的150字节模式
+![[Pasted image 20240310213009.png]]
+可以看到EIP的offset是146
+接下来测试146的offset是否可以完美的覆盖掉EIP寄存器
 ![[Pasted image 20240310150102.png]]
 fuzzing到58623显示丢弃数据包
