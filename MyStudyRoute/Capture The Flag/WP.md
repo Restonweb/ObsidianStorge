@@ -914,12 +914,21 @@ Nmap的后缀-oG用来将扫描结果存放到文件里。
 ![[Pasted image 20240310135640.png]]
 开放了11个端口
 开放了smb服务，rdp服务
-以及31337上非常SUS的服务
+以及31337上非常SUS的服务，扫描传输的数据会回复HELLO+数据
 先枚举其smb分享
 ![[Pasted image 20240310205721.png]]
 可以看到有Users分享，尝试匿名登录：
 ![[Pasted image 20240310205840.png]]
 可以看到Share文件夹下的gatekeeper.exe文件
 get下载下来(使用binary二进制模式下载，不然运行会出问题)
+放到windows系统下运行：
+![[Pasted image 20240310210224.png]]
+显示等待连接，上面扫描到的31337可能就是运行了此程序
+尝试使用netcat连接此端口：
+![[Pasted image 20240310210545.png]]
+可以看到他就是上面所扫描到的服务，且会显示其收到的数据大小
+将其丢入Immunity Debugger(官网下载)，并安装mona插件(可以在github上下载)
+使用脚本测试缓冲区溢出所需的字节大小
+
 ![[Pasted image 20240310150102.png]]
 fuzzing到58623显示丢弃数据包
