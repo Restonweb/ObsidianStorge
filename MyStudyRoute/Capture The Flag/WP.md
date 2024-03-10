@@ -977,4 +977,9 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 ![[Pasted image 20240310220716.png]]
 ![[Pasted image 20240310220811.png]]
 拿到user.txt：`{H4lf_W4y_Th3r3}`
-可以看到桌面firefox的快捷方式，其上安装了火狐浏览器，看wp秒了，是浏览器保存的凭证可以进行利用，我们去
+可以看到桌面firefox的快捷方式，其上安装了火狐浏览器，看wp秒了，是浏览器保存的凭证可以进行利用，我们可以在此路径找到凭证文件：
+`C:\Users\{user}\AppData\Roaming\Mozilla\Firefox\Profiles\`
+![[Pasted image 20240310221229.png]]
+后台当前session(使用CTRL+Z)：![[Pasted image 20240310221659.png]]
+
+
