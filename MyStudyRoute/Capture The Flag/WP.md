@@ -981,5 +981,11 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 `C:\Users\{user}\AppData\Roaming\Mozilla\Firefox\Profiles\`
 ![[Pasted image 20240310221229.png]]
 后台当前session(使用CTRL+Z)：![[Pasted image 20240310221659.png]]
-
-
+使用`multi/gather/firefox_creds`这个post模块
+设置session号为刚才后台的session号、
+![[Pasted image 20240310222305.png]]
+执行后转储了凭证文件到其显示的路径
+这些文件的初始名称为cert9.db、cookies.sqlite、key4.db、logins.json
+将转储的文件重命名为它们原来的文件名
+clone解密脚本：
+`https://github.com/unode/firefox_decrypt`
