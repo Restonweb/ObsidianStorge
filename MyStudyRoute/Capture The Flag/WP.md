@@ -908,3 +908,10 @@ Nmap的后缀-oG用来将扫描结果存放到文件里。
 80，扫描目录：
 ![[Pasted image 20240308181733.png]]
 递归扫描/blog:
+[THM]GateKeeper
+扫描端口：
+![[Pasted image 20240310135657.png]]
+![[Pasted image 20240310135640.png]]
+开放了11个端口
+开放了smb服务，rdp服务
+以及31337上非常SUS的服务
