@@ -915,6 +915,11 @@ Nmap的后缀-oG用来将扫描结果存放到文件里。
 开放了11个端口
 开放了smb服务，rdp服务
 以及31337上非常SUS的服务
-尝试
+先枚举其smb分享
+![[Pasted image 20240310205721.png]]
+可以看到有Users分享，尝试匿名登录：
+![[Pasted image 20240310205840.png]]
+可以看到Share文件夹下的gatekeeper.exe文件
+get下载下来(使用binary二进制模式下载，不然运行会出问题)
 ![[Pasted image 20240310150102.png]]
 fuzzing到58623显示丢弃数据包
