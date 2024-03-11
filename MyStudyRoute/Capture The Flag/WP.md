@@ -908,7 +908,7 @@ Nmap的后缀-oG用来将扫描结果存放到文件里。
 80，扫描目录：
 ![[Pasted image 20240308181733.png]]
 递归扫描/blog:
-[THM]GateKeeper
+[THM]GateKeeper #缓冲区溢出漏洞
 扫描端口：
 ![[Pasted image 20240310135657.png]]
 ![[Pasted image 20240310135640.png]]
@@ -1002,3 +1002,12 @@ clone解密脚本：
 ![[Pasted image 20240310223757.png]]
 在桌面拿到root.txt
 `{Th3_M4y0r_C0ngr4tul4t3s_U}`
+[THM]BrainPan #缓冲区溢出漏洞 
+扫描端口：
+![[Pasted image 20240311122215.png]]
+只有两个端口开放：9999和10000
+9999应该是所说的BrainPan服务运行的端口
+10000运行了一个Python的HTTP服务器，浏览器访问：
+![[Pasted image 20240311122354.png]]
+是一个有关2011年十大漏洞的页面，除此之外再无他物，我们需要找到BrainPan.exe
+gobuster进行目录扫描：
