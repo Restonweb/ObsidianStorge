@@ -1011,3 +1011,6 @@ clone解密脚本：
 ![[Pasted image 20240311122354.png]]
 是一个有关2011年十大漏洞的页面，除此之外再无他物，我们需要找到BrainPan.exe
 gobuster进行目录扫描：
+![[Pasted image 20240311122534.png]]
+扫到一个/bin目录，访问，拿到所需的BrainPan.exe：
+![[Pasted image 20240311122616.png]]
