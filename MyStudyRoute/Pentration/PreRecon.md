@@ -5,7 +5,9 @@
 	子域名收集
 		Layer,subDomainsBrute
 	Whois(注册人)信息查询
-		根据yi'zhi
+		根据已知域名反查，分析出此域名的注册人，邮箱，电话
+		工具：爱站网，站长工具，微步在线
+		site.ip138，searchdns.netcraft.com
 敏感目录
 旁站C段
 整站分析
