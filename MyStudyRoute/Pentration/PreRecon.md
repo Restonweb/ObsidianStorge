@@ -27,6 +27,6 @@
 	CMS类型：robots文件，登陆后台，工具
 	WAF：
 	
-GoogleHack
+GoogleHack：intext:,intitle.Filetype,inurl,site
 URL采集
 信息分析
