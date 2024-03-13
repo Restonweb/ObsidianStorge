@@ -9,6 +9,12 @@
 		工具：爱站网，站长工具，微步在线
 		site.ip138，searchdns.netcraft.com
 敏感目录
+	收集方向
+		robots.txt 后台目录 安装包 上传目录 mysql管理接口 phpinfo 编辑器 iis段文件 分析网站cms
+	常用工具
+		字典爆破：御剑，dirbuster wwwscan IIS_shortname _Scan_
+		蜘蛛爬行：爬行菜刀 webrobot burp等
+		
 旁站C段
 整站分析
 GoogleHack
