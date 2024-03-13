@@ -20,6 +20,13 @@
 	C段：同一网段内其他服务器
 	收集方向：域名(网站)，端口(portscan)，目录(目录扫描工具)
 整站分析
+	服务器类型：平台，版本
+	网站容器：搭建网站的服务组件：IIS，apache,nginx,tomcat
+	脚本类型：ASP,ASPX,PHP,JSP等
+	数据库类型：access,sqlserver,mysql,oracle,postgresql等
+	CMS类型
+	WAF
+	
 GoogleHack
 URL采集
 信息分析
