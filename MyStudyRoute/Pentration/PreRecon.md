@@ -24,8 +24,8 @@
 	网站容器：搭建网站的服务组件：IIS，apache,nginx,tomcat
 	脚本类型：ASP,ASPX,PHP,JSP等
 	数据库类型：access,sqlserver,mysql,oracle,postgresql等
-	CMS类型
-	WAF
+	CMS类型：robots文件，登陆后台，工具
+	WAF：
 	
 GoogleHack
 URL采集
