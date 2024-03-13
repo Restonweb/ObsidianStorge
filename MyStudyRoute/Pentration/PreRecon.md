@@ -31,8 +31,8 @@ GoogleHack：intext:,intitle.Filetype,inurl,site
 ![[Pasted image 20240313170106.png]]
 URL采集
 信息分析
-网络设备信息收集
-![[Pasted image 20240313170229.png]]
-![[Pasted image 20240313170326.png]]
-![[Pasted image 20240313170352.png]]
-![[Pasted image 20240313170544.png]]
+	网络设备信息收集
+	![[Pasted image 20240313170229.png]]
+	![[Pasted image 20240313170326.png]]
+	![[Pasted image 20240313170352.png]]
+	![[Pasted image 20240313170544.png]]
