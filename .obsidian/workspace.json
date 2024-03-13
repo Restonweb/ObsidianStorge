@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/PreRecon.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/PreRecon.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/PreRecon.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md"
+                "file": "MyStudyRoute/Pentration/PreRecon.md"
               }
             }
           }
@@ -134,7 +135,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,6 +150,19 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
+    "MyStudyRoute/Pentration/PreRecon.md",
+    "MyStudyRoute/Pentration/SearchSploit.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
+    "MyStudyRoute/Pentration/NMAP.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/FileTransmit.md",
+    "MyStudyRoute/Pentration/hashcat.md",
+    "MyStudyRoute/Capture The Flag/File Inclusion.md",
+    "MyStudyRoute/Capture The Flag/ReadMe.md",
+    "MyStudyRoute/Capture The Flag/Trick.md",
+    "MyStudyRoute/Capture The Flag/SQLi思路.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
     "Pasted image 20240311122616.png",
     "Pasted image 20240311122534.png",
     "Pasted image 20240311122354.png",
@@ -158,24 +173,12 @@
     "Pasted image 20240310223510.png",
     "Pasted image 20240310222305.png",
     "Pasted image 20240310221659.png",
-    "Pasted image 20240310221229.png",
-    "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
-    "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Pentration/Netcat.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
-    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
-    "MyStudyRoute/Pentration/hashcat.md",
-    "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/Practice",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/WireShark.md",
-    "MyStudyRoute/Capture The Flag/ReadMe.md",
-    "MyStudyRoute/Capture The Flag/SQLi思路.md",
-    "MyStudyRoute/Capture The Flag/File Inclusion.md",
-    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
@@ -185,7 +188,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
-    "MyStudyRoute/Capture The Flag/Trick.md",
     "2024-01-22.md",
     "未命名.md",
     "未命名",
