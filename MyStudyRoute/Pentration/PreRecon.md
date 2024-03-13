@@ -4,7 +4,8 @@
 		nslookup,各种网站（有可能有CDN防护）
 	子域名收集
 		Layer,subDomainsBrute
-		
+	Whois(注册人)信息查询
+		根据yi'zhi
 敏感目录
 旁站C段
 整站分析
