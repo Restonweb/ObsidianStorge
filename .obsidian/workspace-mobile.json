@@ -119,7 +119,7 @@
         }
       }
     ],
-    "currentTab": 0
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -131,8 +131,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e7c5c71f3221483c",
+  "active": "a08ee95fea43b5fa",
   "lastOpenFiles": [
+    "Screenshot_2024-03-18-21-34-45-826-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-33-30-468-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx 1 1.jpg",
+    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx 1.jpg",
+    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-20-50-936-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-20-18-980-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-19-41-941-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-18-10-161-edit_com.microsoft.emmx.jpg",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/WireShark.md",
@@ -141,15 +150,7 @@
     "[.md",
     "Pasted image 20240313170544.png",
     "Pasted image 20240313170352.png",
-    "Pasted image 20240313170326.png",
-    "Pasted image 20240313170229.png",
-    "Pasted image 20240313170203.png",
-    "Pasted image 20240313170106.png",
     "/MyStudyRoute/Pentration/PreRecon.md",
-    "/Pasted image 20240313170544.png",
-    "/Pasted image 20240313170352.png",
-    "/Pasted image 20240313170326.png",
-    "/Pasted image 20240313170229.png",
     "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Python/RAA&EV.md",
