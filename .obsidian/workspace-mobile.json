@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+                "file": "[.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+            "file": "[.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+            "file": "[.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md"
+            "file": "[.md"
           }
         }
       }
@@ -133,20 +133,23 @@
   },
   "active": "1e11e5f59a601ad2",
   "lastOpenFiles": [
-    "MyStudyRoute/Pentration/SearchSploit.md",
+    "MyStudyRoute/Pentration/PreRecon.md",
+    "Pasted image 20240313170544.png",
+    "Pasted image 20240313170352.png",
+    "Pasted image 20240313170326.png",
+    "Pasted image 20240313170229.png",
+    "Pasted image 20240313170203.png",
+    "Pasted image 20240313170106.png",
+    "/MyStudyRoute/Pentration/PreRecon.md",
+    "/Pasted image 20240313170544.png",
+    "/Pasted image 20240313170352.png",
+    "/Pasted image 20240313170326.png",
+    "/Pasted image 20240313170229.png",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+    "[.md",
+    "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Capture The Flag/WP.md",
-    "Pasted image 20240311122616.png",
-    "Pasted image 20240311122534.png",
-    "Pasted image 20240311122354.png",
-    "Pasted image 20240311122215.png",
-    "Pasted image 20240310225434.png",
-    "Pasted image 20240310225227.png",
-    "Pasted image 20240310223757.png",
-    "Pasted image 20240310223510.png",
-    "Pasted image 20240310222305.png",
-    "Pasted image 20240310221659.png",
     "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Python/Python-urllib.md",
     "MyStudyRoute/Pentration/hashcat.md",
