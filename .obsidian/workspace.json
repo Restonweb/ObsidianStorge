@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/PreRecon.md",
+                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/PreRecon.md",
+                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/PreRecon.md",
+                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/PreRecon.md"
+                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md"
               }
             }
           }
@@ -150,6 +149,14 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/Socat.md",
+    "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+    "MyStudyRoute/Pentration/hashcat.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/Netcat.md",
+    "MyStudyRoute/Pentration/NMAP.md",
+    "MyStudyRoute/Pentration/PreRecon.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "Pasted image 20240313170544.png",
     "Pasted image 20240313170352.png",
     "Pasted image 20240313170326.png",
@@ -157,13 +164,8 @@
     "Pasted image 20240313170203.png",
     "Pasted image 20240313170106.png",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
-    "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
-    "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
@@ -173,11 +175,7 @@
     "Pasted image 20240311122534.png",
     "Pasted image 20240311122354.png",
     "Pasted image 20240311122215.png",
-    "Pasted image 20240310225434.png",
-    "MyStudyRoute/Pentration/SomeUsefulCommand.md",
-    "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
-    "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/Practice",
     "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
