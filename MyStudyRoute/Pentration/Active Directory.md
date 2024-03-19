@@ -223,10 +223,46 @@ sudo responder -I {IP/interface}
 `hashcat -m 5600 <hash file> <password file> --force`
 我们使用 hashtype 5600，它与 hashcat 的 NTLMv2-SSP 相对应。
 我们可以破解的任何哈希现在都将为我们的违规行为提供 AD 凭据！
-### 传递挑战
+### 传递质询（challenge）
 然而，在某些情况下，我们可以更进一步，尝试传递挑战，而不仅仅是直接捕捉它。在没有事先了解帐户的情况下，这有点困难，因为这种攻击取决于关联帐户的权限。我们需要做几件事来发挥对我们有利的作用：
 - 应禁用或启用 SMB 签名，但不强制执行。当我们执行中继时，我们会对传递它的请求进行细微的更改。如果启用了强制SMB 签名，我们将无法伪造消息签名，这意味着服务器将拒绝它。
 - 关联的账号需要服务器相关权限才能访问请求的资源。理想情况下，我们希望中继对服务器具有管理权限的帐户的质询和响应，因为这将使我们能够在主机上站稳脚跟。
 - 由于从技术上讲，我们还没有 AD 立足点，因此需要对哪些帐户对哪些主机拥有权限进行一些猜测。如果我们已经破坏了 AD，我们可以先执行一些初始枚举，通常是这种情况。
 这就是为什么盲目中继通常不受欢迎的原因。理想情况下，您应首先使用其他方法破坏 AD，然后执行枚举以确定与已入侵的帐户关联的权限。从这里，您通常可以执行横向移动以跨域进行权限提升。但是，从根本上讲，中继攻击的工作原理仍然很好，如下图所示：
 ![[Pasted image 20240319221208.png]]
+## Microsoft 部署工具包（Microsoft Deployment Toolkit）
+大型组织需要工具来部署和管理房地产的基础设施。在大型组织中，您不能让 IT 人员使用 DVD 甚至 USB 闪存驱动器在每台机器上安装软件。幸运的是，Microsoft已经提供了管理资产所需的工具。但是，我们可以利用这些工具中的错误配置来破坏 AD。
+### MDT and SCCM MDT 和 SCCM
+Microsoft 部署工具包 （MDT） 是一项 Microsoft 服务，可帮助自动部署 Microsoft 操作系统 （OS）。大型组织使用 MDT 等服务来帮助更有效地在其资产中部署新映像，因为可以在中心位置维护和更新基础映像。
+通常，MDT 与 Microsoft 的系统中心配置管理器 （SCCM） 集成，后者管理所有 Microsoft 应用程序、服务和操作系统的所有更新。MDT 用于新部署。从本质上讲，它允许 IT 团队预配置和管理启动映像。因此，如果他们需要配置一台新机器，他们只需要插入一根网线，一切都会自动发生。他们可以对启动映像进行各种更改，例如已经安装了默认软件（如 Office365）和组织选择的防病毒软件。它还可以确保在安装运行时更新新版本。
+SCCM 几乎可以看作是 MDT 的扩展和老大哥。软件安装后会发生什么情况？好吧，SCCM 会进行这种类型的补丁管理。它允许 IT 团队查看整个资产中安装的所有软件的可用更新。团队还可以在沙盒环境中测试这些补丁，以确保它们稳定，然后再将它们集中部署到所有已加入域的计算机。它使 IT 团队的工作变得更加轻松。
+但是，任何提供基础结构集中管理（如 MDT 和 SCCM）的东西也可能成为攻击者的目标，试图接管资产中的大部分关键功能。尽管可以通过多种方式配置 MDT，但对于此任务，我们将专门介绍称为预启动执行环境 （PXE） 启动的配置。
+### PXE Boot
+大型组织使用 PXE 启动来允许连接到网络的新设备直接通过网络连接加载和安装操作系统。MDT 可用于创建、管理和托管 PXE 启动映像。PXE 启动通常与 DHCP 集成，这意味着如果 DHCP 分配了 IP 租约，则允许主机请求 PXE 启动映像并启动网络操作系统安装过程。通信流程如下图所示：
+![[Pasted image 20240319221813.png]]
+执行该过程后，客户端将使用 TFTP 连接下载 PXE 启动映像。我们可以将 PXE 启动映像用于两个不同的目的：
+- 注入权限提升向量（如本地管理员帐户），以便在 PXE 启动完成后获得对操作系统的管理访问权限。
+- 执行密码抓取攻击以恢复安装期间使用的 AD 凭据。
+我们在此将重点关注后者。我们将尝试在安装期间恢复与 MDT 服务关联的部署服务帐户，以进行此密码抓取攻击。此外，还可以检索用于无人值守安装应用程序和服务的其他 AD 帐户。
+### PXE 启动镜像检索
+由于DHCP有点难，我们将绕过此攻击的初始步骤。我们将跳过尝试从 DHCP 请求 IP 和 PXE 启动预配置详细信息的部分。我们将在此过程中手动执行此步骤中的其余攻击。
+有关通过 DHCP 接收的 PXE 启动预配置的第一条信息是 MDT 服务器的 IP。
+您将收到的第二条信息是 BCD 文件的名称。这些文件存储与不同类型体系结构的 PXE 启动相关的信息。
+如下：
+![[Pasted image 20240319222004.png]]
+通常，您将使用 TFTP 请求每个 BCD 文件，并枚举所有这些文件的配置。 MDT 每天都会重新生成文件及其名称。
+现在，通过从 DHCP（已跳过）恢复此初始信息，我们可以枚举和检索 PXE 启动映像。
+连接到在域中的初始立足点：
+我们需要执行的第一步是使用 TFTP 并下载 BCD 文件以读取 MDT 服务器的配置。TFTP 比 FTP 更棘手，因为我们无法列出文件。相反，我们发送一个文件请求，服务器将通过 UDP 连接回我们以传输文件。因此，在指定文件和文件路径时，我们需要准确无误。BCD 文件始终位于 MDT 服务器上的 /Tmp/ 目录中。我们可以在 SSH 会话中使用以下命令启动 TFTP 传输：
+```cmd
+C:\Users\THM\Documents\Am0> tftp -i <MDT IP> GET "\Tmp\x64{39...28}.bcd" conf.bcd
+
+Transfer successful: 12288 bytes in 1 second(s), 12288 bytes/s
+```
+您必须使用 `nslookup mdt.{domain}` 查找MDT IP。随着BCD文件的恢复，我们将使用powerpxe来读取其内容。Powerpxe 是一个 PowerShell 脚本，可自动执行此类攻击，但结果通常会有所不同，因此最好执行手动方法。我们将使用 powerpxe 的 Get-WimFile 函数从 BCD 文件中恢复 PXE 启动映像的位置：
+```cmd
+C:\Users\THM\Documents\Am0> powershell -executionpolicy bypass Windows PowerShell Copyright (C) Microsoft Corporation. All rights reserved. 
+PS C:\Users\THM\Documents\am0> Import-Module .\PowerPXE.ps1 
+PS C:\Users\THM\Documents\am0> $BCDFile = "conf.bcd" 
+PS C:\Users\THM\Documents\am0> Get-WimFile -bcdFile $BCDFile >> Parse the BCD file: conf.bcd >>>> Identify wim file : <PXE Boot Image Location> <PXE Boot Image Location>
+```
