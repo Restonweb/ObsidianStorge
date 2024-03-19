@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+                "file": "MyStudyRoute/Pentration/Active Directory.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+                "file": "MyStudyRoute/Pentration/Active Directory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+                "file": "MyStudyRoute/Pentration/Active Directory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/SomeUsefulCommand.md"
+                "file": "MyStudyRoute/Pentration/Active Directory.md"
               }
             }
           }
@@ -149,8 +149,18 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
-    "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+    "Screenshot_2024-03-18-21-34-45-826-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-33-30-468-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx 1.jpg",
+    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx 1 1.jpg",
+    "Screenshot_2024-03-18-21-20-50-936-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-20-18-980-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-19-41-941-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-18-21-18-10-161-edit_com.microsoft.emmx.jpg",
+    "MyStudyRoute/Pentration/Active Directory.md",
+    "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Pentration/MetaSploit.md",
@@ -159,11 +169,6 @@
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "Pasted image 20240313170544.png",
-    "Pasted image 20240313170352.png",
-    "Pasted image 20240313170326.png",
-    "Pasted image 20240313170229.png",
-    "Pasted image 20240313170203.png",
-    "Pasted image 20240313170106.png",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
@@ -172,10 +177,6 @@
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/WP.md",
-    "Pasted image 20240311122616.png",
-    "Pasted image 20240311122534.png",
-    "Pasted image 20240311122354.png",
-    "Pasted image 20240311122215.png",
     "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
     "MyStudyRoute/Pentration/Practice",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
@@ -194,7 +195,6 @@
     "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/未命名.md",
     "未命名 1.canvas",
-    "未命名.canvas",
-    "Capture The Flag/WP.md"
+    "未命名.canvas"
   ]
 }
