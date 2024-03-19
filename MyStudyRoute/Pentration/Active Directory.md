@@ -293,3 +293,16 @@ PS C:\Users\THM\Documents\am0> Get-FindCredentials -WimFile pxeboot.wim
 可以使用多个枚举脚本（例如 [Seatbelt](https://github.com/GhostPack/Seatbelt) ）来自动执行此过程。
 ### 配置文件凭据
 但是，在此，我们将重点介绍如何从集中部署的应用程序恢复凭据。通常，这些应用程序需要一种方法在安装和执行阶段对域进行身份验证。例如，McAfee Enterprise Endpoint Security 是此类应用程序的一个示例，组织可以将其用作安全端点检测和响应工具。
+McAfee 将安装期间用于连接回业务流程协调程序的凭据嵌入到名为 ma.db 的文件中。可以通过对主机的本地访问权限检索和读取此数据库文件，以恢复关联的 AD 服务帐户。
+ma.db 文件存储在固定位置：
+```
+C:\ProgramData\McAfee\Agent\DB
+```
+要读取数据库文件，我们将使用一个名为 sqlitebrowser 的工具。我们可以使用以下命令打开数据库：
+```shell
+sqlitebrowser ma.db
+```
+使用 sqlitebrowser，我们将选择“浏览数据”选项并关注AGENT_REPOSITORIES表：
+![[Pasted image 20240319223609.png]]
+我们对第二个条目特别感兴趣，重点是 DOMAIN、AUTH_USER 和 AUTH_PASSWD 字段条目。记下这些条目中存储的值。但是，AUTH_PASSWD字段是加密的。幸运的是，迈克菲使用已知密钥加密此字段。[迈克菲解密工具](https://github.com/funoverip/mcafee-sitelist-pwd-decryption)
+
