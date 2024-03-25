@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Python/Python-urllib.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "MyStudyRoute/Pentration/Active Directory.md",
+            "file": "MyStudyRoute/Python/Python-urllib.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "MyStudyRoute/Pentration/Active Directory.md",
+            "file": "MyStudyRoute/Python/Python-urllib.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "MyStudyRoute/Pentration/Active Directory.md"
+            "file": "MyStudyRoute/Python/Python-urllib.md"
           }
         }
       }
@@ -131,8 +131,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e7c5c71f3221483c",
+  "active": "192cb4dd4f8a366b",
   "lastOpenFiles": [
+    "MyStudyRoute/Python/RAA&EV.md",
+    "MyStudyRoute/Pentration/Socat.md",
+    "MyStudyRoute/Pentration/PreRecon.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
+    "MyStudyRoute/Pentration/NMAP.md",
+    "MyStudyRoute/Pentration/hashcat.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/FileTransmit.md",
+    "MyStudyRoute/Pentration/Active Directory.md",
     "Pasted image 20240319223609.png",
     "Pasted image 20240319222004.png",
     "Pasted image 20240319221813.png",
@@ -144,30 +153,20 @@
     "/Pasted image 20240319222004.png",
     "/Pasted image 20240319221813.png",
     "/Pasted image 20240319221208.png",
-    "/Pasted image 20240319212945.png",
     "/MyStudyRoute/Pentration/FileTransmit.md",
     "/MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "/MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/Document",
     "/MyStudyRoute/Pentration/Document",
     "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/WireShark.md",
-    "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
     "[.md",
     "/MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
-    "MyStudyRoute/Pentration/FileTransmit.md",
-    "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Python/Python-urllib.md",
-    "MyStudyRoute/Pentration/hashcat.md",
-    "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/Netcat.md",
-    "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
