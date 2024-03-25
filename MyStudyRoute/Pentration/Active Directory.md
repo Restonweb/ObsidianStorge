@@ -306,4 +306,14 @@ sqlitebrowser ma.db
 ![[Pasted image 20240319223609.png]]
 我们对第二个条目特别感兴趣，重点是 DOMAIN、AUTH_USER 和 AUTH_PASSWD 字段条目。记下这些条目中存储的值。但是，AUTH_PASSWD字段是加密的。幸运的是，迈克菲使用已知密钥加密此字段。[迈克菲解密工具](https://github.com/funoverip/mcafee-sitelist-pwd-decryption)
 # AD Enumeration
-
+![[Screenshot_2024-03-25-08-56-02-949-edit_com.microsoft.emmx.jpg]]
+枚举与利用是紧密联系的，通常我们可以通过横向移动或权限提升获得额外的访问权限，直到我们有足够的权限实现我们的目标，一旦枚举到有效的攻击路径，利用它获取新的立足点，就需要再次枚举，循环往复。
+## 凭证注入
+runas是windows自带的工具，runas名为run as，可以使用特定凭证以其身份来运行程序。
+### Runas
+如果发现了有效的AD凭证，那么就可以通过如下命令以其身份启动一个cmd：
+`runas.exe /netonly /user:<domain>\<username> cmd.exe`
+参数解释：
+/netonly - 由于我们未加入域，因此我们希望加载用于网络身份验证的凭据，但不对域控制器进行身份验证。因此，在计算机上本地执行的命令将在标准 Windows 帐户的上下文中运行，但任何网络连接都将使用此处指定的帐户进行。
+/user - 在这里，我们提供域和用户名的详细信息。使用完全限定域名 （FQDN） 而不仅仅是域的 NetBIOS 名称始终是一个安全的选择，因为这将有助于解决。
+cmd.exe - 这是我们在注入凭据后要执行的程序。这可以更改为任何内容，但最安全的赌注是cmd.exe，因为您可以使用它来启动任何您想要的内容，并注入凭据。
