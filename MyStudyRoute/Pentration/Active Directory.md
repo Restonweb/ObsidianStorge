@@ -305,4 +305,5 @@ sqlitebrowser ma.db
 使用 sqlitebrowser，我们将选择“浏览数据”选项并关注AGENT_REPOSITORIES表：
 ![[Pasted image 20240319223609.png]]
 我们对第二个条目特别感兴趣，重点是 DOMAIN、AUTH_USER 和 AUTH_PASSWD 字段条目。记下这些条目中存储的值。但是，AUTH_PASSWD字段是加密的。幸运的是，迈克菲使用已知密钥加密此字段。[迈克菲解密工具](https://github.com/funoverip/mcafee-sitelist-pwd-decryption)
+# AD Enumeration
 
