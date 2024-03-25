@@ -314,6 +314,38 @@ runas是windows自带的工具，runas名为run as，可以使用特定凭证以
 如果发现了有效的AD凭证，那么就可以通过如下命令以其身份启动一个cmd：
 `runas.exe /netonly /user:<domain>\<username> cmd.exe`
 参数解释：
-/netonly - 由于我们未加入域，因此我们希望加载用于网络身份验证的凭据，但不对域控制器进行身份验证。因此，在计算机上本地执行的命令将在标准 Windows 帐户的上下文中运行，但任何网络连接都将使用此处指定的帐户进行。
+/netonly - 由于我们未加入域，因此我们希望加载用于网络身份验证的凭据，但不对域控制器进行身份验证。因此，在计算机上本地执行的命令将在标准 Windows 帐户的上下文中运行，但任何网络连接都将使用此处指定的帐户进行。（由于这个参数，域控制器不会直接验证凭据，所以输入任何密码都可以被接受。在某些情况下，需要正确的输入密码，否则就算注入了凭证，也没有相对应的权限。）
 /user - 在这里，我们提供域和用户名的详细信息。使用完全限定域名 （FQDN） 而不仅仅是域的 NetBIOS 名称始终是一个安全的选择，因为这将有助于解决。
-cmd.exe - 这是我们在注入凭据后要执行的程序。这可以更改为任何内容，但最安全的赌注是cmd.exe，因为您可以使用它来启动任何您想要的内容，并注入凭据。
+cmd.exe - 这是我们在注入凭据后要执行的程序。这可以更改为任何内容，但最安全的赌注是cmd.exe，因为可以使用它来启动任何想要的内容，并注入凭据。
+### DNS
+在使用注入凭据启动cmd后，要验证凭据是否正常工作，最可靠的方法是访问SYSVOL。任何AD账户，无论其权限多么低，都可以访问SYSVOL的内容。
+SYSVOL 是存在于所有域控制器上的文件夹。它是一个共享文件夹，用于存储组策略对象 （GPO） 和信息以及任何其他与域相关的脚本。它是 Active Directory 的基本组件，因为它将这些 GPO 传送到域上的所有计算机。然后，已加入域的计算机可以读取这些 GPO 并应用适用的 GPO，从而从中心位置进行域范围的配置更改。
+在列出 SYSVOL 之前，我们需要配置 DNS。有时你很幸运，内部DNS会通过DHCP或VPN连接自动为你配置，但并非总是如此(如这个THM网络)。了解如何手动执行此操作是件好事。对于DNS服务器来说，最安全的选择通常是域控制器。使用域控制器的 IP，我们可以在 PowerShell 窗口中执行以下命令：
+```powershell
+$dnsip = "<DC IP>"
+$index = Get-NetAdapter -Name 'Ethernet' | Select-Object -ExpandProperty 'ifIndex'
+Set-DnsClientServerAddress -InterfaceIndex $index -ServerAddresses $dnsip
+```
+```powershell
+C:\> nslookup za.tryhackme.com
+```
+现在应解析为 DC IP，因为这是托管 FQDN 的位置。现在DNS正在工作，我们终于可以测试我们的凭据了。我们可以使用以下命令强制列出 SYSVOL 目录的基于网络的列表：
+```powershell
+C:\Tools>dir \\za.tryhackme.com\SYSVOL\
+ Volume in drive \\za.tryhackme.com\SYSVOL is Windows
+ Volume Serial Number is 1634-22A9
+
+ Directory of \\za.tryhackme.com\SYSVOL
+
+02/24/2022  09:57 PM    <DIR>          .
+02/24/2022  09:57 PM    <DIR>          ..
+02/24/2022  09:57 PM    <JUNCTION>     za.tryhackme.com [C:\Windows\SYSVOL\domain]
+               0 File(s)              0 bytes
+               3 Dir(s)  51,835,408,384 bytes free
+```
+在此并不深入讨论SYSVOL，但这个位置也有可能存着某些凭据。
+### IP与主机名
+Q：两者有区别吗？
+dir \\za.tryhackme.com\SYSVOL和dir \\<DC IP>\SYSVOL
+为什么对DNS大惊小怪？
+A：有很大的不同，它归结为所使用的身份验证方法。当我们提供主机名时，网络身份验证将首先尝试执行 Kerberos 身份验证。由于 Kerberos 身份验证使用票证中嵌入的主机名，因此如果我们提供 IP，则可以强制身份验证类型为 NTLM。虽然从表面上看，这对我们来说并不重要，但了解这些细微的差异是件好事，因为它们可以让您在红队评估期间保持更加隐蔽。在某些情况下，组织将监控 OverPass 和 Pass-The-Hash 攻击。强制 NTLM 身份验证是本书中的一个很好的技巧，可以避免在这些情况下被检测到。
