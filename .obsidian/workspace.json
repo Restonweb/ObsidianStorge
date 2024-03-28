@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/Document/pte.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/Document/pte.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/Pentration/Document/pte.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md"
+                "file": "MyStudyRoute/Pentration/Document/pte.md"
               }
             }
           }
@@ -148,11 +148,14 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/Document/未命名.md",
+    "MyStudyRoute/Pentration/Document/pte.md",
+    "MyStudyRoute/Pentration/Document/未命名",
+    "MyStudyRoute/Capture The Flag/WP.md",
     "Pasted image 20240328193336.png",
     "Pasted image 20240328191209.png",
     "Pasted image 20240328190530.png",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
-    "MyStudyRoute/Pentration/Document/未命名.md",
     "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
@@ -166,7 +169,6 @@
     "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
-    "MyStudyRoute/Capture The Flag/WP.md",
     "Pasted image 20240327164825.png",
     "Pasted image 20240327161324.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
@@ -178,7 +180,6 @@
     "Pasted image 20240319221813.png",
     "Pasted image 20240319221208.png",
     "Pasted image 20240319212945.png",
-    "Pasted image 20240319212509.png",
     "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
@@ -188,7 +189,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
     "2024-01-22.md",
     "未命名.md",

