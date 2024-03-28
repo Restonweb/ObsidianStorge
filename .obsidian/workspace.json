@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Pentration/Document/未命名.md",
     "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
@@ -180,7 +181,6 @@
     "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
-    "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Pentration/Practice/THM-Relevant.md",
     "MyStudyRoute/Pentration/Practice",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
