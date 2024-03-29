@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -148,6 +148,10 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "Pasted image 20240329125252.png",
+    "Pasted image 20240329124936.png",
+    "Pasted image 20240329124443.png",
+    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/Document/pte.md",
     "MyStudyRoute/Pentration/Document/未命名.md",
     "MyStudyRoute/Pentration/Document/未命名",
@@ -166,7 +170,6 @@
     "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "Pasted image 20240327164825.png",
@@ -178,8 +181,6 @@
     "MyStudyRoute/Pentration/新建文件夹",
     "Pasted image 20240319222004.png",
     "Pasted image 20240319221813.png",
-    "Pasted image 20240319221208.png",
-    "Pasted image 20240319212945.png",
     "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
@@ -193,7 +194,6 @@
     "2024-01-22.md",
     "未命名.md",
     "MyStudyRoute/Python/Python-urllib.md",
-    "MyStudyRoute/Python/RAA&EV.md",
     "未命名 1.canvas",
     "未命名.canvas"
   ]
