@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
+                "file": "MyStudyRoute/Pentration/Document/GZCJ.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
+                "file": "MyStudyRoute/Pentration/Document/GZCJ.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
+                "file": "MyStudyRoute/Pentration/Document/GZCJ.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md"
+                "file": "MyStudyRoute/Pentration/Document/GZCJ.md"
               }
             }
           }
@@ -148,6 +148,8 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/SQLi思路.md",
+    "MyStudyRoute/Pentration/Document/GZCJ.md",
     "MyStudyRoute/Pentration/Document/未命名.md",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Pentration/Active Directory.md",
@@ -170,7 +172,6 @@
     "Pasted image 20240329125252.png",
     "MyStudyRoute/Pentration/Document/pte.md",
     "MyStudyRoute/Pentration/Document/未命名",
-    "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/MetaSploit.md",
