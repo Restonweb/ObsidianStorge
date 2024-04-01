@@ -5,3 +5,5 @@
 | https://www.gzcjzyxy.cn/                         | 222.85.212.26 | 主站              | sub  | 暂未发现 | IIS   |
 | http://yypt.gzcjzyxy.cn/                         | 222.85.212.83 | 教务系统？           | sub  | 暂未发现 | nginx |
 | [gzsjzyjk.cn](https://ipchaxun.com/gzsjzyjk.cn/) | 222.85.212.33 | 高校安全管理平台（海康威视？） | main | -    | -     |
+| http://222.85.212.38:88/                         | 222.85.212.38 | 泛微OA            |      |      |       |
+| gdct.net.cn                                      | 222.85.212.38 |                 |      |      |       |
