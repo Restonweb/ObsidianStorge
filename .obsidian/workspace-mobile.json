@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "bcf9103568389b93",
+        "id": "942a0909a8a7eebe",
         "type": "tabs",
         "children": [
           {
-            "id": "e7c5c71f3221483c",
+            "id": "b1772905df6b4ea0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -119,7 +119,7 @@
         }
       }
     ],
-    "currentTab": 2
+    "currentTab": 0
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -131,37 +131,44 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a08ee95fea43b5fa",
+  "active": "b1772905df6b4ea0",
   "lastOpenFiles": [
-    "Screenshot_2024-03-18-21-34-45-826-edit_com.microsoft.emmx.jpg",
-    "Screenshot_2024-03-18-21-33-30-468-edit_com.microsoft.emmx.jpg",
-    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx 1 1.jpg",
-    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx 1.jpg",
-    "Screenshot_2024-03-18-21-28-23-063-edit_com.microsoft.emmx.jpg",
-    "Screenshot_2024-03-18-21-20-50-936-edit_com.microsoft.emmx.jpg",
-    "Screenshot_2024-03-18-21-20-18-980-edit_com.microsoft.emmx.jpg",
-    "Screenshot_2024-03-18-21-19-41-941-edit_com.microsoft.emmx.jpg",
-    "Screenshot_2024-03-18-21-18-10-161-edit_com.microsoft.emmx.jpg",
+    "Screenshot_2024-03-25-08-56-02-949-edit_com.microsoft.emmx.jpg",
+    "Untitled.canvas",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Pentration/Active Directory.md",
-    "MyStudyRoute/Pentration/WireShark.md",
+    "MyStudyRoute/Python/Python-urllib.md",
+    "MyStudyRoute/Python/RAA&EV.md",
+    "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/PreRecon.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
+    "MyStudyRoute/Pentration/NMAP.md",
+    "MyStudyRoute/Pentration/hashcat.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/FileTransmit.md",
+    "Pasted image 20240319223609.png",
+    "Pasted image 20240319222004.png",
+    "Pasted image 20240319221813.png",
+    "Pasted image 20240319221208.png",
+    "Pasted image 20240319212945.png",
+    "Pasted image 20240319212509.png",
+    "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
+    "/Pasted image 20240319223609.png",
+    "/Pasted image 20240319222004.png",
+    "/Pasted image 20240319221813.png",
+    "/Pasted image 20240319221208.png",
+    "/MyStudyRoute/Pentration/FileTransmit.md",
+    "/MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
+    "/MyStudyRoute/Pentration/Active Directory.md",
+    "MyStudyRoute/Pentration/Document",
+    "/MyStudyRoute/Pentration/Document",
+    "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
     "[.md",
-    "Pasted image 20240313170544.png",
-    "Pasted image 20240313170352.png",
     "/MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
-    "MyStudyRoute/Pentration/FileTransmit.md",
-    "MyStudyRoute/Python/RAA&EV.md",
-    "MyStudyRoute/Python/Python-urllib.md",
-    "MyStudyRoute/Pentration/hashcat.md",
-    "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/Netcat.md",
-    "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
@@ -172,10 +179,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
-    "MyStudyRoute/Capture The Flag/File Inclusion.md",
-    "MyStudyRoute/Capture The Flag/res"
+    "MyStudyRoute/Capture The Flag/File Inclusion.md"
   ]
 }
