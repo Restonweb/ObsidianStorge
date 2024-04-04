@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/hashcat.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/hashcat.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/hashcat.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/hashcat.md"
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md"
               }
             }
           }
@@ -148,6 +148,8 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/hashcat.md",
+    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Pentration/Document/GZCJ.md",
     "Untitled.canvas",
@@ -176,7 +178,6 @@
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/MetaSploit.md",
-    "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
