@@ -1,1 +1,12 @@
 [HTB]Jab
+- **初始侦察**：使用**nmap**扫描发现开放端口88、445和5222。
+- **SMB尝试**：尝试使用**smbclient**和**crackmapexec**检查共享文件夹，但遇到错误。
+- **Jabber/XMPP服务**：发现运行着**Jabber**和**XMPP**聊天服务。
+- **Pidgin客户端**：通过**Pidgin**客户端连接到XMPP服务并注册账户。
+- **用户搜索**：利用Pidgin的用户搜索功能，通过输入星号(*)进行高级搜索，获取用户列表。
+- **AS-REP Roasting**：使用**Impacket**工具中的**GetNPUsers.py**进行AS-REP Roasting获取用户哈希。
+- **密码破解**：使用**john**或**hashcat**结合**rockyou.txt**字典文件破解哈希。
+- **远程连接**：使用获取的凭证通过**dcomexec.py**工具建立远程连接。
+- **漏洞利用**：利用CVE-2023–32315漏洞，通过上传恶意**.jar**文件到Openfire admin console实现远程代码执行（RCE）。
+- **端口转发**：使用**Chisel**设置端口转发以访问本地端口9090和9091。
+- **获取根权限**：通过Openfire admin console的RCE获取系统（root）权限，并查看root.txt文件。
