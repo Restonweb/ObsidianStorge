@@ -11,3 +11,7 @@
 - **端口转发**：使用**Chisel**设置端口转发以访问本地端口9090和9091。***\*Chisel的使用***
 - **获取根权限**：通过Openfire admin console的RCE获取系统（root）权限，并查看root.txt文件。
 [HTB]Pov #\.Net反序列化
+```Credential
+alaading
+f8gQ8fynP44ek1m3
+```
