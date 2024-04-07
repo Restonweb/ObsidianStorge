@@ -1,4 +1,4 @@
-# [HTB]Jab #DCOM #AS-REP
+# [HTB] Jab #DCOM #AS-REP
 - **初始侦察**：使用**nmap**扫描发现开放端口88、445和5222。
 - **SMB尝试**：尝试使用**smbclient**和**crackmapexec**检查共享文件夹，但遇到错误。
 - **Jabber/XMPP服务**：发现运行着**Jabber**和**XMPP**聊天服务。
@@ -10,7 +10,7 @@
 - **漏洞利用**：利用CVE-2023–32315漏洞，通过上传恶意**.jar**文件到Openfire admin console实现远程代码执行（RCE）。
 - **端口转发**：使用**Chisel**设置端口转发以访问本地端口9090和9091。***\*Chisel的使用***
 - **获取根权限**：通过Openfire admin console的RCE获取系统（root）权限，并查看root.txt文件。
-# [HTB]Pov #\.Net反序列化
+# [HTB] Pov #\.Net反序列化
 ```Credential
 alaading
 f8gQ8fynP44ek1m3
@@ -303,7 +303,7 @@ So I decided to use busybox to make use of netcat to give me a reverse shell fro
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*_g362aYEoB52iYy4)
 
-# [HTB] headless
+# [HTB] headless #XSS 
 ## Enumeration
 Nmap
 
@@ -469,4 +469,7 @@ The **-p** flag in the above command starts bash in "_privileged mode_". In simp
 **Defence**: Where binaries can be run as Sudo, ensure that absolute file paths are used. In this case if the initdb.sh file was being called from say **/usr/bin** the **dvir** user presumably wouldn't have had access to write to that folder and couldn't have hijacked paths to escalate privileges.  
 防御：如果二进制文件可以作为 Sudo 运行，请确保使用绝对文件路径。在这种情况下，如果从 /usr/bin 调用 initdb.sh 文件，则 dvir 用户可能无权写入该文件夹，也无法劫持路径以提升权限。
 ## Hint
-sudo可以执行的脚本中带有‘./’路径的可执行文件，'./'一般指当前目录下的文件，但是在可执行文件中，这个当前目录指的就是执行该脚本的位置，你可以在你有权限读写的目录执行这个脚本，他会访问你当前目录下的指定文件，这样你就可以伪造文件了。0
+sudo可以执行的脚本中带有‘./’路径的可执行文件，'./'一般指当前目录下的文件，但是在可执行文件中，这个当前目录指的就是执行该脚本的位置，你可以在你有权限读写的目录执行这个脚本，他会访问你当前目录下的指定文件，这样你就可以伪造文件了。
+
+
+
