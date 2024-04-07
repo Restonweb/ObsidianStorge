@@ -406,7 +406,7 @@ So I decided to use busybox to make use of netcat to give me a reverse shell fro
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*_g362aYEoB52iYy4)
 ## Hint
-
+枚举后要注意可疑的凭证，备份文件。以及使用各种方式稳定shell,和命令行的参数命令注入利用
 # [HTB] headless #XSS 
 ## Enumeration
 Nmap
@@ -573,8 +573,20 @@ The **-p** flag in the above command starts bash in "_privileged mode_". In simp
 **Defence**: Where binaries can be run as Sudo, ensure that absolute file paths are used. In this case if the initdb.sh file was being called from say **/usr/bin** the **dvir** user presumably wouldn't have had access to write to that folder and couldn't have hijacked paths to escalate privileges.  
 防御：如果二进制文件可以作为 Sudo 运行，请确保使用绝对文件路径。在这种情况下，如果从 /usr/bin 调用 initdb.sh 文件，则 dvir 用户可能无权写入该文件夹，也无法劫持路径以提升权限。
 ## Hint
+若Useragent是由客户端来处理的，那么可能在请求体内被过滤的操作在UA头内就可以绕过。
 sudo可以执行的脚本中带有‘./’路径的可执行文件，'./'一般指当前目录下的文件，但是在可执行文件中，这个当前目录指的就是执行该脚本的位置，你可以在你有权限读写的目录执行这个脚本，他会访问你当前目录下的指定文件，这样你就可以伪造文件了。
-
-
-
 # [HTB] Hospital
+## Enumeration
+扫描端口：
+![[Pasted image 20240407182439.png]]
+![[Pasted image 20240407182517.png]]
+目标机开放了很多端口，主要针对22，139，389，443，3389，8080进行枚举。
+139，389指示了其拥有smb分享，尝试匿名访问，不被允许。
+访问443（HTTPS）：
+![[Pasted image 20240407182731.png]]
+是一个WEBmail系统
+访问8080：
+![[Pasted image 20240407182809.png]]
+是一个PHP应用。
+## Get User shell
+在8080端口可以进行注册并上传图片，尝试一些文件名，phar可以被上传，拿到一个webshell：
