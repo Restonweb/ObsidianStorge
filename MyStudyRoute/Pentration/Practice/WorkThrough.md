@@ -641,3 +641,4 @@ powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c
 用此凭证尝试rdp登录成功，拿到userflag.
 ## Get Root Flag
 在收到的RDP界面，有一个powershell窗口在重复的执行selenium脚本，打开浏览器并登录webmail界面，输入Administrator及密码，使用这个凭证直接rdp登录拿到rootflag。
+# [HTB] IClean #XSS #Flask #SSTI 
