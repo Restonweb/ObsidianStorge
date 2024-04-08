@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pte.md",
+                "file": "MyStudyRoute/Pentration/Document/未命名 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pte.md",
+                "file": "MyStudyRoute/Pentration/Document/未命名 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pte.md",
+                "file": "MyStudyRoute/Pentration/Document/未命名 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pte.md"
+                "file": "MyStudyRoute/Pentration/Document/未命名 1.md"
               }
             }
           }
@@ -149,14 +149,15 @@
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
-    "MyStudyRoute/Pentration/Document/GZCJ.md",
+    "MyStudyRoute/Pentration/Document/未命名 1.md",
     "MyStudyRoute/Pentration/Document/未命名.md",
+    "MyStudyRoute/Pentration/Document/pte.md",
+    "MyStudyRoute/Pentration/Document/GZCJ.md",
     "未命名.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf.crdownload",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/Active Directory.md",
-    "MyStudyRoute/Pentration/Document/pte.md",
     "MyStudyRoute/Python/Python-urllib.md",
     "MyStudyRoute/Python/RAA&EV.md",
     "Pasted image 20240408180108.png",
@@ -190,7 +191,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Pentration/Document",
     "MyStudyRoute/Pentration/新建文件夹",
-    "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/Practice",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
