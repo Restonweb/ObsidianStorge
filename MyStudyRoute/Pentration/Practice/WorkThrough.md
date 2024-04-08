@@ -644,3 +644,10 @@ powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c
 # [HTB] IClean #XSS #Flask #SSTI #Jinja
 ## Enumeration
 NmapScan:
+![[Pasted image 20240408165754.png]]
+开放了22，80端口。
+访问web页面：
+![[Pasted image 20240408165911.png]]
+![[Pasted image 20240408165937.png]]
+进入dashboard会重定向，这指示其需要验证。
+### XSS
