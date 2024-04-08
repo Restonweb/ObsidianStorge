@@ -651,3 +651,4 @@ NmapScan:
 ![[Pasted image 20240408165937.png]]
 进入dashboard会重定向，这指示其需要验证。
 ### XSS
+在quote系欸按
