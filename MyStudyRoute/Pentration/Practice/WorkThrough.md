@@ -650,5 +650,13 @@ NmapScan:
 ![[Pasted image 20240408165911.png]]
 ![[Pasted image 20240408165937.png]]
 进入dashboard会重定向，这指示其需要验证。
+## Get User Shell
 ### XSS
-在quote系欸按
+在quote界面可以选择服务提交邮箱，服务的选择是以这样的方式被提交的：
+![[Pasted image 20240408171702.png]]
+service参数插入XSS并没有任何回显，让其访问我们的python服务器获取cookie：
+![[Pasted image 20240408171825.png]]
+解码：`session=eyJyb2xlIjoiMjEyMzJmMjk3YTU3YTVhNzQzODk0YTBlNGE4MDFmYzMifQ.ZhKyFw.lx98c9k2a0pAIhcZDpC45fEJ2mY`
+将其放入请求头内，成功访问到dashboard：
+![[Pasted image 20240408172507.png]]
+访问各个功能，在Generate I
