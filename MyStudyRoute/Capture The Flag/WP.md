@@ -876,7 +876,7 @@ ls找不到就直接find，不能傻乎乎的../../../../../../../。。。。�
 构造：
 `index.php?category=php://filter/convert.base64-encode/woofers/resource=flag`
 拿到flag。
-[BUUCTF 2018]Online Tool #命令执行漏洞 #RCE
+[BUUCTF 2018]Online Tool #命令执行漏洞
 进入环境，显示源码：
 ```php
 <?php  

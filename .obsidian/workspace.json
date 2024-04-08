@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#XSS",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -148,6 +148,10 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+    "MyStudyRoute/Pentration/hashcat.md",
+    "Pasted image 20240408174326.png",
     "Pasted image 20240408173235.png",
     "Pasted image 20240408173108.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205329.png",
@@ -155,7 +159,6 @@
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
-    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Python/Python-urllib.md",
@@ -174,10 +177,6 @@
     "Pasted image 20240408165937.png",
     "Pasted image 20240408165911.png",
     "Pasted image 20240408165754.png",
-    "MyStudyRoute/Capture The Flag/WP.md",
-    "Pasted image 20240407184000.png",
-    "Pasted image 20240407183834.png",
-    "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Pentration/Document/pte.md",
     "MyStudyRoute/Pentration/Document/GZCJ.md",
     "MyStudyRoute/Pentration/Document/未命名.md",

