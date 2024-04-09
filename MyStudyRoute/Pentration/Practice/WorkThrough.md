@@ -491,7 +491,7 @@ Copy
 ```
 
 Once I resent the request I got a hit back to my web server.  
-一旦我重新发送请求，我的网络服务器就会受到打击。
+一旦我重新发送请求，我的网络服务器就会收到回应。
 
 ![](https://cybersec-2.gitbook.io/~gitbook/image?url=https:%2F%2F1798236562-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252FeknkpLoG0ZPnMNxHet6A%252Fuploads%252FbO4KuRGFr0r8qQz6qHdi%252FXSS_Admin_Cookie.PNG%3Falt=media%26token=88c2a01f-3d8d-4e86-9a8a-2dc4e580b8ab&width=768&dpr=4&quality=100&sign=c90e75395f77bce1237c17b2ec8ce4fa4eb8d75161a8653b1fcb672bed43bc85)
 
@@ -758,3 +758,4 @@ sudo qpdf --add-attachment /root/root.txt -- /usr/share/doc/shared-mime-info/sha
 对于页面可能有缺陷的漏洞都可以进行尝试，没有思路google一下大概率能解决问题
 AboutSSTI:[SSTI (Server Side Template Injection) | HackTricks | HackTricks --- SSTI（服务器端模板注入） |黑客技巧 |黑客技巧](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
 AboutFlaskVul:[flask漏洞利用小结 - inhann的博客 | inhann's Blog](https://www.inhann.top/2021/02/25/flask_newer/)
+SSTI pythonbase:[[ssti_python_base.pdf]]
