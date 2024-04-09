@@ -375,3 +375,21 @@ A：有很大的不同，它归结为所使用的身份验证方法。当我们�
 攻击者可以通过多种方式横向移动。最简单的方法是使用标准管理协议（如 WinRM、RDP、VNC 或 SSH）连接到网络上的其他计算机。这种方法可以用来在某种程度上模拟普通用户的行为，只要在规划在哪里与哪个帐户连接时保持一定的连贯性。虽然 IT 用户通过 RDP 连接到 Web 服务器可能是很常见的，但必须注意不要尝试可疑连接（例如，为什么本地管理员用户从 Marketing-PC 连接到 DEV-001-PC？
 
 如今，攻击者也有其他横向移动的方法，同时使蓝队有效检测正在发生的事情更具挑战性。虽然没有任何技术可以被认为是万无一失的，但我们至少可以尝试尽可能地保持沉默。在以下任务中，我们将介绍一些最常见的横向移动技术。
+
+### 管理员和 UAC
+
+While performing most of the lateral movement techniques introduced throughout the room, we will mainly use administrator credentials. While one might expect that every single administrator account would serve the same purpose, a distinction has to be made between two types of administrators:  
+在执行整个房间中引入的大多数横向移动技术时，我们将主要使用管理员凭据。虽然人们可能期望每个管理员帐户都具有相同的目的，但必须区分两种类型的管理员：
+
+- Local accounts part of the local Administrators group  
+    本地管理员组的本地帐户
+- Domain accounts part of the local Administrators group  
+    本地 Administrators 组的域帐户
+
+我们感兴趣的差异是用户帐户控制 （UAC） 对本地管理员（默认管理员帐户除外）施加的限制。默认情况下，本地管理员将无法远程连接到计算机并执行管理任务，除非通过 RDP 使用交互式会话。Windows 将拒绝通过 RPC、SMB 或 WinRM 请求的任何管理任务，因为此类管理员将使用筛选的中型完整性令牌登录，从而阻止帐户执行特权操作。唯一将获得完全权限的本地帐户是默认管理员帐户。
+
+具有本地管理权限的域帐户将不受相同的待遇，并将使用完全管理权限登录。
+
+如果需要，可以禁用此安全功能，有时您会发现管理员组中的本地帐户和域帐户之间没有区别。不过，必须记住，如果某些横向移动技术失败，可能是由于使用了强制实施 UAC 的非默认本地管理员。您可以在[这里](https://docs.microsoft.com/en-us/troubleshoot/windows-server/windows-security/user-account-control-and-remote-restriction) 阅读有关此安全功能的更多详细信息。
+
+## 
