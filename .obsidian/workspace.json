@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md"
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md"
               }
             }
           }
@@ -148,12 +148,13 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "README.md",
+    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
     "Pasted image 20240409142204.png",
     "Pasted image 20240409141914.png",
-    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "Pasted image 20240307181630.png",

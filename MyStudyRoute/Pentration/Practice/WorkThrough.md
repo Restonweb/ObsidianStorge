@@ -96,7 +96,7 @@ clone解密脚本：
 在桌面拿到root.txt
 `{Th3_M4y0r_C0ngr4tul4t3s_U}`
 ## Hint
-Immunity Debugger以及mona插件的使用和缓冲区溢出利用
+- Immunity Debugger以及mona插件的使用和缓冲区溢出利用
 # [HTB] Jab #DCOM #AS-REP
 - **初始侦察**：使用**nmap**扫描发现开放端口88、445和5222。
 - **SMB尝试**：尝试使用**smbclient**和**crackmapexec**检查共享文件夹，但遇到错误。
@@ -110,7 +110,8 @@ Immunity Debugger以及mona插件的使用和缓冲区溢出利用
 - **端口转发**：使用**Chisel**设置端口转发以访问本地端口9090和9091。***\*Chisel的使用***
 - **获取根权限**：通过Openfire admin console的RCE获取系统（root）权限，并查看root.txt文件。
 ## Hint
-NP标志位的设置以及利用，DCOM组件的利用
+- NP标志位的设置以及利用
+- DCOM组件的利用
 # [HTB] Pov #\.Net反序列化
 ```Credential
 alaading
@@ -268,7 +269,10 @@ type C:\Users\Administrator\Desktop\root.txt
 
 我们已获得管理员标志。
 ## Hint
-__ViewState的反序列化及利用，Powershell本地凭证的提取，使用RunasCS利用明文密码进行runas操作，使用脚本启用所有拥有的权限
+- \_\_ViewState的反序列化及利用
+- Powershell本地凭证的提取
+- 使用RunasCS利用明文密码进行runas操作
+- 使用脚本启用所有拥有的权限
 # [HTB] Surveillance
 ## Lab Info
 
@@ -407,7 +411,7 @@ So I decided to use busybox to make use of netcat to give me a reverse shell fro
 
 ![](https://miro.medium.com/v2/resize:fit:700/0*_g362aYEoB52iYy4)
 ## Hint
-枚举后要注意可疑的凭证，备份文件。以及使用各种方式稳定shell,和命令行的参数命令注入利用
+- 枚举后要注意可疑的凭证，备份文件。以及使用各种方式稳定shell,和命令行的参数命令注入利用
 # [HTB] headless #XSS 
 ## Enumeration
 Nmap
@@ -574,8 +578,8 @@ The **-p** flag in the above command starts bash in "_privileged mode_". In simp
 **Defence**: Where binaries can be run as Sudo, ensure that absolute file paths are used. In this case if the initdb.sh file was being called from say **/usr/bin** the **dvir** user presumably wouldn't have had access to write to that folder and couldn't have hijacked paths to escalate privileges.  
 防御：如果二进制文件可以作为 Sudo 运行，请确保使用绝对文件路径。在这种情况下，如果从 /usr/bin 调用 initdb.sh 文件，则 dvir 用户可能无权写入该文件夹，也无法劫持路径以提升权限。
 ## Hint
-若Useragent是由客户端来处理的，那么可能在请求体内被过滤的操作在UA头内就可以绕过。
-sudo可以执行的脚本中带有‘./’路径的可执行文件，'./'一般指当前目录下的文件，但是在可执行文件中，这个当前目录指的就是执行该脚本的位置，你可以在你有权限读写的目录执行这个脚本，他会访问你当前目录下的指定文件，这样你就可以伪造文件了。
+- 若Useragent是由客户端来处理的，那么可能在请求体内被过滤的操作在UA头内就可以绕过。
+- sudo可以执行的脚本中带有‘./’路径的可执行文件，'./'一般指当前目录下的文件，但是在可执行文件中，这个当前目录指的就是执行该脚本的位置，你可以在你有权限读写的目录执行这个脚本，他会访问你当前目录下的指定文件，这样你就可以伪造文件了。
 # [HTB] Hospital #文件上传漏洞 
 ## Enumeration
 扫描端口：
@@ -641,6 +645,9 @@ powershell -command "$p = convertto-securestring 'chr!$br0wn' -asplain -force;$c
 用此凭证尝试rdp登录成功，拿到userflag.
 ## Get Root Flag
 在收到的RDP界面，有一个powershell窗口在重复的执行selenium脚本，打开浏览器并登录webmail界面，输入Administrator及密码，使用这个凭证直接rdp登录拿到rootflag。
+## Hint
+- powershell是可以直接执行base64编码的命令的。
+- 没有其他任何的提权路径，最后再选内核提权，因为在现实中，内核提权是十分危险的，可能会影响到机器的正常使用
 # [HTB] IClean #XSS #Flask #SSTI #Jinja #xpdf
 ## Enumeration
 NmapScan:
@@ -759,3 +766,8 @@ sudo qpdf --add-attachment /root/root.txt -- /usr/share/doc/shared-mime-info/sha
 AboutSSTI:[SSTI (Server Side Template Injection) | HackTricks | HackTricks --- SSTI（服务器端模板注入） |黑客技巧 |黑客技巧](https://book.hacktricks.xyz/pentesting-web/ssti-server-side-template-injection)
 AboutFlaskVul:[flask漏洞利用小结 - inhann的博客 | inhann's Blog](https://www.inhann.top/2021/02/25/flask_newer/)
 SSTI pythonbase:[[ssti_python_base.pdf]]
+# [HTB] Monitored
+## Enumeration
+
+
+
