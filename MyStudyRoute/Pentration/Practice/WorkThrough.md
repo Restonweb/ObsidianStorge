@@ -768,6 +768,85 @@ AboutFlaskVul:[flask漏洞利用小结 - inhann的博客 | inhann's Blog](https:
 SSTI pythonbase:[[ssti_python_base.pdf]]
 # [HTB] Monitored
 ## Enumeration
+Nmap:
+```sh
+Host is up (0.13s latency).
+Not shown: 65530 closed tcp ports (reset)
+PORT     STATE SERVICE    VERSION
+22/tcp   open  ssh        OpenSSH 8.4p1 Debian 5+deb11u3 (protocol 2.0)
+| ssh-hostkey: 
+|   3072 61:e2:e7:b4:1b:5d:46:dc:3b:2f:91:38:e6:6d:c5:ff (RSA)
+|   256 29:73:c5:a5:8d:aa:3f:60:a9:4a:a3:e5:9f:67:5c:93 (ECDSA)
+|_  256 6d:7a:f9:eb:8e:45:c2:02:6a:d5:8d:4d:b3:a3:37:6f (ED25519)
+80/tcp   open  http       Apache httpd 2.4.56
+|_http-server-header: Apache/2.4.56 (Debian)
+|_http-title: Did not follow redirect to https://nagios.monitored.htb/
+389/tcp  open  ldap       OpenLDAP 2.2.X - 2.3.X
+443/tcp  open  ssl/http   Apache httpd 2.4.56 ((Debian))
+| ssl-cert: Subject: commonName=nagios.monitored.htb/organizationName=Monitored/stateOrProvinceName=Dorset/countryName=UK
+| Not valid before: 2023-11-11T21:46:55
+|_Not valid after:  2297-08-25T21:46:55
+| tls-alpn: 
+|_  http/1.1
+|_http-server-header: Apache/2.4.56 (Debian)
+|_ssl-date: TLS randomness does not represent time
+|_http-title: Nagios XI
+5667/tcp open  tcpwrapped
+No exact OS matches for host (If you know what OS is running on it, see https://nmap.org/submit/ ).
+TCP/IP fingerprint:
+OS:SCAN(V=7.94%E=4%D=1/15%OT=22%CT=1%CU=30330%PV=Y%DS=2%DC=T%G=Y%TM=65A56AA
+OS:8%P=x86_64-pc-linux-gnu)SEQ(SP=102%GCD=1%ISR=108%TI=Z%CI=Z%II=I%TS=9)SEQ
+OS:(SP=102%GCD=1%ISR=108%TI=Z%CI=Z%II=I%TS=A)OPS(O1=M53CST11NW7%O2=M53CST11
+OS:NW7%O3=M53CNNT11NW7%O4=M53CST11NW7%O5=M53CST11NW7%O6=M53CST11)WIN(W1=FE8
+OS:8%W2=FE88%W3=FE88%W4=FE88%W5=FE88%W6=FE88)ECN(R=Y%DF=Y%T=40%W=FAF0%O=M53
+OS:CNNSNW7%CC=Y%Q=)T1(R=Y%DF=Y%T=40%S=O%A=S+%F=AS%RD=0%Q=)T2(R=N)T3(R=N)T4(
+OS:R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T5(R=Y%DF=Y%T=40%W=0%S=Z%A=S+%F
+OS:=AR%O=%RD=0%Q=)T6(R=Y%DF=Y%T=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)T7(R=Y%DF=Y%T
+OS:=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)U1(R=Y%DF=N%T=40%IPL=164%UN=0%RIPL=G%RI
+OS:D=G%RIPCK=G%RUCK=G%RUD=G)IE(R=Y%DFI=N%T=40%CD=S)
 
+Network Distance: 2 hops
+Service Info: Host: nagios.monitored.htb; OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   131.38 ms 10.10.14.1
+2   131.45 ms 10.129.37.231
+```
+UDP:
+```sh
+Host is up (0.14s latency).
+Not shown: 984 closed udp ports (port-unreach)
+PORT      STATE         SERVICE
+68/udp    open|filtered dhcpc
+123/udp   open          ntp
+161/udp   open          snmp
+162/udp   open|filtered snmptrap
+3702/udp  open|filtered ws-discovery
+16697/udp open|filtered unknown
+16838/udp open|filtered unknown
+17836/udp open|filtered unknown
+21167/udp open|filtered unknown
+34038/udp open|filtered unknown
+37843/udp open|filtered unknown
+40622/udp open|filtered unknown
+41524/udp open|filtered unknown
+43967/udp open|filtered unknown
+54281/udp open|filtered unknown
+65024/udp open|filtered unknown
+```
+对于第一次Nmap扫描，扫描到了22 80 443端口，添加域名后访问其网络服务：
+![[Pasted image 20240410201557.png]]
+点击按钮，会进入到一个登录页，搜索Nagios XI，其是一个监控设备的软件，广泛使用。
+寻找围绕它的常见漏洞。经过快速搜索，我们找到了[这个](https://outpost24.com/blog/nagios-xi-vulnerabilities/)关于 Nagios XI CVE 的博客。CVE-2023-40931:
+```
+Nagios XI features “Announcement Banners”, which can optionally be acknowledged by users. The endpoint for this feature is vulnerable to a SQL Injection attack.  
+Nagios XI具有“公告横幅”功能，用户可以选择确认。此功能的终结点容易受到 SQL 注入攻击。
 
+When a user acknowledges a banner, a POST request is sent to `/nagiosxi/admin/banner_message-ajaxhelper.php` with the POST data consisting of the intended action and message ID – `action=acknowledge banner message&id=3`.  
+当用户确认横幅时，将向 `/nagiosxi/admin/banner_message-ajaxhelper.php` 发送 POST 请求，其中包含由预期操作和消息 ID – `action=acknowledge banner message&id=3` 组成的 POST 数据。
+
+The ID parameter is assumed to be trusted but comes directly from the client without sanitization. This leads to a SQL Injection where an authenticated user with low or no privileges can retrieve sensitive data, such as from the `xi_session` and `xi_users` table containing data such as emails, usernames, hashed passwords, API tokens, and backend tickets.  
+假定 ID 参数是可信的，但直接来自客户端，无需清理。这会导致 SQL 注入，在该注入中，具有低权限或无权限的经过身份验证的用户可以检索敏感数据，例如从包含电子邮件、用户名、哈希密码、API 令牌和后端票证等数据的 `xi_session` 和 `xi_users` 表中检索敏感数据。
+```
+正如我们所看到的，只有当我们至少可以访问低特权用户时，此漏洞才有效。我们需要一种方法来测试它。
