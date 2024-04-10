@@ -813,6 +813,42 @@ HOP RTT       ADDRESS
 1   131.38 ms 10.10.14.1
 2   131.45 ms 10.129.37.231
 ```
+对于第一次Nmap扫描，扫描到了22 80 443端口，添加域名后访问其网络服务：
+![[Pasted image 20240410201557.png]]
+点击按钮，会进入到一个登录页，搜索Nagios XI，其是一个监控设备的软件，广泛使用。
+寻找围绕它的常见漏洞。经过快速搜索，我们找到了[这个](https://outpost24.com/blog/nagios-xi-vulnerabilities/)关于 Nagios XI CVE 的博客。CVE-2023-40931:
+```
+Nagios XI features “Announcement Banners”, which can optionally be acknowledged by users. The endpoint for this feature is vulnerable to a SQL Injection attack.  
+Nagios XI具有“公告横幅”功能，用户可以选择确认。此功能的终结点容易受到 SQL 注入攻击。
+
+When a user acknowledges a banner, a POST request is sent to `/nagiosxi/admin/banner_message-ajaxhelper.php` with the POST data consisting of the intended action and message ID – `action=acknowledge banner message&id=3`.  
+当用户确认横幅时，将向 `/nagiosxi/admin/banner_message-ajaxhelper.php` 发送 POST 请求，其中包含由预期操作和消息 ID – `action=acknowledge banner message&id=3` 组成的 POST 数据。
+
+The ID parameter is assumed to be trusted but comes directly from the client without sanitization. This leads to a SQL Injection where an authenticated user with low or no privileges can retrieve sensitive data, such as from the `xi_session` and `xi_users` table containing data such as emails, usernames, hashed passwords, API tokens, and backend tickets.  
+假定 ID 参数是可信的，但直接来自客户端，无需清理。这会导致 SQL 注入，在该注入中，具有低权限或无权限的经过身份验证的用户可以检索敏感数据，例如从包含电子邮件、用户名、哈希密码、API 令牌和后端票证等数据的 `xi_session` 和 `xi_users` 表中检索敏感数据。
+```
+正如我们所看到的，只有当我们至少可以访问低特权用户时，此漏洞才有效。我们需要一种方法来测试它。
+我已经运行了 `ffuf -u http://nagios.monitored.htb/nagiosxi/FUZZ -w /usr/share/wordlists/dirbuster/directory-list-1.0.txt` 来枚举端点，这就是我得到的：
+
+```
+help                    [Status: 301, Size: 338, Words: 20, Lines: 10, Duration: 139ms]
+mobile                  [Status: 301, Size: 340, Words: 20, Lines: 10, Duration: 136ms]
+images                  [Status: 301, Size: 340, Words: 20, Lines: 10, Duration: 137ms]
+about                   [Status: 301, Size: 339, Words: 20, Lines: 10, Duration: 135ms]
+admin                   [Status: 301, Size: 339, Words: 20, Lines: 10, Duration: 129ms]
+reports                 [Status: 301, Size: 341, Words: 20, Lines: 10, Duration: 136ms]
+includes                [Status: 301, Size: 342, Words: 20, Lines: 10, Duration: 130ms]
+sounds                  [Status: 403, Size: 286, Words: 20, Lines: 10, Duration: 134ms]
+account                 [Status: 301, Size: 341, Words: 20, Lines: 10, Duration: 136ms]
+tools                   [Status: 301, Size: 339, Words: 20, Lines: 10, Duration: 132ms]
+backend                 [Status: 301, Size: 341, Words: 20, Lines: 10, Duration: 136ms]
+config                  [Status: 301, Size: 340, Words: 20, Lines: 10, Duration: 134ms]
+views                   [Status: 301, Size: 339, Words: 20, Lines: 10, Duration: 136ms]
+db                      [Status: 301, Size: 336, Words: 20, Lines: 10, Duration: 137ms]
+api                     [Status: 301, Size: 337, Words: 20, Lines: 10, Duration: 134ms]
+terminal                [Status: 200, Size: 5215, Words: 1247, Lines: 124, Duration: 204ms]
+```
+目录扫描结果并没有给出任何有趣的结果，看看第二次Nmap扫描结果，是有关UDP的
 UDP:
 ```sh
 Host is up (0.14s latency).
@@ -835,18 +871,6 @@ PORT      STATE         SERVICE
 54281/udp open|filtered unknown
 65024/udp open|filtered unknown
 ```
-对于第一次Nmap扫描，扫描到了22 80 443端口，添加域名后访问其网络服务：
-![[Pasted image 20240410201557.png]]
-点击按钮，会进入到一个登录页，搜索Nagios XI，其是一个监控设备的软件，广泛使用。
-寻找围绕它的常见漏洞。经过快速搜索，我们找到了[这个](https://outpost24.com/blog/nagios-xi-vulnerabilities/)关于 Nagios XI CVE 的博客。CVE-2023-40931:
-```
-Nagios XI features “Announcement Banners”, which can optionally be acknowledged by users. The endpoint for this feature is vulnerable to a SQL Injection attack.  
-Nagios XI具有“公告横幅”功能，用户可以选择确认。此功能的终结点容易受到 SQL 注入攻击。
-
-When a user acknowledges a banner, a POST request is sent to `/nagiosxi/admin/banner_message-ajaxhelper.php` with the POST data consisting of the intended action and message ID – `action=acknowledge banner message&id=3`.  
-当用户确认横幅时，将向 `/nagiosxi/admin/banner_message-ajaxhelper.php` 发送 POST 请求，其中包含由预期操作和消息 ID – `action=acknowledge banner message&id=3` 组成的 POST 数据。
-
-The ID parameter is assumed to be trusted but comes directly from the client without sanitization. This leads to a SQL Injection where an authenticated user with low or no privileges can retrieve sensitive data, such as from the `xi_session` and `xi_users` table containing data such as emails, usernames, hashed passwords, API tokens, and backend tickets.  
-假定 ID 参数是可信的，但直接来自客户端，无需清理。这会导致 SQL 注入，在该注入中，具有低权限或无权限的经过身份验证的用户可以检索敏感数据，例如从包含电子邮件、用户名、哈希密码、API 令牌和后端票证等数据的 `xi_session` 和 `xi_users` 表中检索敏感数据。
-```
-正如我们所看到的，只有当我们至少可以访问低特权用户时，此漏洞才有效。我们需要一种方法来测试它。
+161 162运行了snmp服务，上面这个检测系统也是靠这个来运行的。
+新breakpoint!新工具！：我们使用snmpwalk来枚举snmp：
+snmp是一个协议，
