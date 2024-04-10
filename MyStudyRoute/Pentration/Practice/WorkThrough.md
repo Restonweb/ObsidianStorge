@@ -874,4 +874,13 @@ PORT      STATE         SERVICE
 161 162运行了snmp服务，上面这个检测系统也是靠这个来运行的。
 新breakpoint!新工具！：我们使用snmpwalk来枚举snmp：
 snmp是一个协议，**SNMP - Simple Network Management Protocol**简单网络管理协议是一种用于监控网络中不同设备（如路由器、交换机、打印机、物联网等）的协议。详见[[SNMP]]
-使用snmp
+使用snmpwalk:
+`snmpwalk -v VERSION IP OID`
+`snmpwalk -v 2c 10.10.11.248 system | tee snmpwalk.txt`
+可以看到输出内有命令在执行：
+```
+$ cat snmpwalk.txt | grep /bin/bash
+HOST-RESOURCES-MIB::hrSWRunPath.1383 = STRING: "/bin/bash"
+HOST-RESOURCES-MIB::hrSWRunParameters.588 = STRING: "-c sleep 30; sudo -u svc /bin/bash -c /opt/scripts/check_host.sh svc XjH7VCehowpR1xZB "
+HOST-RESOURCES-MIB::hrSWRunParameters.1382 = STRING: "-u svc /bin/bash -c /opt/scripts/check_host.sh svc XjH7VCehowpR1xZB"
+```
