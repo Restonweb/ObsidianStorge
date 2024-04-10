@@ -873,4 +873,5 @@ PORT      STATE         SERVICE
 ```
 161 162运行了snmp服务，上面这个检测系统也是靠这个来运行的。
 新breakpoint!新工具！：我们使用snmpwalk来枚举snmp：
-snmp是一个协议，
+snmp是一个协议，**SNMP - Simple Network Management Protocol**简单网络管理协议是一种用于监控网络中不同设备（如路由器、交换机、打印机、物联网等）的协议。详见[[SNMP]]
+使用snmp
