@@ -1,107 +1,45 @@
-## Parameters 参数
-### IPs to scan 要扫描的 IP
+##  参数
+###  要扫描的 IP
 
 - `**<ip>,<net/mask>**` ： 直接指示 ips
 - `**-iL <ips_file>**`**:** list_IPs  
-- `**-iR <number>**`: Number of random Ips, you can exclude possible Ips with `--exclude <Ips>` or `--excludefile <file>`.  
-    `**-iR <number>**` ：随机 IP 的数量，您可以使用 `--exclude <Ips>` 或 `--excludefile <file>` 排除可能的 Ips。
-    
+- `**-iR <number>**` ：随机 IP 的数量，您可以使用 `--exclude <Ips>` 或 `--excludefile <file>` 排除可能的 Ips。
+###  设备发现
 
-### 
-
-[](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/nmap-summary-esp#equipment-discovery)
-
-Equipment discovery 设备发现
-
-By default Nmap launches a discovery phase consisting of: `-PA80 -PS443 -PE -PP`  
 默认情况下，Nmap 启动一个发现阶段，包括： `-PA80 -PS443 -PE -PP`
 
-- `**-sL**`: It is not invasive, it lists the targets making **DNS** requests to resolve names. It is useful to know if for example www.prueba.es/24 all Ips are our targets.  
-    `**-sL**` ：它不是侵入性的，它列出了发出 DNS 请求以解析名称的目标。例如，了解 www.prueba.es/24 所有 Ip 是否都是我们的目标很有用。
-    
-- `**-Pn**`: **No ping**. This is useful if you know that all of them are active (if not, you could lose a lot of time, but this option also produces false negatives saying that they are not active), it prevents the discovery phase.  
-    `**-Pn**` ：没有 ping。如果您知道它们都处于活动状态（如果没有，您可能会浪费大量时间，但此选项也会产生误报，表明它们处于非活动状态），这将非常有用，它会阻止发现阶段。
-    
-- `**-sn**` : **No port scan**. After completing the reconnaissance phase, it does not scan ports. It is relatively stealthy, and allows a small network scan. With privileges it sends an ACK (-PA) to 80, a SYN(-PS) to 443 and an echo request and a Timestamp request, without privileges it always completes connections. If the target is the network, it only uses ARP(-PR). If used with another option, only the packets of the other option are dropped.  
-    `**-sn**` ：无端口扫描。完成侦察阶段后，它不会扫描端口。它相对隐蔽，并允许进行小型网络扫描。使用权限，它会向 80 发送 ACK （-PA），向 443 发送 SYN（-PS），以及 echo 请求和 Timestamp 请求，如果没有权限，它始终会完成连接。如果目标是网络，则仅使用 ARP（-PR）。如果与另一个选项一起使用，则仅丢弃另一个选项的数据包。
-    
-- `**-PR**`: **Ping ARP**. It is used by default when analyzing computers in our network, it is faster than using pings. If you do not want to use ARP packets use `--send-ip`.  
-    `**-PR**` ：Ping ARP。在分析我们网络中的计算机时默认使用它，它比使用 ping 更快。如果不想使用 ARP 数据包，请使用 `--send-ip` 。
-    
-- `**-PS <ports>**`: It sends SYN packets to which if it answers SYN/ACK it is open (to which it answers with RST so as not to end the connection), if it answers RST it is closed and if it does not answer it is unreachable. In case of not having privileges, a total connection is automatically used. If no ports are given, it throws it to 80.  
-    `**-PS <ports>**` ：它发送 SYN 数据包，如果它响应 SYN/ACK，则打开（它使用 RST 应答，以免结束连接），如果它响应 RST，则关闭，如果它不响应，则无法访问。在没有权限的情况下，将自动使用总连接。如果没有给出端口，它会将其抛出到 80。
-    
-- `**-PA <ports>**`: Like the previous one but with ACK, combining both of them gives better results.  
-    `**-PA <ports>**` ：与前一个类似，但使用 ACK，将它们结合起来可以获得更好的结果。
-    
-- `**-PU <ports>**`: The objective is the opposite, they are sent to ports that are expected to be closed. Some firewalls only check TCP connections. If it is closed it is answered with port unreachable, if it is answered with another icmp or not answered it is left as destination unreachable.  
-    `**-PU <ports>**` ：目标恰恰相反，它们被发送到预计会关闭的端口。某些防火墙仅检查 TCP 连接。如果它被关闭，则以无法访问的端口进行应答，如果用另一个 icmp 应答或未应答，则将其保留为无法访问的目标。
-    
-- `**-PE, -PP, -PM**` : ICMP PINGS: echo replay, timestamp and addresmask. They are launched to find out if the target is active.  
-    `**-PE, -PP, -PM**` ：ICMP PINGS：回声回放、时间戳和添加掩码。启动它们以找出目标是否处于活动状态。
-    
-- `**-PY<ports>**`: Sends SCTP INIT probes to 80 by default, INIT-ACK(open) or ABORT(closed) or nothing or ICMP unreachable(inactive) can be replied.  
-    `**-PY<ports>**` ：默认情况下向 80 发送 SCTP INIT 探测，可以回复 INIT-ACK（open） 或 ABORT（closed） 或 nothing 或 ICMP unreachable（inactive）。
-    
-- `**-PO <protocols>**`: A protocol is indicated in the headers, by default 1(ICMP), 2(IGMP) and 4(Encap IP). For ICMP, IGMP, TCP (6) and UDP (17) protocols the protocol headers are sent, for the rest only the IP header is sent. The purpose of this is that due to the malformation of the headers, Protocol unreachable or responses of the same protocol are answered to know if it is up.  
-    `**-PO <protocols>**` ：默认情况下，标头中指示协议 1（ICMP）、2（IGMP） 和 4（Encap IP）。对于 ICMP、IGMP、TCP （6） 和 UDP （17） 协议，将发送协议报头，其余协议仅发送 IP 报头。这样做的目的是，由于标头的畸形，无法访问协议或同一协议的响应被应答，以了解它是否已启动。
-    
-- `**-n**`: No DNS  `**-n**` ： 无DNS
-    
-- `**-R**`: DNS always  `**-R**` ： DNS 始终
-    
+- `-sL` ：它不是侵入性的，它列出了发出 DNS 请求以解析名称的目标。例如，了解 www.prueba.es/24 所有 Ip 是否都是我们的目标很有用。
+- `-Pn` ：没有 ping。如果您知道它们都处于活动状态（如果没有，您可能会浪费大量时间，但此选项也会产生误报，表明它们处于非活动状态），这将非常有用，它会阻止发现阶段。
+- `-sn` ：无端口扫描。完成侦察阶段后，它不会扫描端口。它相对隐蔽，并允许进行小型网络扫描。使用权限，它会向 80 发送 ACK （-PA），向 443 发送 SYN（-PS），以及 echo 请求和 Timestamp 请求，如果没有权限，它始终会完成连接。如果目标是网络，则仅使用 ARP（-PR）。如果与另一个选项一起使用，则仅丢弃另一个选项的数据包。
+- `-PR` ：Ping ARP。在分析我们网络中的计算机时默认使用它，它比使用 ping 更快。如果不想使用 ARP 数据包，请使用 `--send-ip` 。
+- `-PS <ports>` ：它发送 SYN 数据包，如果它响应 SYN/ACK，则打开（它使用 RST 应答，以免结束连接），如果它响应 RST，则关闭，如果它不响应，则无法访问。在没有权限的情况下，将自动使用总连接。如果没有给出端口，它会将其抛出到 80。
+- `-PA <ports>` ：与前一个类似，但使用 ACK，将它们结合起来可以获得更好的结果。
+- `-PU <ports>` ：目标恰恰相反，它们被发送到预计会关闭的端口。某些防火墙仅检查 TCP 连接。如果它被关闭，则以无法访问的端口进行应答，如果用另一个 icmp 应答或未应答，则将其保留为无法访问的目标。
+- `-PE, -PP, -PM` ：ICMP PINGS：回声回放、时间戳和添加掩码。启动它们以找出目标是否处于活动状态。
+- `-PY<ports>` ：默认情况下向 80 发送 SCTP INIT 探测，可以回复 INIT-ACK（open） 或 ABORT（closed） 或 nothing 或 ICMP unreachable（inactive）。
+- `-PO <protocols>` ：默认情况下，标头中指示协议 1（ICMP）、2（IGMP） 和 4（Encap IP）。对于 ICMP、IGMP、TCP （6） 和 UDP （17） 协议，将发送协议报头，其余协议仅发送 IP 报头。这样做的目的是，由于标头的畸形，无法访问协议或同一协议的响应被应答，以了解它是否已启动。
+- `-n` ： 无DNS
+- `-R` ： 始终使用DNS解析
+### 端口扫描技术
 
-### 
-
-[](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/nmap-summary-esp#port-scanning-techniques)
-
-Port scanning techniques 端口扫描技术
-
-- `**-sS**`: Does not complete the connection so it leaves no trace, very good if it can be used.(privileges) It is the one used by default.  
-    `**-sS**` ：连接不完整，所以不留痕迹，如果能用就好了。（特权）它是默认使用的那个。
-    
-- `**-sT**`: Completes the connection, so it does leave a trace, but it can be used for sure. By default without privileges.  
-    `**-sT**` ：完成连接，因此会留下痕迹，但可以肯定地使用。默认情况下没有权限。
-    
-- `**-sU**`: Slower, for UDP. Mostly: DNS(53), SNMP(161,162), DHCP(67 and 68), (-sU53,161,162,67,68): open(reply), closed(port unreachable), filtered (another ICMP), open/filtered (nothing). In case of open/filtered, -sV sends numerous requests to detect any of the versions that nmap supports and can detect the true state. It increases a lot the time.  
-    `**-sU**` ：较慢，对于 UDP。大多数：DNS（53）、SNMP（161,162）、DHCP（67 和 68）、（-sU53,161,162,67,68）：打开（回复）、关闭（端口无法访问）、过滤（另一个 ICMP）、打开/过滤（无）。在打开/过滤的情况下，-sV 会发送大量请求来检测 nmap 支持的任何版本，并可以检测真实状态。它增加了很多时间。
-    
-- `**-sY**`: SCTP protocol fails to establish the connection, so there are no logs, works like -PY  
-    `**-sY**` ：SCTP协议无法建立连接，因此没有日志，工作方式类似于-PY
-    
-- `**-sN,-sX,-sF**`**:** Null, Fin, Xmas, they can penetrate some firewalls and extract information. They are based on the fact that standard compliant machines should respond with RST all requests that do not have SYN, RST or ACK lags raised: open/filtered(nothing), closed(RST), filtered (ICMP unreachable). Unreliable on WIndows, CIsco, BSDI and OS/400. On unix yes.  
-    `**-sN,-sX,-sF**` ： Null、Fin、Xmas，它们可以穿透一些防火墙并提取信息。它们基于这样一个事实，即符合标准的计算机应使用 RST 响应所有未引发 SYN、RST 或 ACK 滞后的请求：open/filtered（无）、closed（RST）、filtered（ICMP 无法访问）。在 WIndows、CIsco、BSDI 和 OS/400 上不可靠。在 unix 上是的。
-    
-- `**-sM**`: Maimon scan: Sends FIN and ACK flags, used for BSD, currently will return all as closed.  
-    `**-sM**` ： Maimon scan：发送用于 BSD 的 FIN 和 ACK 标志，目前将返回所有已关闭的标记。
-    
-- `**-sA, sW**`: ACK and Window, is used to detect firewalls, to know if the ports are filtered or not. The -sW does distinguish between open/closed since the open ones respond with a different window value: open (RST with window other than 0), closed (RST window = 0), filtered (ICMP unreachable or nothing). Not all computers work this way, so if it is all closed, it is not working, if it is a few open, it is working fine, and if it is many open and few closed, it is working the other way around.  
-    `**-sA, sW**` ： ACK 和 Window，用于检测防火墙，以了解端口是否被过滤。-sW 确实区分了打开/关闭，因为打开的窗口响应不同的窗口值：打开（窗口不是 0 的 RST）、关闭（RST 窗口 = 0）、过滤（ICMP 无法访问或什么都没有）。并非所有计算机都以这种方式工作，因此，如果它全部关闭，则无法工作，如果它是少数打开的，则工作正常，如果它是许多打开的，则很少关闭，则相反。
-    
-- `**-sI**`**:** Idle scan. For the cases in which there is an active firewall but we know that it does not filter to a certain Ip (or when we simply want anonymity) we can use the zombie scanner (it works for all the ports), to look for possible zombies we can use the scrpit ipidseq or the exploit auxiliary/scanner/ip/ipidseq. This scanner is based on the IPID number of the IP packets.  
-    `**-sI**` ：空闲扫描。对于存在活动防火墙但我们知道它不会过滤到某个 IP（或者当我们只是想要匿名）的情况下，我们可以使用僵尸扫描程序（它适用于所有端口），以查找可能的僵尸，我们可以使用 scrpit ipidseq 或漏洞利用辅助/扫描仪/ip/ipidseq。此扫描程序基于 IP 数据包的 IPID 编号。
-    
-- `**--badsum**`**:** It sends the sum wrong, the computers would discard the packets, but the firewalls could answer something, it is used to detect firewalls.  
-    `**--badsum**` ：它发送了错误的总和，计算机会丢弃数据包，但防火墙可以回答一些事情，它用于检测防火墙。
-    
-- `**-sZ**`**:** "Weird" SCTP scanner, when sending probes with cookie echo fragments they should be dropped if open or responded with ABORT if closed. It can pass through firewalls that init does not pass through, the bad thing is that it does not distinguish between filtered and open.  
-    `**-sZ**` ： “奇怪的”SCTP 扫描仪，当发送带有 cookie 回波片段的探针时，如果打开，则应丢弃它们，如果关闭，则应使用 ABORT 响应。它可以通过init无法通过的防火墙，不好的是它不区分过滤和开放。
-    
+- `-sS` ：SYN半连接，所以不留痕迹，如果能用就好了（其需要管理员特权）它是默认使用的那个。
+- `-sT` ：完成TCP连接，因此会留下痕迹，但可以肯定地使用。默认情况下无需权限。
+- `-sU` ：较慢，对于 UDP。大多数：DNS（53）、SNMP（161,162）、DHCP（67 和 68）、（-sU53,161,162,67,68）：打开（回复）、关闭（端口无法访问）、过滤（另一个 ICMP）、打开/过滤（无）。在打开/过滤的情况下，-sV 会发送大量请求来检测 nmap 支持的任何版本，并可以检测真实状态。它增加了很多时间。
+- `-sY` ：SCTP协议无法建立连接，因此没有日志，工作方式类似于-PY
+- `-sN,-sX,-sF` ： Null、Fin、Xmas，它们可以穿透一些防火墙并提取信息。它们基于这样一个事实，即符合标准的计算机应使用 RST 响应所有未引发 SYN、RST 或 ACK 滞后的请求：open/filtered（无）、closed（RST）、filtered（ICMP 无法访问）。在 WIndows、CIsco、BSDI 和 OS/400 上不可靠。在 unix 上是这样的。
+- `-sM` ： Maimon scan：发送用于 BSD 的 FIN 和 ACK 标志，目前将返回所有已关闭的标记。
+- `-sA, sW` ： ACK 和 Window，用于检测防火墙，以了解端口是否被过滤。-sW 确实区分了打开/关闭，因为打开的窗口响应不同的窗口值：打开（窗口不是 0 的 RST）、关闭（RST 窗口 = 0）、过滤（ICMP 无法访问或什么都没有）。并非所有计算机都以这种方式工作，因此，如果它全部关闭，则无法工作，如果它是少数打开的，则工作正常，如果它是许多打开的，则很少关闭，则相反。
+- `-sI` ：空闲扫描。对于存在活动防火墙但我们知道它不会过滤到某个 IP（或者当我们只是想要匿名）的情况下，我们可以使用僵尸扫描程序（它适用于所有端口），以查找可能的僵尸，我们可以使用 scrpit ipidseq 或漏洞利用辅助/扫描仪/ip/ipidseq。此扫描程序基于 IP 数据包的 IPID 编号。
+- `--badsum` ：它发送了错误的包，计算机会丢弃数据包，但防火墙可以回答一些事情，它用于检测防火墙。
+- `-sZ`: "Weird" SCTP scanner, when sending probes with cookie echo fragments they should be dropped if open or responded with ABORT if closed. It can pass through firewalls that init does not pass through, the bad thing is that it does not distinguish between filtered and open.  
+    “奇怪的”SCTP 扫描仪，当发送带有 cookie 回波片段的探针时，如果打开，则应丢弃它们，如果关闭，则应使用 ABORT 响应。它可以通过init无法通过的防火墙，不好的是它不区分过滤和开放。
 - `**-sO**`**:** Protocol Ip scan. Sends bad and empty headers in which sometimes not even the protocol can be distinguished. If ICMP unreachable protocol arrives it is closed, if unreachable port arrives it is open, if another error arrives, filtered, if nothing arrives, open|filtered.  
     `**-sO**` ：协议 IP 扫描。发送错误和空的标头，有时甚至无法区分协议。如果 ICMP 无法访问的协议到达，则关闭，如果无法访问的端口到达，则打开，如果另一个错误到达，则过滤，如果未到达，则打开|过滤。
-    
-- `**-b <server>**`**:** FTPhost--> It is used to scan a host from another one, this is done by connecting the ftp of another machine and asking it to send files to the ports that you want to scan from another machine, according to the answers we will know if they are open or not. [<user>:<password>@]<server>[:<port>] Almost all ftps servers no longer let you do this and therefore it is of little practical use.  
-    `**-b <server>**` ： FTPhost--> 它用于从另一台主机扫描主机，这是通过连接另一台机器的 ftp 并要求它将文件发送到要从另一台机器扫描的端口来完成的，根据答案，我们将知道它们是否打开。 [<user><password>：@]<server>[：<port>] 几乎所有的 ftps 服务器都不再允许您这样做，因此它几乎没有实际用处。
-    
+- `**-b <server>**`: FTPhost--> It is used to scan a host from another one, this is done by connecting the ftp of another machine and asking it to send files to the ports that you want to scan from another machine, according to the answers we will know if they are open or not.` [<user>:<password>@]<server>[:<port>]` Almost all ftps servers no longer let you do this and therefore it is of little practical use.  
+    `**-b <server>**` ： FTPhost--> 它用于从另一台主机扫描主机，这是通过连接另一台机器的 ftp 并要求它将文件发送到要从另一台机器扫描的端口来完成的，根据答案，我们将知道它们是否打开。` [<user><password>：@]<server>[：<port>]` 几乎所有的 ftps 服务器都不再允许您这样做，因此它几乎没有实际用处。
 
-### 
-
-[](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/nmap-summary-esp#centrar-analisis)
-
-**Centrar análisis 焦点分析**
-
-**-p:** Sirve para dar los puertos a escanear. Para seleccionar los 65335: **-p-** o **-p all**. Nmap tiene una clasificaación interna según su popularidad. Por defecto usa los 1000 ppales. Con **-F** (fast scan) analiza los 100 ppales. Con **--top-ports <numero>** Analiza ese numero de ppales (de 1 hasta los 65335). Comprueba los puertos en orden aleatorio, para que eso no pase **-r**. También podemos seleccionar puertos: 20-30,80,443,1024- Esto ultimo significa que mire en adelante del 1024. También podemos agrupar los puertos por protocolos: U:53,T:21-25,80,139,S:9. También podemos escoger un rango dentro de los puertos populares de nmap: -p [-1024] analiza hasta el 1024 de los incluidos en nmap-services. **--port-ratio <ratio>** Analiza los puertos más comúnes que un ratio que debe estar entre 0 y 1  
--p：用于提供要扫描的端口。要选择 65335：-p- 或 -p 全部。Nmap 有一个基于其受欢迎程度的内部排名。默认情况下，使用 1000 页。使用 -F（快速扫描）分析 100 页。使用 --top-ports <numero> 分析该端口数（从 1 到 65335）。以随机顺序检查端口，这样就不会发生 -r。我们还可以选择端口：20-30,80,443,1024-后者表示期待1024。我们还可以按协议对端口进行分组：U：53，T：21-25,80,139，S：9。我们还可以在流行的 nmap 端口中选择一个范围： -p [-1024] 解析 nmap-services 中包含的 1024 个端口。 --port-ratio <ratio> 分析比率应介于 0 和 1 之间的最常见端口
+### 焦点分析
+-p：用于提供要扫描的端口。要选择 65335：-p- 或 -p 全部。Nmap 有一个基于其受欢迎程度的内部排名。默认情况下，使用 1000 页。使用 -F（快速扫描）分析 100 页。使用 `--top-ports <numero>` 分析该端口数（从 1 到 65335）。以随机顺序检查端口，这样就不会发生 -r。我们还可以选择端口：20-30,80,443,1024-后者表示期待1024。我们还可以按协议对端口进行分组：U：53，T：21-25,80,139，S：9。我们还可以在流行的 nmap 端口中选择一个范围： -p [-1024] 解析 nmap-services 中包含的 1024 个端口。 --port-ratio <ratio> 分析比率应介于 0 和 1 之间的最常见端口
 
 **-sV** Escaneado de versión, se puede regular la intensidad de 0 a 9, por defecto 7.  
 -sV 扫描版，可以调节强度从 0 到 9，默认为 7。
