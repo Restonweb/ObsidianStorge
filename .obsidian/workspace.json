@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md"
+                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md"
               }
             }
           }
@@ -134,7 +135,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 341.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,6 +150,8 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/Active Directory.md",
+    "MyStudyRoute/Pentration/基本渗透测试流程.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/SNMP.md",
     "MyStudyRoute/Pentration/Socat.md",
@@ -158,7 +162,6 @@
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/Netcat.md",
@@ -180,7 +183,6 @@
     "MyStudyRoute/Pentration/Document/pte.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
-    "未命名.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf.crdownload",
     "Pasted image 20240408180108.png",
     "Pasted image 20240408175518.png",
