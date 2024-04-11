@@ -1,7 +1,417 @@
-![[Pasted image 20231202155840.png]]
-![[Pasted image 20231202155612.png]]
-![[Pasted image 20231202155632.png]]
-![[Pasted image 20231202163116.png]]
-![[Pasted image 20231202173210.png]]
-![[Pasted image 20231202173230.png]]
-![[Pasted image 20231202221807.png]]
+## Parameters 参数
+### IPs to scan 要扫描的 IP
+
+- `**<ip>,<net/mask>**` ： 直接指示 ips
+- `**-iL <ips_file>**`**:** list_IPs  
+- `**-iR <number>**`: Number of random Ips, you can exclude possible Ips with `--exclude <Ips>` or `--excludefile <file>`.  
+    `**-iR <number>**` ：随机 IP 的数量，您可以使用 `--exclude <Ips>` 或 `--excludefile <file>` 排除可能的 Ips。
+    
+
+### 
+
+[](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/nmap-summary-esp#equipment-discovery)
+
+Equipment discovery 设备发现
+
+By default Nmap launches a discovery phase consisting of: `-PA80 -PS443 -PE -PP`  
+默认情况下，Nmap 启动一个发现阶段，包括： `-PA80 -PS443 -PE -PP`
+
+- `**-sL**`: It is not invasive, it lists the targets making **DNS** requests to resolve names. It is useful to know if for example www.prueba.es/24 all Ips are our targets.  
+    `**-sL**` ：它不是侵入性的，它列出了发出 DNS 请求以解析名称的目标。例如，了解 www.prueba.es/24 所有 Ip 是否都是我们的目标很有用。
+    
+- `**-Pn**`: **No ping**. This is useful if you know that all of them are active (if not, you could lose a lot of time, but this option also produces false negatives saying that they are not active), it prevents the discovery phase.  
+    `**-Pn**` ：没有 ping。如果您知道它们都处于活动状态（如果没有，您可能会浪费大量时间，但此选项也会产生误报，表明它们处于非活动状态），这将非常有用，它会阻止发现阶段。
+    
+- `**-sn**` : **No port scan**. After completing the reconnaissance phase, it does not scan ports. It is relatively stealthy, and allows a small network scan. With privileges it sends an ACK (-PA) to 80, a SYN(-PS) to 443 and an echo request and a Timestamp request, without privileges it always completes connections. If the target is the network, it only uses ARP(-PR). If used with another option, only the packets of the other option are dropped.  
+    `**-sn**` ：无端口扫描。完成侦察阶段后，它不会扫描端口。它相对隐蔽，并允许进行小型网络扫描。使用权限，它会向 80 发送 ACK （-PA），向 443 发送 SYN（-PS），以及 echo 请求和 Timestamp 请求，如果没有权限，它始终会完成连接。如果目标是网络，则仅使用 ARP（-PR）。如果与另一个选项一起使用，则仅丢弃另一个选项的数据包。
+    
+- `**-PR**`: **Ping ARP**. It is used by default when analyzing computers in our network, it is faster than using pings. If you do not want to use ARP packets use `--send-ip`.  
+    `**-PR**` ：Ping ARP。在分析我们网络中的计算机时默认使用它，它比使用 ping 更快。如果不想使用 ARP 数据包，请使用 `--send-ip` 。
+    
+- `**-PS <ports>**`: It sends SYN packets to which if it answers SYN/ACK it is open (to which it answers with RST so as not to end the connection), if it answers RST it is closed and if it does not answer it is unreachable. In case of not having privileges, a total connection is automatically used. If no ports are given, it throws it to 80.  
+    `**-PS <ports>**` ：它发送 SYN 数据包，如果它响应 SYN/ACK，则打开（它使用 RST 应答，以免结束连接），如果它响应 RST，则关闭，如果它不响应，则无法访问。在没有权限的情况下，将自动使用总连接。如果没有给出端口，它会将其抛出到 80。
+    
+- `**-PA <ports>**`: Like the previous one but with ACK, combining both of them gives better results.  
+    `**-PA <ports>**` ：与前一个类似，但使用 ACK，将它们结合起来可以获得更好的结果。
+    
+- `**-PU <ports>**`: The objective is the opposite, they are sent to ports that are expected to be closed. Some firewalls only check TCP connections. If it is closed it is answered with port unreachable, if it is answered with another icmp or not answered it is left as destination unreachable.  
+    `**-PU <ports>**` ：目标恰恰相反，它们被发送到预计会关闭的端口。某些防火墙仅检查 TCP 连接。如果它被关闭，则以无法访问的端口进行应答，如果用另一个 icmp 应答或未应答，则将其保留为无法访问的目标。
+    
+- `**-PE, -PP, -PM**` : ICMP PINGS: echo replay, timestamp and addresmask. They are launched to find out if the target is active.  
+    `**-PE, -PP, -PM**` ：ICMP PINGS：回声回放、时间戳和添加掩码。启动它们以找出目标是否处于活动状态。
+    
+- `**-PY<ports>**`: Sends SCTP INIT probes to 80 by default, INIT-ACK(open) or ABORT(closed) or nothing or ICMP unreachable(inactive) can be replied.  
+    `**-PY<ports>**` ：默认情况下向 80 发送 SCTP INIT 探测，可以回复 INIT-ACK（open） 或 ABORT（closed） 或 nothing 或 ICMP unreachable（inactive）。
+    
+- `**-PO <protocols>**`: A protocol is indicated in the headers, by default 1(ICMP), 2(IGMP) and 4(Encap IP). For ICMP, IGMP, TCP (6) and UDP (17) protocols the protocol headers are sent, for the rest only the IP header is sent. The purpose of this is that due to the malformation of the headers, Protocol unreachable or responses of the same protocol are answered to know if it is up.  
+    `**-PO <protocols>**` ：默认情况下，标头中指示协议 1（ICMP）、2（IGMP） 和 4（Encap IP）。对于 ICMP、IGMP、TCP （6） 和 UDP （17） 协议，将发送协议报头，其余协议仅发送 IP 报头。这样做的目的是，由于标头的畸形，无法访问协议或同一协议的响应被应答，以了解它是否已启动。
+    
+- `**-n**`: No DNS  `**-n**` ： 无DNS
+    
+- `**-R**`: DNS always  `**-R**` ： DNS 始终
+    
+
+### 
+
+[](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/nmap-summary-esp#port-scanning-techniques)
+
+Port scanning techniques 端口扫描技术
+
+- `**-sS**`: Does not complete the connection so it leaves no trace, very good if it can be used.(privileges) It is the one used by default.  
+    `**-sS**` ：连接不完整，所以不留痕迹，如果能用就好了。（特权）它是默认使用的那个。
+    
+- `**-sT**`: Completes the connection, so it does leave a trace, but it can be used for sure. By default without privileges.  
+    `**-sT**` ：完成连接，因此会留下痕迹，但可以肯定地使用。默认情况下没有权限。
+    
+- `**-sU**`: Slower, for UDP. Mostly: DNS(53), SNMP(161,162), DHCP(67 and 68), (-sU53,161,162,67,68): open(reply), closed(port unreachable), filtered (another ICMP), open/filtered (nothing). In case of open/filtered, -sV sends numerous requests to detect any of the versions that nmap supports and can detect the true state. It increases a lot the time.  
+    `**-sU**` ：较慢，对于 UDP。大多数：DNS（53）、SNMP（161,162）、DHCP（67 和 68）、（-sU53,161,162,67,68）：打开（回复）、关闭（端口无法访问）、过滤（另一个 ICMP）、打开/过滤（无）。在打开/过滤的情况下，-sV 会发送大量请求来检测 nmap 支持的任何版本，并可以检测真实状态。它增加了很多时间。
+    
+- `**-sY**`: SCTP protocol fails to establish the connection, so there are no logs, works like -PY  
+    `**-sY**` ：SCTP协议无法建立连接，因此没有日志，工作方式类似于-PY
+    
+- `**-sN,-sX,-sF**`**:** Null, Fin, Xmas, they can penetrate some firewalls and extract information. They are based on the fact that standard compliant machines should respond with RST all requests that do not have SYN, RST or ACK lags raised: open/filtered(nothing), closed(RST), filtered (ICMP unreachable). Unreliable on WIndows, CIsco, BSDI and OS/400. On unix yes.  
+    `**-sN,-sX,-sF**` ： Null、Fin、Xmas，它们可以穿透一些防火墙并提取信息。它们基于这样一个事实，即符合标准的计算机应使用 RST 响应所有未引发 SYN、RST 或 ACK 滞后的请求：open/filtered（无）、closed（RST）、filtered（ICMP 无法访问）。在 WIndows、CIsco、BSDI 和 OS/400 上不可靠。在 unix 上是的。
+    
+- `**-sM**`: Maimon scan: Sends FIN and ACK flags, used for BSD, currently will return all as closed.  
+    `**-sM**` ： Maimon scan：发送用于 BSD 的 FIN 和 ACK 标志，目前将返回所有已关闭的标记。
+    
+- `**-sA, sW**`: ACK and Window, is used to detect firewalls, to know if the ports are filtered or not. The -sW does distinguish between open/closed since the open ones respond with a different window value: open (RST with window other than 0), closed (RST window = 0), filtered (ICMP unreachable or nothing). Not all computers work this way, so if it is all closed, it is not working, if it is a few open, it is working fine, and if it is many open and few closed, it is working the other way around.  
+    `**-sA, sW**` ： ACK 和 Window，用于检测防火墙，以了解端口是否被过滤。-sW 确实区分了打开/关闭，因为打开的窗口响应不同的窗口值：打开（窗口不是 0 的 RST）、关闭（RST 窗口 = 0）、过滤（ICMP 无法访问或什么都没有）。并非所有计算机都以这种方式工作，因此，如果它全部关闭，则无法工作，如果它是少数打开的，则工作正常，如果它是许多打开的，则很少关闭，则相反。
+    
+- `**-sI**`**:** Idle scan. For the cases in which there is an active firewall but we know that it does not filter to a certain Ip (or when we simply want anonymity) we can use the zombie scanner (it works for all the ports), to look for possible zombies we can use the scrpit ipidseq or the exploit auxiliary/scanner/ip/ipidseq. This scanner is based on the IPID number of the IP packets.  
+    `**-sI**` ：空闲扫描。对于存在活动防火墙但我们知道它不会过滤到某个 IP（或者当我们只是想要匿名）的情况下，我们可以使用僵尸扫描程序（它适用于所有端口），以查找可能的僵尸，我们可以使用 scrpit ipidseq 或漏洞利用辅助/扫描仪/ip/ipidseq。此扫描程序基于 IP 数据包的 IPID 编号。
+    
+- `**--badsum**`**:** It sends the sum wrong, the computers would discard the packets, but the firewalls could answer something, it is used to detect firewalls.  
+    `**--badsum**` ：它发送了错误的总和，计算机会丢弃数据包，但防火墙可以回答一些事情，它用于检测防火墙。
+    
+- `**-sZ**`**:** "Weird" SCTP scanner, when sending probes with cookie echo fragments they should be dropped if open or responded with ABORT if closed. It can pass through firewalls that init does not pass through, the bad thing is that it does not distinguish between filtered and open.  
+    `**-sZ**` ： “奇怪的”SCTP 扫描仪，当发送带有 cookie 回波片段的探针时，如果打开，则应丢弃它们，如果关闭，则应使用 ABORT 响应。它可以通过init无法通过的防火墙，不好的是它不区分过滤和开放。
+    
+- `**-sO**`**:** Protocol Ip scan. Sends bad and empty headers in which sometimes not even the protocol can be distinguished. If ICMP unreachable protocol arrives it is closed, if unreachable port arrives it is open, if another error arrives, filtered, if nothing arrives, open|filtered.  
+    `**-sO**` ：协议 IP 扫描。发送错误和空的标头，有时甚至无法区分协议。如果 ICMP 无法访问的协议到达，则关闭，如果无法访问的端口到达，则打开，如果另一个错误到达，则过滤，如果未到达，则打开|过滤。
+    
+- `**-b <server>**`**:** FTPhost--> It is used to scan a host from another one, this is done by connecting the ftp of another machine and asking it to send files to the ports that you want to scan from another machine, according to the answers we will know if they are open or not. [<user>:<password>@]<server>[:<port>] Almost all ftps servers no longer let you do this and therefore it is of little practical use.  
+    `**-b <server>**` ： FTPhost--> 它用于从另一台主机扫描主机，这是通过连接另一台机器的 ftp 并要求它将文件发送到要从另一台机器扫描的端口来完成的，根据答案，我们将知道它们是否打开。 [<user><password>：@]<server>[：<port>] 几乎所有的 ftps 服务器都不再允许您这样做，因此它几乎没有实际用处。
+    
+
+### 
+
+[](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/nmap-summary-esp#centrar-analisis)
+
+**Centrar análisis 焦点分析**
+
+**-p:** Sirve para dar los puertos a escanear. Para seleccionar los 65335: **-p-** o **-p all**. Nmap tiene una clasificaación interna según su popularidad. Por defecto usa los 1000 ppales. Con **-F** (fast scan) analiza los 100 ppales. Con **--top-ports <numero>** Analiza ese numero de ppales (de 1 hasta los 65335). Comprueba los puertos en orden aleatorio, para que eso no pase **-r**. También podemos seleccionar puertos: 20-30,80,443,1024- Esto ultimo significa que mire en adelante del 1024. También podemos agrupar los puertos por protocolos: U:53,T:21-25,80,139,S:9. También podemos escoger un rango dentro de los puertos populares de nmap: -p [-1024] analiza hasta el 1024 de los incluidos en nmap-services. **--port-ratio <ratio>** Analiza los puertos más comúnes que un ratio que debe estar entre 0 y 1  
+-p：用于提供要扫描的端口。要选择 65335：-p- 或 -p 全部。Nmap 有一个基于其受欢迎程度的内部排名。默认情况下，使用 1000 页。使用 -F（快速扫描）分析 100 页。使用 --top-ports <numero> 分析该端口数（从 1 到 65335）。以随机顺序检查端口，这样就不会发生 -r。我们还可以选择端口：20-30,80,443,1024-后者表示期待1024。我们还可以按协议对端口进行分组：U：53，T：21-25,80,139，S：9。我们还可以在流行的 nmap 端口中选择一个范围： -p [-1024] 解析 nmap-services 中包含的 1024 个端口。 --port-ratio <ratio> 分析比率应介于 0 和 1 之间的最常见端口
+
+**-sV** Escaneado de versión, se puede regular la intensidad de 0 a 9, por defecto 7.  
+-sV 扫描版，可以调节强度从 0 到 9，默认为 7。
+
+**--version-intensity <numero>** Regulamos la intensidad, de forma que cuanto más bajo solo lanzará las sondas más probables, pero no todas. Con esto podemos acortar considerablemente el tiempo de escaneo UDP  
+--version-intensity <numero> 我们调节强度，因此强度越低，它只会发射最有可能的探测器，而不是所有探测器。这样，我们可以大大缩短UDP扫描时间
+
+**-O** Deteccion de os - 奥斯的解剖
+
+**--osscan-limit** Para escanear bien un host se necesita que al menos haya 1 puerto abierto y otro cerrado, si no se da esta condición y hemos puesto esto, no intenta hacer predicción de os (ahorra tiempo)  
+--osscan-limit 要很好地扫描主机，您至少需要打开 1 个端口并关闭一个端口，如果不满足此条件并且我们已经放置了这个，它不会尝试进行操作系统预测（节省时间）
+
+**--osscan-guess** Cuando la detección de os no es perfecta esto hace que se esfuerce más  
+--osscan-guess 当 os 检测不完美时，这会让你更加努力
+
+**Scripts 脚本**
+
+--script _<filename>_|_<category>_|_<directory>_|_<expression>_[,...]  
+--脚本 <filename>|<category>|<directory>|<expression>[,...]
+
+Para usar los de por efecto vale con -sC o --script=default  
+使用 by 效果对 -sC 或 --script=default 有效
+
+Los tipos que hay son de: auth, broadcast, default, discovery, dos, exploit, external, fuzzer, intrusive, malware, safe, version, and vuln  
+Los tipos que hay son de： auth， broadcast， default， discovery， dos， exploit， external， fuzzer， intrusive， malware， safe， version， and vuln
+
+- **Auth:** ejecuta todos sus _scripts_ disponibles para autenticación  
+    身份验证：运行所有可用的脚本进行身份验证
+    
+- **Default:** ejecuta los _scripts_ básicos por defecto de la herramienta  
+    默认值：运行工具的基本默认脚本
+    
+- **Discovery:** recupera información del _target_ o víctima  
+    发现：从目标或受害者那里检索信息
+    
+- **External:** _script_ para utilizar recursos externos  
+    外部：使用外部资源的脚本
+    
+- **Intrusive:** utiliza _scripts_ que son considerados intrusivos para la víctima o _target_  
+    侵入性：使用被认为对受害者或目标具有侵入性的脚本
+    
+- **Malware:** revisa si hay conexiones abiertas por códigos maliciosos o _backdoors_ (puertas traseras)  
+    恶意软件：检查恶意代码或后门打开的连接
+    
+- **Safe:** ejecuta _scripts_ que no son intrusivos  
+    安全：运行非侵入式脚本
+    
+- **Vuln:** descubre las vulnerabilidades más conocidas  
+    Vuln：发现最知名的漏洞
+    
+- **All:** ejecuta absolutamente todos los _scripts_ con extensión NSE disponibles  
+    全部：绝对运行所有可用的 NSE 扩展脚本
+    
+
+Para buscar scripts: 要搜索脚本，请执行以下操作：
+
+**nmap --script-help="http-*" -> Los que empiecen por http-  
+nmap --script-help=“http-*” -> 以 http- 开头的那些**
+
+**nmap --script-help="not intrusive" -> Todos menos esos  
+nmap --script-help=“非侵入性” -> 除了那些之外的所有**
+
+**nmap --script-help="default or safe" -> Los que estan en uno o en otro o en ambos  
+nmap --script-help=“default or safe” -> 其中一个或另一个或两者兼而有之**
+
+**nmap --script-help="default and safe" --> Los que estan en ambos  
+nmap --script-help=“default and safe” --> 两者中的那个**
+
+**nmap --script-help="(default or safe or intrusive) and not http-*"  
+nmap --script-help=“（默认或安全或侵入式）而不是 http-*”**
+
+--script-args _<n1>_=_<v1>_,_<n2>_={_<n3>_=_<v3>_},_<n4>_={_<v4>_,_<v5>_}  
+--script-args <n1>=<v1>，<n2>={<n3>=<v3>}，<n4>={<v4>，<v5>}
+
+--script-args-file _<filename>_ --script-args-文件<filename>
+
+--script-help _<filename>_|_<category>_|_<directory>_|_<expression>_|all[,...]  
+--脚本帮助 <filename>|<category>|<directory>|<expression>|全部[,...]
+
+--script-trace ---> Da info de como va elscript  
+--script-trace ---> da info de como va elscript
+
+--script-updatedb --脚本更新数据库
+
+**Para usar un script solo hay que poner: namp --script Nombre_del_script objetivo** --> Al poner el script se ejecutará tanto el script como el escaner, asi que tambien se pueden poner opciones del escaner, podemos añadir **“safe=1”** para que se ejecuten solo los que sean seguros.  
+要使用脚本，您只需将： namp --script Nombre_del_script target --> 当你放置脚本时，脚本和扫描程序都会运行，所以你也可以放置扫描程序选项，我们可以添加“safe=1”，以便只执行安全的那些。
+
+**Control tiempo 时间控制**
+
+**Nmap puede modificar el tiempo en segundos, minutos, ms:** --host-timeout arguments 900000ms, 900, 900s, and 15m all do the same thing.  
+Nmap puede modificar el tiempo en segundos， minutos， ms： --host-timeout arguments 900000ms， 900， 900s， and 15m 都做同样的事情。
+
+Nmap divide el numero total de host a escanear en grupos y analiza esos grupos en bloques de forma que hasta que no han sido analizados todos, no pasa al siguiente bloque (y el usuario tampoco recibe ninguna actualización hasta que se haya analizado el bloque) de esta forma, es más óptimo para nmap usar grupos grandes. Por defecto en clase C usa 256.  
+Nmap 将要扫描的主机总数划分为组，并将这些组分析为块，以便在分析所有主机之前，它不会移动到下一个块（并且用户在分析块之前不会收到任何更新），这样，nmap 使用大型组是更理想的选择。默认情况下，在 C 类中，它使用 256。
+
+Se puede cambiar con**--min-hostgroup** _**<numhosts>**_**;** **--max-hostgroup** _**<numhosts>**_ (Adjust parallel scan group sizes)  
+Se puede cambiar con**--min-hostgroup** <numhosts>; --max-hostgroup <numhosts> （调整并行扫描组大小）
+
+Se puede controlar el numero de escaners en paralelo pero es mejor que no (nmpa ya incorpora control automatico en base al estado de la red): **--min-parallelism** _**<numprobes>**_**;** **--max-parallelism** _**<numprobes>**_  
+您可以并行控制扫描仪的数量，但总比不控制好（nmpa 已经包含了基于网络状态的自动控制）： --min-并行性 <numprobes>; --max-并行性<numprobes>
+
+Podemos modificar el rtt timeout, pero no suele ser necesario: **--min-rtt-timeout** _**<time>**_**,** **--max-rtt-timeout** _**<time>**_**,** **--initial-rtt-timeout** _**<time>**_  
+Podemos modificar el rtt timeout， pero no suele ser necesario： --min-rtt-timeout <time>， --max-rtt-timeout <time>， --initial-rtt-timeout <time>
+
+Podemos modificar el numero de intentos:**--max-retries** _**<numtries>**_  
+我们可以修改尝试次数：--max-retries <numtries>
+
+Podemos modificar el tiempo de escaneado de un host: **--host-timeout** _**<time>**_  
+我们可以修改主机的扫描时间：--host-timeout <time>
+
+Podemos modificar el tiempo entre cada prueba para que vaya despacio: **--scan-delay** _**<time>**_**;** **--max-scan-delay** _**<time>**_  
+我们可以修改每次测试之间的时间，使其运行缓慢： --scan-delay <time>; --max-scan-delay <time>
+
+Podemos modificar el numero de paquetes por segundo: **--min-rate** _**<number>**_**;** **--max-rate** _**<number>**_  
+我们可以修改每秒的数据包数： --min-rate <number>; --max-rate <number>
+
+Muchos puertos tardan mucho en responder al estar filtrados o cerrados, si solo nos interesan los abiertos, podemos ir más rápido con: **--defeat-rst-ratelimit**  
+许多端口在被过滤或关闭时需要很长时间才能响应，如果我们只对开放的端口感兴趣，我们可以使用以下方法更快： --defeat-rst-ratelimit
+
+Para definir lo agresivo que queremos que sea nmap: -T paranoid|sneaky|polite|normal|aggressive|insane  
+Para definir lo agresivo que queremos que sea nmap： -T paranoid|sneaky|polite|normal|aggressive|insane
+
+-T (0-1) -T （0-1）
+
+-T0 --> Solo se escanea 1 puerto a la vez y se espera 5min hasta el siguiente  
+-T0 --> 一次只扫描 1 个端口，等待 5 分钟等待下一个端口
+
+-T1 y T2 --> Muy parecidos pero solo esperan 15 y 0,4seg respectivamente enttre cada prueba  
+-T1 和 T2 -->非常相似，但每次测试之间分别仅等待 15 秒和 0.4 秒
+
+-T3 --> Funcionamiento por defecto, incluye en paralelo  
+-T3 --> 默认操作，包括并行
+
+-T4 --> --max-rtt-timeout 1250ms --min-rtt-timeout 100ms --initial-rtt-timeout 500ms --max-retries 6 --max-scan-delay 10ms
+
+-T5 --> --max-rtt-timeout 300ms --min-rtt-timeout 50ms --initial-rtt-timeout 250ms --max-retries 2 --host-timeout 15m --max-scan-delay 5ms
+
+**Firewall/IDS 防火墙/IDS**
+
+No dejan pasar a puertos y analizan paquetes.  
+它们不让端口通过并扫描数据包。
+
+**-f** Para fragmentar paquetes, por defecto los fragmenta en 8bytes después de la cabecera, para especificar ese tamaño usamos ..mtu (con esto, no usar -f), el offset debe ser multiplo de 8. **Escaners de version y scripts no soportan la fragmentacion**  
+-f 要对数据包进行分段，默认情况下，它会将它们分段为标头后面的 8 个字节，以指定我们使用的大小。mtu（使用此，不要使用 -f），偏移量必须是 8 的倍数。 版本扫描程序和脚本不支持碎片
+
+**-D decoy1,decoy2,ME** Nmap envia escaneres pero con otras direcciones IPs como origen, de esta forma te esconden a ti. Si pones el ME en la lista, nmap te situara ahi, mejor poner 5 o 6 antes de ti para que te enmascaren completamente. Se pueden generar iPs aleatorias con RND:<numero> Para generar <numero> de Ips aleatorias. No funcionan con detector de versiones sin conexion de TCP. Si estas dentro de una red, te interesa usar Ips que esten activas, pues sino será muy facil averiguar que tu eres la unica activa.  
+-D decoy1，decoy2，ME Nmap 发送扫描，但以其他 IP 地址为源，这样它们会隐藏您。如果你把 ME 放在列表中，nmap 会把你放在那里，最好在你面前放 5 或 6，这样你就完全被屏蔽了。可以使用 RND 生成随机 IP：<numero>生成<numero>随机 IP。它们不适用于 TCP 脱机版本检测器。如果您在网络中，则要使用处于活动状态的IP，否则很容易发现您是唯一处于活动状态的IP。
+
+Para usar Ips aleatorias: nmap-D RND: 10 Ip_objetivo  
+使用随机 IP：nmap-D RND：10 Ip_objetivo
+
+**-S IP** Para cuando Nmap no pilla tu dirección Ip se la tienes que dar con eso. También sirve para hacer pensar que hay otro objetivo escaneandoles.  
+-S IP 当 Nmap 没有捕获您的 IP 地址时，您必须将其提供给他们。它还使您认为有另一个目标正在扫描它们。
+
+**-e <interface>** Para elegir la interfaz  
+-e <interface> 选择接口
+
+Muchos administradores dejan puertos de entrada abiertos para que todo funcione correctamente y les es más fácil que buscar otra solución. Estos pueden ser los puertos DNS o los de FTP... para busca esta vulnerabilidad nmap incorpora: **--source-port** _**<portnumber>**_**;-g** _**<portnumber>**_ _Son equivalentes_  
+许多管理员将入站端口保持打开状态以保持一切正常工作，这对他们来说比寻找其他解决方案更容易。这些可以是 DNS 端口或 FTP 端口...为了搜索此漏洞，nmap 包含： --source-port <portnumber>;-g <portnumber> 它们是等效的
+
+**--data** _**<hex string>**_ Para enviar texto hexadecimal: --data 0xdeadbeef and --data \xCA\xFE\x09  
+--data <hex string> Para enviar texto hexadecimal： --data 0xdeadbeef 和 --data \xCA\xFE\x09
+
+**--data-string** _**<string>**_ Para enviar un texto normal: --data-string "Scan conducted by Security Ops, extension 7192"  
+--data-string <string> Para enviar un texto normal： --data-string “Scan conducted by Security Ops， extension 7192”
+
+**--data-length** _**<number>**_ Nmap envía solo cabeceras, con esto logramos que añada a estar un numero de bytes mas (que se generaran aleatoriamente)  
+--data-length <number> Nmap 只发送标头，这样我们就可以让它添加更多的字节（这将是随机生成的）
+
+Para configurar el paquete IP completamente usar **--ip-options**  
+要完全配置 IP 数据包，请使用 --ip-options
+
+If you wish to see the options in packets sent and received, specify --packet-trace. For more information and examples of using IP options with Nmap, see [http://seclists.org/nmap-dev/2006/q3/52](http://seclists.org/nmap-dev/2006/q3/52).  
+如果您希望在发送和接收的数据包中查看选项，请指定 --packet-trace。有关在 Nmap 中使用 IP 选项的更多信息和示例，请参阅 [http://seclists.org/nmap-dev/2006/q3/52](http://seclists.org/nmap-dev/2006/q3/52) 。
+
+**--ttl** _**<value>**_
+
+**--randomize-hosts** Para que el ataque sea menos obvio  
+--randomize-hosts 使攻击不那么明显
+
+**--spoof-mac** _**<MAC address, prefix, or vendor name>**_ Para cambiar la mac ejemplos: Apple, 0, 01:02:03:04:05:06, deadbeefcafe, 0020F2, and Cisco  
+--spoof-mac <MAC 地址、前缀或供应商名称> 要更改 mac 示例：Apple、0、01：02：03：04：05：06、deadbeefcafe、0020F2 和 Cisco
+
+**--proxies** _**<Comma-separated list of proxy URLs>**_ Para usar proxies, a veces un proxy no mantiene tantas conexiones abiertas como nmap quiere por lo que habria que modificar el paralelismo: --max-parallelism  
+--proxies<以逗号分隔的代理 URL 列表> 要使用代理，有时代理不会像 nmap 想要的那样保持打开的连接数量，因此必须修改并行度： --max-parallelism
+
+**-sP** Para descubrir host en la red en la que estamos por ARP  
+-sP 要通过 ARP 发现我们所在的网络上的主机
+
+Muchos administradores crean una regla en el firewall que permite pasar todos los paquetes que provienen de un puerto en particular (como el 20,53 y 67), podemos decire a nmap que mande nuestros paquetes desde esos puertos: **nmap --source-port 53 Ip**  
+许多管理员在防火墙中创建了一个规则，允许来自特定端口（例如 20、53 和 67）的所有数据包通过，我们可以告诉 nmap 从这些端口发送我们的数据包： nmap --source-port 53 Ip
+
+**Salidas 输出**
+
+**-oN file** Salida normal -oN 文件 Salida 正常
+
+**-oX file** Salida XML -oX 文件 Salida XML
+
+**-oS file** Salida de script kidies  
+-oS file Salida de script kidies
+
+**-oG file** Salida grepable -oG 文件 salida grepable
+
+**-oA file** Todos menos -oS  
+-oA 文件除 -oS 外的所有文件
+
+**-v level** verbosity -V 级详细程度
+
+**-d level** debugin -d 级调试
+
+**--reason** Porqué del host y estado  
+--reason 主机原因和状态
+
+**--stats-every time** Cada ese tiempo nos dice como va  
+--stats-every time 每次都告诉我们进展如何
+
+**--packet-trace** Para ver que paquetes salen se pueden especificar filtros como: --version-trace o --script-trace  
+--packet-trace 要查看哪些数据包出来，您可以指定过滤器，例如：--version-trace 或 --script-trace
+
+**--open** muestra los abiertos, abiertos|filtrados y los no filtrados  
+--open 显示打开、打开|筛选和未筛选
+
+**--resume file** Saca un resumen  
+--resume file Saca un resumen
+
+**Miscelanea 米塞拉尼亚**
+
+**-6** Permite ipv6 -6 允许 IPv6
+
+**-A** es lo mismo que -O -sV -sC --traceroute  
+-A 与 -O -sV -sC --traceroute 相同
+
+**Run time 运行时**
+
+Mientras corre nmap podemos cambiar opciones:  
+在运行 nmap 时，我们可以更改选项：
+
+v / V Increase / decrease the verbosity level  
+v / V 增加/减少详细程度
+
+d / D Increase / decrease the debugging Level  
+d/D提高/降低调试级别
+
+p / P Turn on / off packet tracing  
+p/P开启/关闭数据包追踪
+
+? Print a runtime interaction help screen  
+?打印运行时交互帮助屏幕
+
+**Vulscan Vulscan的**
+
+Script de nmap que mira las versiones de los servicios obtenidos en una base de datos offline (que descarga de otras muy importantes) y devuelve las posibles vulnerabilidades  
+一个 nmap 脚本，用于查看在脱机数据库（从其他非常重要的数据库下载）中获得的服务版本并返回可能的漏洞
+
+Las BD que usa son: 您使用的 BD 是：
+
+1. Scipvuldb.csv | [http://www.scip.ch/en/?vuldb](http://www.scip.ch/en/?vuldb)  
+    Scipvuldb.csv | [http://www.scip.ch/en/?vuldb](http://www.scip.ch/en/?vuldb)
+    
+2. Cve.csv | [http://cve.mitre.org](http://cve.mitre.org/)  
+    Cve.csv | [http://cve.mitre.org](http://cve.mitre.org/)
+    
+3. Osvdb.csv | [http://www.osvdb.org](http://www.osvdb.org/)  
+    Osvdb.csv | [http://www.osvdb.org](http://www.osvdb.org/)
+    
+4. Securityfocus.csv | [http://www.securityfocus.com/bid/](http://www.securityfocus.com/bid/)  
+    Securityfocus.csv | [http://www.securityfocus.com/bid/](http://www.securityfocus.com/bid/)
+    
+5. Securitytracker.csv | [http://www.securitytracker.com](http://www.securitytracker.com/)  
+    Securitytracker.csv | [http://www.securitytracker.com](http://www.securitytracker.com/)
+    
+6. Xforce.csv | [http://xforce.iss.net](http://xforce.iss.net/)  
+    Xforce.csv | [http://xforce.iss.net](http://xforce.iss.net/)
+    
+7. Exploitdb.csv | [http://www.exploit-db.com](http://www.exploit-db.com/)  
+    Exploitdb.csv | [http://www.exploit-db.com](http://www.exploit-db.com/)
+    
+8. Openvas.csv | [http://www.openvas.org](http://www.openvas.org/)  
+    Openvas.csv | [http://www.openvas.org](http://www.openvas.org/)
+    
+
+Para descargarlo e instalarlo en la carpeta de Nmap:  
+要在 Nmap 文件夹中下载并安装它：
+
+wget http://www.computec.ch/projekte/vulscan/download/nmap_nse_vulscan-2.0.tar.gz && tar -czvf nmap_nse_vulscan-2.0.tar.gz vulscan/ && sudo cp -r vulscan/ /usr/share/nmap/scripts/  
+Ugate HTTP://O.Computek.f/project/valscan/download/nmap_nse_valscan-2.0.his.gj & tar -cjvf NMAP_nse_valscan-2.0.his.gj valscan/ && sudo cp valscan/ /usr/share/nmap/script/
+
+También habría que descargar los paquetes de las BD y añadirlos a /usr/share/nmap/scripts/vulscan/  
+您还需要下载数据库包并将它们添加到 /usr/share/nmap/scripts/vulscan/
+
+Uso: 用：
+
+Para usar todos: sudo nmap -sV --script=vulscan HOST_A_ESCANEAR  
+全部使用：sudo nmap -sV --script=vulscan HOST_A_ESCANEAR
+
+Para usar una BD específica: sudo nmap -sV --script=vulscan --script-args vulscandb=cve.csv HOST_A_ESCANEAR  
+使用特定数据库：sudo nmap -sV --script=vulscan --script-args vulscandb=cve.csv HOST_A_ESCANEAR
+
+## 
+
+[](https://book.hacktricks.xyz/generic-methodologies-and-resources/pentesting-network/nmap-summary-esp#speed-up-nmap-service-scan-x16)
+
+Speed Up Nmap Service scan x16  
+加速 Nmap 服务扫描 x16
+
+According [**to this post**](https://joshua.hu/nmap-speedup-service-scanning-16x) you can speed up the nmap service analysis by modifying all the `**totalwaitms**` values in `**/usr/share/nmap/nmap-service-probes**` to **300** and `**tcpwrappedms**` to **200**.  
+根据这篇文章，您可以通过将 `**/usr/share/nmap/nmap-service-probes**` 中的所有 `**totalwaitms**` 值修改为 300 和 `**tcpwrappedms**` 修改为 200 来加快 nmap 服务分析。
+
+Moreover, probes which do not have a specifically defined `**servicewaitms**` use a default value of `**5000**`. Therefore, we can either add values to each of the probes, or we can **compile nmap** ourselves and change the default value in [**service_scan.h**](https://github.com/nmap/nmap/blob/master/service_scan.h#L79).  
+此外，没有专门定义 `**servicewaitms**` 的探测器使用默认值 `**5000**` 。因此，我们可以向每个探测器添加值，也可以自己编译 nmap 并更改 service_scan.h 中的默认值。
+
+If you don't want to change the values of `**totalwaitms**` and `**tcpwrappedms**` at all in the `/usr/share/nmap/nmap-service-probes` file, you can edit the [parsing code](https://github.com/nmap/nmap/blob/master/service_scan.cc#L1358) such that these values in the `nmap-service-probes` file are completely ignored.  
+如果根本不想更改 `/usr/share/nmap/nmap-service-probes` 文件中的 `**totalwaitms**` 和 `**tcpwrappedms**` 值，则可以编辑分析代码，以便完全忽略 `nmap-service-probes` 文件中的这些值。
