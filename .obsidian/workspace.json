@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md",
+                "file": "MyStudyRoute/Pentration/枚举.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md",
+                "file": "MyStudyRoute/Pentration/枚举.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md",
+                "file": "MyStudyRoute/Pentration/枚举.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/基本渗透测试流程.md"
+                "file": "MyStudyRoute/Pentration/枚举.md"
               }
             }
           }
@@ -148,6 +148,10 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/FileTransmit.md",
+    "MyStudyRoute/Pentration/Active Directory.md",
+    "MyStudyRoute/Pentration/枚举.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
@@ -161,9 +165,6 @@
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
-    "MyStudyRoute/Pentration/基本渗透测试流程.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
-    "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
@@ -174,7 +175,6 @@
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "Pasted image 20240410201557.png",
     "README.md",
@@ -194,7 +194,6 @@
     "Pasted image 20240408174626.png",
     "Untitled.canvas",
     "MyStudyRoute/Pentration/Document/未命名",
-    "MyStudyRoute/Pentration/Document",
     "未命名 1.canvas",
     "未命名.canvas"
   ]
