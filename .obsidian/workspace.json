@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pent.md",
+                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pent.md",
+                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pent.md",
+                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/pent.md"
+                "file": "MyStudyRoute/Capture The Flag/SQLi思路.md"
               }
             }
           }
@@ -148,6 +148,9 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/Trick.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Pentration/Document/pent.md",
     "MyStudyRoute/Pentration/枚举.md",
     "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
@@ -158,12 +161,10 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
-    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
-    "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Pentration/WireShark.md",
