@@ -143,10 +143,14 @@ Hello=12312321&z0=c3lzdGVtKCd0YWMgLi4va2V5LnBocCcpOw==
 [嘤嘤嘤]P1_5
 直接禁用JS防止其生成随机数，登录
 这题key错的
-[嘤嘤嘤]P1_6
+[嘤嘤嘤]P2_1
 sql注入
 过滤：
 `空格 # union`
 绕过：
 `/**/ %23 ununionion`
 不过只是让读取文件，直接loadfile
+[嘤嘤嘤]P2_2
+文件上传
+直接传带图片头的图片拦截加马gaiphtml
+[嘤嘤嘤]P2_3
