@@ -154,3 +154,10 @@ sql注入
 文件上传
 直接传带图片头的图片拦截加马gaiphtml
 [嘤嘤嘤]P2_3
+文件包含
+使用php://filter/read=convert.base64-encode/resource=..key.php
+拿到flag
+[嘤嘤嘤]P2_4
+命令执行
+过滤了ls cat，直接定义变量绕过
+[嘤嘤嘤]P2_5
