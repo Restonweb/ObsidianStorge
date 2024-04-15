@@ -1,5 +1,13 @@
 sqli:爆多字段别忘了用group_concat
 爆字段别忘了指定数据库以及表[[EXAM特供WP#^1e5e69]]
+过滤了# --+就再闭合一次
+如
+`select * from shit where id='1'`
+就
+`select * from shit where id='1' and 1=1 or '1' = '1'`
+即
+`1' and 1=1 or '1' = '1`
+双引号同理
 fileinclusion:写日志！伪协议！
 日志：
 ```
