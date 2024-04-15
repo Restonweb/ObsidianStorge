@@ -152,7 +152,7 @@ sql注入
 不过只是让读取文件，直接loadfile
 [嘤嘤嘤]P2_2
 文件上传
-直接传带图片头的图片拦截加马gaiphtml
+直接传带图片头的图片拦截加马改phtml
 [嘤嘤嘤]P2_3
 文件包含
 使用php://filter/read=convert.base64-encode/resource=..key.php
@@ -166,3 +166,6 @@ sql注入
 二次注入
 注册admin'#123，重置密码，改的是admin密码。
 [嘤嘤嘤]P3_2
+文件上传
+很简单只做了文件头过滤，没过滤php，所以不要一上来试phtml，万一php就行呢
+[嘤嘤嘤]P3_3
