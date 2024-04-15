@@ -216,3 +216,14 @@ show_source(__FILE__);
 [嘤嘤嘤]P4_5
 改cookie，base64加密的名字和直接写cookie里的isadmin
 [嘤嘤嘤]P5_1
+无
+[嘤嘤嘤]P5_2
+文件包含
+获取日志，useragent传马
+[嘤嘤嘤]P5_3
+命令执行
+过滤了 ；ls cat
+使用&& 变量过
+[嘤嘤嘤]P5_4
+文件上传
+直接传图片马
