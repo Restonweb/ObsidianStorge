@@ -11,11 +11,9 @@
             "id": "4807b1582274dc59",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
-                "mode": "source",
-                "source": false
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf"
               }
             }
           }
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md"
+                "file": "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf"
               }
             }
           }
@@ -148,6 +146,9 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
+    "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
+    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/Document/pent.md",
@@ -155,7 +156,6 @@
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
-    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/枚举.md",
     "MyStudyRoute/Pentration/Active Directory.md",
@@ -165,7 +165,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
@@ -182,7 +181,6 @@
     "MyStudyRoute/Pentration/SNMP.md",
     "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "Pasted image 20240410201557.png",
     "Pasted image 20240409142204.png",
     "Pasted image 20240409141914.png",
