@@ -197,3 +197,6 @@ insert into article(title,author,description,content,dateline) values('1'','1312
 文件上传
 直接传图片马
 [嘤嘤嘤]P4_3
+文件包含，但是没key
+[嘤嘤嘤]P4_4
+
