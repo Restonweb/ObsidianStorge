@@ -136,6 +136,9 @@ Hello=12312321&z0=c3lzdGVtKCdscycpOw==
 
 Hello=12312321&z0=c3lzdGVtKCd0YWMgLi4va2V5LnBocCcpOw==
 ```
+
+^bf5f69
+
 [嘤嘤嘤]P1_4
 命令执行，
 过滤了cat head tail cp mv vi vim
@@ -169,3 +172,6 @@ sql注入
 文件上传
 很简单只做了文件头过滤，没过滤php，所以不要一上来试phtml，万一php就行呢
 [嘤嘤嘤]P3_3
+和[[EXAM特供WP#^bf5f69]]P1_3一样的
+[嘤嘤嘤]P3_4
+
