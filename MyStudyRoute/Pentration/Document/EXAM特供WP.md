@@ -249,3 +249,9 @@ cookie改名字，isadmin
 [嘤嘤嘤]pte1_055
 暴力破解带验证码直接关闭JS拦截此次正确的验证码重复请求
 密码123qwe，flag在F1a9.php但是找不到
+[嘤嘤嘤]pte1_051
+sql注入
+过滤了# ；“ -- or
+`admin' Or 1=1 Or '1'='1`
+拿到f1a9.php
+[嘤嘤嘤]pte1_045
