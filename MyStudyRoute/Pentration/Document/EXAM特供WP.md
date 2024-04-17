@@ -247,3 +247,5 @@ sql注入
 cookie改名字，isadmin
 加XFF头本地访问。
 [嘤嘤嘤]pte1_055
+暴力破解带验证码直接关闭JS拦截此次正确的验证码重复请求
+密码123qwe，flag在F1a9.php但是找不到
