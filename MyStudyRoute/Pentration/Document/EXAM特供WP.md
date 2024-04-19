@@ -286,7 +286,10 @@ sql注入
 [嘤嘤嘤]pte3_00-01
 sql注入
 过滤空格 Union \#
+[嘤嘤嘤]cms-sqlgun
+sqlmap梭id不行
+梭搜索功能成功
+拿到admin/admin凭证
 [嘤嘤嘤]pte1_021
 
-[嘤嘤嘤]pte1_021
 [嘤嘤嘤]pte1_021
