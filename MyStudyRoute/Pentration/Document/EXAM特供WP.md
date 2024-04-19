@@ -268,6 +268,10 @@ flag错的
 禁用JS破解，输入base64命令
 /tmp下没有flag
 [嘤嘤嘤]pte1_024
+命令执行
+过滤了cat head tail cp mv
+使用vi vim 或者tee或者变量都行
+key错的
+[嘤嘤嘤]pte1_022
 
-[嘤嘤嘤]pte1_041
 [嘤嘤嘤]pte1_041
