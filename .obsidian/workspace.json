@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/GZCJ.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 285.5
+    "width": 296.5
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/GZCJ.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/GZCJ.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/GZCJ.md"
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md"
               }
             }
           }
@@ -148,9 +148,13 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/PreRecon.md",
+    "MyStudyRoute/Python/RAA&EV.md",
+    "MyStudyRoute/Pentration/WireShark.md",
+    "MyStudyRoute/Pentration/SNMP.md",
+    "MyStudyRoute/Pentration/Document/GZCJ.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/Document/pent.md",
-    "MyStudyRoute/Pentration/Document/GZCJ.md",
     "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
@@ -168,7 +172,6 @@
     "MyStudyRoute/Pentration/SearchSploit.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
-    "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/hashcat.md",
@@ -179,11 +182,9 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/枚举.md",
     "MyStudyRoute/Pentration/Document/未命名 1.md",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "Pasted image 20240410201557.png",
     "Pasted image 20240409142204.png",
     "Pasted image 20240409141914.png",
