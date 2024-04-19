@@ -281,9 +281,12 @@ sql注入
 正常流程过
 [嘤嘤嘤]pte1_002
 文件上传，过
+[嘤嘤嘤]pte1_033
+用php://filter/convert.base64-encode/resource=
+[嘤嘤嘤]pte3_00-01
+sql注入
+过滤空格 Union \#
 [嘤嘤嘤]pte1_021
 
-[嘤嘤嘤]pte1_021
-[嘤嘤嘤]pte1_021
 [嘤嘤嘤]pte1_021
 [嘤嘤嘤]pte1_021
