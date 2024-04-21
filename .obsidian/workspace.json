@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Active Directory.md"
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md"
               }
             }
           }
@@ -148,6 +148,8 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "MyStudyRoute/Pentration/Document/未命名.md",
@@ -156,7 +158,6 @@
     "MyStudyRoute/Pentration/Document/GZCJ.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/Document/pent.md",
-    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Pentration/WireShark.md",
@@ -180,7 +181,6 @@
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/网络安全——SQL注入漏洞.pdf",
