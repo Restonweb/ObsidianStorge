@@ -315,4 +315,13 @@ with open('filedict.txt','x') as f:
 上传114514.php 马
 文件名形如58612212ea92229dfb02fb03026949d0.php
 找到200请求即可
-[嘤嘤嘤]pte1_021
+[嘤嘤嘤]pte_综合题1
+`http://hazelshishuaige.club:26080/`
+`113.120.11.226:26080`
+`113.120.11.226:26389`
+进入网站扫描目录phpadmin
+`show variables like %secure_file_priv%`
+确定上传文件权限
+弱口令登入，执行into outfile写马
+确定绝对路径：
+``
