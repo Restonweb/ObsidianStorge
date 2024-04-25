@@ -324,4 +324,4 @@ with open('filedict.txt','x') as f:
 确定上传文件权限
 弱口令登入，执行into outfile写马
 确定绝对路径：
-``
+`select load_file "C:||"`
