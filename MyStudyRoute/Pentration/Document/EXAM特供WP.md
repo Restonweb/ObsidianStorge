@@ -325,3 +325,5 @@ with open('filedict.txt','x') as f:
 弱口令登入，执行into outfile写马
 确定绝对路径：
 `select load_file "C:||"`
+[嘤嘤嘤]sql_duidie
+堆叠语句注入，使用show语句，过滤了select，使用HANDLER读列

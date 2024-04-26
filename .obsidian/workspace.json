@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "var_dump",
+                "query": "堆叠",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -134,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 341.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,12 +150,12 @@
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
     "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "MyStudyRoute/Pentration/Document/未命名.md",
     "MyStudyRoute/Pentration/Document/未命名 1.md",
-    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Pentration/Document/GZCJ.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/Document/pent.md",
