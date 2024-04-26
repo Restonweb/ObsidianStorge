@@ -328,3 +328,4 @@ with open('filedict.txt','x') as f:
 [嘤嘤嘤]sql_duidie
 堆叠语句注入，使用show语句，过滤了select，使用HANDLER读列见[[WP#^396303]]
 [嘤嘤嘤]sql_changgui
+过滤空格，or,
