@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 296.5
+    "width": 296.5,
+    "collapsed": true
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md",
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md"
+                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md"
               }
             }
           }
@@ -147,10 +148,10 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cef5dbb49c726b7f",
+  "active": "4807b1582274dc59",
   "lastOpenFiles": [
-    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md",
+    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Pentration/枚举.md",
     "Pasted image 20240427171535.png",
