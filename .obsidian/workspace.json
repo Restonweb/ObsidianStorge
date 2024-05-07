@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "P3",
+                "query": "uuid",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
