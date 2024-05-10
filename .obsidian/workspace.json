@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "uuid",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,8 +65,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Document/EXAM特供WP.md"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -148,44 +147,44 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ceb500f1981397e9",
+  "active": "4807b1582274dc59",
   "lastOpenFiles": [
-    "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md",
-    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
-    "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
+    "MyStudyRoute/Capture The Flag/Trick.md",
+    "MyStudyRoute/Capture The Flag/SQLi思路.md",
+    "MyStudyRoute/Capture The Flag/ReadMe.md",
+    "MyStudyRoute/Pentration/Socat.md",
+    "MyStudyRoute/Python/RAA&EV.md",
+    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/枚举.md",
+    "MyStudyRoute/Pentration/Active Directory.md",
+    "MyStudyRoute/Pentration/FileTransmit.md",
+    "MyStudyRoute/Pentration/hashcat.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/Netcat.md",
+    "MyStudyRoute/Pentration/NMAP.md",
+    "MyStudyRoute/Pentration/PreRecon.md",
+    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
+    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
+    "MyStudyRoute/Pentration/SomeUsefulCommand.md",
+    "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
+    "MyStudyRoute/Pentration/Document/pent.md",
+    "MyStudyRoute/Pentration/Document/GZCJ.md",
+    "MyStudyRoute/Pentration/Document/未命名 1.md",
+    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
+    "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md",
+    "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "Pasted image 20240427171535.png",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Pentration/Document/未命名.md",
-    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
-    "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
-    "MyStudyRoute/Pentration/Document/未命名 1.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
-    "MyStudyRoute/Pentration/Document/GZCJ.md",
-    "MyStudyRoute/Pentration/Document/pent.md",
-    "MyStudyRoute/Pentration/PreRecon.md",
-    "MyStudyRoute/Python/RAA&EV.md",
     "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Pentration/SNMP.md",
-    "MyStudyRoute/Capture The Flag/Trick.md",
-    "MyStudyRoute/Capture The Flag/ReadMe.md",
-    "MyStudyRoute/Capture The Flag/File Inclusion.md",
-    "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205518.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
-    "MyStudyRoute/Pentration/Socat.md",
-    "MyStudyRoute/Pentration/SearchSploit.md",
-    "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
-    "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/Pentration/Netcat.md",
-    "MyStudyRoute/Pentration/hashcat.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/内置函数与特殊数据库.pdf",
     "Pasted image 20240410201557.png",
