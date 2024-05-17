@@ -353,7 +353,7 @@ yersinia dhcp -attack 2 #More parameters are needed
 ```
 ### ARP 欺骗
 
-查看[上一节]([[枚举#ARP 欺骗]])。
+查看[上一节]([[枚举(Enumeratiton)#ARP 欺骗]])。
 ### ICMP重定向
 ICMP 重定向包括发送 ICMP 数据包类型 1 代码 5，指示攻击者是访问 IP 的最佳方式。然后，当受害者想要联系 IP 时，它会通过攻击者发送数据包。
 ```

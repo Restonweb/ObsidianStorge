@@ -6,8 +6,8 @@ CaptureTheFlag节点下的都是早期的基本学习内容。
 Pentration下则是进阶的渗透测试相关主题的内容。
   |WalkThrough是THM,HTB等lab的WalkThrough。
   
-Python
-  |这是一个空节点。Python等语言的学习的文件请见我的另外一个存储库[Restonweb/Websecuritylearning：这是一个存储我的学习代码的存储库。](https://github.com/Restonweb/Websecuritylearning)
+Note
+  |Python等语言的学习的文件请见我的另外一个存储库[Restonweb/Websecuritylearning：这是一个存储我的学习代码的存储库。](https://github.com/Restonweb/Websecuritylearning)
 
 
 This is my Cyber security learning notes, if you need to look at it, you can use *Obsidian and its Obsidian GIT plugin* to directly Clone this repository. When Clone please **Be sure to select this remote repository have one. Obsidian folder in inventory options**.

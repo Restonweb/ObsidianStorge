@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/枚举.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/枚举.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/枚举.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/枚举.md"
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md"
               }
             }
           }
@@ -149,25 +149,28 @@
   },
   "active": "4807b1582274dc59",
   "lastOpenFiles": [
+    "README.md",
+    "MyStudyRoute/WEB攻防(WEB A&D)/ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
+    "Untitled.canvas",
+    "MyStudyRoute/Pentration/NMAP.md",
+    "MyStudyRoute/Pentration/MetaSploit.md",
+    "MyStudyRoute/Pentration/FileTransmit.md",
+    "MyStudyRoute/Pentration/Active Directory.md",
+    "MyStudyRoute/Pentration/枚举(Enumeratiton).md",
     "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
     "MyStudyRoute/Python/RAA&EV.md",
-    "MyStudyRoute/WEB",
+    "MyStudyRoute/WEB攻防(WEB A&D)",
     "MyStudyRoute/未命名.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
     "MyStudyRoute/Pentration/Socat.md",
     "MyStudyRoute/Pentration/hashcat.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Pentration/Practice/WorkThrough.md",
-    "MyStudyRoute/Pentration/枚举.md",
-    "MyStudyRoute/Pentration/FileTransmit.md",
-    "MyStudyRoute/Pentration/MetaSploit.md",
     "MyStudyRoute/Pentration/Netcat.md",
-    "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/Pentration/PreRecon.md",
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/PrivilegeScanTrickUsage.md",
@@ -175,7 +178,6 @@
     "MyStudyRoute/Pentration/Document/pent.md",
     "MyStudyRoute/Pentration/Document/GZCJ.md",
     "MyStudyRoute/Pentration/Document/未命名 1.md",
-    "MyStudyRoute/Pentration/Document/EXAM特供WPfinal.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "Pasted image 20240427171535.png",
     "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
@@ -194,7 +196,6 @@
     "Pasted image 20240408180108.png",
     "Pasted image 20240408175518.png",
     "Pasted image 20240408174911.png",
-    "Untitled.canvas",
     "未命名 1.canvas",
     "未命名.canvas"
   ]
