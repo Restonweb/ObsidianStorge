@@ -13,7 +13,14 @@
 	第二种解法，利用上面PHP比较不支持数组的特点，传入两个数组，两边为NULL判相等，即可绕过。
 	![[Pasted image 20240517205122.png]]
 3. intval
-
-strpos
-in_array
+	![[Pasted image 20240517205453.png]]
+	![[Pasted image 20240517205727.png]]
+4. strpos
+	![[Pasted image 20240517205856.png]]
+	![[Pasted image 20240517205911.png]]
+	![[Pasted image 20240517210044.png]]
+5. in_array
+	![[Pasted image 20240517210227.png]]
+	![[Pasted image 20240517210204.png]]
+	
 preg_match
