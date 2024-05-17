@@ -1,3 +1,5 @@
+ASPX的环境一般可能为：
+windows+iis+aspx+sqlserver
 # .NET项目/ASPX
 ## DLL反编译
 工具：ILSpy
@@ -26,9 +28,9 @@ ON:自定义错误，不会显示原本错误格式
 如果小功能页面包含了带验证代码的文件(如purchase.master)：
 ![[Pasted image 20240517181951.png]]
 直接访问是会进行用户授权的验证的
-如果小功能页面未包含带验证代码的文件：
+如果小功能页面(cat_move.asapx)未包含带验证代码的文件：
 ![[Pasted image 20240517182021.png]]
 ![[Pasted image 20240517182332.png]]
 那么就可以直接访问，这是不应该的，这就属于未授权访问。
 黑盒情况下：
-扫目录发现cat_MO
+扫目录发现cat_move.aspx并没有redirect，说明存在未授权访问。 
