@@ -30,4 +30,4 @@
 7. str_replace
 	![[Pasted image 20240517210808.png]]
 	它无法迭代检测
-	如果传se==select==lect,中间的select会被替换，但是余下部分仍是select，无法再次检测。
+	如果传se==select==lect,中间的select会被替换，但是余下部分仍是select，无法再次检测。双写过滤的原理
