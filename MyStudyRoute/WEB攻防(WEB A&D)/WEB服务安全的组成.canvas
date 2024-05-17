@@ -5,10 +5,12 @@
 		{"id":"1d19fafaad48ab26","x":340,"y":347,"width":250,"height":60,"type":"text","text":"数据库"},
 		{"id":"1ffac3ad2290bfff","x":-280,"y":347,"width":250,"height":60,"type":"text","text":"中间件"},
 		{"id":"871c562072008eb8","type":"text","text":"操作系统","x":-600,"y":347,"width":250,"height":60},
-		{"id":"2a9175f5c522666a","x":-599,"y":520,"width":250,"height":60,"type":"text","text":"操作系统安全"},
 		{"id":"da79f63220ed466a","x":-279,"y":526,"width":250,"height":60,"type":"text","text":"中间件安全"},
-		{"id":"68226e3054697f81","x":35,"y":538,"width":285,"height":50,"type":"text","text":"web服务(源码)安全"},
-		{"id":"ce23720300a0ba4b","x":342,"y":531,"width":250,"height":60,"type":"text","text":""}
+		{"id":"68226e3054697f81","x":18,"y":526,"width":285,"height":60,"type":"text","text":"web服务(源码)安全"},
+		{"id":"2a9175f5c522666a","x":-600,"y":526,"width":250,"height":60,"type":"text","text":"操作系统安全"},
+		{"id":"ce23720300a0ba4b","x":340,"y":526,"width":250,"height":60,"type":"text","text":"数据库安全"},
+		{"id":"916a3b64b246b0f4","x":-107,"y":920,"width":250,"height":60,"color":"1","type":"text","text":"WEB服务安全"},
+		{"id":"b439b0d7e4a59919","x":-117,"y":800,"width":271,"height":60,"type":"text","text":"共同构建WEB安全"}
 	],
 	"edges":[
 		{"id":"316dfe1750be9f05","fromNode":"82a59c4a7595270c","fromSide":"bottom","toNode":"871c562072008eb8","toSide":"top"},
@@ -18,6 +20,11 @@
 		{"id":"c2eb4a0c41cb7bf2","fromNode":"871c562072008eb8","fromSide":"bottom","toNode":"2a9175f5c522666a","toSide":"top"},
 		{"id":"250a76f5c2c73e7b","fromNode":"1ffac3ad2290bfff","fromSide":"bottom","toNode":"da79f63220ed466a","toSide":"top"},
 		{"id":"ed3950cf6342305d","fromNode":"c1a42bbe59658ca6","fromSide":"bottom","toNode":"68226e3054697f81","toSide":"top"},
-		{"id":"08b0bac89f2e603d","fromNode":"1d19fafaad48ab26","fromSide":"bottom","toNode":"ce23720300a0ba4b","toSide":"top"}
+		{"id":"08b0bac89f2e603d","fromNode":"1d19fafaad48ab26","fromSide":"bottom","toNode":"ce23720300a0ba4b","toSide":"top"},
+		{"id":"da60d43b6aed909b","fromNode":"da79f63220ed466a","fromSide":"bottom","toNode":"b439b0d7e4a59919","toSide":"top"},
+		{"id":"b481c57511010891","fromNode":"68226e3054697f81","fromSide":"bottom","toNode":"b439b0d7e4a59919","toSide":"top"},
+		{"id":"12cbe29fc765dc97","fromNode":"2a9175f5c522666a","fromSide":"bottom","toNode":"b439b0d7e4a59919","toSide":"top"},
+		{"id":"6e554e3306bd95d5","fromNode":"ce23720300a0ba4b","fromSide":"bottom","toNode":"b439b0d7e4a59919","toSide":"top"},
+		{"id":"93d486ff3e7be7ee","fromNode":"b439b0d7e4a59919","fromSide":"bottom","toNode":"916a3b64b246b0f4","toSide":"top"}
 	]
 }
