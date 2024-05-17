@@ -22,5 +22,12 @@
 5. in_array
 	![[Pasted image 20240517210227.png]]
 	![[Pasted image 20240517210204.png]]
-	
-preg_match
+	strict不设置True时是弱比较与\=\=绕过同理。
+	设置True还会比较类型。
+6. preg_match
+	![[Pasted image 20240517210437.png]]
+	preg_match只能处理字符串，传数组等就会报错。
+7. str_replace
+	![[Pasted image 20240517210808.png]]
+	它无法迭代检测
+	如果传se==select==lect,中间的select会被替换，但是余下部分仍是select，无法再次检测。
