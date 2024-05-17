@@ -4,22 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "32b203d6266a79c7",
+        "id": "83549eedf6572406",
         "type": "tabs",
         "children": [
           {
-            "id": "580c50a499c6b73d",
+            "id": "81657630e464a165",
             "type": "leaf",
             "state": {
-              "type": "canvas",
-              "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
-                "viewState": {
-                  "x": -5,
-                  "y": 557.5,
-                  "zoom": -0.21854009584084133
-                }
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -88,7 +81,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB1-Before We Start.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +98,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB1-Before We Start.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +121,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas"
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB1-Before We Start.md"
               }
             }
           }
@@ -150,13 +143,13 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "580c50a499c6b73d",
+  "active": "cef5dbb49c726b7f",
   "lastOpenFiles": [
+    "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB3-.NET项目_ASPX&DLL反编译&未授权访问&配置信息泄露.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB2-ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
     "MyStudyRoute/Pentration/SNMP.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB1-Before We Start.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
     "MyStudyRoute/WEB攻防(WEB A&D)/未命名思维导图.md",
     "Pasted image 20240517182332.png",
     "Pasted image 20240517182021.png",
@@ -188,7 +181,6 @@
     "MyStudyRoute/未命名.md",
     "MyStudyRoute/Pentration/SomeUsefulCommand.md",
     "MyStudyRoute/Pentration/Socat.md",
-    "MyStudyRoute/Pentration/WireShark.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "Pasted image 20240427171535.png",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205518.png",
