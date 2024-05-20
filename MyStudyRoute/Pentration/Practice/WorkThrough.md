@@ -884,3 +884,4 @@ HOST-RESOURCES-MIB::hrSWRunPath.1383 = STRING: "/bin/bash"
 HOST-RESOURCES-MIB::hrSWRunParameters.588 = STRING: "-c sleep 30; sudo -u svc /bin/bash -c /opt/scripts/check_host.sh svc XjH7VCehowpR1xZB "
 HOST-RESOURCES-MIB::hrSWRunParameters.1382 = STRING: "-u svc /bin/bash -c /opt/scripts/check_host.sh svc XjH7VCehowpR1xZB"
 ```
+# WebGoat 
