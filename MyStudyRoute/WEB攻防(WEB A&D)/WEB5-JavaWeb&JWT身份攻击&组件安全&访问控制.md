@@ -95,3 +95,5 @@ JWT中最常用的两种算法为`HMAC`和`RSA`。
 JWT保证的是数据传输过程中的完整性而不是机密性。
 
 由于payload是使用`base64url`编码的，所以相当于明文传输，如果在payload中携带了敏感信息（如存放密钥对的文件路径），单独对payload部分进行`base64url`解码，就可以读取到payload中携带的信息。
+## WebGoat
+很好，现在去通关WebGoat吧。
