@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.49999618530273
+    "width": 283.49999618530273,
+    "collapsed": true
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md"
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md"
               }
             }
           }
@@ -134,7 +135,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5
+    "width": 341.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,8 +148,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "81657630e464a165",
+  "active": "87d36b8cf139d18c",
   "lastOpenFiles": [
+    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
@@ -174,7 +177,6 @@
     "MyStudyRoute/Pentration/Document/pent.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/Document/随记.md",
-    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
     "MyStudyRoute/Pentration/Active Directory.md",
     "MyStudyRoute/Pentration/FileTransmit.md",
     "MyStudyRoute/Pentration/hashcat.md",

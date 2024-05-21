@@ -3,7 +3,7 @@
 ## JWT
 jwt是Java中类似于session和cookie功能的东西(它是一种token)，由于其有专门的签名，所以有防篡改的安全功能。
 jwt格式如下：
-`Header.Payload.Signature`
+`Header.Payload.Signature`'各段经过base64编码
 Header中包含了签名所使用的加密方式以及token的类型
 Payload中包含了所要传递的信息
 Signature中为对前面信息的签名，防止被篡改。
