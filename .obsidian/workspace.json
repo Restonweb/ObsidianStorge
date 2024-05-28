@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB8-19-通用漏洞.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB8-19-通用漏洞.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB8-19-通用漏洞.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md"
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB8-19-通用漏洞.md"
               }
             }
           }
@@ -149,8 +149,9 @@
   },
   "active": "81657630e464a165",
   "lastOpenFiles": [
-    "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md",
+    "MyStudyRoute/WEB攻防(WEB A&D)/WEB8-19-通用漏洞.md",
+    "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
