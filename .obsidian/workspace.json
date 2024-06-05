@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB20-通用漏洞XSS.md",
+                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "eb4b09b4f7faeaef",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -48,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "xss",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +78,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB20-通用漏洞XSS.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB20-通用漏洞XSS.md",
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB20-通用漏洞XSS.md"
+                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md"
               }
             }
           }
@@ -147,16 +161,17 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "81657630e464a165",
+  "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
+    "MyStudyRoute/WEB攻防(WEB A&D)/WEB20-通用漏洞XSS.md",
+    "Pasted image 20240307183229.png",
+    "MyStudyRoute/WEB攻防(WEB A&D)/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
+    "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB8-19-通用漏洞.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB1-Before We Start.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB2-ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB3-ASPX_.NET项目&DLL反编译&未授权访问&配置信息泄露.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB20-通用漏洞XSS.md",
     "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
     "MyStudyRoute/Pentration/NMAP.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
@@ -172,7 +187,6 @@
     "Pasted image 20240517205911.png",
     "Pasted image 20240517205856.png",
     "Pasted image 20240517205727.png",
-    "Pasted image 20240517205453.png",
     "MyStudyRoute/Pentration/SNMP.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/未命名思维导图.md",
     "MyStudyRoute/Pentration/Document/技能点.md",
@@ -187,7 +201,6 @@
     "MyStudyRoute/Pentration/Netcat.md",
     "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
     "MyStudyRoute/Pentration/PreRecon.md",
-    "README.md",
     "Untitled.canvas",
     "MyStudyRoute/WEB攻防(WEB A&D)",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
