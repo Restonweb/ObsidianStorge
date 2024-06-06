@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/WEB攻防(WEB A&D)/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
+                "file": "MyStudyRoute/Working on/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
                 "mode": "source",
                 "source": false
               }
@@ -78,8 +78,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -99,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Pentration/Practice/WorkThrough.md"
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md"
               }
             }
           }
@@ -161,22 +160,22 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "eb4b09b4f7faeaef",
+  "active": "cef5dbb49c726b7f",
   "lastOpenFiles": [
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB20-通用漏洞XSS.md",
+    "MyStudyRoute/Working on/WEB20-通用漏洞XSS.md",
     "Pasted image 20240307183229.png",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB7-Python项目&SSTI.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB8-19-通用漏洞.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB1-Before We Start.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB2-ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB3-ASPX_.NET项目&DLL反编译&未授权访问&配置信息泄露.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
-    "MyStudyRoute/Pentration/Document/ssti_python_base.pdf",
-    "MyStudyRoute/Pentration/NMAP.md",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB服务安全的组成.canvas",
-    "MyStudyRoute/WEB攻防(WEB A&D)/WEB4-PHP特性&缺陷对比函数&CTF考点.md",
-    "MyStudyRoute/Pentration/Practice/WorkThrough.md",
+    "MyStudyRoute/Working on/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
+    "MyStudyRoute/Working on/WEB7-Python项目&SSTI.md",
+    "MyStudyRoute/Working on/WEB8-19-通用漏洞.md",
+    "MyStudyRoute/Working on/WEB1-Before We Start.md",
+    "MyStudyRoute/Working on/WEB2-ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
+    "MyStudyRoute/Working on/WEB3-ASPX_.NET项目&DLL反编译&未授权访问&配置信息泄露.md",
+    "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
+    "MyStudyRoute/渗透测试学习/Document/ssti_python_base.pdf",
+    "MyStudyRoute/渗透测试学习/NMAP.md",
+    "MyStudyRoute/Working on/WEB服务安全的组成.canvas",
+    "MyStudyRoute/Working on/WEB4-PHP特性&缺陷对比函数&CTF考点.md",
+    "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
     "MyStudyRoute/Capture The Flag/WP.md",
     "Pasted image 20240517210808.png",
     "Pasted image 20240517210437.png",
@@ -187,22 +186,22 @@
     "Pasted image 20240517205911.png",
     "Pasted image 20240517205856.png",
     "Pasted image 20240517205727.png",
-    "MyStudyRoute/Pentration/SNMP.md",
+    "MyStudyRoute/渗透测试学习/SNMP.md",
     "MyStudyRoute/WEB攻防(WEB A&D)/未命名思维导图.md",
-    "MyStudyRoute/Pentration/Document/技能点.md",
-    "MyStudyRoute/Pentration/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
-    "MyStudyRoute/Pentration/Document/EXAM特供WP.md",
-    "MyStudyRoute/Pentration/Document/GZCJ.md",
-    "MyStudyRoute/Pentration/Document/pent.md",
-    "MyStudyRoute/Pentration/Document/随记.md",
-    "MyStudyRoute/Pentration/Active Directory.md",
-    "MyStudyRoute/Pentration/FileTransmit.md",
-    "MyStudyRoute/Pentration/hashcat.md",
-    "MyStudyRoute/Pentration/Netcat.md",
-    "MyStudyRoute/Pentration/Privilege Escalation Linux.md",
-    "MyStudyRoute/Pentration/PreRecon.md",
+    "MyStudyRoute/渗透测试学习/Document/技能点.md",
+    "MyStudyRoute/渗透测试学习/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
+    "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
+    "MyStudyRoute/渗透测试学习/Document/GZCJ.md",
+    "MyStudyRoute/渗透测试学习/Document/pent.md",
+    "MyStudyRoute/渗透测试学习/Document/随记.md",
+    "MyStudyRoute/渗透测试学习/Active Directory.md",
+    "MyStudyRoute/渗透测试学习/FileTransmit.md",
+    "MyStudyRoute/渗透测试学习/hashcat.md",
+    "MyStudyRoute/渗透测试学习/Netcat.md",
+    "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
+    "MyStudyRoute/渗透测试学习/PreRecon.md",
     "Untitled.canvas",
-    "MyStudyRoute/WEB攻防(WEB A&D)",
+    "MyStudyRoute/Working on",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
