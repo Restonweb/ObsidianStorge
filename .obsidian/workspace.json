@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "xss",
+                "query": "HTB",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -98,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md"
+                "file": "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md"
               }
             }
           }
@@ -162,6 +163,7 @@
   },
   "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
+    "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
@@ -189,7 +191,6 @@
     "MyStudyRoute/Working on/WEB1-Before We Start.md",
     "MyStudyRoute/Working on/WEB2-ASP安全&MDB下载植入&IIS短文件名&写权限&解析.md",
     "MyStudyRoute/Working on/WEB3-ASPX_.NET项目&DLL反编译&未授权访问&配置信息泄露.md",
-    "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
     "MyStudyRoute/渗透测试学习/Document/ssti_python_base.pdf",
     "MyStudyRoute/Working on/WEB服务安全的组成.canvas",
     "Pasted image 20240517210808.png",
