@@ -61,7 +61,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "CTF",
+                "query": "HTB",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -161,7 +161,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "ceb500f1981397e9",
+  "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
     "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
     "Pasted image 20231213200443.png",
