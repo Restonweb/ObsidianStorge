@@ -8,31 +8,18 @@
         "type": "tabs",
         "children": [
           {
-            "id": "81657630e464a165",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyStudyRoute/Working on/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "eb4b09b4f7faeaef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
+                "file": "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "HTB",
+                "query": "sql",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -98,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
+                "file": "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
+                "file": "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md"
+                "file": "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md"
               }
             }
           }
@@ -162,21 +150,22 @@
   },
   "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
+    "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
+    "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
+    "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
+    "MyStudyRoute/渗透测试学习/Document/技能点.md",
+    "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
-    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
-    "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
     "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
-    "MyStudyRoute/渗透测试学习/Document/技能点.md",
     "MyStudyRoute/渗透测试学习/hashcat.md",
     "MyStudyRoute/渗透测试学习/Active Directory.md",
     "Pasted image 20231213200443.png",
-    "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
     "MyStudyRoute/渗透测试学习/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "MyStudyRoute/渗透测试学习/Document/随记.md",
-    "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
     "MyStudyRoute/渗透测试学习/WireShark.md",
     "MyStudyRoute/渗透测试学习/SomeUsefulCommand.md",
     "MyStudyRoute/渗透测试学习/Socat.md",
@@ -190,7 +179,6 @@
     "Pasted image 20240307183229.png",
     "MyStudyRoute/Working on/WEB7-Python项目&SSTI.md",
     "MyStudyRoute/Working on/WEB8-19-通用漏洞.md",
-    "MyStudyRoute/Working on/WEB1-Before We Start.md",
     "MyStudyRoute/渗透测试学习/Document/ssti_python_base.pdf",
     "MyStudyRoute/Working on/WEB服务安全的组成.canvas",
     "Pasted image 20240517210808.png",
