@@ -18,8 +18,19 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "ea85503c96f62806",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.3"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -147,7 +158,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "eb4b09b4f7faeaef",
+  "active": "ea85503c96f62806",
   "lastOpenFiles": [
     "MyStudyRoute/渗透测试学习/PreRecon.md",
     "MyStudyRoute/渗透测试学习/NMAP.md",
