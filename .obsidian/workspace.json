@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
+                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
+                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
+                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md"
+                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md"
               }
             }
           }
@@ -149,6 +149,7 @@
   },
   "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
+    "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
     "MyStudyRoute/渗透测试学习/PreRecon.md",
     "MyStudyRoute/渗透测试学习/NMAP.md",
     "MyStudyRoute/渗透测试学习/Netcat.md",
@@ -158,7 +159,6 @@
     "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
     "MyStudyRoute/渗透测试学习/Document/技能点.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
-    "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
     "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
