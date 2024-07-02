@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/ISOP/ISOP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/ISOP/ISOP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/ISOP/ISOP.md",
+                "file": "MyStudyRoute/Capture The Flag/WP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/ISOP/ISOP.md"
+                "file": "MyStudyRoute/Capture The Flag/WP.md"
               }
             }
           }
@@ -148,9 +148,9 @@
   },
   "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
+    "MyStudyRoute/ISOP/ISOP.md",
     "MyStudyRoute/PENTEST/Active Directory.md",
     "MyStudyRoute/PENTEST/FileTransmit.md",
-    "MyStudyRoute/ISOP/ISOP.md",
     "MyStudyRoute/PENTEST/SNMP.md",
     "MyStudyRoute/ISOP",
     "MyStudyRoute/PENTEST/SearchSploit.md",
