@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
+                "file": "MyStudyRoute/渗透测试学习/SNMP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
+                "file": "MyStudyRoute/渗透测试学习/SNMP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
+                "file": "MyStudyRoute/渗透测试学习/SNMP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md"
+                "file": "MyStudyRoute/渗透测试学习/SNMP.md"
               }
             }
           }
@@ -147,8 +147,11 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cef5dbb49c726b7f",
+  "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
+    "MyStudyRoute/渗透测试学习/SearchSploit.md",
+    "MyStudyRoute/渗透测试学习/PrivilegeScanTrickUsage.md",
+    "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
     "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
     "MyStudyRoute/渗透测试学习/PreRecon.md",
     "MyStudyRoute/渗透测试学习/NMAP.md",
@@ -173,10 +176,7 @@
     "MyStudyRoute/渗透测试学习/SomeUsefulCommand.md",
     "MyStudyRoute/渗透测试学习/Socat.md",
     "MyStudyRoute/渗透测试学习/SNMP.md",
-    "MyStudyRoute/渗透测试学习/SearchSploit.md",
-    "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
     "MyStudyRoute/渗透测试学习/MetaSploit.md",
-    "MyStudyRoute/Working on/WEB6-JS项目&node.js框架安全&识别审计&验证绕过.md",
     "Pasted image 20240307183229.png",
     "MyStudyRoute/渗透测试学习/Document/ssti_python_base.pdf",
     "MyStudyRoute/Working on/WEB服务安全的组成.canvas",
