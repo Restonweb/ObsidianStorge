@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/SNMP.md",
+                "file": "MyStudyRoute/ISOP/ISOP.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/SNMP.md",
+                "file": "MyStudyRoute/ISOP/ISOP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/SNMP.md",
+                "file": "MyStudyRoute/ISOP/ISOP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/渗透测试学习/SNMP.md"
+                "file": "MyStudyRoute/ISOP/ISOP.md"
               }
             }
           }
@@ -149,36 +149,37 @@
   },
   "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
-    "MyStudyRoute/渗透测试学习/SearchSploit.md",
-    "MyStudyRoute/渗透测试学习/PrivilegeScanTrickUsage.md",
-    "MyStudyRoute/渗透测试学习/Privilege Escalation Linux.md",
-    "MyStudyRoute/渗透测试学习/枚举(Enumeratiton).md",
-    "MyStudyRoute/渗透测试学习/PreRecon.md",
-    "MyStudyRoute/渗透测试学习/NMAP.md",
-    "MyStudyRoute/渗透测试学习/Netcat.md",
-    "MyStudyRoute/渗透测试学习/Active Directory.md",
-    "MyStudyRoute/渗透测试学习/FileTransmit.md",
-    "MyStudyRoute/渗透测试学习/hashcat.md",
-    "MyStudyRoute/渗透测试学习/Document/EXAM特供WP.md",
-    "MyStudyRoute/渗透测试学习/Document/技能点.md",
+    "MyStudyRoute/PENTEST/SNMP.md",
+    "MyStudyRoute/ISOP/ISOP.md",
+    "MyStudyRoute/ISOP",
+    "MyStudyRoute/PENTEST/SearchSploit.md",
+    "MyStudyRoute/PENTEST/PrivilegeScanTrickUsage.md",
+    "MyStudyRoute/PENTEST/Privilege Escalation Linux.md",
+    "MyStudyRoute/PENTEST/枚举(Enumeratiton).md",
+    "MyStudyRoute/PENTEST/PreRecon.md",
+    "MyStudyRoute/PENTEST/NMAP.md",
+    "MyStudyRoute/PENTEST/Netcat.md",
+    "MyStudyRoute/PENTEST/Active Directory.md",
+    "MyStudyRoute/PENTEST/FileTransmit.md",
+    "MyStudyRoute/PENTEST/hashcat.md",
+    "MyStudyRoute/PENTEST/Document/EXAM特供WP.md",
+    "MyStudyRoute/PENTEST/Document/技能点.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/Working on/WEB5-JavaWeb&JWT身份攻击&组件安全&访问控制.md",
     "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/渗透测试学习/Practice/WorkThrough.md",
+    "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/常用文件头.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "Pasted image 20231213200443.png",
-    "MyStudyRoute/渗透测试学习/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
-    "MyStudyRoute/渗透测试学习/Document/随记.md",
-    "MyStudyRoute/渗透测试学习/WireShark.md",
-    "MyStudyRoute/渗透测试学习/SomeUsefulCommand.md",
-    "MyStudyRoute/渗透测试学习/Socat.md",
-    "MyStudyRoute/渗透测试学习/SNMP.md",
-    "MyStudyRoute/渗透测试学习/MetaSploit.md",
+    "MyStudyRoute/PENTEST/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
+    "MyStudyRoute/PENTEST/Document/随记.md",
+    "MyStudyRoute/PENTEST/WireShark.md",
+    "MyStudyRoute/PENTEST/SomeUsefulCommand.md",
+    "MyStudyRoute/PENTEST/Socat.md",
     "Pasted image 20240307183229.png",
-    "MyStudyRoute/渗透测试学习/Document/ssti_python_base.pdf",
+    "MyStudyRoute/PENTEST/Document/ssti_python_base.pdf",
     "MyStudyRoute/Working on/WEB服务安全的组成.canvas",
     "Pasted image 20240517210808.png",
     "Pasted image 20240517210437.png",
@@ -196,7 +197,6 @@
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/命令执行中关于PHP正则表达式的一些绕过方法.pdf",
     "未命名 1.canvas",
     "未命名.canvas"
   ]
