@@ -69,7 +69,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 283.49999618530273
+    "width": 283.49999618530273,
+    "collapsed": true
   },
   "right": {
     "id": "6e0ac87f81719039",
@@ -134,7 +135,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 341.5,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -149,8 +150,10 @@
   },
   "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
-    "MyStudyRoute/PENTEST/SNMP.md",
+    "MyStudyRoute/PENTEST/Active Directory.md",
+    "MyStudyRoute/PENTEST/FileTransmit.md",
     "MyStudyRoute/ISOP/ISOP.md",
+    "MyStudyRoute/PENTEST/SNMP.md",
     "MyStudyRoute/ISOP",
     "MyStudyRoute/PENTEST/SearchSploit.md",
     "MyStudyRoute/PENTEST/PrivilegeScanTrickUsage.md",
@@ -159,8 +162,6 @@
     "MyStudyRoute/PENTEST/PreRecon.md",
     "MyStudyRoute/PENTEST/NMAP.md",
     "MyStudyRoute/PENTEST/Netcat.md",
-    "MyStudyRoute/PENTEST/Active Directory.md",
-    "MyStudyRoute/PENTEST/FileTransmit.md",
     "MyStudyRoute/PENTEST/hashcat.md",
     "MyStudyRoute/PENTEST/Document/EXAM特供WP.md",
     "MyStudyRoute/PENTEST/Document/技能点.md",
