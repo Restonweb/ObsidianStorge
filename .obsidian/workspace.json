@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/PENTEST/Active Directory.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "WP"
+              "title": "Active Directory"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/PENTEST/Active Directory.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "WP 的反向链接列表"
+              "title": "Active Directory 的反向链接列表"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md",
+                "file": "MyStudyRoute/PENTEST/Active Directory.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "WP 的出链列表"
+              "title": "Active Directory 的出链列表"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/Capture The Flag/WP.md"
+                "file": "MyStudyRoute/PENTEST/Active Directory.md"
               },
               "icon": "lucide-list",
-              "title": "WP 的大纲"
+              "title": "Active Directory 的大纲"
             }
           }
         ],
@@ -162,11 +162,15 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cef5dbb49c726b7f",
+  "active": "eb4b09b4f7faeaef",
   "lastOpenFiles": [
+    "MyStudyRoute/PENTEST/hashcat.md",
+    "MyStudyRoute/PENTEST/Socat.md",
+    "MyStudyRoute/PENTEST/WireShark.md",
+    "MyStudyRoute/Working on/WEB7-Python项目&SSTI.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
     "MyStudyRoute/PENTEST/Netcat.md",
-    "MyStudyRoute/PENTEST/hashcat.md",
     "MyStudyRoute/PENTEST/Active Directory.md",
     "MyStudyRoute/PENTEST/枚举(Enumeratiton).md",
     "MyStudyRoute/PENTEST/Document/技能点.md",
@@ -178,7 +182,6 @@
     "MyStudyRoute/PENTEST/Document/ssti_python_base.pdf",
     "MyStudyRoute/README.md",
     "README.md",
-    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205329.png",
     "MyStudyRoute/Capture The Flag/Trick.md",
@@ -187,13 +190,10 @@
     "MyStudyRoute/PENTEST/PreRecon.md",
     "MyStudyRoute/PENTEST/NMAP.md",
     "MyStudyRoute/PENTEST/SearchSploit.md",
-    "MyStudyRoute/PENTEST/WireShark.md",
     "MyStudyRoute/PENTEST/SomeUsefulCommand.md",
     "MyStudyRoute/PENTEST/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/PENTEST/FileTransmit.md",
-    "MyStudyRoute/PENTEST/Socat.md",
-    "MyStudyRoute/PENTEST/SNMP.md",
     "MyStudyRoute/ISOP",
     "Pasted image 20231213200443.png",
     "Pasted image 20240307183229.png",
