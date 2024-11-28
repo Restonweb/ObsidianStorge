@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "未命名.md",
+                "file": "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "未命名"
+              "title": "WorkThrough"
             }
           }
         ],
@@ -154,10 +154,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "未命名.md"
+                "file": "MyStudyRoute/PENTEST/Practice/WorkThrough.md"
               },
               "icon": "lucide-list",
-              "title": "未命名 的大纲"
+              "title": "WorkThrough 的大纲"
             }
           }
         ],
@@ -177,12 +177,15 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "2ab2c748150c9dde",
+  "active": "cef5dbb49c726b7f",
   "lastOpenFiles": [
-    "MyStudyRoute/PENTEST/Active Directory.md",
-    "未命名.md",
-    "MyStudyRoute/PENTEST/hashcat.md",
+    "MyStudyRoute/PENTEST/NMAP.md",
     "MyStudyRoute/PENTEST/Socat.md",
+    "MyStudyRoute/加固.md",
+    "MyStudyRoute/PENTEST/MetaSploit.md",
+    "未命名.md",
+    "MyStudyRoute/PENTEST/Active Directory.md",
+    "MyStudyRoute/PENTEST/hashcat.md",
     "MyStudyRoute/PENTEST/WireShark.md",
     "MyStudyRoute/Working on/WEB7-Python项目&SSTI.md",
     "MyStudyRoute/Capture The Flag/WP.md",
@@ -191,7 +194,6 @@
     "MyStudyRoute/PENTEST/枚举(Enumeratiton).md",
     "MyStudyRoute/PENTEST/Document/技能点.md",
     "MyStudyRoute/PENTEST/Document/pent.md",
-    "MyStudyRoute/加固.md",
     "MyStudyRoute/ISOP/ISOP.md",
     "MyStudyRoute/PENTEST/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
     "MyStudyRoute/PENTEST/Document/随记.md",
@@ -204,10 +206,8 @@
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/PENTEST/PreRecon.md",
-    "MyStudyRoute/PENTEST/NMAP.md",
     "MyStudyRoute/PENTEST/SearchSploit.md",
     "MyStudyRoute/PENTEST/SomeUsefulCommand.md",
-    "MyStudyRoute/PENTEST/PrivilegeScanTrickUsage.md",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/ISOP",
     "Pasted image 20231213200443.png",
