@@ -10,18 +10,18 @@
       "savePassword": true,
       "isDefault": true,
       "lastSelectedCategories": [
-        2
+        3
       ],
       "username": "redcamellia",
       "encryptedPassword": {
-        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"9_gph75Ky_nvKoC09Xqvex3mWITrI4muwcC3Wpv8wPY\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
-        "vector": "7WxEq6RkWqsQ8uK4",
-        "encrypted": "5QoXLNzZNs+nMAdTOk94zI5VoU4Y2tdJPEw="
+        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"lewpJC_BIdKLD9moeW8P5PfSWo1QYQULljrhfUlbuVc\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
+        "vector": "ix9EuDuNjBd+uVRu",
+        "encrypted": "sIZTBXStUhHdkHbixv08zaDmQoAbSnHR7WA="
       }
     }
   ],
   "showRibbonIcon": true,
-  "defaultPostStatus": "draft",
+  "defaultPostStatus": "publish",
   "defaultCommentStatus": "open",
   "rememberLastSelectedCategories": true,
   "showWordPressEditConfirm": true,

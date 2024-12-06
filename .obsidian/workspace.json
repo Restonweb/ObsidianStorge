@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "83549eedf6572406",
+        "id": "cabb88a6e2503002",
         "type": "tabs",
         "children": [
           {
-            "id": "eb4b09b4f7faeaef",
+            "id": "4d3319fe4a76efd6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "WorkThrough"
+              "title": "新标签页"
             }
           }
         ]
@@ -138,11 +134,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "MyStudyRoute/PENTEST/Practice/WorkThrough.md"
-              },
+              "state": {},
               "icon": "lucide-list",
-              "title": "WorkThrough 的大纲"
+              "title": "大纲"
             }
           }
         ],
@@ -165,35 +159,34 @@
   },
   "active": "cef5dbb49c726b7f",
   "lastOpenFiles": [
-    "MyStudyRoute/PENTEST/枚举(Enumeratiton).md",
-    "MyStudyRoute/PENTEST/Active Directory.md",
-    "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
-    "MyStudyRoute/PENTEST/NMAP.md",
-    "MyStudyRoute/PENTEST/Socat.md",
-    "MyStudyRoute/加固.md",
-    "MyStudyRoute/PENTEST/MetaSploit.md",
-    "未命名.md",
-    "MyStudyRoute/PENTEST/hashcat.md",
-    "MyStudyRoute/PENTEST/WireShark.md",
-    "MyStudyRoute/Working on/WEB7-Python项目&SSTI.md",
-    "MyStudyRoute/Capture The Flag/WP.md",
-    "MyStudyRoute/PENTEST/Netcat.md",
-    "MyStudyRoute/PENTEST/Document/技能点.md",
-    "MyStudyRoute/PENTEST/Document/pent.md",
-    "MyStudyRoute/ISOP/ISOP.md",
-    "MyStudyRoute/PENTEST/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
-    "MyStudyRoute/PENTEST/Document/随记.md",
     "MyStudyRoute/PENTEST/Document/ssti_python_base.pdf",
-    "MyStudyRoute/README.md",
-    "README.md",
-    "MyStudyRoute/Capture The Flag/ReadMe.md",
-    "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205329.png",
+    "MyStudyRoute/PENTEST/Document/pent.md",
+    "MyStudyRoute/PENTEST/Document/GZCJ.md",
+    "MyStudyRoute/PENTEST/Document/EXAM特供WP.md",
+    "MyStudyRoute/PENTEST/Document/随记.md",
+    "MyStudyRoute/PENTEST/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
+    "MyStudyRoute/PENTEST/Document/技能点.md",
+    "MyStudyRoute/PENTEST/WireShark.md",
+    "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/SQLi思路.md",
+    "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
-    "MyStudyRoute/PENTEST/PreRecon.md",
-    "MyStudyRoute/PENTEST/SearchSploit.md",
+    "MyStudyRoute/ISOP/ISOP.md",
+    "MyStudyRoute/加固.md",
     "MyStudyRoute/PENTEST/SomeUsefulCommand.md",
+    "MyStudyRoute/PENTEST/Socat.md",
+    "MyStudyRoute/PENTEST/SNMP.md",
+    "MyStudyRoute/PENTEST/SearchSploit.md",
+    "MyStudyRoute/PENTEST/PrivilegeScanTrickUsage.md",
+    "MyStudyRoute/PENTEST/Privilege Escalation Linux.md",
+    "MyStudyRoute/PENTEST/PreRecon.md",
+    "MyStudyRoute/PENTEST/NMAP.md",
+    "MyStudyRoute/PENTEST/Netcat.md",
+    "MyStudyRoute/PENTEST/MetaSploit.md",
+    "MyStudyRoute/PENTEST/hashcat.md",
+    "MyStudyRoute/PENTEST/FileTransmit.md",
+    "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205329.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/ISOP",
     "Pasted image 20231213200443.png",
