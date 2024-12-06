@@ -1,0 +1,34 @@
+{
+  "lang": "auto",
+  "profiles": [
+    {
+      "name": "redcamellia",
+      "apiType": "xml-rpc",
+      "endpoint": "https://111.229.238.168/wordpress",
+      "xmlRpcPath": "/xmlrpc.php",
+      "saveUsername": true,
+      "savePassword": true,
+      "isDefault": true,
+      "lastSelectedCategories": [
+        1
+      ],
+      "username": "redcamellia",
+      "encryptedPassword": {
+        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"I5cVw3UObE2ARITPjfWL3H7jiONaS-EH_yDDH8_Vqao\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
+        "vector": "Th/HznRaOFUIEQpx",
+        "encrypted": "1Krq2Vax9Fy5EjiV1kSBg0NIQpcsw4f8vZs="
+      }
+    }
+  ],
+  "showRibbonIcon": false,
+  "defaultPostStatus": "draft",
+  "defaultCommentStatus": "open",
+  "rememberLastSelectedCategories": true,
+  "showWordPressEditConfirm": false,
+  "mathJaxOutputType": "svg",
+  "commentConvertMode": "ignore",
+  "enableHtml": false,
+  "replaceMediaLinks": true,
+  "version": "2",
+  "defaultPostType": "post"
+}
