@@ -14,9 +14,9 @@
       ],
       "username": "redcamellia",
       "encryptedPassword": {
-        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"8IkjndV0NYwn7Ic1WkJZ5BFi9lMs6kZNqJsCLYsCmro\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
-        "vector": "7ozM7abHk5bArsRy",
-        "encrypted": "ZV4TSXnfAD+w4F4Zp8NJJrL8ZmWQoSlwCho="
+        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"wYGisQ-fIQzcef00o1J3jGcYsundFBF9rHdP3uIX5so\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
+        "vector": "UV2MDz6i2/WF3uLe",
+        "encrypted": "fMWY4E3EPsdxkrfFgGb8bqjgG80M6Jv4gZQ="
       }
     }
   ],
@@ -28,7 +28,7 @@
   "mathJaxOutputType": "svg",
   "commentConvertMode": "html",
   "enableHtml": true,
-  "replaceMediaLinks": true,
+  "replaceMediaLinks": false,
   "version": "2",
   "defaultPostType": "post"
 }
