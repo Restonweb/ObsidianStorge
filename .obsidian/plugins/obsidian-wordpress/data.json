@@ -4,19 +4,19 @@
     {
       "name": "redcamellia",
       "apiType": "xml-rpc",
-      "endpoint": "http://111.229.238.168/wordpress",
+      "endpoint": "http://111.229.238.168/pKwRs4d/wordpress",
       "xmlRpcPath": "/xmlrpc.php",
       "saveUsername": true,
       "savePassword": true,
       "isDefault": true,
       "lastSelectedCategories": [
-        3
+        2
       ],
       "username": "redcamellia",
       "encryptedPassword": {
-        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"lewpJC_BIdKLD9moeW8P5PfSWo1QYQULljrhfUlbuVc\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
-        "vector": "ix9EuDuNjBd+uVRu",
-        "encrypted": "sIZTBXStUhHdkHbixv08zaDmQoAbSnHR7WA="
+        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"_W2xGqAXLF1naklCNbMKFvljUwIrKMvm6XOFu2JkeK0\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
+        "vector": "FH/z72gpOuuRdoQd",
+        "encrypted": "JJOTeZxR5sw5b6WFwE2yKloAJJlh3NW0MDk="
       }
     }
   ],
