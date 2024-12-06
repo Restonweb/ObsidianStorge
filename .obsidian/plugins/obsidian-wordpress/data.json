@@ -14,9 +14,9 @@
       ],
       "username": "redcamellia",
       "encryptedPassword": {
-        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"_W2xGqAXLF1naklCNbMKFvljUwIrKMvm6XOFu2JkeK0\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
-        "vector": "FH/z72gpOuuRdoQd",
-        "encrypted": "JJOTeZxR5sw5b6WFwE2yKloAJJlh3NW0MDk="
+        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"8IkjndV0NYwn7Ic1WkJZ5BFi9lMs6kZNqJsCLYsCmro\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
+        "vector": "7ozM7abHk5bArsRy",
+        "encrypted": "ZV4TSXnfAD+w4F4Zp8NJJrL8ZmWQoSlwCho="
       }
     }
   ],
