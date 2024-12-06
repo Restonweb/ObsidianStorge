@@ -4,23 +4,23 @@
     {
       "name": "redcamellia",
       "apiType": "xml-rpc",
-      "endpoint": "https://111.229.238.168/wordpress",
+      "endpoint": "http://111.229.238.168/wordpress",
       "xmlRpcPath": "/xmlrpc.php",
       "saveUsername": true,
       "savePassword": true,
       "isDefault": true,
       "lastSelectedCategories": [
-        1
+        2
       ],
       "username": "redcamellia",
       "encryptedPassword": {
-        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"cSKo9VWbwsvhXAPjZBi7QSEeiJWSk_BRNfghRhYS7VE\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
-        "vector": "C1qSKF+AjBalHJgm",
-        "encrypted": "50LgKB7eVx7554yLFxcjzFjYMleXCELvgqw="
+        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"9_gph75Ky_nvKoC09Xqvex3mWITrI4muwcC3Wpv8wPY\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
+        "vector": "7WxEq6RkWqsQ8uK4",
+        "encrypted": "5QoXLNzZNs+nMAdTOk94zI5VoU4Y2tdJPEw="
       }
     }
   ],
-  "showRibbonIcon": false,
+  "showRibbonIcon": true,
   "defaultPostStatus": "draft",
   "defaultCommentStatus": "open",
   "rememberLastSelectedCategories": true,

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/PENTEST/Active Directory.md",
+                "file": "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Active Directory"
+              "title": "WorkThrough"
             }
           }
         ]
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/PENTEST/Active Directory.md"
+                "file": "MyStudyRoute/PENTEST/Practice/WorkThrough.md"
               },
               "icon": "lucide-list",
-              "title": "Active Directory 的大纲"
+              "title": "WorkThrough 的大纲"
             }
           }
         ],
@@ -159,24 +159,25 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-wordpress:发布到 WordPress": false
     }
   },
-  "active": "eb4b09b4f7faeaef",
+  "active": "cef5dbb49c726b7f",
   "lastOpenFiles": [
+    "MyStudyRoute/PENTEST/枚举(Enumeratiton).md",
+    "MyStudyRoute/PENTEST/Active Directory.md",
     "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
     "MyStudyRoute/PENTEST/NMAP.md",
     "MyStudyRoute/PENTEST/Socat.md",
     "MyStudyRoute/加固.md",
     "MyStudyRoute/PENTEST/MetaSploit.md",
     "未命名.md",
-    "MyStudyRoute/PENTEST/Active Directory.md",
     "MyStudyRoute/PENTEST/hashcat.md",
     "MyStudyRoute/PENTEST/WireShark.md",
     "MyStudyRoute/Working on/WEB7-Python项目&SSTI.md",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/PENTEST/Netcat.md",
-    "MyStudyRoute/PENTEST/枚举(Enumeratiton).md",
     "MyStudyRoute/PENTEST/Document/技能点.md",
     "MyStudyRoute/PENTEST/Document/pent.md",
     "MyStudyRoute/ISOP/ISOP.md",
