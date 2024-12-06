@@ -14,9 +14,9 @@
       ],
       "username": "redcamellia",
       "encryptedPassword": {
-        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"I5cVw3UObE2ARITPjfWL3H7jiONaS-EH_yDDH8_Vqao\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
-        "vector": "Th/HznRaOFUIEQpx",
-        "encrypted": "1Krq2Vax9Fy5EjiV1kSBg0NIQpcsw4f8vZs="
+        "key": "{\"alg\":\"A256GCM\",\"ext\":true,\"k\":\"cSKo9VWbwsvhXAPjZBi7QSEeiJWSk_BRNfghRhYS7VE\",\"key_ops\":[\"encrypt\",\"decrypt\"],\"kty\":\"oct\"}",
+        "vector": "C1qSKF+AjBalHJgm",
+        "encrypted": "50LgKB7eVx7554yLFxcjzFjYMleXCELvgqw="
       }
     }
   ],
@@ -24,10 +24,10 @@
   "defaultPostStatus": "draft",
   "defaultCommentStatus": "open",
   "rememberLastSelectedCategories": true,
-  "showWordPressEditConfirm": false,
+  "showWordPressEditConfirm": true,
   "mathJaxOutputType": "svg",
-  "commentConvertMode": "ignore",
-  "enableHtml": false,
+  "commentConvertMode": "html",
+  "enableHtml": true,
   "replaceMediaLinks": true,
   "version": "2",
   "defaultPostType": "post"
