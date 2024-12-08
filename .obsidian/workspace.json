@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MyStudyRoute/PENTEST/Active Directory.md",
+                "file": "MyStudyRoute/SRC/hanz.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Active Directory"
+              "title": "hanz"
             }
           }
         ]
@@ -73,8 +73,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -140,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "MyStudyRoute/PENTEST/Active Directory.md"
+                "file": "MyStudyRoute/SRC/hanz.md"
               },
               "icon": "lucide-list",
-              "title": "Active Directory 的大纲"
+              "title": "hanz 的大纲"
             }
           }
         ],
@@ -166,12 +165,16 @@
   },
   "active": "4d3319fe4a76efd6",
   "lastOpenFiles": [
+    "Pasted image 20241208205922.png",
+    "Pasted image 20241208205754.png",
+    "MyStudyRoute/PENTEST/Active Directory.md",
+    "MyStudyRoute/SRC/hanz.md",
+    "MyStudyRoute/SRC",
     "MyStudyRoute/Capture The Flag/WP.md",
     "MyStudyRoute/Capture The Flag/Trick.md",
     "MyStudyRoute/Capture The Flag/ReadMe.md",
     "MyStudyRoute/Capture The Flag/File Inclusion.md",
     "MyStudyRoute/PENTEST/Practice/WorkThrough.md",
-    "MyStudyRoute/PENTEST/Active Directory.md",
     "MyStudyRoute/PENTEST/枚举(Enumeratiton).md",
     "MyStudyRoute/PENTEST/PreRecon.md",
     "MyStudyRoute/PENTEST/FileTransmit.md",
@@ -192,8 +195,6 @@
     "MyStudyRoute/PENTEST/Document/EXAM特供WP.md",
     "MyStudyRoute/PENTEST/Document/随记.md",
     "MyStudyRoute/PENTEST/Document/借助 LAPS 和 PXE 接管 Windows 工作站 - RiskInsight.pdf",
-    "MyStudyRoute/PENTEST/Document/技能点.md",
-    "MyStudyRoute/Capture The Flag/SQLi思路.md",
     "MyStudyRoute/Capture The Flag/res/Pasted image 20231020205329.png",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】命令执行漏洞详解_命令执行漏洞原理.pdf",
     "MyStudyRoute/ISOP",
@@ -206,14 +207,12 @@
     "Pasted image 20240517210204.png",
     "Pasted image 20240517210044.png",
     "Pasted image 20240517210012.png",
-    "Pasted image 20240517205911.png",
     "Untitled.canvas",
     "MyStudyRoute/Working on",
     "MyStudyRoute/Capture The Flag/KeyPoint/PHP escapeshellarg()+escapeshellcmd() 之殇.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/MySQL show()函数详述.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/http请求头有哪些？_http协议请求头_Mrwang21的博客-CSDN博客.pdf",
     "MyStudyRoute/Capture The Flag/KeyPoint/【精选】文件包含支持的伪协议_data伪协议-CSDN博客.pdf",
-    "MyStudyRoute/Capture The Flag/KeyPoint/【精选】Shell语法基础--各种括号、引号的用法.pdf",
     "未命名 1.canvas",
     "未命名.canvas"
   ]
