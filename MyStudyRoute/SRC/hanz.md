@@ -16,3 +16,5 @@ http://xjwxt.hzvtc.cn/ws
 表格左侧分别为不同的WebService
 对zygx的WSDL接口进行测试：
 ![[Pasted image 20241208205922.png]]
+![[Pasted image 20241208222919.png]]
+有密钥验证
